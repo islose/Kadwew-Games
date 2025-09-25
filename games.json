@@ -1,0 +1,96 @@
+[
+    {
+        "title": "Elden Ring",
+        "editor": "FromSoftware",
+        "price": 59.99,
+        "image": "images/elden-ring.jpg"
+    },
+    {
+        "title": "EA Sports FC 26",
+        "editor": "Electronic Arts",
+        "price": 79.99,
+        "image": "images/eafc26.jpg",
+        "isNew": "true"
+    },
+    {
+        "title": "Cyberpunk 2077",
+        "editor": "CD Projekt Red",
+        "price": 59.99,
+        "image": "images/cyberpunk2077.jpg"
+    },
+    {
+        "title": "Hogwarts Legacy",
+        "editor": "Warner Bros. Games",
+        "price": 59.99,
+        "discount": 88,
+        "image": "images/hogwarts-legacy.jpg"
+    },
+    {
+        "title": "Counter Strike 2",
+        "editor": "Valve",
+        "price": 0,
+        "image": "images/csgo2.jpg"
+    },
+    {
+        "title": "Assassins's Creed : Valhalla",
+        "editor": "Ubisoft",
+        "price": 59.99,
+        "image": "images/assassinValhalla.jpg"
+    },
+    {
+        "title": "Assassins's Creed : Shadows",
+        "editor": "Ubisoft",
+        "price": 59.99,
+        "image": "images/assassinShadows.jpg"
+    },
+    {
+        "title": "Assassins's Creed : Mirage",
+        "editor": "Ubisoft",
+        "price": 59.99,
+        "image": "images/assassinMirage.jpg"
+    },
+    {
+        "title": "Red Dead Redemption 2",
+        "editor": "Rockstar Games",
+        "price": 49.99,
+        "image": "images/rdr2.jpg"
+    },
+    {
+        "title": "The Witcher 3: Wild Hunt",
+        "editor": "CD Projekt Red",
+        "price": 29.99,
+        "image": "images/witcher3.jpg"
+    },
+    {
+        "title": "Dark Souls : REMASTERED",
+        "editor": "FromSoftware",
+        "price": 19.99,
+        "image": "images/dark-souls.jpg"
+    },
+    {
+        "title": "Dark Souls II",
+        "editor": "FromSoftware",
+        "price": 29.99,
+        "image": "images/dark-soulsII.jpg"
+    },
+    {
+        "title": "Dark Souls III",
+        "editor": "FromSoftware",
+        "price": 39.99,
+        "image": "images/dark-soulsIII.jpg"
+    },
+    {
+        "title": "Sekiro: Shadows Die Twice - GOTY Edition",
+        "editor": "FromSoftware",
+        "price": 39.99,
+        "image": "images/sekiro.jpg"
+    },
+    {
+        "title": "Call of Duty: Modern Warfare II",
+        "editor": "Activision",
+        "price": 69.99,
+        "image": "images/cod-mw2.jpg"
+    }
+    
+    
+]
