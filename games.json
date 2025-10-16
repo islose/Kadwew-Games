@@ -1,9 +1,37 @@
 [
     {
+        "title": "Battlefield 6",
+        "editor": "Electronic Arts",
+        "price": 69.99,
+        "image": "images/battlefield6.jpg",
+        "isNew": "true",
+        "isHot": "false",
+        "link":  "https://store.steampowered.com/app/2807960/Battlefield_6"
+    },
+    {
+        "title": "Little Nightmares III",
+        "editor": "Bandai Namco Entertainment",
+        "price": 39.99,
+        "image": "images/littleNightmares3.jpg",
+        "isNew": "true",
+        "isHot": "true",
+        "link":  "https://store.steampowered.com/app/1392860/Little_Nightmares_III"
+    },
+    {
+        "title": "Nostale",
+        "editor": "Entwell.Inc",
+        "price": 0,
+        "image": "images/nostale.jpg",
+        "isNew": "true",
+        "isHot": "false"
+    },
+    {
         "title": "Elden Ring",
         "editor": "FromSoftware",
         "price": 59.99,
-        "image": "images/elden-ring.jpg"
+        "image": "images/elden-ring.jpg",
+        "isNew": "true",
+        "isHot": "false"
     },
     {
         "title": "EA Sports FC 26",
@@ -16,14 +44,16 @@
         "title": "Cyberpunk 2077",
         "editor": "CD Projekt Red",
         "price": 59.99,
-        "image": "images/cyberpunk2077.jpg"
+        "image": "images/cyberpunk2077.jpg",
+        "isNew": "true"
     },
     {
         "title": "Hogwarts Legacy",
         "editor": "Warner Bros. Games",
         "price": 59.99,
         "discount": 88,
-        "image": "images/hogwarts-legacy.jpg"
+        "image": "images/hogwarts-legacy.jpg",
+        "isNew": "false"
     },
     {
         "title": "Counter Strike 2",
@@ -86,10 +116,24 @@
         "image": "images/sekiro.jpg"
     },
     {
-        "title": "Call of Duty: Modern Warfare II",
-        "editor": "Activision",
-        "price": 69.99,
-        "image": "images/cod-mw2.jpg"
+        "title": "Hades II",
+        "editor": "SuperGiant Games",
+        "price": 29.99,
+        "image": "images/hadesII.jpg",
+        "isNew": "true"
+    },
+    {
+        "title": "Hades",
+        "editor": "SuperGiant Games",
+        "price": 24.99,
+        "image": "images/hades.jpg"
+    },
+    {
+        "title": "Forza Horizon 5",
+        "editor": "Xbox Games Studios",
+        "price": 59.99,
+        "image": "images/forza5.jpg",
+        "isHot": "false"
     }
     
     
