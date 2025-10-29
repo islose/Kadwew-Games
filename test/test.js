@@ -118,7 +118,7 @@ console.log(jourDansXJours(4, 10));
 console.log(jourDansXJours(6, 1));
 console.log(jourDansXJours(3, 2));
 
-const days = ["monday", "tuesday", "thursday", "wednsday", "friday", "saturday", "sunday"];
+const days = ["monday", "tuesday", "wednsday", "thursday", "friday", "saturday", "sunday"];
 
 function dayInXday (start, daysNum) {
   const newIndex = (start + daysNum) % days.length;
@@ -174,36 +174,6 @@ console.log(reverseString("hello"));
 console.log(reverseString("kadwew"));
 console.log(reverseString("123456"));
 
-function mostFrequentChar (word) {
-  let count = {};
-  let mostChar = "";
-  let max = 0;
-
-  for (let letter of word) {
-    count[letter] = (count[letter] || 0) + 1;  
-  }
-
-  for (let letter in count) {
-    if (count[letter] > max) {
-      max = count[letter];
-      mostChar = letter;
-    }
-    else if (count[letter === 1]) {
-      console.log(`Dans le mot ${word} toute les lettres sont répéter une seul fois`);
-    }
-    
-  }
-  console.log(`La lettre la plus répéter dans ${word} est: ${mostChar}, ${max} fois.`);
-}
-
-console.log(mostFrequentChar("kadwew"));
-console.log(mostFrequentChar("negolo"));
-console.log(mostFrequentChar("abdelsamiii"));
-console.log(mostFrequentChar("chat"));
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const Pcontainer = document.querySelector(".particles");
   if (!Pcontainer) return;
@@ -252,3 +222,192 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+function isPalindrom(word) {
+
+  let reversedWord = word.split("").reverse().join("");
+
+  if (word === reversedWord) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(isPalindrom("caca"));
+console.log(isPalindrom("gog"));
+console.log(isPalindrom("letter"));
+console.log(isPalindrom("verev"));
+console.log(isPalindrom("test"));
+
+function letterCounter (word) {
+  let count = {};
+
+  for (let letter of word) {
+    if(letter === " ") continue;
+    count[letter] = (count[letter] || 0) + 1;
+    
+  }
+  return count;
+}
+
+console.log(letterCounter("caca au sucre"));
+console.log(letterCounter("caca"));
+console.log(letterCounter("au"));
+console.log(letterCounter("sucre"));
+
+function findMax (n) {
+  let max = n[0];
+
+  for (let i = 0; i < n.length; i++) {
+    if (n[i] > max) {
+      max = n[i];
+    }
+  }
+  return max;
+}
+
+console.log(findMax([7, 1, 2, 10, 3, 4, 5, 6]));
+console.log(findMax([-5, -1, -50, -100]));
+
+function findMin (n) {
+  let min = n[0];
+
+  for (let i = 0; i < n.length; i++){
+    if (n[i] < min) {
+      min = n[i];
+    }
+  }
+  return min;
+}
+
+console.log(findMin([7, 1, 2, 3, 4, 5, 6]));
+console.log(findMin([-5, -1, -50, -100]));
+
+function findDuplicates (arr) {
+  let count = {};
+  let duplicata = []; 
+  for (let number of arr) {
+    count[number] = (count[number] || 0) + 1;
+  }
+
+  for (let number in count) {
+    if(count[number] > 1) {
+      duplicata.push(+number);
+    }
+  }
+  return duplicata;
+}
+
+console.log(findDuplicates([1, 2, 3, 4, 4, 5, 6, 1]));
+console.log(findDuplicates([5, 55, 555, 5, -5, -555, 0, -55, 5]));
+
+console.log("=== Jeu du || (ou bien) ===");
+
+// Cas 1 : première valeur existe
+let a = 5;
+let b = 10;
+console.log("a =", a, "b =", b, "→", a || b);
+// Résultat : 5 (parce que a existe, donc on garde a)
+
+// Cas 2 : première valeur vaut 0
+a = 0;
+b = 10;
+console.log("a =", a, "b =", b, "→", a || b);
+// Résultat : 10 (car 0 est considéré comme “faux”)
+
+// Cas 3 : première valeur est undefined
+a = undefined;
+b = 42;
+console.log("a =", a, "b =", b, "→", a || b);
+// Résultat : 42 (car a n’existe pas, donc on prend b)
+
+// Cas 4 : première valeur est vide ("")
+a = "";
+b = "Texte de secours";
+console.log("a =", a, "b =", b, "→", a || b);
+// Résultat : "Texte de secours"
+
+// Cas 5 : première valeur est vraie
+a = "Bonjour";
+b = "Salut";
+console.log("a =", a, "b =", b, "→", a || b);
+// Résultat : "Bonjour" (car la première valeur existe)
+
+
+function mostFrequentChar (word) {
+  let count = {};
+  let mostChar = "";
+  let max = 0;
+
+  for (let letter of word) {
+    count[letter] = (count[letter] || 0) + 1;  
+  }
+
+  for (let letter in count) {
+    if (count[letter] > max) {
+      max = count[letter];
+      mostChar = letter;
+    }
+  }
+
+  if (max === 1) {
+    return (`Dans le mot "${word.toUpperCase()}" aucune lettre ne se répete`);
+  }
+  else {
+    return (`Dans le mot "${word.toUpperCase()}" la lettre ${mostChar}, est répéter ${max} fois.`);
+  }
+}
+
+console.log(mostFrequentChar("kadwew"));
+console.log(mostFrequentChar("negolo"));
+console.log(mostFrequentChar("farouk"));
+console.log(mostFrequentChar("chat"));
+
+console.log("////////////////////////////////////////////")
+
+/*
+function newMostFrequentChar(word) {
+  const count = [...word].reduce((acc, letter) => {
+    acc[letter] = (acc[letter] || 0) + 1;
+    return acc;
+  }, {});
+
+  const [mostChar, max] = Object.entries(count)
+    .reduce((a, b) => (b[1] > a[1] ? b : a));
+
+  return max === 1
+  ? `Dans le mot "${word.toUpperCase()}", toutes les lettres sont répétées une seul fois.`
+  : `La lettre la plus répétée dans "${word.toUpperCase()}" est : ${mostChar}, ${max} fois.`
+}
+*/
+function newMostFrequentChar (word) {
+  const count = [...word].reduce((acc, letter) => {
+    acc[letter] = (acc[letter] || 0) + 1;
+    return acc;
+  }, {});
+
+  const max = Math.max(...Object.values(count));
+
+  const mostChar = Object.entries(count)
+  .filter(([_, value]) => value === max)
+  .map(([letter]) => letter);
+
+  if (max === 1) {
+    return `Dans le mot "${word.toUpperCase()}", toutes les lettres sont répétées une seul fois."`
+  }
+  else if (mostChar.length > 1) {
+    return `Dans "${word.toUpperCase()}", les lettres les plus répétées sont : ${mostChar.join(", ")} (${max} fois chacune).`;
+  } 
+  else {
+    return `La lettre la plus répétée dans "${word.toUpperCase()}" est : ${mostChar} ${max} fois.`
+  } 
+}
+
+console.log(newMostFrequentChar("bonjourCommentTalaVous"));
+console.log(newMostFrequentChar("javascript"));
+console.log(newMostFrequentChar("test"));
+console.log(newMostFrequentChar("google"));
+console.log(newMostFrequentChar("sel"));

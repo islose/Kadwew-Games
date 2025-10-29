@@ -168,7 +168,9 @@ async function loadGames() {
 loadGames();
 */
 
-// --- MENU HAMBURGER ---
+///////// ------------------    MENU HAMBURGER    ------------------- //////////
+
+
 const hamb = document.getElementById('hambBtn');
 const menu = document.getElementById('mobileMenu');
 
@@ -178,13 +180,17 @@ hamb.addEventListener('click', () => {
 });
 
 
-////////////////////////////////////////////////////////////////////////////////////////
 
 
-// --- CONTAINERS PRINCIPAUX ---
+
+
+
+///////// ------------------    CONTENUE DE LA CARTE    ------------------- //////////
+
+
 const container = document.getElementById("games-container");
 const newContainer = document.getElementById("new-game-container");
-const discountContainer = document.getElementById("discount-game-container");
+const discountContainer = document.getElementById("featured-games");
 
 // --- FONCTION : CRÉER UNE CARTE DE JEU ---
 function createCard(game) {
@@ -201,12 +207,9 @@ function createCard(game) {
     `;
   }
 
-  // contenu de la carte
   card.innerHTML = `
     <img src="${game.image}" alt="${game.title}">
-    <h2>${game.title}</h2>
     <p class="price">${priceHTML}</p>
-    <button>Ajouter au panier</button>
   `;
 /*
   // badge "NEW"
@@ -227,7 +230,7 @@ function createCard(game) {
 
   return card;
 }
-
+/*
 // --- CHARGEMENT DU FICHIER JSON ---
 async function loadGames() {
   try {
@@ -296,11 +299,6 @@ async function loadGames() {
       });
     }
 
-
-
-
-
-
     // on vide tout avant d'ajouter
     container.innerHTML = "";
     newContainer.innerHTML = "";
@@ -332,8 +330,170 @@ async function loadGames() {
     console.error("Erreur de chargement JSON :", error);
   }
 }
+*/
 
-// --- FONCTION : INITIALISER LE CARROUSEL ---
+
+
+
+
+
+///////// ------------------    APPELLE DATA DU FICHIER JSON    ------------------- //////////
+
+
+async function loadGames() {
+  try {
+    const response = await fetch("games.json");
+    const games = await response.json();
+
+    // --- SECTION BANNIÈRE ---
+    const banner = document.getElementById("banner");
+    const hotBanner = games.find(game => game.isHot === true || game.isHot === "true");
+
+    if (hotBanner) {
+      banner.innerHTML = `
+        <a href="${hotBanner.link}" class="banner-link">
+          <img src="${hotBanner.image}" alt="${hotBanner.title}" class="banner-aura">
+          <div class="dispoBtn">NOW AVAILABLE</div>
+        </a>
+        <div class="particles"></div>
+      `;
+    }
+
+    // --- PARTICULES D’ANIMATION ---
+    const Pcontainer = document.querySelector("#banner .particles");
+    if (Pcontainer) {
+      const particleCount = 100;
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+        Pcontainer.appendChild(p);
+
+        const size = Math.random() * 3 + 10;
+        const hue = 50 + Math.random() * 30;
+        const duration = 1 + Math.random() * 4;
+        const bannerRect = banner.getBoundingClientRect();
+        const bannerWidth = bannerRect.width;
+
+        gsap.set(p, {
+          width: size,
+          height: size,
+          backgroundColor: `hsl(${hue}, 90%, 70%)`,
+          boxShadow: `0 0 ${size * 3}px hsl(${hue}, 100%, 65%)`,
+          x: Math.random() * bannerWidth,
+          y: window.innerHeight + Math.random() * 1,
+          opacity: Math.random() * 1 + 1,
+          scale: size / 15,
+        });
+
+        gsap.to(p, {
+          y: -100,
+          opacity: 0,
+          duration,
+          ease: "none",
+          repeat: -1,
+          delay: Math.random() * duration,
+        });
+
+        gsap.to(p, {
+          x: `+=${Math.random() * 800 + 50}`,
+          duration: Math.random() * 8 + 5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+        });
+      }
+    }
+
+    // --- VIDE LES CONTAINERS ---
+    container.innerHTML = "";
+    newContainer.innerHTML = "";
+    discountContainer.innerHTML = "";
+
+    if (hotBanner) {
+      const hotCard = createCard(hotBanner);
+      container.appendChild(hotCard);
+    }
+
+    ///////// ------------------    PROMOTION CONTAINER    ------------------- //////////
+
+
+    // --- MISE EN PAGE SPÉCIALE POUR LES JEUX EN PROMO ---
+    function createDiscountLayout(games) {
+      const discounted = games.filter(g => Number(g.discount) > 0);
+      if (discounted.length < 4) return; // besoin d'au moins 4 jeux
+
+      const layout = document.createElement("div");
+      layout.classList.add("discount-layout");
+
+      // Sélectionne 4 jeux (tu peux changer ce nombre si tu veux)
+      const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
+
+      layout.innerHTML = `
+        <div class="left-game">
+          <img src="${left.image}" alt="${left.title}">
+          <div class="info"></div>
+        </div>
+
+        <div class="center-game">
+          <img src="${center.image}" alt="${center.title}">
+          <div class="info"></div>
+        </div>
+
+        <div class="right-column">
+          <div class="top-game">
+            <img src="${rightTop.image}" alt="${rightTop.title}">
+            <div class="info"></div>
+          </div>
+          <div class="bottom-game">
+            <img src="${rightBottom.image}" alt="${rightBottom.title}">
+            <div class="info"></div>
+          </div>
+        </div>
+      `;
+
+      discountContainer.appendChild(layout);
+    }
+
+
+
+
+
+
+
+
+    const newGamesData = [];
+
+    games.forEach(game => {
+      const card = createCard(game);
+
+      container.appendChild(card.cloneNode(true));
+
+      if (game.isNew === true || game.isNew === "true") {
+        newGamesData.push(game);
+      }
+
+    });
+
+    // --- CRÉATION DU LAYOUT SPÉCIAL ---
+    createDiscountLayout(games);
+
+    // --- CARROUSEL ---
+    if (newGamesData.length > 0) initCarousel(newGamesData);
+
+  } catch (error) {
+    console.error("Erreur de chargement JSON :", error);
+  }
+}
+
+
+
+
+
+
+
+///////// ------------------    FUNCTION DU CAROUSEL    ------------------- //////////
+
+/*
 function initCarousel(newGamesData) {
   let index = 0;
   const delay = 4000;
@@ -418,8 +578,116 @@ function initCarousel(newGamesData) {
   showGame(index);
   startAuto();
 }
+*/
 
-// --- DÉMARRAGE ---
+function initCarousel(newGamesData) {
+  let index = 0;
+  const delay = 4000;
+  let intervalId;
+  let isPaused = false;
+
+  newContainer.innerHTML = `
+    <div class="carousel-slot">
+      <i class="fa-solid fa-angle-left carousel-arrow left" role="button" aria-label="Previous"></i>
+      <div class="carousel-content"></div>
+      <i class="fa-solid fa-chevron-right carousel-arrow right" role="button" aria-label="Next"></i>
+    </div>
+    <div class="carousel-dots" aria-hidden="false"></div>
+  `;
+
+  const slot = newContainer.querySelector('.carousel-slot');
+  const content = newContainer.querySelector('.carousel-content');
+  const next = newContainer.querySelector('.carousel-arrow.right');
+  const prev = newContainer.querySelector('.carousel-arrow.left');
+  const dotsContainer = newContainer.querySelector('.carousel-dots');
+
+  // create dots (rectangles) for each slide
+  const dots = newGamesData.map((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'carousel-dot';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', `Aller au jeu ${i + 1}`);
+    btn.dataset.index = i;
+    btn.addEventListener('click', () => {
+      index = i;
+      showGame(index);
+      restartAuto();
+    });
+    dotsContainer.appendChild(btn);
+    return btn;
+  });
+
+  function updateDots(i) {
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  }
+
+  function showGame(i) {
+    // supprime proprement la carte précédente
+    const oldCard = content.querySelector('.carousel-card');
+    if (oldCard) {
+      gsap.to(oldCard, {
+        opacity: 0,
+        scale: 0.98,
+        duration: 0.18,
+        ease: "power2.out",
+        onComplete: () => oldCard.remove()
+      });
+    }
+
+    const card = createCard(newGamesData[i]);
+    card.classList.add('carousel-card');
+
+    content.style.position = "relative";
+    gsap.set(card, { position: "absolute", opacity: 0, scale: 1 });
+    content.appendChild(card);
+
+    gsap.to(card, { opacity: 1, scale: 1, duration: 0.28, ease: "power2.out" });
+
+    // update dots visual
+    updateDots(i);
+  }
+
+  function nextGame() {
+    index = (index + 1) % newGamesData.length;
+    showGame(index);
+  }
+  function prevGame() {
+    index = (index - 1 + newGamesData.length) % newGamesData.length;
+    showGame(index);
+  }
+
+  next.addEventListener('click', () => { nextGame(); restartAuto(); });
+  prev.addEventListener('click', () => { prevGame(); restartAuto(); });
+
+  // pause/resume on hover over the visible carousel area
+  slot.addEventListener('mouseenter', () => {
+    isPaused = true;
+    clearInterval(intervalId);
+  });
+  slot.addEventListener('mouseleave', () => {
+    isPaused = false;
+    startAuto();
+  });
+
+  function startAuto() {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      if (!isPaused) nextGame();
+    }, delay);
+  }
+  function restartAuto() {
+    clearInterval(intervalId);
+    startAuto();
+  }
+
+  // initial
+  showGame(index);
+  startAuto();
+}
 loadGames();
 
-
+// --- ÉCRAN DE CHARGEMENT ---
+window.addEventListener("load", () => {
+  const loadingScreen = document.getElementById("loading-screen");
+  loadingScreen.classList.add("hidden"); // masque l'écran après chargement complet
+});

@@ -14,7 +14,7 @@
         "price": 39.99,
         "image": "images/littleNightmares3.jpg",
         "isNew": "true",
-        "isHot": "true",
+        "isHot": "false",
         "link":  "https://store.steampowered.com/app/1392860/Little_Nightmares_III"
     },
     {
@@ -65,6 +65,7 @@
         "title": "Assassins's Creed : Valhalla",
         "editor": "Ubisoft",
         "price": 59.99,
+        "discount": 50,
         "image": "images/assassinValhalla.jpg"
     },
     {
@@ -95,6 +96,7 @@
         "title": "Dark Souls : REMASTERED",
         "editor": "FromSoftware",
         "price": 19.99,
+        "discount": 20,
         "image": "images/dark-souls.jpg"
     },
     {
@@ -107,6 +109,7 @@
         "title": "Dark Souls III",
         "editor": "FromSoftware",
         "price": 39.99,
+        "isNew": "false",
         "image": "images/dark-soulsIII.jpg"
     },
     {
@@ -126,6 +129,7 @@
         "title": "Hades",
         "editor": "SuperGiant Games",
         "price": 24.99,
+        "discount": 10, 
         "image": "images/hades.jpg"
     },
     {
@@ -134,6 +138,37 @@
         "price": 59.99,
         "image": "images/forza5.jpg",
         "isHot": "false"
+    },
+    {
+        "title": "The Outer Worlds 2",
+        "editor": "Xbox Games Studios",
+        "price": 49.99,
+        "image": "images/theouterworlds2.jpg",
+        "isNew": "true",
+        "isHot": "true"
+    },
+    {
+        "title": "The Outer Worlds",
+        "editor": "Private Division",
+        "price": 13.99,
+        "image": "images/theouterworlds.jpg",
+        "isHot": "false"
+    },
+    {
+        "title": "Rust",
+        "editor": "Facepuch Studios",
+        "price": 29.99,
+        "image": "images/rust.jpg",
+        "isNew": "true",
+        "isHot": "true"
+    },
+    {
+        "title": "Apex Legends",
+        "editor": "Electronic Arts",
+        "price": 0,
+        "image": "images/apexlegends.jpg",
+        "isNew": "true",
+        "isHot": "true"
     }
     
     
