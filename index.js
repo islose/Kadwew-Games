@@ -198,34 +198,36 @@ function createCard(game) {
   card.classList.add("game-card");
 
   // gestion du prix et de la promo
-  let priceHTML = `${game.price}€`;
-  if (game.discount && Number(game.discount) > 0) {
+  let prices;
+
+  if (Number(game.price) === 0) {
+    prices = `<span class="free">Free-To-Play</span>`;
+  }
+
+  else if (game.discount && Number(game.discount) > 0) {
     const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
-    priceHTML = `
-      <span class="old-price">${game.price}€</span>
-      <span class="new-price">${newPrice}€</span>
+    prices = `
+    <span class="old-price">${game.price}€</span>
+    <span class="new-price">${newPrice}€</span>
     `;
   }
 
+  else {
+    prices = `${game.price}€`;
+  }
+    
   card.innerHTML = `
     <img src="${game.image}" alt="${game.title}">
-    <p class="price">${priceHTML}</p>
+    <p class="price">${prices}</p>
   `;
-/*
-  // badge "NEW"
-  if (game.isNew === true || game.isNew === "true") {
-    const badge = document.createElement("span");
-    badge.classList.add("badge", "new");
-    badge.textContent = "NEW";
-    card.appendChild(badge);
-  }
-*/
+  
   // badge "-xx%"
   if (game.discount && Number(game.discount) > 0) {
     const badge = document.createElement("span");
     badge.classList.add("badge", "discount");
     badge.textContent = `-${game.discount}%`;
-    card.appendChild(badge);
+    const priceElement = card.querySelector(".price");
+    priceElement.prepend(badge);
   }
 
   return card;
@@ -419,47 +421,57 @@ async function loadGames() {
 
     // --- MISE EN PAGE SPÉCIALE POUR LES JEUX EN PROMO ---
     function createDiscountLayout(games) {
-      const discounted = games.filter(g => Number(g.discount) > 0);
-      if (discounted.length < 4) return; // besoin d'au moins 4 jeux
+  const discounted = games
+    .filter(g => g && g.discount && Number(g.discount) > 0)
+    .sort((a, b) => Number(b.discount) - Number(a.discount));
 
-      const layout = document.createElement("div");
-      layout.classList.add("discount-layout");
+  // vide l'ancien contenu
+  discountContainer.innerHTML = "";
 
-      // Sélectionne 4 jeux (tu peux changer ce nombre si tu veux)
-      const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
+  if (discounted.length === 0) return;
 
-      layout.innerHTML = `
-        <div class="left-game">
-          <img src="${left.image}" alt="${left.title}">
-          <div class="info"></div>
-        </div>
+  // Si moins de 4 jeux, affiche simplement une grille de cartes (identique au games-container)
+  if (discounted.length < 4) {
+    const grid = document.createElement("div");
+    grid.classList.add("discount-grid");
+    discounted.forEach(g => {
+      const c = createCard(g);
+      grid.appendChild(c);
+    });
+    discountContainer.appendChild(grid);
+    return;
+  }
 
-        <div class="center-game">
-          <img src="${center.image}" alt="${center.title}">
-          <div class="info"></div>
-        </div>
+  // Prend les 4 premiers pour le layout spécial
+  const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
 
-        <div class="right-column">
-          <div class="top-game">
-            <img src="${rightTop.image}" alt="${rightTop.title}">
-            <div class="info"></div>
-          </div>
-          <div class="bottom-game">
-            <img src="${rightBottom.image}" alt="${rightBottom.title}">
-            <div class="info"></div>
-          </div>
-        </div>
-      `;
+  const layout = document.createElement("div");
+  layout.classList.add("discount-layout");
 
-      discountContainer.appendChild(layout);
-    }
+  // Utilise createCard pour garder le même look que games-container
+  const leftCard = createCard(left);
+  leftCard.classList.add("left-game", "discount-card");
 
+  const centerCard = createCard(center);
+  centerCard.classList.add("center-game", "discount-card");
 
+  const topRightCard = createCard(rightTop);
+  topRightCard.classList.add("top-game", "discount-card");
 
+  const bottomRightCard = createCard(rightBottom);
+  bottomRightCard.classList.add("bottom-game", "discount-card");
 
+  const rightCol = document.createElement("div");
+  rightCol.classList.add("right-column");
+  rightCol.appendChild(topRightCard);
+  rightCol.appendChild(bottomRightCard);
 
+  layout.appendChild(leftCard);
+  layout.appendChild(centerCard);
+  layout.appendChild(rightCol);
 
-
+  discountContainer.appendChild(layout);
+}
 
     const newGamesData = [];
 

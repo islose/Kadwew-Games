@@ -30,7 +30,7 @@
         "editor": "FromSoftware",
         "price": 59.99,
         "image": "images/elden-ring.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "false"
     },
     {
@@ -51,7 +51,7 @@
         "title": "Hogwarts Legacy",
         "editor": "Warner Bros. Games",
         "price": 59.99,
-        "discount": 88,
+        "discount": 50,
         "image": "images/hogwarts-legacy.jpg",
         "isNew": "false"
     },
@@ -59,64 +59,72 @@
         "title": "Counter Strike 2",
         "editor": "Valve",
         "price": 0,
-        "image": "images/csgo2.jpg"
+        "image": "images/csgo2.jpg",
+        "isNew": "true"
     },
     {
         "title": "Assassins's Creed : Valhalla",
         "editor": "Ubisoft",
         "price": 59.99,
-        "discount": 50,
-        "image": "images/assassinValhalla.jpg"
+        "image": "images/assassinValhalla.jpg",
+        "isNew": "false"
     },
     {
         "title": "Assassins's Creed : Shadows",
         "editor": "Ubisoft",
         "price": 59.99,
-        "image": "images/assassinShadows.jpg"
+        "image": "images/assassinShadows.jpg",
+        "isNew": "false"
     },
     {
         "title": "Assassins's Creed : Mirage",
         "editor": "Ubisoft",
         "price": 59.99,
-        "image": "images/assassinMirage.jpg"
+        "image": "images/assassinMirage.jpg",
+        "isNew": "false"
     },
     {
         "title": "Red Dead Redemption 2",
         "editor": "Rockstar Games",
         "price": 49.99,
-        "image": "images/rdr2.jpg"
+        "image": "images/rdr2.jpg",
+        "isNew": "true"
     },
     {
         "title": "The Witcher 3: Wild Hunt",
         "editor": "CD Projekt Red",
         "price": 29.99,
-        "image": "images/witcher3.jpg"
+        "image": "images/witcher3.jpg",
+        "isNew": "false"
     },
     {
         "title": "Dark Souls : REMASTERED",
         "editor": "FromSoftware",
         "price": 19.99,
-        "discount": 20,
-        "image": "images/dark-souls.jpg"
+        "discount": 0,
+        "image": "images/dark-souls.jpg",
+        "isNew": "false"
     },
     {
         "title": "Dark Souls II",
         "editor": "FromSoftware",
         "price": 29.99,
-        "image": "images/dark-soulsII.jpg"
+        "image": "images/dark-soulsII.jpg",
+        "isNew": "false"
     },
     {
         "title": "Dark Souls III",
         "editor": "FromSoftware",
         "price": 39.99,
-        "isNew": "false",
-        "image": "images/dark-soulsIII.jpg"
+        "image": "images/dark-soulsIII.jpg",
+        "isNew": "false"
     },
     {
         "title": "Sekiro: Shadows Die Twice - GOTY Edition",
         "editor": "FromSoftware",
         "price": 39.99,
-        "image": "images/sekiro.jpg"
+        "image": "images/sekiro.jpg",
+        "isNew": "false"
     },
     {
         "title": "Hades II",
@@ -130,13 +138,15 @@
         "editor": "SuperGiant Games",
         "price": 24.99,
         "discount": 10, 
-        "image": "images/hades.jpg"
+        "image": "images/hades.jpg",
+        "isNew": "false"
     },
     {
         "title": "Forza Horizon 5",
         "editor": "Xbox Games Studios",
         "price": 59.99,
         "image": "images/forza5.jpg",
+        "isNew": "false",
         "isHot": "false"
     },
     {
@@ -144,7 +154,7 @@
         "editor": "Xbox Games Studios",
         "price": 49.99,
         "image": "images/theouterworlds2.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "true"
     },
     {
@@ -152,6 +162,7 @@
         "editor": "Private Division",
         "price": 13.99,
         "image": "images/theouterworlds.jpg",
+        "isNew":"false",
         "isHot": "false"
     },
     {
@@ -159,7 +170,7 @@
         "editor": "Facepuch Studios",
         "price": 29.99,
         "image": "images/rust.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "true"
     },
     {
@@ -168,7 +179,25 @@
         "price": 0,
         "image": "images/apexlegends.jpg",
         "isNew": "true",
-        "isHot": "true"
+        "isHot": "false"
+    },
+    {
+        "title": "Clair Obscur Expedition 33",
+        "editor": "Kepler Interactive",
+        "price": 29.99,
+        "discount": 55,
+        "image": "images/clairobscur.jpg",
+        "isNew": "false",
+        "isHot": "false"
+    },
+    {
+        "title": "Crusader Kings III",
+        "editor": "Paradox Interactive",
+        "price": 9.99,
+        "discount": 95,
+        "image": "images/crusaderkingsIII.jpg",
+        "isNew": "false",
+        "isHot": "false"
     }
     
     
