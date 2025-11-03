@@ -6,7 +6,14 @@
         "image": "images/battlefield6.jpg",
         "isNew": "true",
         "isHot": "false",
-        "link":  "https://store.steampowered.com/app/2807960/Battlefield_6"
+        "link":  "https://store.steampowered.com/app/2807960/Battlefield_6",
+        "screens": [
+            "images/battlefield61.jpg",
+            "images/battlefield62.jpg",
+            "images/battlefield63.jpg",
+            "images/battlefield64.jpg",
+            "images/battlefield65.jpg"
+        ]
     },
     {
         "title": "Little Nightmares III",
@@ -15,7 +22,14 @@
         "image": "images/littleNightmares3.jpg",
         "isNew": "true",
         "isHot": "false",
-        "link":  "https://store.steampowered.com/app/1392860/Little_Nightmares_III"
+        "link":  "https://store.steampowered.com/app/1392860/Little_Nightmares_III",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Nostale",
@@ -23,7 +37,14 @@
         "price": 0,
         "image": "images/nostale.jpg",
         "isNew": "true",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Elden Ring",
@@ -31,21 +52,42 @@
         "price": 59.99,
         "image": "images/elden-ring.jpg",
         "isNew": "false",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "EA Sports FC 26",
         "editor": "Electronic Arts",
         "price": 79.99,
         "image": "images/eafc26.jpg",
-        "isNew": "true"
+        "isNew": "true",
+        "screens": [
+            "images/eafc26Screen1.jpg",
+            "images/eafc26Screen2.jpg",
+            "images/eafc26Screen3.jpg",
+            "images/eafc26Screen4.jpg",
+            "images/eafc26Screen5.jpg"
+        ]
     },
     {
         "title": "Cyberpunk 2077",
         "editor": "CD Projekt Red",
         "price": 59.99,
         "image": "images/cyberpunk2077.jpg",
-        "isNew": "true"
+        "isNew": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Hogwarts Legacy",
@@ -53,49 +95,98 @@
         "price": 59.99,
         "discount": 50,
         "image": "images/hogwarts-legacy.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Counter Strike 2",
         "editor": "Valve",
         "price": 0,
         "image": "images/csgo2.jpg",
-        "isNew": "true"
+        "isNew": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Assassins's Creed : Valhalla",
         "editor": "Ubisoft",
         "price": 59.99,
         "image": "images/assassinValhalla.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Assassins's Creed : Shadows",
         "editor": "Ubisoft",
         "price": 59.99,
         "image": "images/assassinShadows.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Assassins's Creed : Mirage",
         "editor": "Ubisoft",
         "price": 59.99,
         "image": "images/assassinMirage.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Red Dead Redemption 2",
         "editor": "Rockstar Games",
         "price": 49.99,
         "image": "images/rdr2.jpg",
-        "isNew": "true"
+        "isNew": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "The Witcher 3: Wild Hunt",
         "editor": "CD Projekt Red",
         "price": 29.99,
         "image": "images/witcher3.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Dark Souls : REMASTERED",
@@ -103,35 +194,70 @@
         "price": 19.99,
         "discount": 0,
         "image": "images/dark-souls.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Dark Souls II",
         "editor": "FromSoftware",
         "price": 29.99,
         "image": "images/dark-soulsII.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Dark Souls III",
         "editor": "FromSoftware",
         "price": 39.99,
         "image": "images/dark-soulsIII.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Sekiro: Shadows Die Twice - GOTY Edition",
         "editor": "FromSoftware",
         "price": 39.99,
         "image": "images/sekiro.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Hades II",
         "editor": "SuperGiant Games",
         "price": 29.99,
         "image": "images/hadesII.jpg",
-        "isNew": "true"
+        "isNew": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Hades",
@@ -139,7 +265,14 @@
         "price": 24.99,
         "discount": 10, 
         "image": "images/hades.jpg",
-        "isNew": "false"
+        "isNew": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Forza Horizon 5",
@@ -147,7 +280,14 @@
         "price": 59.99,
         "image": "images/forza5.jpg",
         "isNew": "false",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "The Outer Worlds 2",
@@ -155,7 +295,14 @@
         "price": 49.99,
         "image": "images/theouterworlds2.jpg",
         "isNew": "false",
-        "isHot": "true"
+        "isHot": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "The Outer Worlds",
@@ -163,7 +310,14 @@
         "price": 13.99,
         "image": "images/theouterworlds.jpg",
         "isNew":"false",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Rust",
@@ -171,7 +325,14 @@
         "price": 29.99,
         "image": "images/rust.jpg",
         "isNew": "false",
-        "isHot": "true"
+        "isHot": "true",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Apex Legends",
@@ -179,7 +340,14 @@
         "price": 0,
         "image": "images/apexlegends.jpg",
         "isNew": "true",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Clair Obscur Expedition 33",
@@ -188,7 +356,14 @@
         "discount": 55,
         "image": "images/clairobscur.jpg",
         "isNew": "false",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     },
     {
         "title": "Crusader Kings III",
@@ -197,7 +372,14 @@
         "discount": 95,
         "image": "images/crusaderkingsIII.jpg",
         "isNew": "false",
-        "isHot": "false"
+        "isHot": "false",
+        "screens": [
+            "images/crusaderkingsIII1.jpg",
+            "images/crusaderkingsIII2.jpg",
+            "images/crusaderkingsIII3.jpg",
+            "images/crusaderkingsIII4.jpg",
+            "images/crusaderkingsIII5.jpg"
+        ]
     }
     
     
