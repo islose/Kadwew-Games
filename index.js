@@ -69,23 +69,29 @@ function createCard(game) {
   let timeoutId;
 
   card.addEventListener("mouseenter", () => {
-    // Ajoute un zoom fluide
-    imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
+  imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
 
-    // Attend 300 ms avant de démarrer le défilement
-    timeoutId = setTimeout(() => {
-      intervalId = setInterval(() => {
-        currentIndex = (currentIndex + 1) % game.screens.length;
+  timeoutId = setTimeout(() => {
+    // 🔹 Changement immédiat une première fois
+    currentIndex = (currentIndex + 1) % game.screens.length;
+    imgElement.style.opacity = "0";
+    setTimeout(() => {
+      imgElement.src = game.screens[currentIndex];
+      imgElement.style.opacity = "1";
+    }, 300);
 
-        // Effet de fondu lors du changement d'image
-        imgElement.style.opacity = "0";
-        setTimeout(() => {
-          imgElement.src = game.screens[currentIndex];
-          imgElement.style.opacity = "1";
-        }, 300);
-      }, 1500); // changement toutes les 1.5 secondes
-    }, 1);
-  });
+    // 🔹 Puis on démarre la boucle toutes les 1.5 secondes
+    intervalId = setInterval(() => {
+      currentIndex = (currentIndex + 1) % game.screens.length;
+      imgElement.style.opacity = "0";
+      setTimeout(() => {
+        imgElement.src = game.screens[currentIndex];
+        imgElement.style.opacity = "1";
+      }, 300);
+    }, 1200);
+  }, 700);
+});
+
 
   card.addEventListener("mouseleave", () => {
     clearTimeout(timeoutId);
@@ -101,10 +107,60 @@ function createCard(game) {
     // Retire le zoom
     imgElement.style.transform = "scale(1)";
   });
+
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      clearInterval(intervalId);
+      imgElement.src = originalSrc;
+    }
+  });
+});
+
+observer.observe(card);
+
 }
 
 
   return card;
+}
+
+///////// ------------------    CHARGEMENT DES IMAGES EN ARRIERE PLAN    ------------------- //////////
+/*
+function preloadScreens(games) {
+  games.forEach(game => {
+    if (game.screens && game.screens.length > 0) {
+      game.screens.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+  });
+}
+*/
+
+function preloadScreens (games) {
+  const loads = [];
+
+  games.forEach(game => {
+    if (game.image) {
+      loads.push(new Promise(res => {
+        const img = new Image();
+        img.onload = img.onerror = res;
+        img.src = game.image;
+      }));
+    }
+    if (Array.isArray(game.screens)) {
+      game.screens.forEach(src => {
+        loads.push(new Promise(res => {
+          const img = new Image();
+          img.onload = img.onerror = res;
+          img.src = src;
+        }));
+      });
+    }
+  });
+  return Promise.all(loads);
 }
 
 
@@ -119,6 +175,8 @@ async function loadGames() {
   try {
     const response = await fetch("games.json");
     const games = await response.json();
+
+    preloadScreens(games);
 
     // --- SECTION BANNIÈRE ---
     const banner = document.getElementById("banner");
@@ -382,6 +440,8 @@ function initCarousel(newGamesData) {
   startAuto();
 }
 loadGames();
+
+
 
 // --- ÉCRAN DE CHARGEMENT ---
 window.addEventListener("load", () => {
