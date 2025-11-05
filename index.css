@@ -11,6 +11,7 @@
   --radius:14px;
   --nav-height:72px;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: "Faculty Glyphic", sans-serif;
 }
 
 body{
@@ -136,6 +137,7 @@ nav {
 
 #banner.banner-game {
   margin-top: 50px;
+  margin-bottom: 150px;
   width: 100%;
   height: 70%;
   margin-left: calc(50% - 50vw);
@@ -206,11 +208,23 @@ nav {
 
 }
 
+.popular-title {
+  position: relative;
+  letter-spacing: 10px;
+  font-weight: bolder;
+  margin-bottom: -10px;
+  background-color: green;
+  font-family: "Faculty Glyphic", sans-serif;
+}
+
 #new-game-container {
-  margin-top: 150px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 #new-game-container .game-card {
+  margin-top: 10%;
+  width: 90%;
   background: rgb(44, 44, 44);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s;
@@ -220,19 +234,19 @@ nav {
 #new-game-container .game-card img {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 1; /* 800x400 = ratio 2:1 */
+  aspect-ratio: 2 / 1;
   object-fit: cover;
 }
 
 .big-games {
   position: relative;
+  background-color: #1e699b11;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.555);
   display: block;
   text-align: center;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0px auto;
-  min-height: 500px;
-  border-radius: 15px;
-  box-shadow: 0 0 0 0 black;
+  min-height: 550px;
 }
 
 .carousel-card {
@@ -264,7 +278,7 @@ nav {
 
 .carousel-arrow {
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   width: 54px;
   height: 54px;
@@ -300,7 +314,7 @@ nav {
   gap: 8px;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 100px;
   padding: 6px 0 0;
 }
 
@@ -324,6 +338,17 @@ nav {
   background: linear-gradient(90deg, #008cff, #00ccff);
   box-shadow: 0 6px 18px rgba(255,110,20,0.25);
   transform: scale(1.3);
+}
+
+.discount-title {
+  position: relative;
+  margin: auto;
+  max-width: 1010px;
+  letter-spacing: 10px;
+  font-weight: bolder;
+  margin-bottom: -50px;
+  font-family: "Faculty Glyphic", sans-serif;
+  background-color: green;
 }
 
 .price {
@@ -517,6 +542,17 @@ nav {
 
 
 @media (max-width: 1153px) {
+
+  #new-game-container .game-card {
+    width: 100%;
+  }
+
+  #new-game-container .game-card img {
+    height: 100%;
+  }
+
+
+
   .discount-layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */

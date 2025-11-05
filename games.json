@@ -97,11 +97,11 @@
         "image": "images/hogwarts-legacy.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/hogwarts-legacy1.jpg",
+            "images/hogwarts-legacy2.jpg",
+            "images/hogwarts-legacy3.jpg",
+            "images/hogwarts-legacy4.jpg",
+            "images/hogwarts-legacy5.jpg"
         ]
     },
     {
@@ -267,11 +267,11 @@
         "image": "images/hades.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/hades1.jpg",
+            "images/hades2.jpg",
+            "images/hades3.jpg",
+            "images/hades4.jpg",
+            "images/hades5.jpg"
         ]
     },
     {
@@ -358,17 +358,17 @@
         "isNew": "false",
         "isHot": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/clairobscur1.jpg",
+            "images/clairobscur2.jpg",
+            "images/clairobscur3.jpg",
+            "images/clairobscur4.jpg",
+            "images/clairobscur5.jpg"
         ]
     },
     {
         "title": "Crusader Kings III",
         "editor": "Paradox Interactive",
-        "price": 9.99,
+        "price": 29.99,
         "discount": 95,
         "image": "images/crusaderkingsIII.jpg",
         "isNew": "false",

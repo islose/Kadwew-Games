@@ -24,6 +24,7 @@ const discountContainer = document.getElementById("featured-games");
 
 // --- FONCTION : CRÉER UNE CARTE DE JEU ---
 function createCard(game) {
+  
   const card = document.createElement("div");
   card.classList.add("game-card");
 
@@ -61,36 +62,36 @@ function createCard(game) {
   }
 
     // --- ANIMATION : défilement des screens au survol ---
- if (game.screens && game.screens.length > 0) {
-  const imgElement = card.querySelector("img");
-  const originalSrc = imgElement.src;
-  let currentIndex = 0;
-  let intervalId;
-  let timeoutId;
+  if (game.screens && game.screens.length > 0) {
+    const imgElement = card.querySelector("img");
+    const originalSrc = imgElement.src;
+    let currentIndex = 0;
+    let intervalId;
+    let timeoutId;
 
-  card.addEventListener("mouseenter", () => {
-  imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
+    card.addEventListener("mouseenter", () => {
+    imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
 
-  timeoutId = setTimeout(() => {
-    // 🔹 Changement immédiat une première fois
-    currentIndex = (currentIndex + 1) % game.screens.length;
-    imgElement.style.opacity = "0";
-    setTimeout(() => {
-      imgElement.src = game.screens[currentIndex];
-      imgElement.style.opacity = "1";
-    }, 300);
-
-    // 🔹 Puis on démarre la boucle toutes les 1.5 secondes
-    intervalId = setInterval(() => {
+    timeoutId = setTimeout(() => {
+      // 🔹 Changement immédiat une première fois
       currentIndex = (currentIndex + 1) % game.screens.length;
       imgElement.style.opacity = "0";
       setTimeout(() => {
         imgElement.src = game.screens[currentIndex];
         imgElement.style.opacity = "1";
-      }, 300);
-    }, 1200);
-  }, 700);
-});
+      }, 200);
+
+      // 🔹 Puis on démarre la boucle toutes les 1.5 secondes
+      intervalId = setInterval(() => {
+        currentIndex = (currentIndex + 1) % game.screens.length;
+        imgElement.style.opacity = "0";
+        setTimeout(() => {
+          imgElement.src = game.screens[currentIndex];
+          imgElement.style.opacity = "1";
+        }, 200);
+      }, 1200);
+    }, 600);
+  });
 
 
   card.addEventListener("mouseleave", () => {
@@ -109,19 +110,16 @@ function createCard(game) {
   });
 
   const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      clearInterval(intervalId);
-      imgElement.src = originalSrc;
-    }
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        clearInterval(intervalId);
+        imgElement.src = originalSrc;
+      }
+    });
   });
-});
 
 observer.observe(card);
-
 }
-
-
   return card;
 }
 
@@ -257,7 +255,9 @@ async function loadGames() {
     .sort((a, b) => Number(b.discount) - Number(a.discount));
 
   // vide l'ancien contenu
-  discountContainer.innerHTML = "";
+  discountContainer.innerHTML = `
+      <h2 class="discount-title">OFFERS OF THE WEEK</h2>
+  `;
 
   if (discounted.length === 0) return;
 
@@ -304,7 +304,7 @@ async function loadGames() {
   discountContainer.appendChild(layout);
 }
 
-    const newGamesData = [];
+  const newGamesData = [];
 
     games.forEach(game => {
       const card = createCard(game);
@@ -316,12 +316,20 @@ async function loadGames() {
       }
 
     });
+    
 
-    // --- CRÉATION DU LAYOUT SPÉCIAL ---
+    
+      // --- CAROUSEL --- //
+
+    if (newGamesData.length > 0) initCarousel(newGamesData);
+    
+
+    // --- CRÉATION DU LAYOUT SPÉCIAL --- //
+
     createDiscountLayout(games);
 
-    // --- CARROUSEL ---
-    if (newGamesData.length > 0) initCarousel(newGamesData);
+
+
 
   } catch (error) {
     console.error("Erreur de chargement JSON :", error);
@@ -342,6 +350,7 @@ function initCarousel(newGamesData) {
   let isPaused = false;
 
   newContainer.innerHTML = `
+  <h2 class="popular-title">TENDANCES AND POPULAR</h2>
     <div class="carousel-slot">
       <i class="fa-solid fa-angle-left carousel-arrow left" role="button" aria-label="Previous"></i>
       <div class="carousel-content"></div>
