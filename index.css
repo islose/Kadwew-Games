@@ -226,9 +226,15 @@ nav {
   margin-top: 10%;
   width: 90%;
   background: rgb(44, 44, 44);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border: solid 2px transparent;
   transition: transform 0.2s;
   cursor: pointer;
+  
+}
+
+#new-game-container .game-card:hover {
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.555);
+  transition: 0.2s ease-in-out;
 }
 
 #new-game-container .game-card img {
@@ -346,7 +352,7 @@ nav {
   max-width: 1010px;
   letter-spacing: 10px;
   font-weight: bolder;
-  margin-bottom: -50px;
+  margin-bottom: -60px;
   font-family: "Faculty Glyphic", sans-serif;
   background-color: green;
 }
@@ -459,6 +465,73 @@ nav {
   background: rgb(44, 44, 44);
 }
 
+
+#filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg,hsla(0, 0%, 0%, 0.600), hsla(203, 95%, 36%, 0.015));
+  padding: 12px 18px;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+#filter-bar button {
+  padding: 8px 14px;
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Faculty Glyphic", sans-serif;
+  backdrop-filter: blur(6px);
+}
+
+#filter-bar button:hover {
+  background: #3a3a3a;
+}
+
+.dropdown {
+  position: absolute;
+  background: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  gap: 6px;
+  width: 180px;
+  z-index: 20;
+}
+
+.dropdown p {
+  margin: 0;
+  padding: 6px 8px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown p:hover {
+  background: #3a3a3a;
+}
+
+.hidden {
+  display: none;
+}
+
+#price-dropdown {
+  left: 0;
+}
+
+#sort-dropdown {
+  right: 0;
+}
+
+
 .games {
   height: 35vh;
   display: grid;
@@ -466,7 +539,7 @@ nav {
   gap: 20px;
   padding: 100px;
   transition: 0.3s ease;
-  margin-top: 100px;
+  margin-top: -80px;
 }
 
 #games-container .game-card {
@@ -543,10 +616,6 @@ nav {
 
 @media (max-width: 1153px) {
 
-  #new-game-container .game-card {
-    width: 100%;
-  }
-
   #new-game-container .game-card img {
     height: 100%;
   }
@@ -615,6 +684,28 @@ nav {
     font-size: 0.8rem;
     border-radius: 40px;
   
+  }
+
+  #filter-bar {
+    width: 90%;
+
+
+  }
+
+  #filter-bar button {
+    padding: 8px 14px;
+    background: #2b2b2b;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Faculty Glyphic", sans-serif;
+    backdrop-filter: blur(6px);
+  }
+
+  
+  .games {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
 

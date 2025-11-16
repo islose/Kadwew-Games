@@ -402,7 +402,7 @@ function newMostFrequentChar (word) {
     return `Dans "${word.toUpperCase()}", les lettres les plus répétées sont : ${mostChar.join(", ")} (${max} fois chacune).`;
   } 
   else {
-    return `La lettre la plus répétée dans "${word.toUpperCase()}" est : ${mostChar} ${max} fois.`
+    return `La lettre la plus répétée dans "${word.toUpperCase()}" est : "${mostChar}" ${max} fois.`
   } 
 }
 
@@ -411,3 +411,99 @@ console.log(newMostFrequentChar("javascript"));
 console.log(newMostFrequentChar("test"));
 console.log(newMostFrequentChar("google"));
 console.log(newMostFrequentChar("sel"));
+
+function countVowels (str) {
+  const vowels = "aiueoyAIUEOY";
+  let counter = 0;
+
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(countVowels("Bonjour tout le monde"));
+console.log(countVowels("aiueo"));
+console.log(countVowels("Mon nom est Voyelle"));
+
+const player = { name: "Kadwew", score: 10, level: 1};
+
+function addScore (p, points) {
+  p.score += points;
+}
+
+addScore(player, 5);
+console.log(player.score);
+
+const nums = [2, 5, 8, 13, 21, 36];
+let pair = [];
+function onlyPair (nums) {
+  for (const n of nums) {
+    if (n % 2 === 0) {
+      pair.push(n);
+    }
+  }
+  return pair;
+}
+
+console.log(onlyPair(nums));
+
+
+const names = ["Kadwew", "Islos", "PapouasieNouvelleGuinée"];
+
+function countLetterOfNames (names) {
+  return names.map(name => name.length);
+}
+
+console.log(countLetterOfNames(names));
+
+const button = document.getElementById("next");
+
+button.addEventListener("click", () => {
+  console.log("Vous venez de clicker sur le button next, Félécitation !");
+});
+
+
+const verif = document.getElementById("verif");
+const texto = document.getElementById("texto");
+const result = document.getElementById("result");
+
+verif.addEventListener("click", () => {
+  const age = Number(texto.value);
+
+  if (!age) {
+    result.textContent = "Veuillez entrer un age valide !";
+    return;
+  }
+
+  if (age < 18) {
+    result.textContent = "Vous êtes Mineur !";
+  }
+
+  else {
+    result.textContent = "Vous êtes Majeur !";
+  }
+});
+
+const fruits = ["pomme", "banane"];
+
+const newFruits = [...fruits, "orange"];
+
+console.log(newFruits);
+console.log(fruits);
+
+const user = { nom: "Islos", age: 25};
+
+const addInfoUser = {...user, ville: "Alger"};
+
+console.log(addInfoUser);
+console.log(user);
+
+function test() {
+  console.log("Salut");
+}
+
+const x = test();
+console.log(x);

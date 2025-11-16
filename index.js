@@ -1,3 +1,10 @@
+///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
+window.addEventListener("load", () => {
+  const loadingScreen = document.getElementById("loading-screen");
+  loadingScreen.classList.add("hidden"); // masque l'écran après chargement complet
+});
+
+
 ///////// ------------------    MENU HAMBURGER    ------------------- //////////
 
 
@@ -11,7 +18,32 @@ hamb.addEventListener('click', () => {
 
 
 
+///////// ------------------    CHARGEMENT DES IMAGES EN ARRIERE PLAN    ------------------- //////////
 
+
+function preloadScreens (games) {
+  const loads = [];
+
+  games.forEach(game => {
+    if (game.image) {
+      loads.push(new Promise(res => {
+        const img = new Image();
+        img.onload = img.onerror = res;
+        img.src = game.image;
+      }));
+    }
+    if (Array.isArray(game.screens)) {
+      game.screens.forEach(src => {
+        loads.push(new Promise(res => {
+          const img = new Image();
+          img.onload = img.onerror = res;
+          img.src = src;
+        }));
+      });
+    }
+  });
+  return Promise.all(loads);
+}
 
 
 
@@ -79,7 +111,7 @@ function createCard(game) {
       setTimeout(() => {
         imgElement.src = game.screens[currentIndex];
         imgElement.style.opacity = "1";
-      }, 200);
+      }, 250);
 
       // 🔹 Puis on démarre la boucle toutes les 1.5 secondes
       intervalId = setInterval(() => {
@@ -88,7 +120,7 @@ function createCard(game) {
         setTimeout(() => {
           imgElement.src = game.screens[currentIndex];
           imgElement.style.opacity = "1";
-        }, 200);
+        }, 250);
       }, 1200);
     }, 600);
   });
@@ -108,6 +140,22 @@ function createCard(game) {
     // Retire le zoom
     imgElement.style.transform = "scale(1)";
   });
+  /*
+  window.addEventListener("scroll", () => {
+    if (card.matches(":hover")) {
+      clearTimeout(timeoutId);
+      clearInterval(intervalId);
+
+      imgElement.style.opacity = "0";
+      setTimeout(() => {
+        imgElement.src = originalSrc;
+        imgElement.style.opacity = "1";
+      }, 10);
+
+      imgElement.style.transform = "scale(1)";
+    }
+  });
+  */
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -123,43 +171,7 @@ observer.observe(card);
   return card;
 }
 
-///////// ------------------    CHARGEMENT DES IMAGES EN ARRIERE PLAN    ------------------- //////////
-/*
-function preloadScreens(games) {
-  games.forEach(game => {
-    if (game.screens && game.screens.length > 0) {
-      game.screens.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-    }
-  });
-}
-*/
 
-function preloadScreens (games) {
-  const loads = [];
-
-  games.forEach(game => {
-    if (game.image) {
-      loads.push(new Promise(res => {
-        const img = new Image();
-        img.onload = img.onerror = res;
-        img.src = game.image;
-      }));
-    }
-    if (Array.isArray(game.screens)) {
-      game.screens.forEach(src => {
-        loads.push(new Promise(res => {
-          const img = new Image();
-          img.onload = img.onerror = res;
-          img.src = src;
-        }));
-      });
-    }
-  });
-  return Promise.all(loads);
-}
 
 
 
@@ -173,6 +185,8 @@ async function loadGames() {
   try {
     const response = await fetch("games.json");
     const games = await response.json();
+
+    window.allGames = games;
 
     preloadScreens(games);
 
@@ -250,9 +264,9 @@ async function loadGames() {
 
     // --- MISE EN PAGE SPÉCIALE POUR LES JEUX EN PROMO ---
     function createDiscountLayout(games) {
-  const discounted = games
-    .filter(g => g && g.discount && Number(g.discount) > 0)
-    .sort((a, b) => Number(b.discount) - Number(a.discount));
+    const discounted = games
+      .filter(g => g && g.discount && Number(g.discount) > 0)
+      .sort((a, b) => Number(b.discount) - Number(a.discount));
 
   // vide l'ancien contenu
   discountContainer.innerHTML = `
@@ -452,8 +466,138 @@ loadGames();
 
 
 
-// --- ÉCRAN DE CHARGEMENT ---
-window.addEventListener("load", () => {
-  const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.classList.add("hidden"); // masque l'écran après chargement complet
+
+
+
+
+
+///////// ------------------    FILTER GAMES    ------------------- //////////
+
+
+let currentPriceFilter = null;
+let currentSort = null;
+
+
+
+const priceBtn = document.getElementById("price-filter-btn");
+const priceDropdown = document.getElementById("price-dropdown");
+
+const sortBtn = document.getElementById("sort-filter-btn");
+const sortDropdown = document.getElementById("sort-dropdown");
+
+
+function displayGames (list) {
+  container.innerHTML = "";
+
+  list.forEach(game => {
+    const card = createCard(game);
+    container.appendChild(card);
+  });
+}
+
+document.querySelectorAll("#sort-dropdown p").forEach(option => {
+  option.addEventListener("click", () => {
+    currentSort = option.dataset.sort;
+    applyAllFilters();
+    sortDropdown.classList.add("hidden");
+  });
+});
+
+document.querySelectorAll("#price-dropdown p").forEach(option => {
+  option.addEventListener("click", () => {
+    currentPriceFilter = option.dataset.filter;
+    applyAllFilters();
+    priceDropdown.classList.add("hidden");
+  });
+});
+
+
+function applyAllFilters() {
+  let result = [...window.allGames];
+
+
+  if (currentPriceFilter) {
+    switch(currentPriceFilter) {
+      case "free":
+        result = result.filter(g => Number(g.price) === 0);
+        priceBtn.textContent = "Prices : Free-To-Play";
+        break;
+
+      case "under10":
+        result = result.filter(g => Number(g.price) >= 1 && Number(g.price) <= 10);
+        priceBtn.textContent = "Prices : Under 10€";
+        break;
+
+      case "11-25":
+        result = result.filter(g => Number(g.price) >= 11 && Number(g.price) <= 25);
+        priceBtn.textContent = "Prices : 11€ - 25€";
+        break;
+
+      case "25-50":
+        result = result.filter(g => Number(g.price) >= 25 && Number(g.price) <= 50);
+        priceBtn.textContent = "Prices : 25€ - 50€";
+        break;
+
+      case "50plus":
+        result = result.filter(g => Number(g.price) > 50);
+        priceBtn.textContent = "Prices : 50€ +";
+        break;
+
+      case "promo":
+        result = result.filter(g => Number(g.discount) > 0);
+        priceBtn.textContent = "Prices : On Sale";
+        break;
+    }
+  }
+
+  
+  if (currentSort) {
+    switch(currentSort) {
+
+      case "az":
+        result.sort((a, b) => a.title.localeCompare(b.title));
+        sortBtn.textContent = "Filter : A → Z";
+        break;
+
+      case "za":
+        result.sort((a, b) => b.title.localeCompare(a.title));
+        sortBtn.textContent = "Filter : Z → A";
+        break;
+
+      case "price-low":
+        result.sort((a, b) => Number(a.price) - Number(b.price));
+        sortBtn.textContent = "Filter : Ascending";
+        break;
+
+      case "price-high":
+        result.sort((a, b) => Number(b.price) - Number(a.price));
+        sortBtn.textContent = "Filter : Descending";
+        break;
+    }
+  }
+
+  displayGames(result);
+}
+
+
+
+
+// TOGGLE LEFT DROPDOWN
+priceBtn.addEventListener("click", () => {
+  priceDropdown.classList.toggle("hidden");
+  sortDropdown.classList.add("hidden");
+});
+
+// TOGGLE RIGHT DROPDOWN
+sortBtn.addEventListener("click", () => {
+  sortDropdown.classList.toggle("hidden");
+  priceDropdown.classList.add("hidden");
+});
+
+// CLOSE DROPDOWNS IF CLICK OUTSIDE
+document.addEventListener("click", (e) => {
+  if (!e.target.closest("#filter-bar")) {
+    priceDropdown.classList.add("hidden");
+    sortDropdown.classList.add("hidden");
+  }
 });

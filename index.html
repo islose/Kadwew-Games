@@ -70,6 +70,37 @@
 
     <div id="new-game-container" class="big-games"></div>
     <div id="featured-games" class="discount-games"></div>
+    <h2 class="discount-title">ALL GAMES</h2>
+
+    <div id="filter-bar">
+
+  <div class="left-side-filter-bar">
+    <button id="price-filter-btn">Prices : All</button>
+
+    <div id="price-dropdown" class="dropdown hidden">
+      <p data-filter="allGames">All</p>
+      <p data-filter="free">Free-To-Play</p>
+      <p data-filter="under10">Under 10€</p>
+      <p data-filter="11-25">11€ - 25€</p>
+      <p data-filter="25-50">25€ - 50€</p>
+      <p data-filter="50plus">50€ +</p>
+      <p data-filter="promo">On Sale</p>
+    </div>
+  </div>
+
+  <div class="right-side-filter-bar">
+    <button id="sort-filter-btn">Filter :</button>
+
+    <div id="sort-dropdown" class="dropdown hidden">
+      <p data-sort="az">A → Z</p>
+      <p data-sort="za">Z → A</p>
+      <p data-sort="price-low">Ascending</p>
+      <p data-sort="price-high">Descending</p>
+    </div>
+  </div>
+
+</div>
+
     <div id="games-container" class="games"></div>
     
     <div id="loading-screen">

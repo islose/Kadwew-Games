@@ -48,6 +48,15 @@ button {
  right: 5px;
 }
 
+#verif {
+  cursor: pointer;
+  z-index: 100;
+}
+
+#result {
+  color: white;
+}
+
 .progress-bar {
   position: absolute;
   bottom: 0;

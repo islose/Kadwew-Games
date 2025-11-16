@@ -3,6 +3,7 @@
         "title": "Battlefield 6",
         "editor": "Electronic Arts",
         "price": 69.99,
+        "discount": 0,
         "image": "images/battlefield6.jpg",
         "isNew": "true",
         "isHot": "false",
@@ -19,6 +20,7 @@
         "title": "Little Nightmares III",
         "editor": "Bandai Namco Entertainment",
         "price": 39.99,
+        "discount": 0,
         "image": "images/littleNightmares3.jpg",
         "isNew": "true",
         "isHot": "false",
@@ -50,6 +52,7 @@
         "title": "Elden Ring",
         "editor": "FromSoftware",
         "price": 59.99,
+        "discount": 0,
         "image": "images/elden-ring.jpg",
         "isNew": "false",
         "isHot": "false",
@@ -65,6 +68,7 @@
         "title": "EA Sports FC 26",
         "editor": "Electronic Arts",
         "price": 79.99,
+        "discount": 0,
         "image": "images/eafc26.jpg",
         "isNew": "true",
         "screens": [
@@ -79,6 +83,7 @@
         "title": "Cyberpunk 2077",
         "editor": "CD Projekt Red",
         "price": 59.99,
+        "discount": 0,
         "image": "images/cyberpunk2077.jpg",
         "isNew": "true",
         "screens": [
@@ -108,6 +113,7 @@
         "title": "Counter Strike 2",
         "editor": "Valve",
         "price": 0,
+        "discount": 0,
         "image": "images/csgo2.jpg",
         "isNew": "true",
         "screens": [
@@ -122,6 +128,7 @@
         "title": "Assassins's Creed : Valhalla",
         "editor": "Ubisoft",
         "price": 59.99,
+        "discount": 0,
         "image": "images/assassinValhalla.jpg",
         "isNew": "false",
         "screens": [
@@ -136,6 +143,7 @@
         "title": "Assassins's Creed : Shadows",
         "editor": "Ubisoft",
         "price": 59.99,
+        "discount": 0,
         "image": "images/assassinShadows.jpg",
         "isNew": "false",
         "screens": [
@@ -150,6 +158,7 @@
         "title": "Assassins's Creed : Mirage",
         "editor": "Ubisoft",
         "price": 59.99,
+        "discount": 0,
         "image": "images/assassinMirage.jpg",
         "isNew": "false",
         "screens": [
@@ -164,6 +173,7 @@
         "title": "Red Dead Redemption 2",
         "editor": "Rockstar Games",
         "price": 49.99,
+        "discount": 0,
         "image": "images/rdr2.jpg",
         "isNew": "true",
         "screens": [
@@ -178,6 +188,7 @@
         "title": "The Witcher 3: Wild Hunt",
         "editor": "CD Projekt Red",
         "price": 29.99,
+        "discount": 0,
         "image": "images/witcher3.jpg",
         "isNew": "false",
         "screens": [
@@ -207,6 +218,7 @@
         "title": "Dark Souls II",
         "editor": "FromSoftware",
         "price": 29.99,
+        "discount": 0,
         "image": "images/dark-soulsII.jpg",
         "isNew": "false",
         "screens": [
@@ -221,6 +233,7 @@
         "title": "Dark Souls III",
         "editor": "FromSoftware",
         "price": 39.99,
+        "discount": 0,
         "image": "images/dark-soulsIII.jpg",
         "isNew": "false",
         "screens": [
@@ -235,6 +248,7 @@
         "title": "Sekiro: Shadows Die Twice - GOTY Edition",
         "editor": "FromSoftware",
         "price": 39.99,
+        "discount": 0,
         "image": "images/sekiro.jpg",
         "isNew": "false",
         "screens": [
@@ -249,6 +263,7 @@
         "title": "Hades II",
         "editor": "SuperGiant Games",
         "price": 29.99,
+        "discount": 0,
         "image": "images/hadesII.jpg",
         "isNew": "true",
         "screens": [
@@ -278,6 +293,7 @@
         "title": "Forza Horizon 5",
         "editor": "Xbox Games Studios",
         "price": 59.99,
+        "discount": 0,
         "image": "images/forza5.jpg",
         "isNew": "false",
         "isHot": "false",
@@ -293,6 +309,7 @@
         "title": "The Outer Worlds 2",
         "editor": "Xbox Games Studios",
         "price": 49.99,
+        "discount": 0,
         "image": "images/theouterworlds2.jpg",
         "isNew": "false",
         "isHot": "true",
@@ -308,6 +325,7 @@
         "title": "The Outer Worlds",
         "editor": "Private Division",
         "price": 13.99,
+        "discount": 0,
         "image": "images/theouterworlds.jpg",
         "isNew":"false",
         "isHot": "false",
@@ -323,6 +341,7 @@
         "title": "Rust",
         "editor": "Facepuch Studios",
         "price": 29.99,
+        "discount": 0,
         "image": "images/rust.jpg",
         "isNew": "false",
         "isHot": "true",
