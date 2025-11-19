@@ -37,6 +37,7 @@
         "title": "Nostale",
         "editor": "Entwell.Inc",
         "price": 0,
+        "discount": 0,
         "image": "images/nostale.jpg",
         "isNew": "true",
         "isHot": "false",
@@ -57,11 +58,11 @@
         "isNew": "false",
         "isHot": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/eldenRing1.jpg",
+            "images/eldenRing2.jpg",
+            "images/eldenRing3.jpg",
+            "images/eldenRing4.jpg",
+            "images/eldenRing5.jpg"
         ]
     },
     {
@@ -132,11 +133,11 @@
         "image": "images/assassinValhalla.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/assassinValhalla1.jpg",
+            "images/assassinValhalla2.jpg",
+            "images/assassinValhalla3.jpg",
+            "images/assassinValhalla4.jpg",
+            "images/assassinValhalla5.jpg"
         ]
     },
     {
@@ -248,7 +249,7 @@
         "title": "Sekiro: Shadows Die Twice - GOTY Edition",
         "editor": "FromSoftware",
         "price": 39.99,
-        "discount": 0,
+        "discount": 15,
         "image": "images/sekiro.jpg",
         "isNew": "false",
         "screens": [
@@ -298,11 +299,11 @@
         "isNew": "false",
         "isHot": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/forza51.jpg",
+            "images/forza52.jpg",
+            "images/forza53.jpg",
+            "images/forza54.jpg",
+            "images/forza55.jpg"
         ]
     },
     {
@@ -314,11 +315,11 @@
         "isNew": "false",
         "isHot": "true",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/theouterworlds21.jpg",
+            "images/theouterworlds22.jpg",
+            "images/theouterworlds23.jpg",
+            "images/theouterworlds24.jpg",
+            "images/theouterworlds25.jpg"
         ]
     },
     {
@@ -357,6 +358,7 @@
         "title": "Apex Legends",
         "editor": "Electronic Arts",
         "price": 0,
+        "discount": 0,
         "image": "images/apexlegends.jpg",
         "isNew": "true",
         "isHot": "false",
@@ -398,6 +400,38 @@
             "images/crusaderkingsIII3.jpg",
             "images/crusaderkingsIII4.jpg",
             "images/crusaderkingsIII5.jpg"
+        ]
+    },
+    {
+        "title": "Stardew Valley",
+        "editor": "ConcernedApe",
+        "price": 5.99,
+        "discount": 5,
+        "image": "images/stardewvalley.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "screens": [
+            "images/stardewvalley1.jpg",
+            "images/stardewvalley2.jpg",
+            "images/stardewvalley3.jpg",
+            "images/stardewvalley4.jpg",
+            "images/stardewvalley5.jpg"
+        ]
+    },
+    {
+        "title": "Project Zomboid",
+        "editor": "The Indie Stone",
+        "price": 9.99,
+        "discount": 0,
+        "image": "images/projectzomboid.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "screens": [
+            "images/projectzomboid1.jpg",
+            "images/projectzomboid2.jpg",
+            "images/projectzomboid3.jpg",
+            "images/projectzomboid4.jpg",
+            "images/projectzomboid5.jpg"
         ]
     }
     

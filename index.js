@@ -207,7 +207,7 @@ async function loadGames() {
     // --- PARTICULES D’ANIMATION ---
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
-      const particleCount = 100;
+      const particleCount = 50;
       for (let i = 0; i < particleCount; i++) {
         const p = document.createElement("div");
         p.classList.add("particle");
@@ -495,6 +495,35 @@ function displayGames (list) {
   });
 }
 
+/*
+gsap.to("#games-container .game-card", {
+    opacity: 0,
+    y: -20,
+    duration: 0.2,
+    stagger: 0.03
+  });
+
+  // 2) Petit délai pour laisser l'effet se jouer
+  setTimeout(() => {
+    container.innerHTML = "";
+
+    list.forEach(game => {
+      const card = createCard(game);
+      container.appendChild(card);
+    });
+
+    // 3) Animation d'apparition des nouveaux jeux
+    gsap.from("#games-container .game-card", {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "power2.out"
+    });
+
+  }, 200);
+*/
+
 document.querySelectorAll("#sort-dropdown p").forEach(option => {
   option.addEventListener("click", () => {
     currentSort = option.dataset.sort;
@@ -514,32 +543,41 @@ document.querySelectorAll("#price-dropdown p").forEach(option => {
 
 function applyAllFilters() {
   let result = [...window.allGames];
+  result = result.map(g => ({
+    ...g,
+    newPrice: (Number(g.price) * (1 - Number(g.discount) / 100)).toFixed(2)
+  }));
 
 
   if (currentPriceFilter) {
     switch(currentPriceFilter) {
+      case "allGames":
+        result = result.filter(g => Number(g.price) >= 0);
+        priceBtn.textContent = "Prices : All";
+        break;
+
       case "free":
         result = result.filter(g => Number(g.price) === 0);
         priceBtn.textContent = "Prices : Free-To-Play";
         break;
 
       case "under10":
-        result = result.filter(g => Number(g.price) >= 1 && Number(g.price) <= 10);
+        result = result.filter(g => Number(g.newPrice) >= 1 && Number(g.newPrice) <= 10);
         priceBtn.textContent = "Prices : Under 10€";
         break;
 
       case "11-25":
-        result = result.filter(g => Number(g.price) >= 11 && Number(g.price) <= 25);
+        result = result.filter(g => Number(g.newPrice) >= 11 && Number(g.newPrice) <= 25);
         priceBtn.textContent = "Prices : 11€ - 25€";
         break;
 
       case "25-50":
-        result = result.filter(g => Number(g.price) >= 25 && Number(g.price) <= 50);
+        result = result.filter(g => Number(g.newPrice) >= 25 && Number(g.newPrice) <= 50);
         priceBtn.textContent = "Prices : 25€ - 50€";
         break;
 
       case "50plus":
-        result = result.filter(g => Number(g.price) > 50);
+        result = result.filter(g => Number(g.newPrice) > 50);
         priceBtn.textContent = "Prices : 50€ +";
         break;
 
@@ -565,12 +603,12 @@ function applyAllFilters() {
         break;
 
       case "price-low":
-        result.sort((a, b) => Number(a.price) - Number(b.price));
+        result.sort((a, b) => Number(a.newPrice) - Number(b.newPrice));
         sortBtn.textContent = "Filter : Ascending";
         break;
 
       case "price-high":
-        result.sort((a, b) => Number(b.price) - Number(a.price));
+        result.sort((a, b) => Number(b.newPrice) - Number(a.newPrice));
         sortBtn.textContent = "Filter : Descending";
         break;
     }

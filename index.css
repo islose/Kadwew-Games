@@ -15,9 +15,9 @@
 }
 
 body{
-  height: 400vh;
+  height: 500vh;
   margin: 0;
-  background: linear-gradient(180deg,var(--bg),#0570b3);
+  background: linear-gradient(180deg,var(--bg),#25a2f0);
   color: #e8eef2;
   -webkit-font-smoothing: antialiased;
   text-align: center;
@@ -133,6 +133,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 #banner.banner-game {
@@ -472,10 +473,14 @@ nav {
   align-items: center;
   background: linear-gradient(180deg,hsla(0, 0%, 0%, 0.600), hsla(203, 95%, 36%, 0.015));
   padding: 12px 18px;
-  width: 30%;
+  width: 500px;
   margin: 0 auto;
   margin-top: 100px;
   position: relative;
+}
+
+#search2 {
+  display: none;
 }
 
 #filter-bar button {
@@ -548,6 +553,7 @@ nav {
   position: relative;
   cursor: pointer;
   border: solid 2px transparent;
+  transition: 0.3s ease;
 }
 
 #games-container .game-card:hover {
@@ -645,6 +651,10 @@ nav {
     grid-column: auto;
     grid-row: auto;
   }
+
+  .games {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 
@@ -655,16 +665,20 @@ nav {
     display: none;
   }
 
-  .search {
-    display: none;
-  }
-
   .btn-primary {
     display: none;
   }
 
   .hamburger {
     display: block;
+  }
+
+  #search1 {
+    display: none;
+  }
+
+  #search2 {
+    display: flex;
   }
 
   #banner.banner-game img {
@@ -686,12 +700,6 @@ nav {
   
   }
 
-  #filter-bar {
-    width: 90%;
-
-
-  }
-
   #filter-bar button {
     padding: 8px 14px;
     background: #2b2b2b;
@@ -707,6 +715,29 @@ nav {
   .games {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
+}
+
+@media (max-width: 570px) {
+  
+  #filter-bar {
+    width: 90%;
+    gap: 5px;
+  }
+
+  #filter-bar button {
+    padding: 10px 3px;
+    
+  }
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  #games-container .game-card {
+  margin-left: -73px;
+  }
+  
 }
 
 
@@ -748,6 +779,3 @@ nav {
     opacity: 1;
   }
 }
-
-
-/* === Featured / Discount Layout === */
