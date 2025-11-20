@@ -254,11 +254,6 @@ async function loadGames() {
     newContainer.innerHTML = "";
     discountContainer.innerHTML = "";
 
-    if (hotBanner) {
-      const hotCard = createCard(hotBanner);
-      container.appendChild(hotCard);
-    }
-
     ///////// ------------------    PROMOTION CONTAINER    ------------------- //////////
 
 

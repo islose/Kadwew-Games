@@ -148,11 +148,11 @@
         "image": "images/assassinShadows.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/assassinShadows1.jpg",
+            "images/assassinShadows2.jpg",
+            "images/assassinShadows3.jpg",
+            "images/assassinShadows4.jpg",
+            "images/assassinShadows5.jpg"
         ]
     },
     {
@@ -163,11 +163,11 @@
         "image": "images/assassinMirage.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/assassinMirage1.jpg",
+            "images/assassinMirage2.jpg",
+            "images/assassinMirage3.jpg",
+            "images/assassinMirage4.jpg",
+            "images/assassinMirage5.jpg"
         ]
     },
     {
@@ -193,11 +193,11 @@
         "image": "images/witcher3.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/witcher31.jpg",
+            "images/witcher32.jpg",
+            "images/witcher33.jpg",
+            "images/witcher34.jpg",
+            "images/witcher35.jpg"
         ]
     },
     {
@@ -208,11 +208,11 @@
         "image": "images/dark-souls.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/dark-souls1.jpg",
+            "images/dark-souls2.jpg",
+            "images/dark-souls3.jpg",
+            "images/dark-souls4.jpg",
+            "images/dark-souls5.jpg"
         ]
     },
     {
@@ -223,11 +223,11 @@
         "image": "images/dark-soulsII.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/dark-soulsII1.jpg",
+            "images/dark-soulsII2.jpg",
+            "images/dark-soulsII3.jpg",
+            "images/dark-soulsII4.jpg",
+            "images/dark-soulsII5.jpg"
         ]
     },
     {
@@ -238,11 +238,11 @@
         "image": "images/dark-soulsIII.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/dark-soulsIII1.jpg",
+            "images/dark-soulsIII2.jpg",
+            "images/dark-soulsIII3.jpg",
+            "images/dark-soulsIII4.jpg",
+            "images/dark-soulsIII5.jpg"
         ]
     },
     {
@@ -253,11 +253,11 @@
         "image": "images/sekiro.jpg",
         "isNew": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/sekiro1.jpg",
+            "images/sekiro2.jpg",
+            "images/sekiro3.jpg",
+            "images/sekiro4.jpg",
+            "images/sekiro5.jpg"
         ]
     },
     {
@@ -331,11 +331,11 @@
         "isNew":"false",
         "isHot": "false",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/theouterworlds1.jpg",
+            "images/theouterworlds12.jpg",
+            "images/theouterworlds3.jpg",
+            "images/theouterworlds4.jpg",
+            "images/theouterworlds5.jpg"
         ]
     },
     {
@@ -347,11 +347,11 @@
         "isNew": "false",
         "isHot": "true",
         "screens": [
-            "images/crusaderkingsIII1.jpg",
-            "images/crusaderkingsIII2.jpg",
-            "images/crusaderkingsIII3.jpg",
-            "images/crusaderkingsIII4.jpg",
-            "images/crusaderkingsIII5.jpg"
+            "images/rust1.jpg",
+            "images/rust2.jpg",
+            "images/rust3.jpg",
+            "images/rust4.jpg",
+            "images/rust5.jpg"
         ]
     },
     {
