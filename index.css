@@ -214,7 +214,8 @@ nav {
   letter-spacing: 10px;
   font-weight: bolder;
   margin-bottom: -10px;
-  background-color: green;
+  background-color: hsl(120, 100%, 25%);
+  box-shadow: 0 0 10px hsla(120, 100%, 25%);
   font-family: "Faculty Glyphic", sans-serif;
 }
 
@@ -253,7 +254,8 @@ nav {
   text-align: center;
   max-width: 1000px;
   margin: 0px auto;
-  min-height: 550px;
+  min-height: 500px;
+  max-height: 1000px;
 }
 
 .carousel-card {
@@ -285,7 +287,7 @@ nav {
 
 .carousel-arrow {
   position: absolute;
-  top: 60%;
+  top: 65%;
   transform: translateY(-50%);
   width: 54px;
   height: 54px;
@@ -295,20 +297,16 @@ nav {
   font-size: 3rem;
   cursor: pointer;
   z-index: 2;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   transition: box-shadow 0.2s;
   user-select: none;
 }
 
 .carousel-arrow.left {
   left: 0;
-  background: linear-gradient(to right, #252525 50%, transparent 90%);
 }
 
 .carousel-arrow.right {
   right: 0;
-  background: linear-gradient(to left, #252525 50%, transparent 90%);
 }
 
 .carousel-arrow:hover {
@@ -321,8 +319,8 @@ nav {
   gap: 8px;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
-  padding: 6px 0 0;
+  margin-top: 10%;
+  padding: 6px 0 10px;
 }
 
 .carousel-dot {
@@ -355,7 +353,8 @@ nav {
   font-weight: bolder;
   margin-bottom: -60px;
   font-family: "Faculty Glyphic", sans-serif;
-  background-color: green;
+  background-color: hsl(120, 100%, 25%);
+  box-shadow: 0 0 10px hsla(120, 100%, 25%);
 }
 
 .price {
@@ -541,8 +540,12 @@ nav {
   height: 35vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-width: 1900px;
+  margin: 60 auto;
   gap: 20px;
   padding: 100px;
+  align-items: start;
+  justify-content: center;
   transition: 0.3s ease;
   margin-top: -80px;
 }
@@ -553,7 +556,7 @@ nav {
   position: relative;
   cursor: pointer;
   border: solid 2px transparent;
-  transition: 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 #games-container .game-card:hover {
@@ -712,30 +715,37 @@ nav {
   }
 
   
-  .games {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
+  
 }
 
 @media (max-width: 570px) {
+
+  .carousel-dots {
+    margin-top: -20px;
+  }
   
   #filter-bar {
-    width: 90%;
+    width: 100%;
     gap: 5px;
   }
 
   #filter-bar button {
     padding: 10px 3px;
-    
+    margin-left: -12px;
+  }
+
+  .badge.discount {
+    font-size: 1rem;
+  }
+
+  #search2 {
+    display: flex;
   }
 
   .games {
+    text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  #games-container .game-card {
-  margin-left: -73px;
+    max-width: 500px;
   }
   
 }

@@ -366,6 +366,7 @@ function initCarousel(newGamesData) {
       <i class="fa-solid fa-chevron-right carousel-arrow right" role="button" aria-label="Next"></i>
     </div>
     <div class="carousel-dots" aria-hidden="false"></div>
+    
   `;
 
   const slot = newContainer.querySelector('.carousel-slot');
@@ -481,43 +482,32 @@ const sortBtn = document.getElementById("sort-filter-btn");
 const sortDropdown = document.getElementById("sort-dropdown");
 
 
-function displayGames (list) {
-  container.innerHTML = "";
+function displayGames(list) {
 
-  list.forEach(game => {
-    const card = createCard(game);
-    container.appendChild(card);
+  gsap.to("#games-container .game-card", {
+    opacity: 0,
+    y: -10,
+    duration: 0.2,
+    onComplete: () => {
+
+      container.innerHTML = "";
+
+      list.forEach(game => {
+        const card = createCard(game);
+        container.appendChild(card);
+      });
+
+      gsap.from("#games-container .game-card", {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+
+    }
   });
 }
 
-/*
-gsap.to("#games-container .game-card", {
-    opacity: 0,
-    y: -20,
-    duration: 0.2,
-    stagger: 0.03
-  });
 
-  // 2) Petit délai pour laisser l'effet se jouer
-  setTimeout(() => {
-    container.innerHTML = "";
-
-    list.forEach(game => {
-      const card = createCard(game);
-      container.appendChild(card);
-    });
-
-    // 3) Animation d'apparition des nouveaux jeux
-    gsap.from("#games-container .game-card", {
-      opacity: 0,
-      y: 20,
-      duration: 0.3,
-      stagger: 0.05,
-      ease: "power2.out"
-    });
-
-  }, 200);
-*/
 
 document.querySelectorAll("#sort-dropdown p").forEach(option => {
   option.addEventListener("click", () => {
