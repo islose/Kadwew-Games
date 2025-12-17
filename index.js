@@ -46,6 +46,19 @@ function preloadScreens (games) {
 }
 
 
+///////// ------------------    URL DE PAGES DES JEUX    ------------------- //////////
+
+
+function slugify (text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+}
+
+
+
 
 ///////// ------------------    CONTENUE DE LA CARTE    ------------------- //////////
 
@@ -56,9 +69,11 @@ const discountContainer = document.getElementById("featured-games");
 
 // --- FONCTION : CRÉER UNE CARTE DE JEU ---
 function createCard(game) {
-  
-  const card = document.createElement("div");
+  const slug = slugify(game.title);
+  const card = document.createElement("a");
   card.classList.add("game-card");
+  card.href = `games.html?game=${slug}`;
+  
 
   // gestion du prix et de la promo
   let prices;
@@ -83,6 +98,10 @@ function createCard(game) {
     <img src="${game.image}" alt="${game.title}">
     <p class="price">${prices}</p>
   `;
+
+  
+
+  
   
   // badge "-xx%"
   if (game.discount && Number(game.discount) > 0) {
@@ -459,6 +478,94 @@ function initCarousel(newGamesData) {
   startAuto();
 }
 loadGames();
+
+
+
+
+
+
+///////// ------------------    SEARCH SUGGESTIONS    ------------------- //////////
+
+
+const searchInput = document.querySelector('#search2 input') || document.getElementById('search-input');
+const suggestionsContainer = document.querySelector('#search2 .search-suggestions') || document.getElementById('search-suggestions');
+
+if (searchInput && suggestionsContainer) {
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    suggestionsContainer.innerHTML = "";
+
+    if (query.length === 0) {
+      suggestionsContainer.style.display = "none";
+      return;
+    }
+
+    // Filtre les jeux selon la recherche (max 4)
+    const filtered = window.allGames.filter(game =>
+      game.title && game.title.toLowerCase().includes(query)
+    ).slice(0, 4);
+
+    if (filtered.length === 0) {
+      suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
+      suggestionsContainer.style.display = "block";
+      return;
+    }
+
+    // Affiche les suggestions (max 4)
+    filtered.forEach(game => {
+      const suggestion = document.createElement('div');
+      suggestion.className = 'search-suggestion';
+      suggestion.style.cssText = `
+        padding: 10px 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      `;
+      
+      // Affiche l'image + titre du jeu
+      suggestion.innerHTML = `
+        <img src="${game.image}" alt="${game.title}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px;">
+        <span>${game.title}</span>
+      `;
+      
+      suggestion.addEventListener('click', () => {
+        // Redirige vers le lien du jeu
+        if (game.link) {
+          window.open(game.link, '_blank');
+        }
+        searchInput.value = game.title;
+        suggestionsContainer.style.display = "none";
+      });
+
+      suggestion.addEventListener('mouseenter', () => {
+        suggestion.style.background = "rgba(255,255,255,0.1)";
+      });
+      suggestion.addEventListener('mouseleave', () => {
+        suggestion.style.background = "transparent";
+      });
+
+      suggestionsContainer.appendChild(suggestion);
+    });
+
+    suggestionsContainer.style.display = "block";
+  });
+
+  // Ferme les suggestions si on clique ailleurs
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search')) {
+      suggestionsContainer.style.display = "none";
+    }
+  });
+}
+
+
+
+
+
+
+
 
 
 

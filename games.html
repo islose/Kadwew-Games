@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="games.css">
     <link rel="icon" type="png" href="/images/kadwew-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
-
+    
     <title>Kadwew Games</title>
+
 </head>
 <body>
-
-  <header class="header">
+    <header class="header">
   <a class="logo" href="#">
     <img src="/images/kadwew-logo.png" alt="Kadwew Games Logo" width="70" height="70">
     <div class="brand">
@@ -63,67 +63,20 @@
   </div>
 
   </header>
-  <main>
-    <section id="banner" class="banner-game">
-      <div class="particles"></div>
-    </section>
-
-    <div id="new-game-container" class="big-games"></div>
-    <div id="featured-games" class="discount-games"></div>
-    <h2 class="discount-title">ALL GAMES</h2>
-
-    <div id="filter-bar">
-
-  <div class="left-side-filter-bar">
-    <button id="price-filter-btn">Prices : All</button>
-
-    <div id="price-dropdown" class="dropdown hidden">
-      <p data-filter="allGames">All</p>
-      <p data-filter="free">Free-To-Play</p>
-      <p data-filter="under10">Under 10€</p>
-      <p data-filter="11-25">11€ - 25€</p>
-      <p data-filter="25-50">25€ - 50€</p>
-      <p data-filter="50plus">50€ +</p>
-      <p data-filter="promo">On Sale</p>
-    </div>
-  </div>
-
-  <label id="search2" class="search" for="search-input">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-        <circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></circle>
-      </svg>
-      <input id="search-input" placeholder="Search" />
-      <div id="search-suggestions" class="search-suggestions"></div>
-    </label>
-
-  <div class="right-side-filter-bar">
-    <button id="sort-filter-btn">Filter :</button>
-
-    <div id="sort-dropdown" class="dropdown hidden">
-      <p data-sort="az">A → Z</p>
-      <p data-sort="za">Z → A</p>
-      <p data-sort="price-low">Ascending</p>
-      <p data-sort="price-high">Descending</p>
-    </div>
-  </div>
-
-</div>
-
-    <div id="games-container" class="games"></div>
     
+  <div class="background-blur"></div>
+
+
+
+
+
     <div id="loading-screen">
-      <div id="loading-text">Loading...</div>
+        <div id="loading-text">Loading...</div>
     </div>
-  </main>
-  
 
-
-    
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/a45b53a937.js" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="games.js"></script>
 </body>
 </html>

@@ -478,8 +478,16 @@ verif.addEventListener("click", () => {
     return;
   }
 
-  if (age < 18) {
+  else if (age < 18 && age > 0) {
     result.textContent = "Vous êtes Mineur !";
+  }
+
+  else if (age > 105) {
+    result.textContent = "Vous êtes normalment mort la";
+  }
+
+  else if (age < 1) {
+    result.textContent = "C'est juste impossible";
   }
 
   else {
@@ -507,3 +515,314 @@ function test() {
 
 const x = test();
 console.log(x);
+
+/*
+function windowSum(arr) {
+  let maxSum = -Infinity;
+
+  for (let i = 0; i < arr.length - 3; i++) {
+    const currentWindow = [arr[i], arr[i + 1], arr[i + 2], arr[i + 3]];
+    const currentSum = arr[i] + arr[i + 1] + arr[i + 2] + arr[i + 3];
+    console.log("Fenêtre :", currentWindow, "-> Somme :", currentSum);
+
+    if (currentSum > maxSum) {
+      maxSum = currentSum
+    }
+  }
+
+  
+
+  return (`La Somme de la fenêtre la plus grande est : ${maxSum}`);
+}
+
+console.log(windowSum([1, 9, 2, 5, 4, 3, 4, 8, 7, 9, 1, 6]));
+*/
+
+function optiWindowSum(arr) {
+  let minSum = Infinity;
+
+  let currentSum = arr[0] + arr[1] + arr[2];
+  minSum = currentSum;
+
+  console.log("Fenêtre :", [arr[0], arr[1], arr[2]], "-> Somme : ", currentSum);
+
+  for (let i = 1; i < arr.length - 2; i++) {
+    currentSum = currentSum - arr[i - 1] + arr[i + 2];
+
+    let currentWindow = [arr[i], arr[i + 1], arr[i + 2]];
+    console.log("Fenêtre :", currentWindow, "-> Somme : ", currentSum);
+
+    if (currentSum < minSum) {
+      minSum = currentSum;
+    }
+  }
+  
+  return (`La Somme de la fenêtre la plus petite est : ${minSum}`);
+}
+
+console.log(optiWindowSum([6, 5, 1, 7, 2, 1, 3, 4, 9, 8, 9, 1, 4]));
+
+
+function windowSums(arr, k) {
+  let left = 0;
+  let currentSum = 0;
+  let maxLen = 0;
+
+  for (let right = 0; right < arr.length; right++) {
+    currentSum += arr[right];
+
+    while (currentSum > k) {
+      currentSum -= arr[left];
+      left++
+    }
+
+    maxLen = Math.max(maxLen, right - left + 1);
+  }
+
+  return maxLen;
+}
+
+console.log(windowSums([5, 2, 4, 1, 3, 1], 5));
+
+
+function mapping (word) {
+  let map = {};
+
+  for (let i = 0; i < word.length; i++) {
+    let letter = word[i];
+
+    if (!map[letter]) {
+      map[letter] = 1;
+    }
+
+    else {
+      map[letter]++;
+    }
+
+  }
+  return map;
+}
+
+console.log(mapping("banana"));
+
+
+function hasDuplicated(str) {
+  let map = {};
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i];
+
+    if (map[letter]) {
+      return "Rep";
+    }
+    else {
+      map[letter] = true;
+    }
+  }
+  return "Pas De Rep";
+}
+
+console.log(hasDuplicated("hello"));
+console.log(hasDuplicated("salim"));
+console.log(hasDuplicated("abcdefghijklmnopqrstuvwxyz"));
+console.log(hasDuplicated("azertyuioppa"));
+console.log(hasDuplicated("malik"));
+console.log(hasDuplicated("kadwew"));
+
+
+const input = document.getElementById("search");
+const results = document.getElementById("result");
+const words = [
+  "Grand Theft Auto 1",
+  "Grand Theft Auto 2",
+  "Grand Theft Auto 3",
+  "Grand Theft Auto 4",
+  "Grand Theft Auto 5",
+  "Grand Theft Auto San Andreas",
+  "Call of Duty Modern Warfare",
+  "call of duty black ops 1",
+  "call of duty black ops 2",
+  "the last of us",
+  "league of legends"
+];
+
+/*
+const words = ["pomme", "fraise", "ananas", "mangue", "poire"];
+
+input.addEventListener("input", function(event){
+  console.log(event.target.value);
+});
+*/
+
+function getInitial(str) {
+  return str
+  .split(" ")
+  .map(word => word[0])
+  .join("")
+  .toLowerCase();
+}
+/*
+input.addEventListener("input", function(event){
+  const searchText = event.target.value.toLowerCase();
+
+  const filtered = words.filter(word => {
+    const initials = getInitial(word);
+    const lower = word.toLowerCase();
+
+    if (searchText === ""){
+      result.innerHTML = "";
+      return;
+    }
+
+    return (
+      lower.includes(searchText) ||
+      initials.includes(searchText)
+    );
+  });
+
+  result.innerHTML = filtered.join("<br>");
+});
+*/
+
+input.addEventListener("input", (event) => {
+  const searchText = event.target.value.toLowerCase("");
+
+  const filtered = words.filter(word => {
+    const initials = getInitial(word);
+    const lower = word.toLowerCase();
+
+    if (searchText === "") {
+      result.innerHTML = "";
+      return;
+    }
+
+    return (lower.includes(searchText) || initials.includes(searchText));
+  });
+  result.innerHTML = filtered.join("<br>");
+});
+
+
+
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    console.log("Tu as validé avec Entrée :", input.value);
+  }
+});
+
+
+const arrowFunction = (a, b) => {
+  return a + b;
+}
+console.log(arrowFunction(1, 5));
+
+const carréFunction = (a) => {
+  return a * a;
+}
+console.log(carréFunction(5));
+
+const nameFunction = (str) => {
+  return (`Bonjour ${str} !`);
+}
+console.log(nameFunction("Kadwew"));
+
+const pairImpair = (a) => a % 2 === 0 ? "pair" : "impair";
+console.log(pairImpair(25));
+console.log(pairImpair(1));
+console.log(pairImpair(4));
+
+const ageFunction = (age) => age >= 18;
+console.log(ageFunction(18));
+console.log(ageFunction(150));
+console.log(ageFunction(14));
+
+const doubleTable = (numbers) => {
+  return numbers.map(number => number * 2);
+}
+
+console.log(doubleTable([1, 2, 3, 4, 5]));
+
+const moreThan20 = (numbers) => {
+  return numbers.filter(number => number >= 20);
+}
+
+console.log(moreThan20([10, 15, 20, 25, 30]));
+
+const findWord = (words) => {
+  return words.find(word => word.includes("react"));
+}
+console.log(findWord(["js", "html", "css", "react"]));
+
+const findFirstEven = numbers => numbers.find(number => number % 2 === 0);
+
+console.log(findFirstEven([1, 3, 5, 8, 10]));
+
+const sum = (a, b) => a + b;
+console.log(sum(1, 2));
+
+const isPositive = (n) => n > 0;
+console.log(isPositive(5));
+console.log(isPositive(0));
+console.log(isPositive(-5));
+
+const toUpper = (str) => str.toUpperCase();
+console.log(toUpper("react"));
+
+
+const doublePrices = (prices) => prices.map(price => price * 2);
+console.log(doublePrices([10, 15 ,20]));
+
+const getAdults = (ages) => ages.filter(age => age >= 18);
+console.log(getAdults([15, 20, 17, 30]));
+
+
+const users = [
+  { id: 1, name: "Ali" },
+  { id: 2, name: "Sara" },
+  { id: 3, name: "Yassine" }
+];
+
+const findUser = (users) =>  users.find(user => user.id === 2);
+console.log(findUser(users));
+
+const prices = [50, 120, 80];
+
+const formatPrices = (prices) =>
+   prices.map(price =>
+     price >= 100
+      ? `${price} DA`
+      : `Promo : ${price} DA`
+      );
+
+console.log(formatPrices(prices));
+
+const utilisateurs = [
+  { name: "Ali", active: true },
+  { name: "Sara", active: false },
+  { name: "Yassine", active: true }
+];
+
+const getActiveUsers = (utilisateurs) =>
+   utilisateurs.filter(utilisateur =>
+     utilisateur.active);
+
+console.log(getActiveUsers(utilisateurs));
+
+const getUserNames = (utilisateurs) =>
+   utilisateurs.map(utilisateur =>
+    utilisateur.name
+   );
+console.log(getUserNames(utilisateurs));
+
+const findExpensive = (prices) =>
+  prices.find(price => price >= 100);
+
+console.log(findExpensive(prices));
+
+const sumPrices = (prices) => prices.reduce((a, b) => b + a, 0);
+console.log(sumPrices(prices));
+
+
+function slugify (text) {
+  return text.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+}
+
+console.log(slugify("La lois de la nature: le monde perdue"));
