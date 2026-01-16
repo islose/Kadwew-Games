@@ -787,13 +787,13 @@ nav {
     transform: translateY(-50%);
   }
 
-.carousel-arrow.left {
-  left: 0;
-}
+  .carousel-arrow.left {
+    left: 0;
+  }
 
-.carousel-arrow.right {
-  right: 0;
-}
+  .carousel-arrow.right {
+    right: 0;
+  }
 
   .carousel-dots {
     margin-top: -20px;
@@ -838,7 +838,7 @@ nav {
 #loading-screen {
   position: fixed;
   inset: 0;
-  background: #000; /* fond noir (tu peux changer la couleur) */
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -854,7 +854,7 @@ nav {
   visibility: hidden;
 }
 
-/* Animation du texte de chargement */
+
 #loading-text {
   font-family: 'Poppins', sans-serif;
   letter-spacing: 2px;

@@ -173,7 +173,7 @@ function reverseString (str) {
 console.log(reverseString("hello"));
 console.log(reverseString("kadwew"));
 console.log(reverseString("123456"));
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const Pcontainer = document.querySelector(".particles");
   if (!Pcontainer) return;
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
+*/
 
 function isPalindrom(word) {
 
@@ -459,12 +459,6 @@ function countLetterOfNames (names) {
 
 console.log(countLetterOfNames(names));
 
-const button = document.getElementById("next");
-
-button.addEventListener("click", () => {
-  console.log("Vous venez de clicker sur le button next, Félécitation !");
-});
-
 
 const verif = document.getElementById("verif");
 const texto = document.getElementById("texto");
@@ -653,35 +647,7 @@ input.addEventListener("input", function(event){
 });
 */
 
-function getInitial(str) {
-  return str
-  .split(" ")
-  .map(word => word[0])
-  .join("")
-  .toLowerCase();
-}
-/*
-input.addEventListener("input", function(event){
-  const searchText = event.target.value.toLowerCase();
 
-  const filtered = words.filter(word => {
-    const initials = getInitial(word);
-    const lower = word.toLowerCase();
-
-    if (searchText === ""){
-      result.innerHTML = "";
-      return;
-    }
-
-    return (
-      lower.includes(searchText) ||
-      initials.includes(searchText)
-    );
-  });
-
-  result.innerHTML = filtered.join("<br>");
-});
-*/
 
 input.addEventListener("input", (event) => {
   const searchText = event.target.value.toLowerCase("");
@@ -825,4 +791,421 @@ function slugify (text) {
   return text.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 }
 
-console.log(slugify("La lois de la nature: le monde perdue"));
+console.log(slugify("La loi de la nature: le monde perdue"));
+
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+  console.log("Boutton cliquer !");
+});
+
+const btnC = document.getElementById("btnC");
+const pb = document.getElementById("pb");
+
+btnC.addEventListener("click", () => {
+  pb.textContent = "Bonsoir";
+});
+
+const box = document.getElementById("box");
+const Bouton = document.getElementById("Bouton");
+
+Bouton.addEventListener("click", () => {
+  box.classList.toggle("active");
+});
+
+const inputs = document.getElementById("input");
+const resultss = document.getElementById("result");
+/*
+inputs.addEventListener("keydown", (event) => {
+    if (event.target.value.length >= 4 && !["Backspace", "ArrowLeft", "ArrowRight", "Shift", "Control"].includes(event.key)) {
+      event.preventDefault();
+    }
+  });
+
+inputs.addEventListener("input", (event) => {
+  resultss.textContent = `Caractères : ${event.target.value.length}`;
+  if (event.target.value.length >= 4) {
+    resultss.textContent = "Nombre maximal de caractères atteint";
+  }
+});
+*/
+const spec = /[^a-zA-Z\s]/;
+
+inputs.addEventListener("keydown", (event) => {
+  if (spec.test(event.key)) {
+    event.preventDefault();
+    resultss.textContent = "Veuillez évitez les chiffres et carachteres spéciaux";
+  }
+    console.log(event.key);
+});
+
+inputs.addEventListener("input", (event) => {
+  if (!spec.test(event.key)) {
+    resultss.textContent = "Caracther dissponibel";
+  }
+});
+
+
+/*
+function getInitial(str) {
+  return str
+  .split(" ")
+  .map(word => word[0])
+  .join("")
+  .toLowerCase();
+}
+
+input.addEventListener("input", function(event){
+  const searchText = event.target.value.toLowerCase();
+
+  const filtered = words.filter(word => {
+    const initials = getInitial(word);
+    const lower = word.toLowerCase();
+
+    if (searchText === ""){
+      result.innerHTML = "";
+      return;
+    }
+
+    return (
+      lower.includes(searchText) ||
+      initials.includes(searchText)
+    );
+  });
+
+  result.innerHTML = filtered.join("<br>");
+});
+*/
+const jeux = [
+  "Grand Theft Auto 1",
+  "Grand Theft Auto 2",
+  "Grand Theft Auto 3",
+  "Grand Theft Auto 4",
+  "Grand Theft Auto 5",
+  "Grand Theft Auto San Andreas",
+  "Call of Duty Modern Warfare",
+  "Call of duty black ops 1",
+  "Call of duty black ops 2",
+  "The last of us",
+  "League of legends",
+  "Battlefield 2042",
+  "Battlefield 6",
+  "Mortal kombat",
+  "Player unknown battleground",
+  "Legend of runeterra",
+  "Nostale",
+  "World of warcraft",
+  "Overwatch",
+  "Battlerite",
+  "Realm royal",
+  "Fortnite",
+  "Plants vs zombies",
+  "Saints row",
+  "Uncharted 1",
+  "Uncharted 2",
+  "Uncharted 3",
+  "Uncharted 4",
+  "Paladin",
+  "Smite"
+];
+function getInitial (str) {
+  return str.split(" ").map(jeu => jeu[0]).join("").toLowerCase();
+}
+/*
+inputs.addEventListener("input", (event) => {
+  const searchText = event.target.value.toLowerCase();
+
+  if (searchText === "") {
+    result.innerHTML = "";
+    return;
+  }
+
+  const filtered = jeux
+    .filter(jeu => {
+      const initial = getInitial(jeu);
+      const lower = jeu.toLowerCase();
+
+      return (lower.includes(searchText) || initial.includes(searchText));
+    
+  })
+  .sort((a, b) => a.localeCompare(b));  
+  result.innerHTML = filtered.join("<br>");
+});
+*/
+
+inputs.addEventListener("input", (event) => {
+  const searchText = event.target.value.toLowerCase();
+
+  if (searchText === "") {
+    result.innerHTML = "";
+    return;
+  }
+
+  const filtered = jeux
+    .filter(jeu => jeu.toLowerCase().includes(searchText))
+    .sort((a, b) => {
+      const aLower = a.toLowerCase();
+      const bLower = b.toLowerCase();
+
+      // priorité 1 : commence par la lettre
+      const aStarts = aLower.startsWith(searchText);
+      const bStarts = bLower.startsWith(searchText);
+
+      if (aStarts !== bStarts) return aStarts ? -1 : 1;
+
+      // priorité 2 : un mot commence par la lettre
+      const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+      const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+
+      if (aWord !== bWord) return aWord ? -1 : 1;
+
+      // priorité 3 : ordre alphabétique
+      return a.localeCompare(b);
+    });
+
+  result.innerHTML = filtered.join("<br>");
+});
+
+/*
+
+function twoSum (nums, target) {
+  const seen = {};
+
+  for(let i = 0; i < nums.length; i++) {
+
+    const current = nums[i];
+    const needed = target - current;
+
+    if (seen[needed] !== undefined) {
+      return [seen[needed], i];
+    }
+    seen[current] = i;
+  }
+}
+
+console.log(twoSum([2, 7, 11, 15, 1, 3, 4, 9, 8, 5, 12, 10, 1], 27));
+
+function findSum (nums, target) {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+};
+console.log(findSum([9, 8, 7, 2, 5, 6, 4, 1, 3, 10], 16));
+*/
+/*
+function findSum (nums, target) {
+  const map = {};
+  for(let i = 0; i < nums.length; i++) {
+    const current = nums[i];
+    const total = target - current;
+
+    if (map[total] !== undefined) {
+      return [map[total], i];
+    }
+    map[current] = i;
+  }
+}
+
+console.log(findSum2([1, 5, 9, 11, 15, 0, -1, 3, -5], 8));
+
+function findSum2 (nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const total = target - nums[i];
+    if (map.has(total)) {
+      return [map.get(total), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+};
+*/
+/*
+function findTripleSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    const map = new Map();
+    const total = target - nums[i];
+
+    for (let j = i + 1; j < nums.length; j++) {
+      const newTotal = total - nums[j];
+
+      if (map.has(newTotal)) {
+        return [i, map.get(newTotal), j];
+      }
+
+      map.set(nums[j], j);
+    }
+  }
+  return [];
+}
+
+console.log(findTripleSum([11, 2, 1, 5, 3, 4, 6, 7, 8, 9, 10, 50, 70], 121));
+*/
+
+function isNumPalindrom (x) {
+  if (x < 0 || (x % 10 === 0 && x !== 0)) {
+    return false;
+  }
+
+  let reversed = 0;
+
+  while(x > reversed) {
+    const lastDigit = x % 10;
+    reversed = reversed * 10 + lastDigit;
+    x = Math.floor(x / 10);
+  }
+  return x === reversed || x === Math.floor(reversed / 10);
+}
+
+console.log(isNumPalindrom(121));
+console.log(isNumPalindrom(5520155));
+console.log(isNumPalindrom(123321));
+console.log(isNumPalindrom(22322));
+console.log(isNumPalindrom(1234567));
+
+
+function twoSum (nums, target) {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const total = target - nums[i];
+    if (map.has(total)) {
+      return [map.get(total), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+}
+
+console.log(twoSum([2, 7, 11, 15], 18));
+
+function double (nums) {
+  const map = new Map();
+
+  for (let num of nums) {
+    if (map.has(num)) {
+      map.set(num, map.get(num) + 1);
+    }
+    else {
+      map.set(num, 1);
+    }
+  }
+
+  const duplicated = [];
+  for (const [num, count] of map.entries()) {
+    if (count > 1) {
+      duplicated.push(`${num} (${count} fois)`);
+    }
+  }
+
+  if (duplicated.length === 0) {
+    return "Aucune Répétition Détécté";
+  }
+
+  else {
+    return "Le(s) Chiffre(s) répétés : " + duplicated.join(", ");
+  }
+}
+
+console.log(double([1, 2, 3, 4, 1, 1, 2, 5]));
+console.log(double([11, 1, 111, -1, -11, -111, 2, 11]));
+
+function once (nums) {
+  const map = new Map();
+
+  for (let num of nums) {
+    if (map.has(num)) {
+      map.set(num, map.get(num) + 1);
+    }
+    else {
+      map.set(num, 1);
+    }
+  }
+
+  const uniques = [];
+
+  for (let [num, count] of map.entries()) {
+    if (count === 1) {
+      uniques.push(`${num}`);
+    }
+  }
+
+  if (uniques.length === 0) {
+    return "Aucun Chiffre Unique Détécté";
+  }
+  else {
+    return "Chiffre(s) Unique(s) : " + uniques.join(", ");
+  }
+}
+
+console.log(once([1, 2, 2, 3, 4, 1, 4, 5, 5, 6]));
+
+function uniqueLetter(sentence) {
+  const map = new Map();
+  for (let carachteres of sentence) {
+    carachteres = carachteres.toLowerCase();
+    if (carachteres === " ") continue;
+
+    if (map.has(carachteres)) {
+      map.set(carachteres, map.get(carachteres) + 1);
+    }
+    else {
+      map.set(carachteres, 1);
+    }
+  }
+
+  const uniques = [];
+
+  for (let [carachteres, count] of map.entries()) {
+    if (count === 1) {
+      uniques.push(`${carachteres}`);
+    }
+  }
+
+  if (uniques.length === 0) {
+    return "Aucune lettre Unique n'a était trouvé dans cette Phrase/Mot";
+  }
+  else {
+    return "Lettre(s) Unique dans la Phrase/Mot(s) :" + uniques.join(", ");
+  }
+}
+
+console.log(uniqueLetter("bonJOur lE MonDe"));
+
+function firstNonRepeatedLetter (str) {
+  const map = new Map();
+  str = str.toLowerCase();
+
+  for (let char of str) {
+    if (char === " ") continue;
+    if (map.has(char)) {
+      map.set(char, map.get(char) + 1);
+    }
+    else {
+      map.set(char, 1);
+    }
+  }
+  
+  for (let char of str) {
+    if (map.get(char) === 1) {
+      return "La Premiere Lettre Unique est : " + char.toUpperCase();
+    }
+    
+  }
+  
+ 
+  return "Aucune Lettre Unique";
+
+}
+
+console.log(firstNonRepeatedLetter("stReSs"));
+console.log(firstNonRepeatedLetter("LEet COde"));
+console.log(firstNonRepeatedLetter("KaDweW"));
+console.log(firstNonRepeatedLetter("aabbcc"));

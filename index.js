@@ -487,23 +487,51 @@ loadGames();
 ///////// ------------------    SEARCH SUGGESTIONS    ------------------- //////////
 
 
-const searchInput = document.querySelector('#search2 input') || document.getElementById('search-input');
-const suggestionsContainer = document.querySelector('#search2 .search-suggestions') || document.getElementById('search-suggestions');
+const searchInput = document.querySelector('#search2 input') || document.getElementById('#search1');
+const suggestionsContainer = document.querySelector('#search2 #search1 .search-suggestions') || document.getElementById('search-suggestions');
 
 if (searchInput && suggestionsContainer) {
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
+
+  searchInput.addEventListener('input', (event) => {
+    const searchText = event.target.value.toLowerCase().trim();
     suggestionsContainer.innerHTML = "";
 
-    if (query.length === 0) {
+    if (searchText.length === 0) {
       suggestionsContainer.style.display = "none";
       return;
     }
-
+    /*
     // Filtre les jeux selon la recherche (max 4)
     const filtered = window.allGames.filter(game =>
       game.title && game.title.toLowerCase().includes(query)
     ).slice(0, 4);
+    */
+    const filtered = window.allGames
+    .filter(game => game.title && game.title.toLowerCase().includes(searchText))
+    .sort((a, b) => {
+      const aLower = a.title.toLowerCase();
+      const bLower = b.title.toLowerCase();
+
+      // priorité 1 : commence par la lettre
+      const aStarts = aLower.startsWith(searchText);
+      const bStarts = bLower.startsWith(searchText);
+
+      if (aStarts !== bStarts) return aStarts ? -1 : 1;
+
+      // priorité 2 : un mot commence par la lettre
+      const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+      const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+
+      if (aWord !== bWord) return aWord ? -1 : 1;
+
+      // priorité 3 : ordre alphabétique
+      return a.title.localeCompare(b.title);
+    })
+    .slice(0, 4);
+
+    if (filtered === 0) {
+      game.price.textContent = `Free-To-Play`;
+    }
 
     if (filtered.length === 0) {
       suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
@@ -528,12 +556,18 @@ if (searchInput && suggestionsContainer) {
       suggestion.innerHTML = `
         <img src="${game.image}" alt="${game.title}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px;">
         <span>${game.title}</span>
+        <span>€${game.price}</span>
       `;
       
+      
+      
       suggestion.addEventListener('click', () => {
+        const slug = slugify(game.title);
+        const gameLink = `games.html?game=${slug}`;
+
         // Redirige vers le lien du jeu
-        if (game.link) {
-          window.open(game.link, '_blank');
+        if (gameLink) {
+          window.open(`games.html?game=${slug}`);
         }
         searchInput.value = game.title;
         suggestionsContainer.style.display = "none";
@@ -553,9 +587,15 @@ if (searchInput && suggestionsContainer) {
   });
 
   // Ferme les suggestions si on clique ailleurs
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.search')) {
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.search')) {
       suggestionsContainer.style.display = "none";
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest('.search')) {
+      suggestionsContainer.style.display = "block";
     }
   });
 }
