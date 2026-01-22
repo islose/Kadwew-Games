@@ -1,7 +1,7 @@
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
 window.addEventListener("load", () => {
   const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.classList.add("hidden"); // masque l'écran après chargement complet
+  loadingScreen.classList.add("hidden");
 });
 
 
@@ -10,10 +10,17 @@ window.addEventListener("load", () => {
 
 const hamb = document.getElementById('hambBtn');
 const menu = document.getElementById('mobileMenu');
+const panier = document.getElementById('panier-btn');
+const panierMenu = document.getElementById('panier-menu');
 
 hamb.addEventListener('click', () => {
   const open = menu.classList.toggle('open');
   menu.setAttribute('aria-hidden', !open);
+});
+
+panier.addEventListener('click', () => {
+  const open = panierMenu.classList.toggle('open');
+  panierMenu.setAttribute('aria-hidden', !open);
 });
 
 
@@ -226,7 +233,7 @@ async function loadGames() {
     // --- PARTICULES D’ANIMATION ---
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
-      const particleCount = 50;
+      const particleCount = 100;
       for (let i = 0; i < particleCount; i++) {
         const p = document.createElement("div");
         p.classList.add("particle");
@@ -378,7 +385,7 @@ function initCarousel(newGamesData) {
   let isPaused = false;
 
   newContainer.innerHTML = `
-  <h2 class="popular-title">TENDANCES AND POPULAR</h2>
+  <h2 class="popular-title">TENDANCES AND POPULARS</h2>
     <div class="carousel-slot">
       <i class="fa-solid fa-angle-left carousel-arrow left" role="button" aria-label="Previous"></i>
       <div class="carousel-content"></div>
@@ -771,3 +778,137 @@ document.addEventListener("click", (e) => {
     sortDropdown.classList.add("hidden");
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+
+// Ajuster la taille du canvas
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Paramètres
+const stars = [];
+const numStars = 800;
+let speed = 2;
+
+// Classe étoile
+class Star {
+  constructor() {
+    this.reset();
+}
+
+reset() {
+  this.x = Math.random() * canvas.width - canvas.width / 2;
+  this.y = Math.random() * canvas.height - canvas.height / 2;
+  this.z = Math.random() * canvas.width;
+  this.prevX = this.x;
+  this.prevY = this.y;
+}
+
+update() {
+  this.prevX = this.x;
+  this.prevY = this.y;
+                
+  // Déplacer l'étoile vers nous
+  this.z -= speed;
+
+  // Si l'étoile est passée, la réinitialiser
+  if (this.z <= 0) {
+    this.reset();
+  }
+}
+
+draw() {
+  // Projection 3D vers 2D
+  const x = (this.x / this.z) * canvas.width + canvas.width / 2;
+  const y = (this.y / this.z) * canvas.height + canvas.height / 2;
+                
+  const prevX = (this.prevX / (this.z + speed)) * canvas.width + canvas.width / 2;
+  const prevY = (this.prevY / (this.z + speed)) * canvas.height + canvas.height / 2;
+
+  // Taille de l'étoile basée sur la distance
+  const size = (1 - this.z / canvas.width) * 3;
+                
+  // Opacité basée sur la distance
+  const opacity = 1 - this.z / canvas.width;
+
+  // Dessiner la traînée (ligne)
+  ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+  ctx.lineWidth = size;
+  ctx.beginPath();
+  ctx.moveTo(prevX, prevY);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+
+  // Dessiner l'étoile (point)
+  ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+  ctx.beginPath();
+  ctx.arc(x, y, size, 0, Math.PI * 2);
+  ctx.fill();
+  }
+}
+
+// Créer les étoiles
+for (let i = 0; i < numStars; i++) {
+  stars.push(new Star());
+}
+
+// Animation
+function animate() {
+  // Effet de traînée
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Mettre à jour et dessiner chaque étoile
+  stars.forEach(star => {
+    star.update();
+    star.draw();
+    });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// Contrôle de la vitesse
+function changeSpeed(mode) {
+  switch(mode) {
+    case 'slow':
+      speed = 1;
+      break;
+    case 'normal':
+      speed = 2;
+      break;
+    case 'fast':
+      speed = 5;
+      break;
+    case 'warp':
+      speed = 15;
+      break;
+  }
+}
+*/

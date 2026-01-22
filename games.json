@@ -7,6 +7,7 @@
         "image": "images/battlefield6.jpg",
         "isNew": "true",
         "isHot": "false",
+        "description":"Battlefield 6 is a modern-day, large-scale first-person shooter set in 2027, returning to classic class systems (Assault, Engineer, Support, Recon) and 64-player battles, focusing on tactical destruction, infantry-vehicle combat, and objective play, featuring both a single-player campaign following US Marine Raiders against Pax Armata and the popular Battlefield Portal mode for user-created content. Key elements include customizable weapons, deep environmental destruction for strategic advantage, and a return to grounded warfare with intense firefights and aerial dogfights.",
         "link":  "https://store.steampowered.com/app/2807960/Battlefield_6",
         "screens": [
             "images/battlefield61.jpg",
@@ -24,6 +25,7 @@
         "image": "images/littleNightmares3.jpg",
         "isNew": "true",
         "isHot": "false",
+        "description":"Little Nightmares III follows two new child protagonists, Low and Alone, as they navigate the twisted world of the Nowhere, trapped in the 'Spiral' of disturbing locations, seeking an escape back to the real world, featuring the series' first online co-op mode alongside solo play with an AI companion. Each character has unique tools—Low uses a bow, Alone a wrench—to solve puzzles and overcome monstrous 'Residents' in locations like the Necropolis and Candy Factory, all while confronting personal fears and traumatic past memories. ",
         "link":  "https://store.steampowered.com/app/1392860/Little_Nightmares_III",
         "screens": [
             "images/littleNightmares31.jpg",
@@ -41,6 +43,7 @@
         "image": "images/nostale.jpg",
         "isNew": "true",
         "isHot": "false",
+        "description":"Nostale is a free-to-play anime-styled MMORPG where players explore a fantasy world, battle monsters, team up with others, and customize characters with numerous specialist classes, pets, and partners, featuring quests, raids, PvP, and player housing, all with a focus on action and adventure in a 2D-in-2.5D world that blends typical MMORPG elements with unique features like 'Specialist Cards' and elemental fairies. ",
         "screens": [
             "images/nostale1.jpg",
             "images/nostale2.jpg",
@@ -57,6 +60,7 @@
         "image": "images/elden-ring.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Elden Ring is an epic open-world action RPG from FromSoftware, set in the vast, mysterious Lands Between, where players, as Tarnished, explore ruins and battle formidable foes to become the Elden Lord, guided by lore from Hidetaka Miyazaki and George R.R. Martin. The game features deep, challenging combat, vast freedom for exploration using a spectral steed (Torrent), and a cryptic story centered around the shattered Elden Ring and its runes, offering immense replayability and discovery. ",
         "screens": [
             "images/eldenRing1.jpg",
             "images/eldenRing2.jpg",
@@ -72,6 +76,7 @@
         "discount": 0,
         "image": "images/eafc26.jpg",
         "isNew": "true",
+        "description":"EA Sports FC 26 offers an overhauled, community-driven gameplay experience with responsive dribbling, smarter AI, and lifelike animations, featuring new Archetypes for player development, dynamic Manager Live Career scenarios, and enhanced Football Ultimate Team (FUT) modes with Live Events and Tournaments, all built on unmatched authenticity with thousands of licensed players, clubs, and competitions, including exclusive UEFA rights. Key additions include Competitive and Authentic gameplay presets, deeper PC settings, and a 'World Tour Through History' theme for FUT Seasons, celebrating football's biggest stories. ",
         "screens": [
             "images/eafc26Screen1.jpg",
             "images/eafc26Screen2.jpg",
@@ -87,6 +92,7 @@
         "discount": 0,
         "image": "images/cyberpunk2077.jpg",
         "isNew": "true",
+        "description":"Cyberpunk 2077 is an open-world, action-adventure RPG set in the futuristic, corrupt megalopolis of Night City, where players control a customizable mercenary named V, navigating a world obsessed with power, glamour, and cybernetic body modification, with choices affecting story and character development, featuring intense combat, stealth, hacking, and a deep lore built around mega-corporations and street life, enhanced by the Phantom Liberty spy-thriller expansion and ongoing updates. ",
         "screens": [
             "images/cyberpunk20771.jpg",
             "images/cyberpunk20772.jpg",
@@ -102,6 +108,7 @@
         "discount": 50,
         "image": "images/hogwarts-legacy.jpg",
         "isNew": "false",
+        "description":"Hogwarts Legacy is an open-world action RPG set in the 1800s Wizarding World, where you play as a new fifth-year student at Hogwarts, uncovering an ancient magical secret while attending classes, learning spells, and exploring the castle and its surroundings, with a focus on your unique legacy. Players can create their own witch or wizard, customize their magical journey, interact with iconic creatures, brew potions, and shape the destiny of the wizarding world. ",
         "screens": [
             "images/hogwarts-legacy1.jpg",
             "images/hogwarts-legacy2.jpg",
@@ -117,6 +124,7 @@
         "discount": 0,
         "image": "images/csgo2.jpg",
         "isNew": "true",
+        "description":"Counter-Strike 2 is a free-to-play, multiplayer tactical first-person shooter by Valve that replaced CS:GO, offering significant technical upgrades with the Source 2 engine, realistic volumetric smoke physics, updated maps, and a new competitive ranking system called CS Rating, focusing on classic bomb defusal/hostage rescue gameplay with enhanced visuals and audio. ",
         "screens": [
             "images/csgo21.jpg",
             "images/csgo22.jpg",
@@ -132,6 +140,7 @@
         "discount": 0,
         "image": "images/assassinValhalla.jpg",
         "isNew": "false",
+        "description":"Assassin's Creed Valhalla is an open-world action RPG where you play as Eivor, a Viking warrior leading their clan from Norway to establish a new home in 9th-century England, engaging in brutal combat, epic raids, settlement building, and forging alliances while navigating the conflict between Assassins and Templars, all wrapped in Norse mythology and sagas. It features a massive, dynamic world, visceral dual-wielding combat, and deep RPG mechanics allowing players to shape their character and story through choices, promising a true 'Viking fantasy'. ",
         "screens": [
             "images/assassinValhalla1.jpg",
             "images/assassinValhalla2.jpg",
@@ -147,6 +156,7 @@
         "discount": 0,
         "image": "images/assassinShadows.jpg",
         "isNew": "false",
+        "description":"Assassin's Creed Shadows is an open-world action-adventure game set in feudal Japan (Sengoku period) featuring two playable protagonists: the stealthy shinobi Naoe and the powerful samurai Yasuke, allowing players to seamlessly switch between their distinct combat and stealth styles to dismantle a common enemy and usher in a new era. It emphasizes deep stealth mechanics, visceral combat, a beautiful world with dynamic seasons and weather, customizable hideouts, and a non-linear approach to missions, building on the series' stealth roots and RPG elements. ",
         "screens": [
             "images/assassinShadows1.jpg",
             "images/assassinShadows2.jpg",
@@ -162,6 +172,7 @@
         "discount": 0,
         "image": "images/assassinMirage.jpg",
         "isNew": "false",
+        "description":"Assassin's Creed Mirage is a narrative-driven, open-world action-adventure game set in 9th-century Baghdad, focusing on the origin story of Basim Ibn Ishaq, a cunning street thief who becomes a Master Assassin for the Hidden Ones, returning to the series' roots with enhanced parkour, stealth, and Black Box assassination missions in a dense, vibrant city with distinct districts. ",
         "screens": [
             "images/assassinMirage1.jpg",
             "images/assassinMirage2.jpg",
@@ -177,6 +188,7 @@
         "discount": 0,
         "image": "images/rdr2.jpg",
         "isNew": "true",
+        "description":"Red Dead Redemption 2 is an epic open-world Western adventure by Rockstar Games, set in 1899 America, following outlaw Arthur Morgan and the Van der Linde gang as they flee lawmen and internal strife during the dying days of the Wild West, forcing Arthur to choose between loyalty and his own ideals in a story of survival and consequence. Players experience a rich, detailed world through first/third-person perspectives, engaging in shootouts, hunting, robberies, and moral choices that shape the story and Arthur's honor. ",
         "screens": [
             "images/rdr21.jpg",
             "images/rdr22.jpg",
@@ -192,6 +204,7 @@
         "discount": 0,
         "image": "images/witcher3.jpg",
         "isNew": "false",
+        "description":"The Witcher 3: Wild Hunt is a critically acclaimed, dark fantasy, open-world RPG where you play as Geralt of Rivia, a monster-hunting Witcher, searching for his adopted daughter, Ciri, before she's captured by the spectral Wild Hunt; it features a massive world, morally grey choices with significant consequences, deep storytelling, monster slaying with swords and magic, and expansive content including two major expansions, 'Hearts of Stone' and 'Blood and Wine', making it a vast adventure. ",
         "screens": [
             "images/witcher31.jpg",
             "images/witcher32.jpg",
@@ -207,6 +220,7 @@
         "discount": 0,
         "image": "images/dark-souls.jpg",
         "isNew": "false",
+        "description":"Dark Souls Remastered is a visually enhanced re-release of the original iconic action RPG, bringing updated graphics, smoother performance, and improved multiplayer with dedicated servers, while retaining the notoriously challenging gameplay, deep lore, and interconnected world of Lordran, plus the Artorias of the Abyss DLC. It offers a definitive experience for new players and fans, emphasizing strategic combat, exploration, and player accomplishment within its dark, rich universe. ",
         "screens": [
             "images/dark-souls1.jpg",
             "images/dark-souls2.jpg",
@@ -222,6 +236,7 @@
         "discount": 0,
         "image": "images/dark-soulsII.jpg",
         "isNew": "false",
+        "description":"Dark Souls II is a challenging action RPG from FromSoftware, set in the ruined kingdom of Drangleic, where an undead traveler seeks a cure for their curse, leading to encounters with powerful foes, deep customization, and strategic combat emphasizing stamina management and exploration, with the Scholar of the First Sin edition overhauling enemy placement for an even tougher, different experience. ",
         "screens": [
             "images/dark-soulsII1.jpg",
             "images/dark-soulsII2.jpg",
@@ -237,6 +252,7 @@
         "discount": 0,
         "image": "images/dark-soulsIII.jpg",
         "isNew": "false",
+        "description":"Dark Souls III is the final chapter in the acclaimed action RPG series, where players, as an 'Unkindled' warrior, journey through the dying kingdom of Lothric to prevent the world's end by finding and returning the powerful Lords of Cinder to their thrones to rekindle the fading First Flame. It features faster combat, intense atmosphere, deeper customization, and the series' signature challenging gameplay, set in a beautiful but ruined world where colossal enemies and epic scale define the experience. ",
         "screens": [
             "images/dark-soulsIII1.jpg",
             "images/dark-soulsIII2.jpg",
@@ -252,6 +268,7 @@
         "discount": 15,
         "image": "images/sekiro.jpg",
         "isNew": "false",
+        "description":"Sekiro: Shadows Die Twice is a challenging third-person action-adventure game by FromSoftware, set in a dark, mythical version of 1500s Japan, where you play as the 'One-Armed Wolf' a shinobi dedicated to protecting a young lord, facing brutal foes with a katana, stealth, and a versatile prosthetic arm (including a grappling hook) to master posture-based combat and vertical exploration, all while dealing with a unique resurrection mechanic after death.",
         "screens": [
             "images/sekiro1.jpg",
             "images/sekiro2.jpg",
@@ -267,6 +284,7 @@
         "discount": 0,
         "image": "images/hadesII.jpg",
         "isNew": "true",
+        "description":"Hades II is a rogue-like dungeon crawler sequel where you play as Melinoë, Hades' daughter, fighting to rescue her family from the Titan of Time, Chronos, using dark magic, Olympian boons, and powerful weapons in an ever-shifting underworld and surface world. It expands the original's gameplay with new paths (Erebus/Olympus), deeper narrative, more gods, and unique witchcraft mechanics, maintaining Supergiant Games' signature art, voice acting, and engaging action. ",
         "screens": [
             "images/hadesII1.jpg",
             "images/hadesII2.jpg",
@@ -282,6 +300,7 @@
         "discount": 10, 
         "image": "images/hades.jpg",
         "isNew": "false",
+        "description":"Hades is a critically acclaimed rogue-like dungeon crawler where you play as Zagreus, the immortal son of Hades, in his persistent attempts to escape the Underworld and reach Mount Olympus, aided by powers from his Olympian relatives like Zeus, Athena, and Ares, all while unraveling a rich, character-driven story through frequent, permanent death and rebirth. It combines fast-paced hack-and-slash combat with permanent progression, story revelations, and deep character relationships, making each escape attempt unique and engaging.",
         "screens": [
             "images/hades1.jpg",
             "images/hades2.jpg",
@@ -298,6 +317,7 @@
         "image": "images/forza5.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Forza Horizon 5 is a massive, vibrant open-world racing game set in a fictionalized Mexico, featuring the series' largest and most diverse map with unique biomes like jungles, deserts, beaches, and a volcano, dynamic seasons, stunning graphics with ray tracing, hundreds of customizable cars, and a deep campaign with challenges, plus online multiplayer for cooperative or competitive fun. Players explore, race, and create content in this evolving world with unique weather events like dust storms and tropical storms, offering limitless driving action and customization. ",
         "screens": [
             "images/forza51.jpg",
             "images/forza52.jpg",
@@ -314,6 +334,7 @@
         "image": "images/theouterworlds2.jpg",
         "isNew": "false",
         "isHot": "true",
+        "description":"The Outer Worlds 2 is a single-player sci-fi RPG from Obsidian Entertainment, set in the new Arcadia system, where you play as an Earth Directorate Agent investigating dangerous space-time rifts and corporate conflicts, offering expanded character customization (including unique 'Flaws'), deeper RPG systems, improved first/third-person combat, and more player choice in a retro-futuristic world with new factions, characters, planets, and a greater focus on identity, morality, and exploration than the original game. ",
         "screens": [
             "images/theouterworlds21.jpg",
             "images/theouterworlds22.jpg",
@@ -330,6 +351,7 @@
         "image": "images/theouterworlds.jpg",
         "isNew":"false",
         "isHot": "false",
+        "description":"The Outer Worlds is a first-person sci-fi RPG set in the far-flung Halcyon colony, where mega-corporations rule, and players, as a thawed-out colonist from a lost ship, uncover a conspiracy while shaping a player-driven story with significant choices, combat (including a 'time dilation' bullet-time), and exploration, all with a retro-futuristic, corporate-dystopian theme. ",
         "screens": [
             "images/theouterworlds1.jpg",
             "images/theouterworlds12.jpg",
@@ -346,6 +368,7 @@
         "image": "images/rust.jpg",
         "isNew": "false",
         "isHot": "true",
+        "description":"Rust is a brutal, multiplayer-only open-world survival game where players spawn naked on a mysterious island with just a rock and a torch, facing threats from wildlife, the environment (hunger, cold), and most significantly, other players, requiring them to gather resources, craft tools, build shelters, and fight or team up to survive and dominate the harsh world. The core gameplay revolves around PvP conflict, raiding, base building, and continuous resource management, with the constant tension of potentially losing everything upon death, even when offline. ",
         "screens": [
             "images/rust1.jpg",
             "images/rust2.jpg",
@@ -362,6 +385,7 @@
         "image": "images/apexlegends.jpg",
         "isNew": "true",
         "isHot": "false",
+        "description":"Apex Legends is a free-to-play, squad-based, hero-shooter battle royale game set in the Titanfall universe, where legendary characters 'Legends' with unique abilities team up to fight for fame and fortune in a shrinking arena, emphasizing strategic squad play, diverse characters, and innovative gameplay mechanics. Developed by Respawn Entertainment, it combines tactical shooter elements with hero abilities, offering a fresh take on the battle royale genre with rich lore and evolving content. ",
         "screens": [
             "images/apexLegends1.jpg",
             "images/apexLegends2.jpg",
@@ -378,6 +402,7 @@
         "image": "images/clairobscur.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Clair Obscur: Expedition 33 is a dark fantasy, turn-based RPG set in a world inspired by Belle Époque France, where a being called the Paintress erases people by painting cursed numbers on a monolith, with your team, Expedition 33, sent on a final, desperate quest to destroy her before the number '33' is painted, featuring deep character customization, real-time timed combat mechanics (dodging/parrying), a rich story about mortality and legacy, and stunning art direction. Players lead a party of unique individuals, utilizing strategic skill synergy and upgrades to overcome challenging enemies, all while exploring a somber yet hopeful world filled with melancholy and charm. ",
         "screens": [
             "images/clairobscur1.jpg",
             "images/clairobscur2.jpg",
@@ -394,6 +419,7 @@
         "image": "images/crusaderkingsIII.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Crusader Kings III is a grand strategy RPG where you lead a medieval dynasty, focusing on characters, intrigue, and dynastic legacy over generations, rather than just nations, from 867 or 1066 to the fall of Byzantium. Players guide their noble family through the Middle Ages, using diplomacy, war, plots, and marriage to expand power, manage traits, religions, and courtly drama, ensuring their lineage survives and thrives through heirs, even as rulers die and are replaced. ",
         "screens": [
             "images/crusaderkingsIII1.jpg",
             "images/crusaderkingsIII2.jpg",
@@ -410,6 +436,7 @@
         "image": "images/stardewvalley.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Stardew Valley is an open-ended, pixel-art farming RPG where you inherit a rundown farm, escape corporate drudgery, and build a new life in Pelican Town, focusing on farming, foraging, fishing, mining, and building relationships with villagers, all while restoring the dilapidated Community Center or setting your own goals at your own pace. It's a charming, relaxing simulation game with deep mechanics, social depth, and endless replayability, featuring seasonal changes, crafting, combat, and exploring caves and the desert. ",
         "screens": [
             "images/stardewvalley1.jpg",
             "images/stardewvalley2.jpg",
@@ -426,6 +453,7 @@
         "image": "images/projectzomboid.jpg",
         "isNew": "false",
         "isHot": "false",
+        "description":"Project Zomboid is a hardcore, open-world isometric zombie survival RPG where you try to survive as long as possible in Knox County, Kentucky, looting, crafting, building, and fighting hordes, knowing that 'this is the story of how you died' as no help is coming and death is inevitable, though the details of survival are deep and complex.",
         "screens": [
             "images/projectzomboid1.jpg",
             "images/projectzomboid2.jpg",

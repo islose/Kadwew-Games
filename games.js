@@ -1,7 +1,16 @@
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
 window.addEventListener("load", () => {
   const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.classList.add("hidden"); // masque l'écran après chargement complet
+  loadingScreen.classList.add("hidden");
+});
+
+
+const panier = document.getElementById('panier-btn');
+const panierMenu = document.getElementById('panier-menu');
+
+panier.addEventListener("click", () => {
+  const open = panierMenu.classList.toggle('open');
+  panierMenu.setAttribute('aria-hidden', !open);
 });
 
 
@@ -32,10 +41,44 @@ function createCardGames(game) {
 
   card.innerHTML = `
     <img class="main-image" src="${game.image}" alt="${game.title}">
+    <div class="price" id="price">${game.price}€</div>
+    <div class="game-information" id="game-information">
+        <button class="buy-btn" id="buy-btn">Ajouter au panier</button>
+    </div>
+    <div class="description" id="description">${game.description}</div>
     <div class="screens">
+      <div class="screensH1">
+        <h1>Screenshots</h1>
+      </div>
       ${screensHTML}
     </div>
   `;
+
+  let prices;
+
+  if (Number(game.price) === 0) {
+    prices = `<span class="free">Free-To-Play</span>`;
+  }
+
+  else if (game.discount && Number(game.discount) > 0) {
+    const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
+    prices = `
+    <span class="old-price">${game.price}€</span>
+    <span class="new-price">${newPrice}€</span>
+    `;
+  }
+
+  else {
+    prices = `${game.price}€`;
+  }
+
+  if (game.discount && Number(game.discount) > 0) {
+    const badge = document.createElement("span");
+    badge.classList.add("badge", "discount");
+    badge.textContent = `-${game.discount}%`;
+    const priceElement = card.querySelector(".price");
+    //priceElement.prepend(badge);
+  }
 
   return card;
 }

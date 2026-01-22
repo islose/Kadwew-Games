@@ -48,7 +48,13 @@
     <button class="hamburger" id="hambBtn" aria-label="Ouvrir le menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
     </button>
+    <button class="panier-btn" id="panier-btn">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="panier-item">3</span>
+    </button>
   </div>
+
+  <div class="panier-menu" id="panier-menu" aria-hidden="true"></div>
 
   <!-- Mobile menu (hidden on desktop) -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
@@ -67,7 +73,10 @@
   <main>
     <div class="game-box" id="game-box">
       <div class="game-image" id="game-image"></div>
-      <div class="game-info" id="game-info"></div>
+      <div class="game-information" id="game-information">
+        <button class="buy-btn" id="buy-btn">Ajouter au panier</button>
+      </div>
+      <div class="game-screens" id="game-screens"></div>
     </div>
     
 
