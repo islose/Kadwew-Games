@@ -5,8 +5,15 @@ window.addEventListener("load", () => {
 });
 
 
+const hamb = document.getElementById('hambBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 const panier = document.getElementById('panier-btn');
 const panierMenu = document.getElementById('panier-menu');
+
+hamb.addEventListener("click", () => {
+  const open = mobileMenu.classList.toggle('open');
+  mobileMenu.setAttribute('aria-hidden', !open);
+});
 
 panier.addEventListener("click", () => {
   const open = panierMenu.classList.toggle('open');
@@ -39,20 +46,7 @@ function createCardGames(game) {
     });
   }
 
-  card.innerHTML = `
-    <img class="main-image" src="${game.image}" alt="${game.title}">
-    <div class="price" id="price">${game.price}€</div>
-    <div class="game-information" id="game-information">
-        <button class="buy-btn" id="buy-btn">Ajouter au panier</button>
-    </div>
-    <div class="description" id="description">${game.description}</div>
-    <div class="screens">
-      <div class="screensH1">
-        <h1>Screenshots</h1>
-      </div>
-      ${screensHTML}
-    </div>
-  `;
+  
 
   let prices;
 
@@ -72,13 +66,30 @@ function createCardGames(game) {
     prices = `${game.price}€`;
   }
 
+  card.innerHTML = `
+    <h2 class="game-title">${game.title}</h2>
+    <img class="main-image" src="${game.image}" alt="${game.title}">
+    <div class="price" id="price">${prices}</div>
+    <div class="game-information" id="game-information">
+        <button class="buy-btn" id="buy-btn">Ajouter au panier</button>
+    </div>
+    <div class="description" id="description">${game.description}</div>
+    <div class="screens">
+      <div class="screensH1">
+        <h1>Screenshots</h1>
+      </div>
+      ${screensHTML}
+    </div>
+  `;
+
   if (game.discount && Number(game.discount) > 0) {
     const badge = document.createElement("span");
     badge.classList.add("badge", "discount");
     badge.textContent = `-${game.discount}%`;
     const priceElement = card.querySelector(".price");
-    //priceElement.prepend(badge);
+    priceElement.prepend(badge);
   }
+
 
   return card;
 }
