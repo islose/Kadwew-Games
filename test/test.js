@@ -1432,10 +1432,118 @@ console.log("⏳ L'image est en train de charger...");
 
 
 function intervalAleatoire() {
-  const delai = Math.floor(Math.random() * 100000) + 10000;
+  const delai = Math.floor(Math.random() * 10000) + 1;
   console.log(`Tic (délai: ${delai}ms)`);
 
   setTimeout(intervalAleatoire, delai);
 }
 
 intervalAleatoire();
+
+
+function averageCalc (arr) {
+  let total = 0;
+
+  arr.forEach(number => {
+    total += number;
+  });
+  total = total / arr.length;
+  return total;
+}
+
+console.log(averageCalc([10, 20, 30]));
+console.log(averageCalc([5, 15, 25, 35]));
+
+function reversedWords (word) {
+  let reversedWord = word.split("").reverse().join("");
+  return reversedWord;
+}
+
+console.log(reversedWords("bonjour"));
+console.log(reversedWords("JavaScript"));
+console.log(reversedWords("hello"));
+
+function VoyellesCounter (word) {
+  const voyelles = ['a','i', 'u', 'e', 'o', 'y'];
+  let counter = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    if (voyelles.includes(word[i].toLowerCase())) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(VoyellesCounter("bonjour"));
+console.log(VoyellesCounter("JavaScript"));
+console.log(VoyellesCounter("hello"));
+
+function estPalindrome(word) {
+  let reversedWord = word.split("").reverse().join("");
+  return word === reversedWord;
+}
+
+console.log(estPalindrome("radar"));
+console.log(estPalindrome("kayak"));
+console.log(estPalindrome("bonjour"));
+console.log(estPalindrome("été"));
+
+function isFizzBuzz (n) {
+  let result = [];
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push("FizzBuzz");
+    }
+    else if (i % 3 === 0) {
+      result.push("Fizz");
+    }
+
+    else if (i % 5 === 0) {
+      result.push("Buzz");
+    }
+
+    else {
+      result.push(i);
+    }
+  }
+  return result;
+  
+}
+
+console.log(isFizzBuzz(15));
+
+const chart = [];
+const products = [
+  { name: "Need for Speed Carbon", price: 9.99, quantity: 100 },
+  { name: "Pro Evolution Soccer 2011", price: 19.99, quantity: 23 },
+  { name: "Assassin's Creed II", price: 29.99, quantity: 45 }
+];
+
+function delChart (name) {
+  const index = products.findIndex((product) => product.name === name);
+
+  if (index !== -1) {
+    products.splice(index, 1);
+    console.log("Product Deleted !");
+  }
+  else {
+    console.log("The product can not be find");
+  }
+}
+delChart("Pro Evolution Soccer 2011");
+console.log(products);
+
+
+const panier = [{ nom: "caca", prix: 0}];
+localStorage.setItem('panier', JSON.stringify(panier));
+const panierRecupere = JSON.parse(localStorage.getItem('panier'));
+
+function addChart(name, price, quantity) {
+  chart.push({ name, price, quantity });
+  localStorage.setItem('chart', JSON.stringify(chart));
+  const getProducts = JSON.parse(localStorage.getItem('products'));
+  console.log("Product Added !");
+  console.log(chart);
+}
