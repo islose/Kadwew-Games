@@ -74,7 +74,6 @@ const container = document.getElementById("games-container");
 const newContainer = document.getElementById("new-game-container");
 const discountContainer = document.getElementById("featured-games");
 
-// --- FONCTION : CRÉER UNE CARTE DE JEU ---
 function createCard(game) {
   const slug = slugify(game.title);
   const card = document.createElement("a");
@@ -82,7 +81,6 @@ function createCard(game) {
   card.href = `games.html?game=${slug}`;
   
 
-  // gestion du prix et de la promo
   let prices;
 
   if (Number(game.price) === 0) {
@@ -110,7 +108,6 @@ function createCard(game) {
 
   
   
-  // badge "-xx%"
   if (game.discount && Number(game.discount) > 0) {
     const badge = document.createElement("span");
     badge.classList.add("badge", "discount");
@@ -119,7 +116,7 @@ function createCard(game) {
     priceElement.prepend(badge);
   }
 
-    // --- ANIMATION : défilement des screens au survol ---
+
   if (game.screens && game.screens.length > 0) {
     const imgElement = card.querySelector("img");
     const originalSrc = imgElement.src;
@@ -131,7 +128,6 @@ function createCard(game) {
     imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
 
     timeoutId = setTimeout(() => {
-      // 🔹 Changement immédiat une première fois
       currentIndex = (currentIndex + 1) % game.screens.length;
       imgElement.style.opacity = "0";
       setTimeout(() => {
@@ -139,7 +135,6 @@ function createCard(game) {
         imgElement.style.opacity = "1";
       }, 250);
 
-      // 🔹 Puis on démarre la boucle toutes les 1.5 secondes
       intervalId = setInterval(() => {
         currentIndex = (currentIndex + 1) % game.screens.length;
         imgElement.style.opacity = "0";
@@ -156,14 +151,12 @@ function createCard(game) {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
 
-    // Retour à la jaquette d'origine
     imgElement.style.opacity = "0";
     setTimeout(() => {
       imgElement.src = originalSrc;
       imgElement.style.opacity = "1";
     }, 10);
 
-    // Retire le zoom
     imgElement.style.transform = "scale(1)";
   });
   /*
@@ -216,7 +209,6 @@ async function loadGames() {
 
     preloadScreens(games);
 
-    // --- SECTION BANNIÈRE ---
     const banner = document.getElementById("banner");
     const hotBanner = games.find(game => game.isHot === true || game.isHot === "true");
 
@@ -230,7 +222,6 @@ async function loadGames() {
       `;
     }
 
-    // --- PARTICULES D’ANIMATION ---
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
       const particleCount = 100;
@@ -275,7 +266,6 @@ async function loadGames() {
       }
     }
 
-    // --- VIDE LES CONTAINERS ---
     container.innerHTML = "";
     newContainer.innerHTML = "";
     discountContainer.innerHTML = "";
@@ -283,61 +273,59 @@ async function loadGames() {
     ///////// ------------------    PROMOTION CONTAINER    ------------------- //////////
 
 
-    // --- MISE EN PAGE SPÉCIALE POUR LES JEUX EN PROMO ---
     function createDiscountLayout(games) {
-    const discounted = games
-      .filter(g => g && g.discount && Number(g.discount) > 0)
-      .sort((a, b) => Number(b.discount) - Number(a.discount));
+      const discounted = games
+        .filter(g => g && g.discount && Number(g.discount) > 0)
+        .sort((a, b) => Number(b.discount) - Number(a.discount));
 
-  // vide l'ancien contenu
-  discountContainer.innerHTML = `
-      <h2 class="discount-title">OFFERS OF THE WEEK</h2>
-  `;
+      discountContainer.innerHTML = `
+        <h2 class="discount-title">OFFERS OF THE WEEK</h2>
+      `;
 
-  if (discounted.length === 0) return;
+    if (discounted.length === 0) return;
 
-  // Si moins de 4 jeux, affiche simplement une grille de cartes (identique au games-container)
-  if (discounted.length < 4) {
-    const grid = document.createElement("div");
-    grid.classList.add("discount-grid");
-    discounted.forEach(g => {
-      const c = createCard(g);
-      grid.appendChild(c);
-    });
-    discountContainer.appendChild(grid);
-    return;
+
+    if (discounted.length < 4) {
+      const grid = document.createElement("div");
+      grid.classList.add("discount-grid");
+      discounted.forEach(g => {
+        const c = createCard(g);
+        grid.appendChild(c);
+      });
+
+      discountContainer.appendChild(grid);
+      return;
+    }
+
+    const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
+
+    const layout = document.createElement("div");
+    layout.classList.add("discount-layout");
+
+
+    const leftCard = createCard(left);
+    leftCard.classList.add("left-game", "discount-card");
+
+    const centerCard = createCard(center);
+    centerCard.classList.add("center-game", "discount-card");
+
+    const topRightCard = createCard(rightTop);
+    topRightCard.classList.add("top-game", "discount-card");
+
+    const bottomRightCard = createCard(rightBottom);
+    bottomRightCard.classList.add("bottom-game", "discount-card");
+
+    const rightCol = document.createElement("div");
+    rightCol.classList.add("right-column");
+    rightCol.appendChild(topRightCard);
+    rightCol.appendChild(bottomRightCard);
+
+    layout.appendChild(leftCard);
+    layout.appendChild(centerCard);
+    layout.appendChild(rightCol);
+
+    discountContainer.appendChild(layout);
   }
-
-  // Prend les 4 premiers pour le layout spécial
-  const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
-
-  const layout = document.createElement("div");
-  layout.classList.add("discount-layout");
-
-  // Utilise createCard pour garder le même look que games-container
-  const leftCard = createCard(left);
-  leftCard.classList.add("left-game", "discount-card");
-
-  const centerCard = createCard(center);
-  centerCard.classList.add("center-game", "discount-card");
-
-  const topRightCard = createCard(rightTop);
-  topRightCard.classList.add("top-game", "discount-card");
-
-  const bottomRightCard = createCard(rightBottom);
-  bottomRightCard.classList.add("bottom-game", "discount-card");
-
-  const rightCol = document.createElement("div");
-  rightCol.classList.add("right-column");
-  rightCol.appendChild(topRightCard);
-  rightCol.appendChild(bottomRightCard);
-
-  layout.appendChild(leftCard);
-  layout.appendChild(centerCard);
-  layout.appendChild(rightCol);
-
-  discountContainer.appendChild(layout);
-}
 
   const newGamesData = [];
 
@@ -351,21 +339,11 @@ async function loadGames() {
       }
 
     });
-    
-
-    
-      // --- CAROUSEL --- //
 
     if (newGamesData.length > 0) initCarousel(newGamesData);
-    
-
-    // --- CRÉATION DU LAYOUT SPÉCIAL --- //
-
     createDiscountLayout(games);
 
-
-
-
+    
   } catch (error) {
     console.error("Erreur de chargement JSON :", error);
   }
@@ -401,7 +379,6 @@ function initCarousel(newGamesData) {
   const prev = newContainer.querySelector('.carousel-arrow.left');
   const dotsContainer = newContainer.querySelector('.carousel-dots');
 
-  // create dots (rectangles) for each slide
   const dots = newGamesData.map((_, i) => {
     const btn = document.createElement('button');
     btn.className = 'carousel-dot';
@@ -422,7 +399,6 @@ function initCarousel(newGamesData) {
   }
 
   function showGame(i) {
-    // supprime proprement la carte précédente
     const oldCard = content.querySelector('.carousel-card');
     if (oldCard) {
       gsap.to(oldCard, {
@@ -443,7 +419,6 @@ function initCarousel(newGamesData) {
 
     gsap.to(card, { opacity: 1, scale: 1, duration: 0.28, ease: "power2.out" });
 
-    // update dots visual
     updateDots(i);
   }
 
@@ -459,7 +434,6 @@ function initCarousel(newGamesData) {
   next.addEventListener('click', () => { nextGame(); restartAuto(); });
   prev.addEventListener('click', () => { prevGame(); restartAuto(); });
 
-  // pause/resume on hover over the visible carousel area
   slot.addEventListener('mouseenter', () => {
     isPaused = true;
     clearInterval(intervalId);
@@ -508,7 +482,6 @@ if (searchInput && suggestionsContainer) {
       return;
     }
     /*
-    // Filtre les jeux selon la recherche (max 4)
     const filtered = window.allGames.filter(game =>
       game.title && game.title.toLowerCase().includes(query)
     ).slice(0, 4);
@@ -519,19 +492,16 @@ if (searchInput && suggestionsContainer) {
       const aLower = a.title.toLowerCase();
       const bLower = b.title.toLowerCase();
 
-      // priorité 1 : commence par la lettre
       const aStarts = aLower.startsWith(searchText);
       const bStarts = bLower.startsWith(searchText);
 
       if (aStarts !== bStarts) return aStarts ? -1 : 1;
 
-      // priorité 2 : un mot commence par la lettre
       const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
       const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
 
       if (aWord !== bWord) return aWord ? -1 : 1;
 
-      // priorité 3 : ordre alphabétique
       return a.title.localeCompare(b.title);
     })
     .slice(0, 4);
@@ -546,7 +516,6 @@ if (searchInput && suggestionsContainer) {
       return;
     }
 
-    // Affiche les suggestions (max 4)
     filtered.forEach(game => {
       const suggestion = document.createElement('div');
       suggestion.className = 'search-suggestion';
@@ -559,7 +528,6 @@ if (searchInput && suggestionsContainer) {
         border-bottom: 1px solid rgba(255,255,255,0.1);
       `;
       
-      // Affiche l'image + titre du jeu
       suggestion.innerHTML = `
         <img src="${game.image}" alt="${game.title}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px;">
         <span>${game.title}</span>
@@ -572,7 +540,6 @@ if (searchInput && suggestionsContainer) {
         const slug = slugify(game.title);
         const gameLink = `games.html?game=${slug}`;
 
-        // Redirige vers le lien du jeu
         if (gameLink) {
           window.open(`games.html?game=${slug}`);
         }
@@ -593,7 +560,6 @@ if (searchInput && suggestionsContainer) {
     suggestionsContainer.style.display = "block";
   });
 
-  // Ferme les suggestions si on clique ailleurs
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.search')) {
       suggestionsContainer.style.display = "none";
@@ -759,19 +725,16 @@ function applyAllFilters() {
 
 
 
-// TOGGLE LEFT DROPDOWN
 priceBtn.addEventListener("click", () => {
   priceDropdown.classList.toggle("hidden");
   sortDropdown.classList.add("hidden");
 });
 
-// TOGGLE RIGHT DROPDOWN
 sortBtn.addEventListener("click", () => {
   sortDropdown.classList.toggle("hidden");
   priceDropdown.classList.add("hidden");
 });
 
-// CLOSE DROPDOWNS IF CLICK OUTSIDE
 document.addEventListener("click", (e) => {
   if (!e.target.closest("#filter-bar")) {
     priceDropdown.classList.add("hidden");
