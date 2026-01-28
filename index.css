@@ -239,6 +239,25 @@ nav {
   border: 15px solid rgb(35, 35, 43);
 }
 
+.cart-list {
+  max-height: 400px;
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.cart-games:hover {
+  background: rgba(255, 255, 255, 0.500);
+}
+
+.cart-games img {
+  padding-top: 5px;
+  width: 60%;
+}
+
+.panier-menu h2 {
+  margin-top: -1px;
+}
+
 .panier-menu.open {
   display: block;
 }

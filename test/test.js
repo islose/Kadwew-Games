@@ -815,7 +815,7 @@ Bouton.addEventListener("click", () => {
 
 const inputs = document.getElementById("input");
 const resultss = document.getElementById("result");
-/*
+/* 
 inputs.addEventListener("keydown", (event) => {
     if (event.target.value.length >= 4 && !["Backspace", "ArrowLeft", "ArrowRight", "Shift", "Control"].includes(event.key)) {
       event.preventDefault();

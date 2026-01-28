@@ -1,33 +1,50 @@
-function loadCarte() {
-    const savedCarte = localStorage.getItem('carte');
-    if (savedCarte) {
-        return JSON.parse(savedCarte);
-    }
-    else {
-        return [];
-    }
+function loadCart() {
+  const savedCart = localStorage.getItem('cart');
+  if (savedCart) {
+    return JSON.parse(savedCart);
+  }
+  else {
+    return [];
+  }
 }
 
-let cart = loadCarte();
+let cart = loadCart();
+displayCart();
 
 function addToCart(title, price, discount, image) {
-    const game = cart.find(game => game.title === title);
-    if (game) {
-        console.log("Ce jeu est déja dans le panier");
-    }
-    else {
-        cart.push({title, price, discount, image});
-        localStorage.setItem('cart', JSON.stringify(cart));
-        console.log("Produit ajouter dans le panier !");
-    }
+  const game = cart.find(game => game.title === title);
+  if (game) {
+    console.log("Ce jeu est déja dans le panier");
+  }
+  else {
+    cart.push({title, price, discount, image});
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log("Produit ajouter dans le panier !");
+    displayCart();
+  }
 }
 
-const buyBtn = document.getElementById('buy-btn');
 
-buyBtn.addEventListener('click', () => {
-    console.log("Ajouter au panier !");
-});
+function displayCart() {
+  const panierMenu = document.getElementById('panier-menu');
+  if (panierMenu) {
+    panierMenu.innerHTML = `
+    <div class="panierH2">
+      <h2>Votre Panier</h2>
+    </div>
+    <div class="cart-list"></div>
+    `;
 
-document.addEventListener('keydown', () => {
-    console.log("caca");
-});
+    const cartList = panierMenu.querySelector('.cart-list');
+
+    cart.forEach(game => {
+      cartList.innerHTML += `
+      <div class="cart-games">
+        <img src="${game.image}">
+        <p>${game.title}</p>
+        <p>${game.discount}%</p>
+        <p>${game.price}€</p>
+      </div>`
+    });
+  }
+}

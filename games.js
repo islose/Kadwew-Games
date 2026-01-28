@@ -1,3 +1,5 @@
+let game;
+
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
 window.addEventListener("load", () => {
   const loadingScreen = document.getElementById("loading-screen");
@@ -98,7 +100,7 @@ async function loadGame() {
   const response = await fetch("games.json");
   const games = await response.json();
 
-  const game = games.find(g => slugify(g.title) === slugFromUrl);
+  game = games.find(g => slugify(g.title) === slugFromUrl);
 
   if (!game) {
     document.body.innerHTML = "Jeu introuvable";
@@ -112,6 +114,14 @@ async function loadGame() {
 
   gameBox.innerHTML = "";
   gameBox.appendChild(createCardGames(game));
+
+  const buyBtn = document.getElementById('buy-btn');
+
+  if (buyBtn) {
+    buyBtn.addEventListener('click', () => {
+      addToCart(game.title, game.price, game.discount, game.image);
+    });
+  }
 }
 
 loadGame();
