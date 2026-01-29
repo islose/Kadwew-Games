@@ -24,6 +24,17 @@ function addToCart(title, price, discount, image) {
   }
 }
 
+function removeFromCart(title) {
+  const cartGames = document.getElementById('cart-games');
+
+  cart = cart.filter(game => game.title !== title);
+  if (panierMenu) {
+    cartGames.innerHTML = ``;
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  displayCart();
+}
+
 
 function displayCart() {
   const panierMenu = document.getElementById('panier-menu');
@@ -36,15 +47,33 @@ function displayCart() {
     `;
 
     const cartList = panierMenu.querySelector('.cart-list');
+    const panierItem = document.getElementById('panier-item');
+    let counter = 0;
 
     cart.forEach(game => {
       cartList.innerHTML += `
-      <div class="cart-games">
+      <div class="cart-games" id="cart-games">
+          <i class="fa-solid fa-square-xmark remove-game-btn"></i>
         <img src="${game.image}">
         <p>${game.title}</p>
         <p>${game.discount}%</p>
         <p>${game.price}€</p>
       </div>`
+
+      if (game) {
+        counter++;
+        panierItem.textContent = `${counter}`;
+      }
+      if (game === ``) {
+        panierItem.textContent = ``;
+      }
     });
+    const removeButtons = document.querySelectorAll('.remove-game-btn');
+
+    removeButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          removeFromCart(cart[index].title);
+        })
+      })
   }
 }

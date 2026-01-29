@@ -73,7 +73,10 @@ function createCardGames(game) {
     <img class="main-image" src="${game.image}" alt="${game.title}">
     <div class="price" id="price">${prices}</div>
     <div class="game-information" id="game-information">
-        <button class="buy-btn" id="buy-btn">Ajouter au panier</button>
+        <button class="buy-btn" id="buy-btn">Acheter</button>
+        <button class="add-cart-btn" id="add-cart-btn">Ajouter au panier
+          <i class="fa-solid fa-cart-plus"></i>
+        </button>
     </div>
     <div class="description" id="description">${game.description}</div>
     <div class="screens">
@@ -115,11 +118,18 @@ async function loadGame() {
   gameBox.innerHTML = "";
   gameBox.appendChild(createCardGames(game));
 
-  const buyBtn = document.getElementById('buy-btn');
+  const buyBtn = document.getElementById('add-cart-btn');
+  const removeGameBtn = document.getElementById('remove-game-btn');
 
   if (buyBtn) {
     buyBtn.addEventListener('click', () => {
       addToCart(game.title, game.price, game.discount, game.image);
+    });
+  }
+
+  if (removeGameBtn) {
+    removeGameBtn.addEventListener('click', () => {
+      removeFromCart(title);
     });
   }
 }

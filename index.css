@@ -355,7 +355,7 @@ nav {
   width: 90%;
   background: rgb(44, 44, 44);
   border: solid 2px transparent;
-  transition: transform 0.2s;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
