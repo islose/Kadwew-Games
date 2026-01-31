@@ -64,16 +64,18 @@ function displayCart() {
         counter++;
         panierItem.textContent = `${counter}`;
       }
-      if (game === ``) {
-        panierItem.textContent = ``;
+
+      if (cartList.length === 0) {
+        panierItem.style.display = "none";
       }
+     
     });
     const removeButtons = document.querySelectorAll('.remove-game-btn');
-
+    
     removeButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          removeFromCart(cart[index].title);
-        })
-      })
+      btn.addEventListener('click', () => {
+        removeFromCart(cart[index].title);
+      });
+    });
   }
 }

@@ -462,16 +462,107 @@ loadGames();
 
 
 
-
-
-
 ///////// ------------------    SEARCH SUGGESTIONS    ------------------- //////////
+/*
+inputs.addEventListener("input", (event) => {
+  const searchText = event.target.value.toLowerCase();
 
+  if (searchText === "") {
+    result.innerHTML = "";
+    return;
+  }
 
-const searchInput = document.querySelector('#search2 input') || document.getElementById('#search1');
+  const filtered = jeux
+    .filter(jeu => jeu.toLowerCase().includes(searchText))
+    .sort((a, b) => {
+      const aLower = a.toLowerCase();
+      const bLower = b.toLowerCase();
+
+      // priorité 1 : commence par la lettre
+      const aStarts = aLower.startsWith(searchText);
+      const bStarts = bLower.startsWith(searchText);
+
+      if (aStarts !== bStarts) return aStarts ? -1 : 1;
+
+      // priorité 2 : un mot commence par la lettre
+      const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+      const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+
+      if (aWord !== bWord) return aWord ? -1 : 1;
+
+      // priorité 3 : ordre alphabétique
+      return a.localeCompare(b);
+    });
+
+  result.innerHTML = filtered.join("<br>");
+});
+*/
+
+const searchInput = document.querySelector('#search2 input') || document.querySelector('#search1 input');
 const suggestionsContainer = document.querySelector('#search2 #search1 .search-suggestions') || document.getElementById('search-suggestions');
 
 if (searchInput && suggestionsContainer) {
+  
+  function createSuggestion(game) {
+    const suggestion = document.createElement('div');
+    suggestion.className = 'search-suggestion';
+    suggestion.style.cssText = `
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    `;
+
+    const freeGames = game.price === 0 ? `Free-To-Play` : `${game.price}€`;
+    
+    suggestion.innerHTML = `
+      <img src="${game.image}" alt="${game.title}" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
+      <span>${game.title} : </span>
+      <span>${freeGames}</span>
+    `;
+    
+    suggestion.addEventListener('click', () => {
+      const slug = slugify(game.title);
+      window.open(`games.html?game=${slug}`);
+      searchInput.value = game.title;
+      suggestionsContainer.style.display = "none";
+    });
+
+    suggestion.addEventListener('mouseenter', () => {
+      suggestion.style.background = "rgba(255,255,255,0.1)";
+    });
+    suggestion.addEventListener('mouseleave', () => {
+      suggestion.style.background = "transparent";
+    });
+
+    return suggestion;
+  }
+
+
+  searchInput.addEventListener('click', () => {
+    if (searchInput.value.trim() === '') {
+      suggestionsContainer.innerHTML = "";
+      
+      const hotGames = window.allGames
+        .filter(game => game.isHot)
+        .slice(0, 4);
+
+      if (hotGames.length === 0) {
+        suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>`;
+        suggestionsContainer.style.display = "block";
+        return;
+      }
+
+      hotGames.forEach(game => {
+        suggestionsContainer.appendChild(createSuggestion(game));
+      });
+
+      suggestionsContainer.style.display = "block";
+    }
+  });
+  
 
   searchInput.addEventListener('input', (event) => {
     const searchText = event.target.value.toLowerCase().trim();
@@ -481,34 +572,26 @@ if (searchInput && suggestionsContainer) {
       suggestionsContainer.style.display = "none";
       return;
     }
-    /*
-    const filtered = window.allGames.filter(game =>
-      game.title && game.title.toLowerCase().includes(query)
-    ).slice(0, 4);
-    */
+    
     const filtered = window.allGames
-    .filter(game => game.title && game.title.toLowerCase().includes(searchText))
-    .sort((a, b) => {
-      const aLower = a.title.toLowerCase();
-      const bLower = b.title.toLowerCase();
+      .filter(game => game.title && game.title.toLowerCase().includes(searchText))
+      .sort((a, b) => {
+        const aLower = a.title.toLowerCase();
+        const bLower = b.title.toLowerCase();
 
-      const aStarts = aLower.startsWith(searchText);
-      const bStarts = bLower.startsWith(searchText);
+        const aStarts = aLower.startsWith(searchText);
+        const bStarts = bLower.startsWith(searchText);
 
-      if (aStarts !== bStarts) return aStarts ? -1 : 1;
+        if (aStarts !== bStarts) return aStarts ? -1 : 1;
 
-      const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
-      const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+        const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+        const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
 
-      if (aWord !== bWord) return aWord ? -1 : 1;
+        if (aWord !== bWord) return aWord ? -1 : 1;
 
-      return a.title.localeCompare(b.title);
-    })
-    .slice(0, 4);
-
-    if (filtered === 0) {
-      game.price.textContent = `Free-To-Play`;
-    }
+        return a.title.localeCompare(b.title);
+      })
+      .slice(0, 4);
 
     if (filtered.length === 0) {
       suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
@@ -517,58 +600,16 @@ if (searchInput && suggestionsContainer) {
     }
 
     filtered.forEach(game => {
-      const suggestion = document.createElement('div');
-      suggestion.className = 'search-suggestion';
-      suggestion.style.cssText = `
-        padding: 10px 12px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      `;
-      
-      suggestion.innerHTML = `
-        <img src="${game.image}" alt="${game.title}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px;">
-        <span>${game.title}</span>
-        <span>€${game.price}</span>
-      `;
-      
-      
-      
-      suggestion.addEventListener('click', () => {
-        const slug = slugify(game.title);
-        const gameLink = `games.html?game=${slug}`;
-
-        if (gameLink) {
-          window.open(`games.html?game=${slug}`);
-        }
-        searchInput.value = game.title;
-        suggestionsContainer.style.display = "none";
-      });
-
-      suggestion.addEventListener('mouseenter', () => {
-        suggestion.style.background = "rgba(255,255,255,0.1)";
-      });
-      suggestion.addEventListener('mouseleave', () => {
-        suggestion.style.background = "transparent";
-      });
-
-      suggestionsContainer.appendChild(suggestion);
+      suggestionsContainer.appendChild(createSuggestion(game));
     });
 
     suggestionsContainer.style.display = "block";
   });
 
+
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.search')) {
       suggestionsContainer.style.display = "none";
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (event.target.closest('.search')) {
-      suggestionsContainer.style.display = "block";
     }
   });
 }

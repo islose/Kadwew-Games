@@ -138,7 +138,7 @@ nav {
   background: #1a1a1a;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
-  max-width: 280px;
+  max-width: 310px;
   max-height: 250px;
   overflow-y: auto;
   z-index: 100;
@@ -156,7 +156,6 @@ nav {
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.2s ease;
 }
 
 .search-suggestion:last-child {
