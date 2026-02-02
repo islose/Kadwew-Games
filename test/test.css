@@ -32,6 +32,14 @@ body {
   
 }
 
+#message {
+  color: white;
+  font-size: 55px;
+}
+
+#taskList {
+  color: white;
+}
 
 
 

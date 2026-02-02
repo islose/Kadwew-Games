@@ -1549,3 +1549,146 @@ function totalCount() {
 }
 
 console.log(totalCount());
+
+let prenom = "kadwew";
+let age = 23;
+
+console.log(`je m'appelle ${prenom} et j'ai ${age}`);
+
+if (age >= 18) {
+  console.log("Majeure");
+}
+else {
+  console.log("Mineur");
+}
+
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+
+function addition (x, y) {
+  let somme = x + y;
+  return somme;
+}
+console.log(addition(5, 3));
+
+const newGames = ["gta6", "tes6", "forza7", "ea fc 27", "nostale2"];
+
+console.log(newGames[0]);
+console.log(newGames[4]);
+console.log(newGames.length);
+
+const fruitss = ["pomme", "banane", "orange"];
+
+fruitss.forEach(fruit =>  {
+  console.log(fruit);
+});
+
+const nombres = [10, 20, 30];
+nombres.push(40);
+console.log(nombres);
+console.log(nombres.length);
+
+const message = document.getElementById('message');
+message.textContent = "Salut";
+
+const myBtn = document.getElementById('myBtn');
+
+myBtn.addEventListener('click', () => {
+  console.log("Boutton cliquer !");
+});
+
+const myName = document.getElementById('myName');
+const submitName = document.getElementById('submitName');
+
+submitName.addEventListener('click', () => {
+  console.log(myName.value);
+});
+
+const ages = [12, 18, 25, 15, 30, 16];
+const plusDe18 = [];
+const majeur = ages.filter(age => age >= 18);
+
+console.log(majeur);
+
+const comptes = [
+  { name: "Alice", age: 25},
+  { name: "Bob", age: 30},
+  { name: "Karim", age: 20}
+];
+
+const bob = comptes.find(compte => compte.name.toLowerCase() === "bob");
+console.log(bob.age);
+
+const prenoms = ["Zelda", "Mario", "Link", "Peech"];
+
+prenoms.sort()
+console.log(prenoms);
+
+const prix = [10, 20, 30];
+
+const doublePrix = prix.map(prix => prix * 2);
+console.log(doublePrix);
+
+const games =
+  { 
+    title: "GTA VI",
+    price: 79,
+    isHot: true 
+  };
+
+console.log(games.title);
+
+const players = {
+  name: "Alex",
+  score: 100
+};
+
+players.score += 50;
+players.level = 5;
+
+console.log(players);
+
+const jeuxVideo = [
+  { title: "Fortnite", price: 0},
+  { title: "GTA V", price: 30},
+  { title: "MMinecraft", price: 20},
+  { title: "Nostale", price: 0}
+];
+
+const freeGames = jeuxVideo.filter(game => game.price === 0);
+
+console.log(freeGames);
+
+freeGames.forEach(game => {
+  console.log(game.title);
+});
+
+
+const taskInput = document.getElementById('taskInput');
+const addBtn = document.getElementById('addBtn');
+const taskList = document.getElementById('taskList');
+
+addBtn.addEventListener('click', () => {
+  if (taskInput.value.trim() === "") {
+    alert("Veuillez entrer une tâche a faire !");
+    return;
+  }
+
+  const newTask = document.createElement('li');
+  newTask.textContent = taskInput.value;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = "Supprimer";
+
+  deleteBtn.addEventListener('click', () => {
+    newTask.remove();
+  });
+
+  newTask.appendChild(deleteBtn);
+
+  taskList.appendChild(newTask);
+
+  taskInput.value = "";
+
+});
