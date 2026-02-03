@@ -211,10 +211,13 @@ async function loadGames() {
 
     const banner = document.getElementById("banner");
     const hotBanner = games.find(game => game.isHot === true || game.isHot === "true");
+    
 
     if (hotBanner) {
+      const hotSlug = slugify(hotBanner.title);
+      const hotHref = `games.html?game=${hotSlug}`;
       banner.innerHTML = `
-        <a href="${hotBanner.link}" class="banner-link">
+        <a href="${hotHref}" class="banner-link">
           <img src="${hotBanner.image}" alt="${hotBanner.title}" class="banner-aura">
           <div class="dispoBtn">NOW AVAILABLE</div>
         </a>
@@ -498,12 +501,11 @@ inputs.addEventListener("input", (event) => {
 });
 */
 
-const searchInput = document.querySelector('#search2 input') || document.querySelector('#search1 input');
-const suggestionsContainer = document.querySelector('#search2 #search1 .search-suggestions') || document.getElementById('search-suggestions');
+const searchInputs = document.querySelectorAll('.search input');
 
-if (searchInput && suggestionsContainer) {
-  
-  function createSuggestion(game) {
+if (searchInputs.length > 0) {
+
+  function createSuggestion(game, input) {
     const suggestion = document.createElement('div');
     suggestion.className = 'search-suggestion';
     suggestion.style.cssText = `
@@ -526,8 +528,9 @@ if (searchInput && suggestionsContainer) {
     suggestion.addEventListener('click', () => {
       const slug = slugify(game.title);
       window.open(`games.html?game=${slug}`);
-      searchInput.value = game.title;
-      suggestionsContainer.style.display = "none";
+      input.value = game.title;
+      const container = input.closest('.search').querySelector('.search-suggestions');
+      if (container) container.style.display = "none";
     });
 
     suggestion.addEventListener('mouseenter', () => {
@@ -540,79 +543,189 @@ if (searchInput && suggestionsContainer) {
     return suggestion;
   }
 
+  searchInputs.forEach(searchInput => {
+    let container = searchInput.closest('.search') && searchInput.closest('.search').querySelector('.search-suggestions');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'search-suggestions';
+      if (searchInput.closest('.search')) searchInput.closest('.search').appendChild(container);
+    }
+    container.style.display = 'none';
 
-  searchInput.addEventListener('click', () => {
-    if (searchInput.value.trim() === '') {
-      suggestionsContainer.innerHTML = "";
+    searchInput.addEventListener('click', () => {
+      if (searchInput.value.trim() === '') {
+        container.innerHTML = "";
+        
+        const hotGames = (window.allGames || [])
+          .filter(game => game.isHot)
+          .slice(0, 4);
+
+        if (hotGames.length === 0) {
+          container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>`;
+          container.style.display = "block";
+          return;
+        }
+
+        hotGames.forEach(game => {
+          container.appendChild(createSuggestion(game, searchInput));
+        });
+
+        container.style.display = "block";
+      }
+    });
+
+    searchInput.addEventListener('input', (event) => {
+      const searchText = event.target.value.toLowerCase().trim();
+      container.innerHTML = "";
+
+      if (searchText.length === 0) {
+        container.style.display = "none";
+        return;
+      }
       
-      const hotGames = window.allGames
-        .filter(game => game.isHot)
+      const filtered = (window.allGames || [])
+        .filter(game => game.title && game.title.toLowerCase().includes(searchText))
+        .sort((a, b) => {
+          const aLower = a.title.toLowerCase();
+          const bLower = b.title.toLowerCase();
+
+          const aStarts = aLower.startsWith(searchText);
+          const bStarts = bLower.startsWith(searchText);
+
+          if (aStarts !== bStarts) return aStarts ? -1 : 1;
+
+          const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+          const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+
+          if (aWord !== bWord) return aWord ? -1 : 1;
+
+          return a.title.localeCompare(b.title);
+        })
         .slice(0, 4);
 
-      if (hotGames.length === 0) {
-        suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>`;
-        suggestionsContainer.style.display = "block";
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
+        container.style.display = "block";
         return;
       }
 
+      filtered.forEach(game => {
+        container.appendChild(createSuggestion(game, searchInput));
+      });
+
+      container.style.display = "block";
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.search')) {
+      document.querySelectorAll('.search-suggestions').forEach(c => c.style.display = 'none');
+    }
+  });
+}
+
+
+
+
+
+
+/*
+const searchInput = document.querySelector('#search2 input') || document.querySelector('#search1 input');
+const suggestionsContainer = document.querySelector('#search2 #search1 .search-suggestions') || document.getElementById('search-suggestions');
+if (searchInput && suggestionsContainer) {
+
+  function createSuggestion(game) {
+    const suggestion = document.createElement('div');
+    suggestion.className = 'search-suggestion';
+    suggestion.style.cssText = 
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    ;
+    const freeGames = game.price === 0 ? Free-To-Play : ${game.price}€;
+
+    suggestion.innerHTML = 
+      <img src="${game.image}" alt="${game.title}" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
+      <span>${game.title} : </span>
+      <span>${freeGames}</span>
+    ;
+
+    suggestion.addEventListener('click', () => {
+      const slug = slugify(game.title);
+      window.opengames.html?game=${slug});
+      searchInput.value = game.title;
+      suggestionsContainer.style.display = "none";
+    });
+    suggestion.addEventListener('mouseenter', () => {
+      suggestion.style.background = "rgba(255,255,255,0.1)";
+    });
+    suggestion.addEventListener('mouseleave', () => {
+      suggestion.style.background = "transparent";
+    });
+    return suggestion;
+  }
+  searchInput.addEventListener('click', () => {
+    if (searchInput.value.trim() === '') {
+      suggestionsContainer.innerHTML = "";
+
+      const hotGames = window.allGames
+        .filter(game => game.isHot)
+        .slice(0, 4);
+      if (hotGames.length === 0) {
+        suggestionsContainer.innerHTML = <div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>;
+        suggestionsContainer.style.display = "block";
+        return;
+      }
       hotGames.forEach(game => {
         suggestionsContainer.appendChild(createSuggestion(game));
       });
-
       suggestionsContainer.style.display = "block";
     }
   });
-  
 
   searchInput.addEventListener('input', (event) => {
     const searchText = event.target.value.toLowerCase().trim();
     suggestionsContainer.innerHTML = "";
-
     if (searchText.length === 0) {
       suggestionsContainer.style.display = "none";
       return;
     }
-    
+
     const filtered = window.allGames
       .filter(game => game.title && game.title.toLowerCase().includes(searchText))
       .sort((a, b) => {
         const aLower = a.title.toLowerCase();
         const bLower = b.title.toLowerCase();
-
         const aStarts = aLower.startsWith(searchText);
         const bStarts = bLower.startsWith(searchText);
-
         if (aStarts !== bStarts) return aStarts ? -1 : 1;
-
         const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
         const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
-
         if (aWord !== bWord) return aWord ? -1 : 1;
-
         return a.title.localeCompare(b.title);
       })
       .slice(0, 4);
-
     if (filtered.length === 0) {
-      suggestionsContainer.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
+      suggestionsContainer.innerHTML = <div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>;
       suggestionsContainer.style.display = "block";
       return;
     }
-
     filtered.forEach(game => {
       suggestionsContainer.appendChild(createSuggestion(game));
     });
-
     suggestionsContainer.style.display = "block";
   });
-
-
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.search')) {
       suggestionsContainer.style.display = "none";
     }
   });
 }
+*/
+
 
 
 

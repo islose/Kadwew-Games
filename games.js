@@ -73,10 +73,8 @@ function createCardGames(game) {
     <img class="main-image" src="${game.image}" alt="${game.title}">
     <div class="price" id="price">${prices}</div>
     <div class="game-information" id="game-information">
-        <button class="buy-btn" id="buy-btn">Acheter</button>
-        <button class="add-cart-btn" id="add-cart-btn">Ajouter au panier
-          <i class="fa-solid fa-cart-plus"></i>
-        </button>
+        <button class="buy-btn" id="buy-btn">Purchase</button>
+        <button class="add-cart-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to cart </button>
     </div>
     <div class="description" id="description">${game.description}</div>
     <div class="screens">

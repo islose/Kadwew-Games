@@ -14,7 +14,7 @@ displayCart();
 function addToCart(title, price, discount, image) {
   const game = cart.find(game => game.title === title);
   if (game) {
-    console.log("Ce jeu est déja dans le panier");
+    alert("Ce jeu est déja dans le panier");
   }
   else {
     cart.push({title, price, discount, image});
@@ -38,6 +38,8 @@ function removeFromCart(title) {
 
 function displayCart() {
   const panierMenu = document.getElementById('panier-menu');
+  const panierItem = document.getElementById('panier-item');
+
   if (panierMenu) {
     panierMenu.innerHTML = `
     <div class="panierH2">
@@ -47,29 +49,26 @@ function displayCart() {
     `;
 
     const cartList = panierMenu.querySelector('.cart-list');
-    const panierItem = document.getElementById('panier-item');
-    let counter = 0;
+
+    if (cart.length === 0) {
+      panierItem.style.display = "none";
+      return;
+    }
+
+    panierItem.textContent = `${cart.length}`;
+    panierItem.style.display = "block";
 
     cart.forEach(game => {
       cartList.innerHTML += `
       <div class="cart-games" id="cart-games">
-          <i class="fa-solid fa-square-xmark remove-game-btn"></i>
+        <i class="fa-solid fa-square-xmark remove-game-btn"></i>
         <img src="${game.image}">
         <p>${game.title}</p>
         <p>${game.discount}%</p>
         <p>${game.price}€</p>
       </div>`
-
-      if (game) {
-        counter++;
-        panierItem.textContent = `${counter}`;
-      }
-
-      if (cartList.length === 0) {
-        panierItem.style.display = "none";
-      }
-     
     });
+
     const removeButtons = document.querySelectorAll('.remove-game-btn');
     
     removeButtons.forEach((btn, index) => {
