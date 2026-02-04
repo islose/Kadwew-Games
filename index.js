@@ -517,13 +517,33 @@ if (searchInputs.length > 0) {
       border-bottom: 1px solid rgba(255,255,255,0.1);
     `;
 
-    const freeGames = game.price === 0 ? `Free-To-Play` : `${game.price}€`;
+    let prices;
+
+    if (Number(game.price) === 0) {
+      prices = `<span class="free">Free-To-Play</span>`;
+    }
+
+    else if (game.discount && Number(game.discount) > 0) {
+      const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
+      let badge = `<span class="badge discount">-${game.discount}%</span>`;
+      prices = `
+      ${badge}
+      <span class="old-price">${game.price}€</span>
+      <span class="new-price">${newPrice}€</span>
+      `;
+    }
+
+    else {
+      prices = `${game.price}€`;
+    }
     
     suggestion.innerHTML = `
       <img src="${game.image}" alt="${game.title}" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
       <span>${game.title} : </span>
-      <span>${freeGames}</span>
+      <span>${prices}</span>
     `;
+
+    
     
     suggestion.addEventListener('click', () => {
       const slug = slugify(game.title);

@@ -365,7 +365,7 @@
         "discount": 0,
         "image": "images/rust.jpg",
         "isNew": "false",
-        "isHot": "true",
+        "isHot": "false",
         "description":"Rust is a brutal, multiplayer-only open-world survival game where players spawn naked on a mysterious island with just a rock and a torch, facing threats from wildlife, the environment (hunger, cold), and most significantly, other players, requiring them to gather resources, craft tools, build shelters, and fight or team up to survive and dominate the harsh world. The core gameplay revolves around PvP conflict, raiding, base building, and continuous resource management, with the constant tension of potentially losing everything upon death, even when offline. ",
         "screens": [
             "images/rust1.jpg",
@@ -458,6 +458,125 @@
             "images/projectzomboid3.jpg",
             "images/projectzomboid4.jpg",
             "images/projectzomboid5.jpg"
+        ]
+    },
+    {
+        "title": "Terraria",
+        "editor": "Re-Logic",
+        "price": 9.75,
+        "discount": 60,
+        "image": "images/terraria.jpg",
+        "isNew": "false",
+        "isHot": "true",
+        "description":"Terraria is a 2D sandbox action-adventure, role-playing, and platformer video game developed by Re-Logic, often described as a 16-bit, side-scrolling equivalent to Minecraft. It focuses on exploration, crafting, building, and combat against various creatures and bosses in procedurally generated worlds. Players can explore, gather resources, build structures, and fight, featuring both single-player and multiplayer modes.",
+        "screens": [
+            "images/terraria1.jpg",
+            "images/terraria2.jpg",
+            "images/terraria3.jpg",
+            "images/terraria4.jpg",
+            "images/terraria5.jpg"
+        ]
+    },
+    {
+        "title": "HELLDIVERS II",
+        "editor": "PlayStation Studios",
+        "price": 39.99,
+        "discount": 0,
+        "image": "images/helldiversII.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "description":"Helldivers 2 is a chaotic, 1-4 player cooperative third-person shooter where players act as elite soldiers 'Helldivers' for 'Super Earth' to battle hordes of alien insects (Terminids) and robots (Automatons). It is a satirical, high-stakes game focused on team-based combat, utilizing heavy weaponry and orbital airstrikes while navigating active friendly fire.",
+        "screens": [
+            "images/helldiversII1.jpg",
+            "images/helldiversII2.jpg",
+            "images/helldiversII3.jpg",
+            "images/helldiversII4.jpg",
+            "images/helldiversII5.jpg"
+        ]
+    },
+    {
+        "title": "Arc Raiders",
+        "editor": "Embark Studio",
+        "price": 39.99,
+        "discount": 10,
+        "image": "images/arcraiders.jpg",
+        "isNew": "false",
+        "isHot": "true",
+        "description":"ARC Raiders is a 2025 third-person, online PvPvE extraction shooter developed by Embark Studios, featuring squad-based gameplay. Players 'Raiders' scavenge for loot on a ruined Earth surface while fighting or avoiding intelligent, deadly machines (ARC). The core goal is to survive, collect resources, and extract to the underground city of Speranza.",
+        "screens": [
+            "images/arcraiders1.jpg",
+            "images/arcraiders2.jpg",
+            "images/arcraiders3.jpg",
+            "images/arcraiders4.jpg",
+            "images/arcraiders5.jpg"
+        ]
+    },
+    {
+        "title": "Dead Island 2",
+        "editor": "Deep Silver",
+        "price": 35.99,
+        "discount": 15,
+        "image": "images/deadisland2.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "description":"Dead Island 2 is a thrilling First-Person, Action RPG takes players across a brand-new playground a hellish vision of LA (or HELL-A, as we like to call it). Dead Island 2 is stylish, vibrant and flooded with zombie infection. Explore iconic, gore-drenched Los Angeles. Meet larger-than-life characters.",
+        "screens": [
+            "images/deadisland21.jpg",
+            "images/deadisland22.jpg",
+            "images/deadisland23.jpg",
+            "images/deadisland24.jpg",
+            "images/deadisland25.jpg"
+        ]
+    },
+    {
+        "title": "Overwarch 2",
+        "editor": "Blizzard Entertainment",
+        "price": 0,
+        "discount": 0,
+        "image": "images/overwatch2.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "description":"Overwatch 2 is a free-to-play, team-based, first-person 'hero shooter' developed by Blizzard Entertainment, released in 2022 as a sequel to Overwatch. It features 5v5 player-versus-player (PvP) combat, where players choose from a diverse roster of 40+ unique characters—divided into Tank, Damage, and Support roles—to compete in objective-based matches.",
+        "screens": [
+            "images/overwatch21.jpg",
+            "images/overwatch22.jpg",
+            "images/overwatch23.jpg",
+            "images/overwatch24.jpg",
+            "images/overwatch25.jpg"
+        ]
+    },
+    {
+        "title": "Fallout 4",
+        "editor": "Bethesda Game Studios",
+        "price": 12.99,
+        "discount": 75,
+        "image": "images/fallout4.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "description":"Fallout 4 is a 2015 dystopian action role-playing game (ARPG) developed by Bethesda, set in a post-apocalyptic Boston. As the 'Sole Survivor' of Vault 111, players explore a 1950s-inspired, radioactive wasteland, fighting enemies, crafting items, and building settlements to locate their missing child, featuring both first- and third-person perspectives. ",
+        "screens": [
+            "images/fallout41.jpg",
+            "images/fallout42.jpg",
+            "images/fallout43.jpg",
+            "images/fallout44.jpg",
+            "images/fallout45.jpg"
+        ]
+    },
+    {
+        "title": "The Elder Scrolls V: Skyrim Special Edition",
+        "editor": "Bethesda Game Studios",
+        "price": 23.99,
+        "discount": 0,
+        "image": "images/skyrim.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "description":"The Elder Scrolls V: Skyrim is an open-world fantasy action RPG developed by Bethesda Game Studios. Players assume the role of the 'Last Dragonborn' in a vast, free-roaming, Nordic-inspired landscape, fighting dragons, completing quests, and leveling skills in first or third-person perspectives.",
+        "screens": [
+            "images/skyrim1.jpg",
+            "images/skyrim2.jpg",
+            "images/skyrim3.jpg",
+            "images/skyrim4.jpg",
+            "images/skyrim5.jpg"
         ]
     }
     

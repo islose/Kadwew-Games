@@ -11,6 +11,15 @@ function loadCart() {
 let cart = loadCart();
 displayCart();
 
+window.addEventListener('storage', (e) => {
+  if (e.key === 'cart') {
+    console.log("Pannier mis a jours depuis un autre onglet !!!!!!!");
+    cart = loadCart();
+    displayCart();
+  }
+});
+
+
 function addToCart(title, price, discount, image) {
   const game = cart.find(game => game.title === title);
   if (game) {
