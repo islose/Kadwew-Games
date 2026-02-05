@@ -1692,3 +1692,37 @@ addBtn.addEventListener('click', () => {
   taskInput.value = "";
 
 });
+
+
+
+let panier = [];
+let affichage = document.getElementById('affichage');
+let total = document.getElementById('total');
+
+function ajouterProduit(nom, prix) {
+  panier.push({nom: nom, prix: prix});
+  console.log(panier);
+  let newProduit = document.createElement('div');
+  newProduit.textContent = `Ajout de ${nom}: ${prix}€`;
+  affichage.append(newProduit);
+  afficherTotal();
+}
+
+function afficherTotal() {
+  let totalPrix = 0;
+  panier.forEach(produit => {
+    totalPrix += produit.prix;
+  }); 
+
+  total.textContent = `Prix total du panier est : ${totalPrix}€`;
+  console.log(`Prix total du panier est: ${totalPrix}€`);
+
+
+}
+
+function viderPanier() {
+  panier = [];
+  affichage.textContent = "";
+  total.textContent = `Vous avez vider le panier !`;
+  console.log(`Vous avez videz le panier !`);
+}
