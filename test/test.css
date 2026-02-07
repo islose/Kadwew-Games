@@ -45,6 +45,27 @@ div {
   color: white;
 }
 
+.complete {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.tache {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 
 
 

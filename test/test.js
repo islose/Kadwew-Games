@@ -1726,3 +1726,111 @@ function viderPanier() {
   total.textContent = `Vous avez vider le panier !`;
   console.log(`Vous avez videz le panier !`);
 }
+
+
+
+
+let reaction = {
+  like: 156017,
+  dislike: 25500
+};
+
+function react(type) {
+  console.log("Le type est: " + type);
+
+  if(type === 'like') {
+    reaction.like++;
+    console.log(reaction.like);
+  }
+  else if (type === 'dislike') {
+    reaction.dislike++;
+    console.log(reaction.dislike);
+  }
+  displayCounter();
+}
+
+function calculateRatio() {
+  return reaction.like + reaction.dislike;
+}
+
+function displayCounter() {
+  let counter = document.getElementById('counter');
+  counter.textContent = `👍 ${reaction.like} | 👎 ${reaction.dislike} Total Vote(s): ${calculateRatio()}`;
+}
+
+function reset() {
+  reaction.like = 0;
+  reaction.dislike = 0;
+  displayCounter();
+}
+
+
+
+let tasksInput = document.getElementById('tasksInput');
+let tasks = [];
+
+function addTask() {
+  if (tasksInput.value.length === 0) {
+    console.log("Veuillez Ajouter une Tâche Valide");  
+  }
+
+  else {
+    let inputValue = tasksInput.value;
+    let task = {
+      id: Date.now(),
+      texte: inputValue,
+      complete: false
+    }
+    console.log(tasks);
+    tasks.push(task);
+
+    tasksInput.value = "";
+    displayTask();
+  }
+  
+}
+
+function toggleTask(id) {
+  const task = tasks.find(t => t.id === id);
+  task.complete !== task.complete;
+  console.log(task);
+}
+
+function deleteTask(id) {
+  const remove = tasks.filter(task => task.id === id);
+  displayTask();
+}
+
+function taskCounter() {
+  let tasksFinished = tasks.filter(task => task.complete === true);
+  let counter = tasksFinished.length;
+  console.log(counter);
+}
+
+function displayTask() {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = "";
+  tasks.forEach(task => {
+    let div = document.createElement('div');
+    div.className = 'tache';
+
+    const texte = document.createElement('span');
+    texte.textContent = task.text;
+    if (task.complete) {
+      texte.className = 'complete';
+    }
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.textContent = '✅';
+    toggleBtn.onclick = () => toggleTask(task.id);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '❌';
+    deleteBtn.onclick = () => deleteTask(task.id);
+
+    div.appendChild(texte);
+    div.appendChild(toggleBtn);
+    div.appendChild(deleteBtn);
+    taskList.appendChild(div);
+  });
+}
