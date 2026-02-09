@@ -12,10 +12,11 @@ body {
 }
 
 #box {
+  position: absolute;
   width: 100px;
   height: 100px;
   background: red;
-  transition:  ease 0.3s;
+  transition: background 0.3s;
 }
 
 #box.active {

@@ -1792,30 +1792,33 @@ function addTask() {
 
 function toggleTask(id) {
   const task = tasks.find(t => t.id === id);
-  task.complete !== task.complete;
+  task.complete = !task.complete;
   console.log(task);
+  displayTask();
 }
 
 function deleteTask(id) {
-  const remove = tasks.filter(task => task.id === id);
+  let theTask = tasks.filter(task => task.id !== id);
+  tasks = theTask;
   displayTask();
 }
 
 function taskCounter() {
-  let tasksFinished = tasks.filter(task => task.complete === true);
-  let counter = tasksFinished.length;
-  console.log(counter);
+  let tasksCompleted = tasks.filter(task => task.complete === true);
+  let tasksRemaining = tasks.filter(task => task.complete === false);
+  let total = tasksCompleted.length + tasksRemaining.length;
+  return { total, tasksCompleted: tasksCompleted.length, tasksRemaining: tasksRemaining.length };
 }
 
 function displayTask() {
-  const taskList = document.getElementById('taskList');
-  taskList.innerHTML = "";
+  const newTaskList = document.getElementById('newTaskList');
+  newTaskList.innerHTML = "";
   tasks.forEach(task => {
     let div = document.createElement('div');
     div.className = 'tache';
 
     const texte = document.createElement('span');
-    texte.textContent = task.text;
+    texte.textContent = task.texte;
     if (task.complete) {
       texte.className = 'complete';
     }
@@ -1828,9 +1831,98 @@ function displayTask() {
     deleteBtn.textContent = '❌';
     deleteBtn.onclick = () => deleteTask(task.id);
 
-    div.appendChild(texte);
-    div.appendChild(toggleBtn);
-    div.appendChild(deleteBtn);
-    taskList.appendChild(div);
+    div.append(texte);
+    div.append(toggleBtn);
+    div.append(deleteBtn);
+    newTaskList.append(div);
   });
+  
+  const statsData = taskCounter();
+  const stats = document.getElementById('stats');
+  stats.innerHTML = `Total: ${statsData.total}, Completed: ${statsData.tasksCompleted}, Remaining: ${statsData.tasksRemaining}`;
 }
+/*
+let isDragging = false;
+let currentElement = null;
+let offsetX, offsetY;
+
+const Rbox = document.getElementById('box');
+
+Rbox.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  currentElement = Rbox;
+  offsetX = e.clientX - Rbox.offsetLeft;
+  offsetY = e.clientY - Rbox.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    currentElement.style.left = (e.clientX - offsetX) + 'px';
+    currentElement.style.top = (e.clientY - offsetY) + 'px';
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+*/
+/*
+let isDragging = false;
+let currentElement = null;
+let offsetX, offsetY;
+let mouseX = 0, mouseY = 0; // ← Stocker la position de la souris
+
+const Rbox = document.getElementById('box');
+
+Rbox.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  currentElement = Rbox;
+  offsetX = e.clientX - Rbox.offsetLeft;
+  offsetY = e.clientY - Rbox.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+  // On stocke juste la position, on ne bouge pas encore
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+// ← NOUVELLE PARTIE : Animation fluide
+function animatee() {
+  if (isDragging) {
+    currentElement.style.left = (mouseX - offsetX) + 'px';
+    currentElement.style.top = (mouseY - offsetY) + 'px';
+  }
+  requestAnimationFrame(animatee); // Boucle à 60fps
+}
+
+animatee(); // Lance l'animation
+*/
+
+const Rbox = document.getElementById('box');
+
+// C'est tout ! Une seule ligne ! 🎉
+Draggable.create(Rbox, {
+  type: "x,y"  // Peut se déplacer en X et Y
+});
+
+
+Draggable.create(Rbox, {
+  type: "x,y",
+  bounds: "body",           // Ne peut pas sortir de la page
+  inertia: true,            // Effet d'inertie (rebond)
+  edgeResistance: 0.65,     // Résistance aux bords
+  onDragStart: function() {
+    console.log("Début du drag");
+  },
+  onDrag: function() {
+    console.log("En train de glisser");
+  },
+  onDragEnd: function() {
+    console.log("Fin du drag");
+  }
+});
