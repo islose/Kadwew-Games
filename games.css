@@ -138,15 +138,19 @@ nav {
   background: #1a1a1a;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
-  max-width: 280px;
+  max-width: 400px;
   max-height: 250px;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 1;
   display: none;
   top: 100%;
   left: 0;
   margin-top: 6px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.search-suggestions .old-price {
+  color: hsla(0, 0%, 100%, 0.300);
 }
 
 .search-suggestion {
@@ -180,6 +184,10 @@ nav {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.search-suggestion .badge.discount {
+  font-size: 1rem;
 }
 
 
@@ -242,6 +250,9 @@ nav {
   position: relative;
   max-height: 400px;
   overflow-y: auto;
+}
+
+.cart-games {
   cursor: pointer;
 }
 
@@ -321,7 +332,7 @@ nav {
 .badge.discount {
   background-color: rgba(255, 255, 0, 0.493);
   color: rgb(255, 255, 0);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bolder;
   padding: 2px 5px;
 }

@@ -1,5 +1,13 @@
 let game;
 
+///////// ------------------    LOAD GAMES DATA    ------------------- //////////
+fetch("games.json")
+  .then(response => response.json())
+  .then(games => {
+    window.allGames = games;
+  })
+  .catch(error => console.error("Error loading games.json:", error));
+
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
 window.addEventListener("load", () => {
   const loadingScreen = document.getElementById("loading-screen");
@@ -21,6 +29,151 @@ panier.addEventListener("click", () => {
   const open = panierMenu.classList.toggle('open');
   panierMenu.setAttribute('aria-hidden', !open);
 });
+
+
+
+const searchInputs = document.querySelectorAll('.search input');
+
+if (searchInputs.length > 0) {
+
+  function createSuggestion(game, input) {
+    const suggestion = document.createElement('div');
+    suggestion.className = 'search-suggestion';
+    suggestion.style.cssText = `
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    `;
+
+    let prices;
+
+    if (Number(game.price) === 0) {
+      prices = `<span class="free">Free-To-Play</span>`;
+    }
+
+    else if (game.discount && Number(game.discount) > 0) {
+      const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
+      let badge = `<span class="badge discount">-${game.discount}%</span>`;
+      prices = `
+      ${badge}
+      <span class="old-price">${game.price}€</span>
+      <span class="new-price">${newPrice}€</span>
+      `;
+    }
+
+    else {
+      prices = `${game.price}€`;
+    }
+    
+    suggestion.innerHTML = `
+      <img src="${game.image}" alt="${game.title}" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
+      <span>${game.title} : </span>
+      <span>${prices}</span>
+    `;
+
+    
+    
+    suggestion.addEventListener('click', () => {
+      const slug = slugify(game.title);
+      window.open(`games.html?game=${slug}`);
+      input.value = game.title;
+      const container = input.closest('.search').querySelector('.search-suggestions');
+      if (container) container.style.display = "none";
+    });
+
+    suggestion.addEventListener('mouseenter', () => {
+      suggestion.style.background = "rgba(255,255,255,0.1)";
+    });
+    suggestion.addEventListener('mouseleave', () => {
+      suggestion.style.background = "transparent";
+    });
+
+    return suggestion;
+  }
+
+  searchInputs.forEach(searchInput => {
+    let container = searchInput.closest('.search') && searchInput.closest('.search').querySelector('.search-suggestions');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'search-suggestions';
+      if (searchInput.closest('.search')) searchInput.closest('.search').appendChild(container);
+    }
+    container.style.display = 'none';
+
+    searchInput.addEventListener('click', () => {
+      if (searchInput.value.trim() === '') {
+        container.innerHTML = "";
+        
+        const hotGames = (window.allGames || [])
+          .filter(game => game.isHot)
+          .slice(0, 4);
+
+        if (hotGames.length === 0) {
+          container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>`;
+          container.style.display = "block";
+          return;
+        }
+
+        hotGames.forEach(game => {
+          container.appendChild(createSuggestion(game, searchInput));
+        });
+
+        container.style.display = "block";
+      }
+    });
+
+    searchInput.addEventListener('input', (event) => {
+      const searchText = event.target.value.toLowerCase().trim();
+      container.innerHTML = "";
+
+      if (searchText.length === 0) {
+        container.style.display = "none";
+        return;
+      }
+      
+      const filtered = (window.allGames || [])
+        .filter(game => game.title && game.title.toLowerCase().includes(searchText))
+        .sort((a, b) => {
+          const aLower = a.title.toLowerCase();
+          const bLower = b.title.toLowerCase();
+
+          const aStarts = aLower.startsWith(searchText);
+          const bStarts = bLower.startsWith(searchText);
+
+          if (aStarts !== bStarts) return aStarts ? -1 : 1;
+
+          const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
+          const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
+
+          if (aWord !== bWord) return aWord ? -1 : 1;
+
+          return a.title.localeCompare(b.title);
+        })
+        .slice(0, 4);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
+        container.style.display = "block";
+        return;
+      }
+
+      filtered.forEach(game => {
+        container.appendChild(createSuggestion(game, searchInput));
+      });
+
+      container.style.display = "block";
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.search')) {
+      document.querySelectorAll('.search-suggestions').forEach(c => c.style.display = 'none');
+    }
+  });
+}
 
 
 function slugify(text) {

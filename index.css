@@ -138,15 +138,19 @@ nav {
   background: #1a1a1a;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 400px;
   max-height: 300px;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 1;
   display: none;
   top: 100%;
   left: 0;
   margin-top: 6px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+#search2 .search-suggestions {
+  margin-left: -90px;
 }
 
 .search-suggestion {
@@ -485,6 +489,11 @@ nav {
   display: inline;
   color: white;
   margin: 16px;
+}
+
+.search-suggestion .old-price {
+  text-decoration: line-through;
+  color: hsla(0, 0%, 100%, 0.300);
 }
 
 .old-price {
