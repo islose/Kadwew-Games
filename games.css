@@ -409,7 +409,56 @@ nav {
   transition: transform 0.5s ease;
 }
 
+.systemRequirements {
+  margin: 3rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+}
 
+.systemRequirements h2 {
+  margin-top: -50px;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.requirementsContainer {
+  display: flex;
+  background: #00000065;
+  gap: 2rem;
+}
+
+.requirementsContainer li {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin-left: -20px;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.systemMinimum,
+.systemRecomended {
+  flex: 1;
+}
+
+.systemMinimum {
+  border-left: 4px solid #ff0000;
+}
+
+.systemMinimum li {
+  text-decoration: none;
+}
+
+.systemRecomended {
+  border-left: 4px solid #3fc744;
+}
 
 
 

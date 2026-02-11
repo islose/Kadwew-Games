@@ -32,6 +32,8 @@ panier.addEventListener("click", () => {
 
 
 
+
+
 const searchInputs = document.querySelectorAll('.search input');
 
 if (searchInputs.length > 0) {
@@ -201,8 +203,6 @@ function createCardGames(game) {
     });
   }
 
-  
-
   let prices;
 
   if (Number(game.price) === 0) {
@@ -236,7 +236,42 @@ function createCardGames(game) {
       </div>
       ${screensHTML}
     </div>
+    ${game.requirements ? `
+      <div class="systemRequirements" id="systemRequirements">
+        <h2>System Requirements</h2>
+        <div class="requirementsContainer">
+          <div class="systemMinimum">
+            <h3>Minimum</h3>
+            <ul>
+              <li><strong>OS: </strong> ${game.requirements.minimum.os}</li>
+              <li><strong>CPU: </strong> ${game.requirements.minimum.cpu}</li>
+              <li><strong>RAM: </strong> ${game.requirements.minimum.ram}</li>
+              <li><strong>GPU: </strong> ${game.requirements.minimum.gpu}</li>
+              <li><strong>Storage: </strong> ${game.requirements.minimum.storage}</li>
+            </ul>
+          </div>
+          <div class="systemRecomended">
+            <h3>Recommended</h3>
+            <ul>
+              <li><strong>OS: </strong> ${game.requirements.recommended.os}</li>
+              <li><strong>CPU: </strong> ${game.requirements.recommended.cpu}</li>
+              <li><strong>RAM: </strong> ${game.requirements.recommended.ram}</li>
+              <li><strong>GPU: </strong> ${game.requirements.recommended.gpu}</li>
+              <li><strong>Storage: </strong> ${game.requirements.recommended.storage}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    ` : `
+      <div class="systemRequirements">
+        <h2>System Requirements</h2>
+        <p style="color: #aaa; text-align: center; padding: 2rem;">
+          Configuration système non disponible pour ce jeu.
+        </p>
+      </div>
+    `}
   `;
+
 
   if (game.discount && Number(game.discount) > 0) {
     const badge = document.createElement("span");

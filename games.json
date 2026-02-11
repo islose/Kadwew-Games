@@ -97,7 +97,25 @@
             "images/cyberpunk20773.jpg",
             "images/cyberpunk20774.jpg",
             "images/cyberpunk20775.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-6700 or AMD Ryzen 5 1600",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 580 8GB",
+            "storage": "70 GB SSD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-12700 or AMD Ryzen 7 7800X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 Super or AMD Radeon RX 5700 XT",
+            "storage": "70 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Hogwarts Legacy",

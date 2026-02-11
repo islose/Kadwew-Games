@@ -648,26 +648,6 @@ input.addEventListener("input", function(event){
 */
 
 
-
-input.addEventListener("input", (event) => {
-  const searchText = event.target.value.toLowerCase("");
-
-  const filtered = words.filter(word => {
-    const initials = getInitial(word);
-    const lower = word.toLowerCase();
-
-    if (searchText === "") {
-      result.innerHTML = "";
-      return;
-    }
-
-    return (lower.includes(searchText) || initials.includes(searchText));
-  });
-  result.innerHTML = filtered.join("<br>");
-});
-
-
-
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     console.log("Tu as validé avec Entrée :", input.value);
@@ -875,43 +855,8 @@ input.addEventListener("input", function(event){
 
   result.innerHTML = filtered.join("<br>");
 });
-*/
-const jeux = [
-  "Grand Theft Auto 1",
-  "Grand Theft Auto 2",
-  "Grand Theft Auto 3",
-  "Grand Theft Auto 4",
-  "Grand Theft Auto 5",
-  "Grand Theft Auto San Andreas",
-  "Call of Duty Modern Warfare",
-  "Call of duty black ops 1",
-  "Call of duty black ops 2",
-  "The last of us",
-  "League of legends",
-  "Battlefield 2042",
-  "Battlefield 6",
-  "Mortal kombat",
-  "Player unknown battleground",
-  "Legend of runeterra",
-  "Nostale",
-  "World of warcraft",
-  "Overwatch",
-  "Battlerite",
-  "Realm royal",
-  "Fortnite",
-  "Plants vs zombies",
-  "Saints row",
-  "Uncharted 1",
-  "Uncharted 2",
-  "Uncharted 3",
-  "Uncharted 4",
-  "Paladin",
-  "Smite"
-];
-function getInitial (str) {
-  return str.split(" ").map(jeu => jeu[0]).join("").toLowerCase();
-}
-/*
+
+
 inputs.addEventListener("input", (event) => {
   const searchText = event.target.value.toLowerCase();
 
@@ -932,39 +877,6 @@ inputs.addEventListener("input", (event) => {
   result.innerHTML = filtered.join("<br>");
 });
 */
-
-inputs.addEventListener("input", (event) => {
-  const searchText = event.target.value.toLowerCase();
-
-  if (searchText === "") {
-    result.innerHTML = "";
-    return;
-  }
-
-  const filtered = jeux
-    .filter(jeu => jeu.toLowerCase().includes(searchText))
-    .sort((a, b) => {
-      const aLower = a.toLowerCase();
-      const bLower = b.toLowerCase();
-
-      // priorité 1 : commence par la lettre
-      const aStarts = aLower.startsWith(searchText);
-      const bStarts = bLower.startsWith(searchText);
-
-      if (aStarts !== bStarts) return aStarts ? -1 : 1;
-
-      // priorité 2 : un mot commence par la lettre
-      const aWord = aLower.split(" ").some(w => w.startsWith(searchText));
-      const bWord = bLower.split(" ").some(w => w.startsWith(searchText));
-
-      if (aWord !== bWord) return aWord ? -1 : 1;
-
-      // priorité 3 : ordre alphabétique
-      return a.localeCompare(b);
-    });
-
-  result.innerHTML = filtered.join("<br>");
-});
 
 /*
 
@@ -1926,3 +1838,98 @@ Draggable.create(Rbox, {
     console.log("Fin du drag");
   }
 });
+
+
+
+
+
+const jeux = [
+  "Grand Theft Auto 1",
+  "Grand Theft Auto 2",
+  "Grand Theft Auto 3",
+  "Grand Theft Auto 4",
+  "Grand Theft Auto 5",
+  "Grand Theft Auto San Andreas",
+  "Call of Duty Modern Warfare",
+  "Call of duty black ops 1",
+  "Call of duty black ops 2",
+  "The last of us",
+  "League of legends",
+  "Battlefield 2042",
+  "Battlefield 6",
+  "Mortal kombat",
+  "Player unknown battleground",
+  "Legend of runeterra",
+  "Nostale",
+  "World of warcraft",
+  "Overwatch",
+  "Battlerite",
+  "Realm royal",
+  "Fortnite",
+  "Plants vs zombies",
+  "Saints row",
+  "Uncharted 1",
+  "Uncharted 2",
+  "Uncharted 3",
+  "Uncharted 4",
+  "Paladin",
+  "Smite"
+];
+
+function getInitial (str) {
+  return str.split(" ").map(jeu => jeu[0]).join("").toLowerCase();
+}
+
+
+input.addEventListener("input", (event) => {
+  const searchText = event.target.value.toLowerCase("");
+
+  const filtered = jeux.filter(jeu => {
+    const initials = getInitial(jeu);
+    const lower = jeu.toLowerCase();
+
+    if (searchText === "") {
+      result.innerHTML = "";
+      return;
+    }
+
+    return (lower.includes(searchText) || initials.includes(searchText));
+  });
+  result.innerHTML = filtered.join("<br>");
+});
+
+
+
+const movies = [
+  { title: "Star Wars", year: 1977 },
+  { title: "The Star", year: 2017 },
+  { title: "Interstellar", year: 2014 },
+  { title: "The Matrix", year: 1999 },
+  { title: "Matrix Reloaded", year: 2003 },
+  { title: "Inception", year: 2010 },
+  { title: "The Inception Theory", year: 2015 }
+];
+
+const research = "the";
+
+const filterMovies = movies
+.filter(movie => movie.title && movie.title.toLowerCase().includes(research))
+.sort((a, b) => {
+  const aMovie = a.title.toLowerCase();
+  const bMovie = b.title.toLowerCase();
+
+  const aFilterMovie = aMovie.startsWith(research);
+  const bFilterMovie = bMovie.startsWith(research);
+
+  if (aFilterMovie !== bFilterMovie) return aFilterMovie ? -1 : 1;
+
+  const aTitle = aMovie.split(" ").some(m => m.startsWith(research));
+  const bTitle = bMovie.split(" ").some(m => m.startsWith(research));
+
+  if (aTitle !== bTitle) return aTitle ? -1 : 1;
+
+  return a.title.localeCompare(b.title);
+})
+.slice(0, 3);
+
+console.log(filterMovies);
