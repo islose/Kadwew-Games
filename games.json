@@ -14,7 +14,25 @@
             "images/battlefield63.jpg",
             "images/battlefield64.jpg",
             "images/battlefield65.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 5 2600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 or AMD Radeon RX 5600 XT",
+            "storage": "55 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-10700 or AMD Ryzen 7 3700X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3060 Ti or AMD Radeon RX 6700 XT",
+            "storage": "90 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Little Nightmares III",
@@ -425,7 +443,25 @@
             "images/clairobscur3.jpg",
             "images/clairobscur4.jpg",
             "images/clairobscur5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-8700K or AMD Ryzen 5 1600X",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 5600 XT 6GB",
+            "storage": "55 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-12700K or AMD Ryzen 7 5800X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3060 Ti 8GB or AMD Radeon RX 6800 XT 16GB",
+            "storage": "55 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Crusader Kings III",

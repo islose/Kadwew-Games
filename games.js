@@ -1,7 +1,7 @@
 let game;
 
 ///////// ------------------    LOAD GAMES DATA    ------------------- //////////
-fetch("games.json")
+fetch('games.json')
   .then(response => response.json())
   .then(games => {
     window.allGames = games;
@@ -9,9 +9,9 @@ fetch("games.json")
   .catch(error => console.error("Error loading games.json:", error));
 
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
-window.addEventListener("load", () => {
-  const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.classList.add("hidden");
+window.addEventListener('load', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  loadingScreen.classList.add('hidden');
 });
 
 
@@ -25,10 +25,61 @@ hamb.addEventListener("click", () => {
   mobileMenu.setAttribute('aria-hidden', !open);
 });
 
-panier.addEventListener("click", () => {
+gsap.set(panierMenu, {
+  y: -20,
+  opacity: 0,
+  display: 'none'
+});
+
+panier.addEventListener('click', () => {
   const open = panierMenu.classList.toggle('open');
   panierMenu.setAttribute('aria-hidden', !open);
+  document.body.classList.toggle('cart-open', open);
+
+  if (open) {
+    gsap.timeline()
+      .set(panierMenu, { display: 'block' })
+      .to(panierMenu, {
+        y: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+  } 
+  
+  else {
+    gsap.to(panierMenu, {
+      y: -20,
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power2.out',
+      onComplete: () => {
+        gsap.set(panierMenu, { display: 'none' });
+      }
+    });
+  }
 });
+
+document.addEventListener('click', (e) => {
+  if (!panier.contains(e.target) && !panierMenu.contains(e.target)) {
+    if (panierMenu.classList.contains('open')) {
+      panierMenu.classList.remove('open');
+      panierMenu.setAttribute('aria-hidden', true);
+      document.body.classList.remove('cart-open');
+      
+      gsap.to(panierMenu, {
+        y: -20,
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        onComplete: () => {
+          gsap.set(panierMenu, { display: 'none' });
+        }
+      });
+    }
+  }
+});
+
 
 
 

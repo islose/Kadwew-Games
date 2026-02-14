@@ -201,6 +201,7 @@ nav {
 .hamburger {
   color: hsl(0, 0%, 100%);
   cursor: pointer;
+  position: relative;
 }
 
 .panier-btn {
@@ -236,15 +237,58 @@ nav {
 .panier-menu {
   display: none;
   position: absolute;
-  height: 500px;
-  width: 300px;
-  right: 12px;
+  margin-top: 30px;
+  height: 600px;
+  width: 70%;
+  left: 15%;
   top: var(--nav-height);
-  background: rgb(50, 50, 50);
-  backdrop-filter: blur(6px);
+  /*
+  background: rgba(93, 190, 255, 0.8);
+  */
+  background: linear-gradient(135deg, rgba(93, 190, 255, 0.8) 0%, #535353 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   padding: 14px;
-  border: 15px solid rgb(35, 35, 43);
+  border: 1px solid rgb(255, 255, 255);
+  z-index: 70;
+  
+  overflow: hidden;
 }
+
+.panier-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  pointer-events: none; /* ← Ne bloque pas les clics */
+  border-radius: 16px 16px 0 0;
+}
+
+/* Reflet brillant additionnel (optionnel) */
+.panier-menu::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  border-radius: 14px 14px 0 0;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
 
 .cart-list {
   position: relative;
@@ -285,6 +329,14 @@ nav {
   display: block;
 }
 
+main {
+  transition: filter 300ms ease;
+}
+
+body.cart-open main {
+  filter: blur(6px);
+}
+
 .background-blur {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -293,6 +345,7 @@ nav {
   background-position: center;
   filter: blur(15px) brightness(0.6);
   z-index: -1;
+  pointer-events: none;
   backdrop-filter: brightness(0.5) saturate(1.3);
 }
 
@@ -416,10 +469,16 @@ nav {
 }
 
 .systemRequirements h2 {
-  margin-top: -50px;
+  margin-top: 50px;
   margin-bottom: 2rem;
+  letter-spacing: 4px;
   color: #fff;
   font-size: 3rem;
+}
+
+.systemRequirements h3 {
+  text-decoration: underline;
+  letter-spacing: 2px;
 }
 
 .requirementsContainer {
@@ -430,12 +489,10 @@ nav {
 
 .requirementsContainer li {
   list-style: none;
-  margin-top: 20px;
-  display: flex;
-  justify-content: start;
+  margin-top: 50px;
   width: 100%;
   margin-left: -20px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 h3 {
@@ -630,6 +687,10 @@ h3 {
 
   .brand {
     display: none;
+  }
+
+  .requirementsContainer {
+    flex-direction: column;
   }
   
 }
