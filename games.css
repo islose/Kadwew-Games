@@ -238,7 +238,7 @@ nav {
   display: none;
   position: absolute;
   margin-top: 30px;
-  height: 600px;
+  height: 700px;
   width: 70%;
   left: 15%;
   top: var(--nav-height);
@@ -251,7 +251,6 @@ nav {
   padding: 14px;
   border: 1px solid rgb(255, 255, 255);
   z-index: 70;
-  
   overflow: hidden;
 }
 
@@ -292,7 +291,7 @@ nav {
 
 .cart-list {
   position: relative;
-  max-height: 400px;
+  max-height: 600px;
   overflow-y: auto;
 }
 
@@ -306,7 +305,7 @@ nav {
 
 .cart-games img {
   padding-top: 5px;
-  width: 60%;
+  width: 10%;
 }
 
 .cart-games i {
@@ -615,7 +614,8 @@ h3 {
   }
 
   .panier-btn {
-    display: none;
+    display: block;
+    margin-left: -10px;
   }
 
   .game-box {
@@ -685,12 +685,40 @@ h3 {
     max-width: 95%;
   }
 
+  .logo {
+    margin-right: -15px;
+  }
+
   .brand {
     display: none;
   }
 
   .requirementsContainer {
     flex-direction: column;
+  }
+
+  .panier-btn:hover {
+    background-color: transparent;
+  }
+
+  .search {
+    max-width: 50px;
+  }
+
+  .panier-btn {
+    font-size: 1rem;
+  }
+
+  .panier-item {
+    font-size: 0.7rem;
+  }
+
+  .buy-btn {
+    font-size: 1rem;
+  }
+
+  .add-cart-btn {
+    font-size: 1rem;
   }
   
 }

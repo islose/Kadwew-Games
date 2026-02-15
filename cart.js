@@ -81,7 +81,8 @@ function displayCart() {
     const removeButtons = document.querySelectorAll('.remove-game-btn');
     
     removeButtons.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         removeFromCart(cart[index].title);
       });
     });

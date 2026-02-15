@@ -247,7 +247,6 @@ function createCardGames(game) {
   card.classList.add("game-card");
 
   let screensHTML = "";
-
   if (game.screens && game.screens.length > 0) {
     game.screens.forEach(screen => {
       screensHTML += `<img src="${screen}" alt="${game.title} screen">`;
@@ -255,83 +254,102 @@ function createCardGames(game) {
   }
 
   let prices;
-
   if (Number(game.price) === 0) {
     prices = `<span class="free">Free-To-Play</span>`;
-  }
-
-  else if (game.discount && Number(game.discount) > 0) {
+  } else if (game.discount && Number(game.discount) > 0) {
     const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
     prices = `
-    <span class="old-price">${game.price}€</span>
-    <span class="new-price">${newPrice}€</span>
+      <span class="old-price">${game.price}€</span>
+      <span class="new-price">${newPrice}€</span>
     `;
-  }
-
-  else {
+  } else {
     prices = `${game.price}€`;
   }
 
   card.innerHTML = `
     <h2 class="game-title">${game.title}</h2>
     <img class="main-image" src="${game.image}" alt="${game.title}">
-    <div class="price" id="price">${prices}</div>
+    <div class="price" id="price">
+      ${game.discount && Number(game.discount) > 0 ? `
+        <span class="badge discount">-${game.discount}%</span>
+      ` : ''}
+      ${prices}
+    </div>
     <div class="game-information" id="game-information">
         <button class="buy-btn" id="buy-btn">Purchase</button>
-        <button class="add-cart-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to cart </button>
+        <button class="add-cart-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to cart</button>
     </div>
     <div class="description" id="description">${game.description}</div>
-    <div class="screens">
-      <div class="screensH1">
-        <h1>Screenshots</h1>
+    
+    ${game.screens && game.screens.length > 0 ? `
+      <div class="screens">
+        <div class="screensH1">
+          <h1>Screenshots</h1>
+        </div>
+        ${screensHTML}
       </div>
-      ${screensHTML}
-    </div>
+    ` : ''}
+    
     ${game.requirements ? `
       <div class="systemRequirements" id="systemRequirements">
         <h2>System Requirements</h2>
         <div class="requirementsContainer">
-          <div class="systemMinimum">
-            <h3>Minimum</h3>
-            <ul>
-              <li><strong>OS: </strong> ${game.requirements.minimum.os}</li>
-              <li><strong>CPU: </strong> ${game.requirements.minimum.cpu}</li>
-              <li><strong>RAM: </strong> ${game.requirements.minimum.ram}</li>
-              <li><strong>GPU: </strong> ${game.requirements.minimum.gpu}</li>
-              <li><strong>Storage: </strong> ${game.requirements.minimum.storage}</li>
-            </ul>
-          </div>
-          <div class="systemRecomended">
-            <h3>Recommended</h3>
-            <ul>
-              <li><strong>OS: </strong> ${game.requirements.recommended.os}</li>
-              <li><strong>CPU: </strong> ${game.requirements.recommended.cpu}</li>
-              <li><strong>RAM: </strong> ${game.requirements.recommended.ram}</li>
-              <li><strong>GPU: </strong> ${game.requirements.recommended.gpu}</li>
-              <li><strong>Storage: </strong> ${game.requirements.recommended.storage}</li>
-            </ul>
-          </div>
+          ${game.requirements.minimum ? `
+            <div class="systemMinimum">
+              <h3>Minimum</h3>
+              <ul>
+                <li><strong>OS:</strong> ${game.requirements.minimum.os}</li>
+                <li><strong>CPU:</strong> ${game.requirements.minimum.cpu}</li>
+                <li><strong>RAM:</strong> ${game.requirements.minimum.ram}</li>
+                <li><strong>GPU:</strong> ${game.requirements.minimum.gpu}</li>
+                <li><strong>Storage:</strong> ${game.requirements.minimum.storage}</li>
+              </ul>
+            </div>
+          ` : ''}
+          
+          ${game.requirements.recommended ? `
+            <div class="systemRecomended ${!game.requirements.minimum ? 'centered' : ''}">
+              <h3>Recommended</h3>
+              <ul>
+                <li><strong>OS:</strong> ${game.requirements.recommended.os}</li>
+                <li><strong>CPU:</strong> ${game.requirements.recommended.cpu}</li>
+                <li><strong>RAM:</strong> ${game.requirements.recommended.ram}</li>
+                <li><strong>GPU:</strong> ${game.requirements.recommended.gpu}</li>
+                <li><strong>Storage:</strong> ${game.requirements.recommended.storage}</li>
+              </ul>
+            </div>
+          ` : ''}
         </div>
       </div>
     ` : `
       <div class="systemRequirements">
-        <h2>System Requirements</h2>
-        <p style="color: #aaa; text-align: center; padding: 2rem;">
-          Configuration système non disponible pour ce jeu.
-        </p>
+        <div class="requirementsContainer">
+          <div class="systemMinimum">
+            <h3>Minimum</h3>
+              <ul>
+                <li><strong>OS:</strong> TBD</li>
+                <li><strong>CPU:</strong> TBD</li>
+                <li><strong>RAM:</strong> TBD</li>
+                <li><strong>GPU:</strong> TBD</li>
+                <li><strong>Storage:</strong> TBD</li>
+              </ul>
+          </div>
+        
+          <div class="systemRecomended">
+            <h3>Recommended</h3>
+              <ul>
+                <li><strong>OS:</strong> TBD</li>
+                <li><strong>CPU:</strong> TBD</li>
+                <li><strong>RAM:</strong> TBD</li>
+                <li><strong>GPU:</strong> TBD</li>
+                <li><strong>Storage:</strong> TBD</li>
+              </ul>
+          </div>
+        </div>
       </div>
+    </div>
     `}
   `;
-
-
-  if (game.discount && Number(game.discount) > 0) {
-    const badge = document.createElement("span");
-    badge.classList.add("badge", "discount");
-    badge.textContent = `-${game.discount}%`;
-    const priceElement = card.querySelector(".price");
-    priceElement.prepend(badge);
-  }
-
 
   return card;
 }

@@ -49,7 +49,25 @@
             "images/littleNightmares33.jpg",
             "images/littleNightmares34.jpg",
             "images/littleNightmares35.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-6500 or AMD Ryzen 3 1200",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon RX 580 4GB",
+            "storage": "30 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 5 1600",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce RTX 2080 8GB or AMD Radeon RX 6800",
+            "storage": "30 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Nostale",
@@ -66,7 +84,25 @@
             "images/nostale3.jpg",
             "images/nostale4.jpg",
             "images/nostale5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows Vista, Windows 7, Windows 8, Windows 10",
+            "cpu": "Pentium 3 800Mhz",
+            "ram": "512 MB",
+            "gpu": "NVIDIA Geforce 2 MX",
+            "storage": "6 GB HDD",
+            "directx": "Version 9.0"
+          },
+          "recommended": {
+            "os": "Windows 7, Windows 8, Windows 10, Windows 11",
+            "cpu": "Intel Core i3",
+            "ram": "2 GB",
+            "gpu": "NVIDIA Geforce GTS 450",
+            "storage": "6 GB HDD",
+            "directx": "Version 9.0"
+          }
+      }
     },
     {
         "title": "Elden Ring",
@@ -83,7 +119,25 @@
             "images/eldenRing3.jpg",
             "images/eldenRing4.jpg",
             "images/eldenRing5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 3 3300X",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon RX 580 4GB",
+            "storage": "60 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-8700K or AMD Ryzen 5 3600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1070 8GB or AMD Radeon RX Vega 56 8GB",
+            "storage": "60 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "EA Sports FC 26",
@@ -99,7 +153,25 @@
             "images/eafc26Screen3.jpg",
             "images/eafc26Screen4.jpg",
             "images/eafc26Screen5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-6600K or AMD Ryzen 5 1600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 Ti or AMD Radeon RX 570",
+            "storage": "100 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-6700 or AMD Ryzen 7 2700X",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce GTX 1660 Ti or AMD Radeon RX 5600 XT",
+            "storage": "100 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Cyberpunk 2077",
@@ -149,7 +221,25 @@
             "images/hogwarts-legacy3.jpg",
             "images/hogwarts-legacy4.jpg",
             "images/hogwarts-legacy5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-6600 or AMD Ryzen 5 1400",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 960 4GB or AMD Radeon RX 470 4GB",
+            "storage": "85 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-8700 or AMD Ryzen 5 3600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce 1080 Ti or AMD Radeon RX 5700 XT",
+            "storage": "85 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Counter Strike 2",
@@ -165,7 +255,25 @@
             "images/csgo23.jpg",
             "images/csgo24.jpg",
             "images/csgo25.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 5 2600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 or AMD Radeon RX 5600 XT",
+            "storage": "55 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i5-750 or Higher",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce RTX 3060 Ti or AMD Radeon RX 6700 XT",
+            "storage": "90 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Assassins's Creed : Valhalla",
@@ -181,7 +289,25 @@
             "images/assassinValhalla3.jpg",
             "images/assassinValhalla4.jpg",
             "images/assassinValhalla5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-4460 or AMD Ryzen 3 1200",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 960 4GB or AMD R9 380 4GB",
+            "storage": "50 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-4790 or AMD Ryzen 5 1600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 570 8GB",
+            "storage": "50 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Assassins's Creed : Shadows",
@@ -197,7 +323,25 @@
             "images/assassinShadows3.jpg",
             "images/assassinShadows4.jpg",
             "images/assassinShadows5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-8700K or AMD Ryzen 5 3600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1070 8GB or AMD Radeon RX 5700 8GB",
+            "storage": "115 GB SSD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i5-11600K or AMD Ryzen 5 5600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3060 Ti 8GB or AMD Radeon RX 6700 XT 12GB",
+            "storage": "115 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Assassins's Creed : Mirage",
@@ -213,7 +357,25 @@
             "images/assassinMirage3.jpg",
             "images/assassinMirage4.jpg",
             "images/assassinMirage5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-4790K or AMD Ryzen 5 1600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 570 4GB",
+            "storage": "40 GB SSD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-8700K or AMD Ryzen 5 3600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 1660 Ti 6GB or AMD Radeon RX 5600 XT 6GB",
+            "storage": "40 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Red Dead Redemption 2",
@@ -229,7 +391,25 @@
             "images/rdr23.jpg",
             "images/rdr24.jpg",
             "images/rdr25.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-2500K or AMD FX-6300",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 770 2GB or AMD Radeon R9 280 3GB",
+            "storage": "150 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-4770K or AMD Ryzen 5 1500X",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 480 4GB",
+            "storage": "150 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "The Witcher 3: Wild Hunt",
@@ -245,7 +425,25 @@
             "images/witcher33.jpg",
             "images/witcher34.jpg",
             "images/witcher35.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-2500K or AMD Phenom II X4 940",
+            "ram": "6 GB",
+            "gpu": "NVIDIA Geforce GTX 660 or AMD Radeon HD 7870",
+            "storage": "35 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-3770 or AMD FX-8350 4GHz",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 770 8GB or AMD Radeon R9 290",
+            "storage": "35 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Dark Souls : REMASTERED",
@@ -261,7 +459,25 @@
             "images/dark-souls3.jpg",
             "images/dark-souls4.jpg",
             "images/dark-souls5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7 64-bit",
+            "cpu": "Intel Core i5-2300 or AMD FX-6300",
+            "ram": "6 GB",
+            "gpu": "NVIDIA Geforce GTX 460 1GB or AMD Radeon HD 6870 1GB",
+            "storage": "8 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-4570 or AMD FX-8350",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 660 2GB or AMD Radeon HD 7870 2GB",
+            "storage": "8 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Dark Souls II",
@@ -277,7 +493,25 @@
             "images/dark-soulsII3.jpg",
             "images/dark-soulsII4.jpg",
             "images/dark-soulsII5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Pentium Core 2 Duo E8500 or AMD Phenom II X2 555",
+            "ram": "2 GB",
+            "gpu": "NVIDIA Geforce 9600GT or ATI Radeon HD 5870",
+            "storage": "14 GB HDD",
+            "directx": "Version 9.0"
+          },
+          "recommended": {
+            "os": "Windows 7 64-bit",
+            "cpu": "Intel Core i3-2100 or AMD A8 3870K",
+            "ram": "4 GB",
+            "gpu": "NVIDIA Geforce GTX 750 8GB or ATI Radeon HD 6870 or Higher",
+            "storage": "14 GB SSD",
+            "directx": "Version 9"
+          }
+      }
     },
     {
         "title": "Dark Souls III",
@@ -293,7 +527,25 @@
             "images/dark-soulsIII3.jpg",
             "images/dark-soulsIII4.jpg",
             "images/dark-soulsIII5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7, Windows 8.1, Windows 10 64-bit",
+            "cpu": "Intel Core i3-2100 or AMD FX-6300",
+            "ram": "4 GB",
+            "gpu": "NVIDIA Geforce GTX 750 Ti or ATI Radeon HD 7950",
+            "storage": "25 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-3770 or AMD FX-8350",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 970 or ATI Radeon R9 series",
+            "storage": "25 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Sekiro: Shadows Die Twice - GOTY Edition",
@@ -309,7 +561,25 @@
             "images/sekiro3.jpg",
             "images/sekiro4.jpg",
             "images/sekiro5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7, Windows 8, Windows 10 64-bit",
+            "cpu": "Intel Core i3-2100 or AMD FX-6300",
+            "ram": "4 GB",
+            "gpu": "NVIDIA Geforce GTX 760 or AMD Radeon HD 7950",
+            "storage": "25 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-2500K or AMD Ryzen 5 1400",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 970 or AMD Radeon RX 570 56 8GB",
+            "storage": "25 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Hades II",
@@ -325,7 +595,25 @@
             "images/hadesII3.jpg",
             "images/hadesII4.jpg",
             "images/hadesII5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Dual Core 2.4 GHz",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 950 or AMD Radeon R7 360",
+            "storage": "10 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Quad Core 2.4 GHz",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 or AMD Radeon RX 5600 XT",
+            "storage": "10 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Hades",
@@ -341,7 +629,25 @@
             "images/hades3.jpg",
             "images/hades4.jpg",
             "images/hades5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7",
+            "cpu": "Dual Core 2.4 GHz",
+            "ram": "4 GB",
+            "gpu": "1GB VRAM",
+            "storage": "15 GB HDD",
+            "directx": "Version 10+"
+          },
+          "recommended": {
+            "os": "Windows 7",
+            "cpu": "Dual Core 3.0 GHz+",
+            "ram": "8 GB",
+            "gpu": "2GB VRAM",
+            "storage": "20 GB HDD",
+            "directx": "Version 10+"
+          }
+      }
     },
     {
         "title": "Forza Horizon 5",
@@ -358,7 +664,25 @@
             "images/forza53.jpg",
             "images/forza54.jpg",
             "images/forza55.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-4460 or AMD Ryzen 3 1200",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 970 or AMD Radeon RX 470 4GB",
+            "storage": "110 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 5 1500X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1070 or AMD Radeon RX 590 8GB",
+            "storage": "110 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "The Outer Worlds 2",
@@ -375,7 +699,25 @@
             "images/theouterworlds23.jpg",
             "images/theouterworlds24.jpg",
             "images/theouterworlds25.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit, Windows 11",
+            "cpu": "Intel Core i3-8400 or AMD Ryzen 5 2600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1070 or AMD Radeon RX 5700",
+            "storage": "110 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit, Windows 11",
+            "cpu": "Intel Core i7-10700K or AMD Ryzen 5 5600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3080 or AMD Radeon RX 6800 XT",
+            "storage": "110 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "The Outer Worlds",
@@ -392,7 +734,25 @@
             "images/theouterworlds3.jpg",
             "images/theouterworlds4.jpg",
             "images/theouterworlds5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7",
+            "cpu": "Intel Core i3-3225 or AMD Phenom II X6 1100T",
+            "ram": "4 GB",
+            "gpu": "NVIDIA Geforce GTX 650 Ti or AMD Radeon HD 7850",
+            "storage": "40 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-7700K or AMD Ryzen 5 1600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 470",
+            "storage": "40 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Rust",
@@ -409,7 +769,25 @@
             "images/rust3.jpg",
             "images/rust4.jpg",
             "images/rust5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-3770 or AMD Ryzen FX-9590 or Better",
+            "ram": "10 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 or AMD Radeon 500 Series or better",
+            "storage": "35 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-4790K or AMD Ryzen 5 2600 or Better",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3060 or AMD Radeon RX 570 Series or better",
+            "storage": "35 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Apex Legends",
@@ -426,7 +804,25 @@
             "images/apexLegends3.jpg",
             "images/apexLegends4.jpg",
             "images/apexLegends5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7 64-bit",
+            "cpu": "Intel Core i3-6300 or AMD Ryzen FX 4350",
+            "ram": "6 GB",
+            "gpu": "NVIDIA Geforce GT 640 or AMD Radeon HD 7730",
+            "storage": "56 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-3570K or AMD Ryzen 5 or Equivalent",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 970 or AMD Radeon R9 290",
+            "storage": "56 GB HDD",
+            "directx": "Version 11"
+          }
+      }
     },
     {
         "title": "Clair Obscur Expedition 33",
@@ -478,7 +874,25 @@
             "images/crusaderkingsIII3.jpg",
             "images/crusaderkingsIII4.jpg",
             "images/crusaderkingsIII5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 8.1 64-bit",
+            "cpu": "Intel Core i3-2120 or AMD FX 6350",
+            "ram": "6 GB",
+            "gpu": "NVIDIA Geforce GTX 460 1GB or AMD Radeon HD 7870 2GB",
+            "storage": "8 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-4670K or AMD Ryzen 5 2400G",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1650 4GB or AMD Radeon R9 390X 8GB",
+            "storage": "8 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Stardew Valley",
@@ -495,7 +909,17 @@
             "images/stardewvalley3.jpg",
             "images/stardewvalley4.jpg",
             "images/stardewvalley5.jpg"
-        ]
+        ],
+        "requirements": {
+          "recommended": {
+            "os": "Windows Vista or geater",
+            "cpu": "2 GHz",
+            "ram": "2 GB",
+            "gpu": "256 MB Video Memory, Shader Model 3.0+",
+            "storage": "500 MB HDD",
+            "directx": "Version 10"
+          }
+      }
     },
     {
         "title": "Project Zomboid",
@@ -512,7 +936,17 @@
             "images/projectzomboid3.jpg",
             "images/projectzomboid4.jpg",
             "images/projectzomboid5.jpg"
-        ]
+        ],
+        "requirements": {
+          "recommended": {
+            "os": "Windows 10 64-Bit",
+            "cpu": "Intel 2.77 GHz Quad-core",
+            "ram": "8 GB",
+            "gpu": "Dedicated graphics card with 2 GB of VRAM minimum, OpenGL 2.1 and GLSL 1.2 support (generally 2012 or newer)",
+            "storage": "5 GB HDD",
+            "directx": "Version 11"
+            }
+      }
     },
     {
         "title": "Terraria",
@@ -529,7 +963,25 @@
             "images/terraria3.jpg",
             "images/terraria4.jpg",
             "images/terraria5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows XP, Vista, 7, 8, 8.1, 10",
+            "cpu": "2.0 GHz",
+            "ram": "2.5 GB",
+            "gpu": "128 MB Video Memory, Capable of Shader Model 2.0+",
+            "storage": "200 MB HDD",
+            "directx": "Version 9.0"
+          },
+          "recommended": {
+            "os": "Windows 7, 8, 8.1, 10",
+            "cpu": "Dual Core 3.0 GHz",
+            "ram": "4 GB",
+            "gpu": "256 MB Video Memory, Capable of Shader Model 2.0+",
+            "storage": "200 MB HDD",
+            "directx": "Version 9.0"
+          }
+      }
     },
     {
         "title": "HELLDIVERS II",
@@ -546,7 +998,25 @@
             "images/helldiversII3.jpg",
             "images/helldiversII4.jpg",
             "images/helldiversII5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-4790K or AMD Ryzen 5 1500X",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 Ti or AMD Radeon RX 470",
+            "storage": "100 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7-9700K or AMD Ryzen 7 3700X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 or AMD Radeon RX 6600 XT",
+            "storage": "100 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Arc Raiders",
@@ -563,7 +1033,25 @@
             "images/arcraiders3.jpg",
             "images/arcraiders4.jpg",
             "images/arcraiders5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i5-6600K or AMD Ryzen R5 1600",
+            "ram": "12 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 Ti or AMD Radeon RX 580",
+            "storage": "55 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i5-9600K or AMD Ryzen 5 3600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2070 or AMD Radeon RX 5700 XT",
+            "storage": "55 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Dead Island 2",
@@ -580,7 +1068,25 @@
             "images/deadisland23.jpg",
             "images/deadisland24.jpg",
             "images/deadisland25.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i7-7700HQ or AMD FX-9590",
+            "ram": "10 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 480",
+            "storage": "70 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i9-9900K or AMD Ryzen 5 5600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2070 Super 8GB or AMD Radeon RX 6600 XT 16GB",
+            "storage": "70 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Overwarch 2",
@@ -597,7 +1103,25 @@
             "images/overwatch23.jpg",
             "images/overwatch24.jpg",
             "images/overwatch25.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10 64-bit",
+            "cpu": "Intel Core i3 or AMD Phenom X3 8650",
+            "ram": "6 GB",
+            "gpu": "NVIDIA Geforce GTX 600 Series or AMD Radeon HD 7000 Series",
+            "storage": "50 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11 64-bit",
+            "cpu": "Intel Core i7 or AMD Ryzen 5",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon R9 380 / AMD RX 6400",
+            "storage": "50 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "Fallout 4",
@@ -614,7 +1138,25 @@
             "images/fallout43.jpg",
             "images/fallout44.jpg",
             "images/fallout45.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7, 8, 10",
+            "cpu": "Intel Core i5-2300 2.8GHz or AMD Phenom II X4 945 3.0GHz or Equivalent",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 550 Ti 2GB or AMD Radeon HD 7870 2GB or Equivalent",
+            "storage": "30 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 7, 8, 10",
+            "cpu": "Intel Core i7-4790 3.6 GHz or AMD FX-9590 4.7 GHz or Equivalent",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 780 3GB or AMD Radeon R9 290X 4GB or Equivalent",
+            "storage": "30 GB HDD",
+            "directx": "Version 12"
+          }
+      }
     },
     {
         "title": "The Elder Scrolls V: Skyrim Special Edition",
@@ -631,7 +1173,25 @@
             "images/skyrim3.jpg",
             "images/skyrim4.jpg",
             "images/skyrim5.jpg"
-        ]
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7, 8.1, 10",
+            "cpu": "Intel Core i5-750 or AMD Phenom II X4-945",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 470 1GB or AMD HD 7870 2GB",
+            "storage": "12 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 7, 8.7, 10",
+            "cpu": "Intel Core i5-2400 or AMD FX-8320",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 780 3GB or AMD R9 290 4GB",
+            "storage": "12 GB SSD",
+            "directx": "Version 12"
+          }
+      }
     }
     
     
