@@ -266,11 +266,10 @@ nav {
     rgba(255, 255, 255, 0.15),
     transparent
   );
-  pointer-events: none; /* ← Ne bloque pas les clics */
+  pointer-events: none;
   border-radius: 16px 16px 0 0;
 }
 
-/* Reflet brillant additionnel (optionnel) */
 .panier-menu::after {
   content: '';
   position: absolute;
@@ -290,12 +289,19 @@ nav {
 
 
 .cart-list {
-  position: relative;
+  position: absolute;
   max-height: 600px;
+  max-width: 60%;
   overflow-y: auto;
 }
 
 .cart-games {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 100px;
+  margin-bottom: 20px;
+  padding: 20px;
   cursor: pointer;
 }
 
@@ -305,7 +311,16 @@ nav {
 
 .cart-games img {
   padding-top: 5px;
-  width: 10%;
+  width: 20%;
+}
+
+.cart-games p {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  max-width: 70px;
+  font-size: 1rem;
+  margin: auto 0;
 }
 
 .cart-games i {

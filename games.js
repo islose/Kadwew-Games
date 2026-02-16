@@ -208,7 +208,7 @@ if (searchInputs.length > 0) {
         .slice(0, 4);
 
       if (filtered.length === 0) {
-        container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun résultat</div>`;
+        container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">No Results</div>`;
         container.style.display = "block";
         return;
       }
