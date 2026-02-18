@@ -1933,3 +1933,50 @@ const filterMovies = movies
 .slice(0, 3);
 
 console.log(filterMovies);
+
+const isItPairOrNot = (n) => n % 2 === 0 ? "pair" : "impair"; 
+
+console.log(isItPairOrNot(2));
+console.log(isItPairOrNot(6));
+console.log(isItPairOrNot(10));
+console.log(isItPairOrNot(13));
+console.log(isItPairOrNot(19));
+
+
+function higherNum (a, b) {
+  if (a > b) {
+    return a;
+  }
+
+  else if (a === b) {
+    return "égaliter";
+  }
+
+  else {
+    return b;
+  }
+}
+
+console.log(higherNum(11, 6));
+console.log(higherNum(0, 3));
+console.log(higherNum(455, 554));
+console.log(higherNum(13, 12));
+console.log(higherNum(1, 2));
+console.log(higherNum(66, 22));
+console.log(higherNum(11, 11));
+console.log(higherNum(-55, -253));
+
+
+function sommeAll (n) {
+  let somme = 0;
+
+  for (let i = 1; i <= n; i++) {
+    somme += i;
+  }
+  return somme;
+}
+
+console.log(sommeAll(15));
+console.log(sommeAll(5));
+console.log(sommeAll(100));
+console.log(sommeAll(1000));
