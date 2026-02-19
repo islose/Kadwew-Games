@@ -18,8 +18,9 @@
 }
 
 body{
-  height: 500vh;
+  min-height: 100vh;
   margin: 0;
+  padding-top: var(--nav-height);
   background: linear-gradient(180deg,var(--bg),#25a2f0);
   color: #e8eef2;
   -webkit-font-smoothing: antialiased;
@@ -44,9 +45,11 @@ h1 {
     rgba(255, 255, 255, 0.01)
   );
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  position: sticky;
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
-  z-index: 50;
+  z-index: 9999;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 

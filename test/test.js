@@ -1980,3 +1980,107 @@ console.log(sommeAll(15));
 console.log(sommeAll(5));
 console.log(sommeAll(100));
 console.log(sommeAll(1000));
+
+function findMax (arr) {
+  let max = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log(findMax([3, 4, 1, 9, 4]));
+console.log(findMax([11, -5, 3, 1, 2, 3]));
+console.log(findMax([-5, -10, -100 ,-55, -1, -2]));
+console.log(findMax([44, -55, -9999, -4, 98, 1000]));
+
+function reversedPairTable(arr) {
+  let pairTable = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      pairTable.push(arr[i]);
+    }
+  }
+  return pairTable;
+}
+
+console.log(reversedPairTable([3, 4, 1, 9, 4]));
+console.log(reversedPairTable([11, -5, 3, 1, 2, 3]));
+console.log(reversedPairTable([-5, -10, -100 ,-55, -1, -2]));
+console.log(reversedPairTable([44, -55, -9999, -4, 98, 1000]));
+
+function reversedCar (word) {
+  let reversedW = [];
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversedW.push(word[i]);
+  }
+  return reversedW.join("");
+}
+
+console.log(reversedCar("bonjour"));
+console.log(reversedCar("salut"));
+console.log(reversedCar("ramdan"));
+console.log(reversedCar("tarawih"));
+
+
+function isItPalindrome (word) {
+  let palindrom = [];
+  for (let i = word.length - 1; i >= 0; i--) {
+    palindrom.push(word[i]);
+  }
+  return word === palindrom.join("");
+}
+
+console.log(isItPalindrome("kayak"));
+console.log(isItPalindrome("level"));
+console.log(isItPalindrome("moto"));
+console.log(isItPalindrome("adc"));
+console.log(isItPalindrome("gaga"));
+
+
+function numberOfEachLetterInTheWord (word) {
+  let result = {};
+  for (let i = 0; i < word.length; i++) {
+
+    if (result[word[i]]) {
+      result[word[i]]++;
+    }
+
+    else {
+      result[word[i]] = 1;
+    }
+
+  }
+  return result;
+}
+
+console.log(numberOfEachLetterInTheWord("banane"));
+console.log(numberOfEachLetterInTheWord("cacahuette"));
+console.log(numberOfEachLetterInTheWord("madagascar"));
+console.log(numberOfEachLetterInTheWord("kadwew"));
+console.log(numberOfEachLetterInTheWord("ramadan"));
+
+
+function fizzBuzz () {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log(`FizzBuzz : ${i}`);
+    }
+
+    else if (i % 5 === 0) {
+      console.log(`Buzz : ${i}`);
+    }
+
+    else if (i % 3 === 0) {
+      console.log(`Fizz : ${i}`);
+    }
+
+    else {
+      console.log(`None ${i}`);
+    }
+  }
+}
+
+fizzBuzz();
