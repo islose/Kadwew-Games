@@ -673,7 +673,7 @@ nav {
 .games {
   height: 35vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1900px;
   margin: 60 auto;
   gap: 20px;
