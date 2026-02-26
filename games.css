@@ -245,9 +245,6 @@ nav {
   width: 70%;
   left: 15%;
   top: var(--nav-height);
-  /*
-  background: rgba(93, 190, 255, 0.8);
-  */
   background: linear-gradient(135deg, rgba(93, 190, 255, 0.8) 0%, #535353 100%);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -257,55 +254,26 @@ nav {
   overflow: hidden;
 }
 
-.panier-menu::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.15),
-    transparent
-  );
-  pointer-events: none;
-  border-radius: 16px 16px 0 0;
-}
-
-.panier-menu::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  height: 30%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  border-radius: 14px 14px 0 0;
-  filter: blur(8px);
-  pointer-events: none;
-}
-
-
 .cart-list {
   position: absolute;
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(83, 56, 56, 0.9) 100%);
   max-height: 600px;
-  max-width: 60%;
+  max-width: 70%;
   overflow-y: auto;
 }
 
 .cart-games {
   display: flex;
-  align-items: start;
-  justify-content: flex-start;
-  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
   padding: 20px;
   cursor: pointer;
+  position: relative;
+}
+
+.cart-games .badge.discount {
+  font-size: 1rem;
 }
 
 .cart-games:hover {
@@ -313,7 +281,6 @@ nav {
 }
 
 .cart-games img {
-  padding-top: 5px;
   width: 20%;
 }
 
@@ -321,7 +288,7 @@ nav {
   display: flex;
   align-items: start;
   justify-content: flex-start;
-  max-width: 70px;
+  max-width: 200px;
   font-size: 1rem;
   margin: auto 0;
 }
@@ -330,8 +297,10 @@ nav {
   display: none;
   position: absolute;
   color: rgb(255, 0, 0); 
-  left: 0%;
+  top: 1px;
+  left: 1px;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .cart-games:hover i {
@@ -392,7 +361,6 @@ body.cart-open main {
   margin: 0 auto;
   font-size: 2rem;
 }
-
 
 .old-price {
   text-decoration: line-through;

@@ -68,15 +68,41 @@ function displayCart() {
     panierItem.style.display = "block";
 
     cart.forEach(game => {
+      let prices;
+
+
+    if (game.discount && Number(game.discount) > 0) {
+      const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
+      let badge = `<span class="badge discount">-${game.discount}%</span>`;
+        prices = `
+          <span class="old-price">${game.price}</span>
+          <span class="new-price">${newPrice}</span>
+        `
+      }
+
+      else if (Number(game.price) === 0) {
+        prices = `<span class="free">0</span>`;
+      }
+
+      else {
+        prices = `${game.price}`;
+      }
+
       cartList.innerHTML += `
       <div class="cart-games" id="cart-games">
         <i class="fa-solid fa-square-xmark remove-game-btn"></i>
         <img src="${game.image}">
         <p>${game.title}</p>
-        <p>${game.discount}%</p>
-        <p>${game.price}€</p>
+          ${game.discount && Number(game.discount) > 0 ? `
+          <span class="badge discount">-${game.discount}%</span>
+      ` : ''}
+        <p>${prices}€</p>
       </div>`
     });
+
+    
+ 
+    
 
     const removeButtons = document.querySelectorAll('.remove-game-btn');
     
