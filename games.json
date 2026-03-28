@@ -5,8 +5,9 @@
         "price": 69.99,
         "discount": 0,
         "image": "images/battlefield6.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "false",
+        "isPopular": "true",
         "description":"Battlefield 6 is a modern-day, large-scale first-person shooter set in 2027, returning to classic class systems (Assault, Engineer, Support, Recon) and 64-player battles, focusing on tactical destruction, infantry-vehicle combat, and objective play, featuring both a single-player campaign following US Marine Raiders against Pax Armata and the popular Battlefield Portal mode for user-created content. Key elements include customizable weapons, deep environmental destruction for strategic advantage, and a return to grounded warfare with intense firefights and aerial dogfights.",
         "screens": [
             "images/battlefield61.jpg",
@@ -40,8 +41,9 @@
         "price": 39.99,
         "discount": 0,
         "image": "images/littleNightmares3.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Little Nightmares III follows two new child protagonists, Low and Alone, as they navigate the twisted world of the Nowhere, trapped in the 'Spiral' of disturbing locations, seeking an escape back to the real world, featuring the series' first online co-op mode alongside solo play with an AI companion. Each character has unique tools—Low uses a bow, Alone a wrench—to solve puzzles and overcome monstrous 'Residents' in locations like the Necropolis and Candy Factory, all while confronting personal fears and traumatic past memories. ",
         "screens": [
             "images/littleNightmares31.jpg",
@@ -75,8 +77,9 @@
         "price": 0,
         "discount": 0,
         "image": "images/nostale.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "false",
+        "isPopular": "true",
         "description":"Nostale is a free-to-play anime-styled MMORPG where players explore a fantasy world, battle monsters, team up with others, and customize characters with numerous specialist classes, pets, and partners, featuring quests, raids, PvP, and player housing, all with a focus on action and adventure in a 2D-in-2.5D world that blends typical MMORPG elements with unique features like 'Specialist Cards' and elemental fairies. ",
         "screens": [
             "images/nostale1.jpg",
@@ -112,6 +115,7 @@
         "image": "images/elden-ring.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Elden Ring is an epic open-world action RPG from FromSoftware, set in the vast, mysterious Lands Between, where players, as Tarnished, explore ruins and battle formidable foes to become the Elden Lord, guided by lore from Hidetaka Miyazaki and George R.R. Martin. The game features deep, challenging combat, vast freedom for exploration using a spectral steed (Torrent), and a cryptic story centered around the shattered Elden Ring and its runes, offering immense replayability and discovery. ",
         "screens": [
             "images/eldenRing1.jpg",
@@ -145,7 +149,9 @@
         "price": 79.99,
         "discount": 0,
         "image": "images/eafc26.jpg",
-        "isNew": "true",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "true",
         "description":"EA Sports FC 26 offers an overhauled, community-driven gameplay experience with responsive dribbling, smarter AI, and lifelike animations, featuring new Archetypes for player development, dynamic Manager Live Career scenarios, and enhanced Football Ultimate Team (FUT) modes with Live Events and Tournaments, all built on unmatched authenticity with thousands of licensed players, clubs, and competitions, including exclusive UEFA rights. Key additions include Competitive and Authentic gameplay presets, deeper PC settings, and a 'World Tour Through History' theme for FUT Seasons, celebrating football's biggest stories. ",
         "screens": [
             "images/eafc26Screen1.jpg",
@@ -179,7 +185,9 @@
         "price": 59.99,
         "discount": 0,
         "image": "images/cyberpunk2077.jpg",
-        "isNew": "true",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "true",
         "description":"Cyberpunk 2077 is an open-world, action-adventure RPG set in the futuristic, corrupt megalopolis of Night City, where players control a customizable mercenary named V, navigating a world obsessed with power, glamour, and cybernetic body modification, with choices affecting story and character development, featuring intense combat, stealth, hacking, and a deep lore built around mega-corporations and street life, enhanced by the Phantom Liberty spy-thriller expansion and ongoing updates. ",
         "screens": [
             "images/cyberpunk20771.jpg",
@@ -214,6 +222,8 @@
         "discount": 50,
         "image": "images/hogwarts-legacy.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Hogwarts Legacy is an open-world action RPG set in the 1800s Wizarding World, where you play as a new fifth-year student at Hogwarts, uncovering an ancient magical secret while attending classes, learning spells, and exploring the castle and its surroundings, with a focus on your unique legacy. Players can create their own witch or wizard, customize their magical journey, interact with iconic creatures, brew potions, and shape the destiny of the wizarding world. ",
         "screens": [
             "images/hogwarts-legacy1.jpg",
@@ -247,7 +257,9 @@
         "price": 0,
         "discount": 0,
         "image": "images/csgo2.jpg",
-        "isNew": "true",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "true",
         "description":"Counter-Strike 2 is a free-to-play, multiplayer tactical first-person shooter by Valve that replaced CS:GO, offering significant technical upgrades with the Source 2 engine, realistic volumetric smoke physics, updated maps, and a new competitive ranking system called CS Rating, focusing on classic bomb defusal/hostage rescue gameplay with enhanced visuals and audio. ",
         "screens": [
             "images/csgo21.jpg",
@@ -282,6 +294,8 @@
         "discount": 0,
         "image": "images/assassinValhalla.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Assassin's Creed Valhalla is an open-world action RPG where you play as Eivor, a Viking warrior leading their clan from Norway to establish a new home in 9th-century England, engaging in brutal combat, epic raids, settlement building, and forging alliances while navigating the conflict between Assassins and Templars, all wrapped in Norse mythology and sagas. It features a massive, dynamic world, visceral dual-wielding combat, and deep RPG mechanics allowing players to shape their character and story through choices, promising a true 'Viking fantasy'. ",
         "screens": [
             "images/assassinValhalla1.jpg",
@@ -316,6 +330,8 @@
         "discount": 0,
         "image": "images/assassinShadows.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Assassin's Creed Shadows is an open-world action-adventure game set in feudal Japan (Sengoku period) featuring two playable protagonists: the stealthy shinobi Naoe and the powerful samurai Yasuke, allowing players to seamlessly switch between their distinct combat and stealth styles to dismantle a common enemy and usher in a new era. It emphasizes deep stealth mechanics, visceral combat, a beautiful world with dynamic seasons and weather, customizable hideouts, and a non-linear approach to missions, building on the series' stealth roots and RPG elements. ",
         "screens": [
             "images/assassinShadows1.jpg",
@@ -350,6 +366,8 @@
         "discount": 0,
         "image": "images/assassinMirage.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Assassin's Creed Mirage is a narrative-driven, open-world action-adventure game set in 9th-century Baghdad, focusing on the origin story of Basim Ibn Ishaq, a cunning street thief who becomes a Master Assassin for the Hidden Ones, returning to the series' roots with enhanced parkour, stealth, and Black Box assassination missions in a dense, vibrant city with distinct districts. ",
         "screens": [
             "images/assassinMirage1.jpg",
@@ -383,7 +401,9 @@
         "price": 49.99,
         "discount": 0,
         "image": "images/rdr2.jpg",
-        "isNew": "true",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "true",
         "description":"Red Dead Redemption 2 is an epic open-world Western adventure by Rockstar Games, set in 1899 America, following outlaw Arthur Morgan and the Van der Linde gang as they flee lawmen and internal strife during the dying days of the Wild West, forcing Arthur to choose between loyalty and his own ideals in a story of survival and consequence. Players experience a rich, detailed world through first/third-person perspectives, engaging in shootouts, hunting, robberies, and moral choices that shape the story and Arthur's honor. ",
         "screens": [
             "images/rdr21.jpg",
@@ -418,6 +438,8 @@
         "discount": 0,
         "image": "images/witcher3.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"The Witcher 3: Wild Hunt is a critically acclaimed, dark fantasy, open-world RPG where you play as Geralt of Rivia, a monster-hunting Witcher, searching for his adopted daughter, Ciri, before she's captured by the spectral Wild Hunt; it features a massive world, morally grey choices with significant consequences, deep storytelling, monster slaying with swords and magic, and expansive content including two major expansions, 'Hearts of Stone' and 'Blood and Wine', making it a vast adventure. ",
         "screens": [
             "images/witcher31.jpg",
@@ -452,6 +474,8 @@
         "discount": 0,
         "image": "images/dark-souls.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Dark Souls Remastered is a visually enhanced re-release of the original iconic action RPG, bringing updated graphics, smoother performance, and improved multiplayer with dedicated servers, while retaining the notoriously challenging gameplay, deep lore, and interconnected world of Lordran, plus the Artorias of the Abyss DLC. It offers a definitive experience for new players and fans, emphasizing strategic combat, exploration, and player accomplishment within its dark, rich universe. ",
         "screens": [
             "images/dark-souls1.jpg",
@@ -486,6 +510,8 @@
         "discount": 0,
         "image": "images/dark-soulsII.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Dark Souls II is a challenging action RPG from FromSoftware, set in the ruined kingdom of Drangleic, where an undead traveler seeks a cure for their curse, leading to encounters with powerful foes, deep customization, and strategic combat emphasizing stamina management and exploration, with the Scholar of the First Sin edition overhauling enemy placement for an even tougher, different experience. ",
         "screens": [
             "images/dark-soulsII1.jpg",
@@ -520,6 +546,8 @@
         "discount": 0,
         "image": "images/dark-soulsIII.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Dark Souls III is the final chapter in the acclaimed action RPG series, where players, as an 'Unkindled' warrior, journey through the dying kingdom of Lothric to prevent the world's end by finding and returning the powerful Lords of Cinder to their thrones to rekindle the fading First Flame. It features faster combat, intense atmosphere, deeper customization, and the series' signature challenging gameplay, set in a beautiful but ruined world where colossal enemies and epic scale define the experience. ",
         "screens": [
             "images/dark-soulsIII1.jpg",
@@ -554,6 +582,8 @@
         "discount": 15,
         "image": "images/sekiro.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Sekiro: Shadows Die Twice is a challenging third-person action-adventure game by FromSoftware, set in a dark, mythical version of 1500s Japan, where you play as the 'One-Armed Wolf' a shinobi dedicated to protecting a young lord, facing brutal foes with a katana, stealth, and a versatile prosthetic arm (including a grappling hook) to master posture-based combat and vertical exploration, all while dealing with a unique resurrection mechanic after death.",
         "screens": [
             "images/sekiro1.jpg",
@@ -587,7 +617,9 @@
         "price": 29.99,
         "discount": 0,
         "image": "images/hadesII.jpg",
-        "isNew": "true",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Hades II is a rogue-like dungeon crawler sequel where you play as Melinoë, Hades' daughter, fighting to rescue her family from the Titan of Time, Chronos, using dark magic, Olympian boons, and powerful weapons in an ever-shifting underworld and surface world. It expands the original's gameplay with new paths (Erebus/Olympus), deeper narrative, more gods, and unique witchcraft mechanics, maintaining Supergiant Games' signature art, voice acting, and engaging action. ",
         "screens": [
             "images/hadesII1.jpg",
@@ -622,6 +654,8 @@
         "discount": 10, 
         "image": "images/hades.jpg",
         "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Hades is a critically acclaimed rogue-like dungeon crawler where you play as Zagreus, the immortal son of Hades, in his persistent attempts to escape the Underworld and reach Mount Olympus, aided by powers from his Olympian relatives like Zeus, Athena, and Ares, all while unraveling a rich, character-driven story through frequent, permanent death and rebirth. It combines fast-paced hack-and-slash combat with permanent progression, story revelations, and deep character relationships, making each escape attempt unique and engaging.",
         "screens": [
             "images/hades1.jpg",
@@ -657,6 +691,7 @@
         "image": "images/forza5.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Forza Horizon 5 is a massive, vibrant open-world racing game set in a fictionalized Mexico, featuring the series' largest and most diverse map with unique biomes like jungles, deserts, beaches, and a volcano, dynamic seasons, stunning graphics with ray tracing, hundreds of customizable cars, and a deep campaign with challenges, plus online multiplayer for cooperative or competitive fun. Players explore, race, and create content in this evolving world with unique weather events like dust storms and tropical storms, offering limitless driving action and customization. ",
         "screens": [
             "images/forza51.jpg",
@@ -691,7 +726,8 @@
         "discount": 0,
         "image": "images/theouterworlds2.jpg",
         "isNew": "false",
-        "isHot": "true",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"The Outer Worlds 2 is a single-player sci-fi RPG from Obsidian Entertainment, set in the new Arcadia system, where you play as an Earth Directorate Agent investigating dangerous space-time rifts and corporate conflicts, offering expanded character customization (including unique 'Flaws'), deeper RPG systems, improved first/third-person combat, and more player choice in a retro-futuristic world with new factions, characters, planets, and a greater focus on identity, morality, and exploration than the original game. ",
         "screens": [
             "images/theouterworlds21.jpg",
@@ -727,6 +763,7 @@
         "image": "images/theouterworlds.jpg",
         "isNew":"false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"The Outer Worlds is a first-person sci-fi RPG set in the far-flung Halcyon colony, where mega-corporations rule, and players, as a thawed-out colonist from a lost ship, uncover a conspiracy while shaping a player-driven story with significant choices, combat (including a 'time dilation' bullet-time), and exploration, all with a retro-futuristic, corporate-dystopian theme. ",
         "screens": [
             "images/theouterworlds1.jpg",
@@ -762,6 +799,7 @@
         "image": "images/rust.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Rust is a brutal, multiplayer-only open-world survival game where players spawn naked on a mysterious island with just a rock and a torch, facing threats from wildlife, the environment (hunger, cold), and most significantly, other players, requiring them to gather resources, craft tools, build shelters, and fight or team up to survive and dominate the harsh world. The core gameplay revolves around PvP conflict, raiding, base building, and continuous resource management, with the constant tension of potentially losing everything upon death, even when offline. ",
         "screens": [
             "images/rust1.jpg",
@@ -795,8 +833,9 @@
         "price": 0,
         "discount": 0,
         "image": "images/apexlegends.jpg",
-        "isNew": "true",
+        "isNew": "false",
         "isHot": "false",
+        "isPopular": "true",
         "description":"Apex Legends is a free-to-play, squad-based, hero-shooter battle royale game set in the Titanfall universe, where legendary characters 'Legends' with unique abilities team up to fight for fame and fortune in a shrinking arena, emphasizing strategic squad play, diverse characters, and innovative gameplay mechanics. Developed by Respawn Entertainment, it combines tactical shooter elements with hero abilities, offering a fresh take on the battle royale genre with rich lore and evolving content. ",
         "screens": [
             "images/apexLegends1.jpg",
@@ -832,6 +871,7 @@
         "image": "images/clairobscur.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Clair Obscur: Expedition 33 is a dark fantasy, turn-based RPG set in a world inspired by Belle Époque France, where a being called the Paintress erases people by painting cursed numbers on a monolith, with your team, Expedition 33, sent on a final, desperate quest to destroy her before the number '33' is painted, featuring deep character customization, real-time timed combat mechanics (dodging/parrying), a rich story about mortality and legacy, and stunning art direction. Players lead a party of unique individuals, utilizing strategic skill synergy and upgrades to overcome challenging enemies, all while exploring a somber yet hopeful world filled with melancholy and charm. ",
         "screens": [
             "images/clairobscur1.jpg",
@@ -867,6 +907,7 @@
         "image": "images/crusaderkingsIII.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Crusader Kings III is a grand strategy RPG where you lead a medieval dynasty, focusing on characters, intrigue, and dynastic legacy over generations, rather than just nations, from 867 or 1066 to the fall of Byzantium. Players guide their noble family through the Middle Ages, using diplomacy, war, plots, and marriage to expand power, manage traits, religions, and courtly drama, ensuring their lineage survives and thrives through heirs, even as rulers die and are replaced. ",
         "screens": [
             "images/crusaderkingsIII1.jpg",
@@ -902,6 +943,7 @@
         "image": "images/stardewvalley.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Stardew Valley is an open-ended, pixel-art farming RPG where you inherit a rundown farm, escape corporate drudgery, and build a new life in Pelican Town, focusing on farming, foraging, fishing, mining, and building relationships with villagers, all while restoring the dilapidated Community Center or setting your own goals at your own pace. It's a charming, relaxing simulation game with deep mechanics, social depth, and endless replayability, featuring seasonal changes, crafting, combat, and exploring caves and the desert. ",
         "screens": [
             "images/stardewvalley1.jpg",
@@ -929,6 +971,7 @@
         "image": "images/projectzomboid.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Project Zomboid is a hardcore, open-world isometric zombie survival RPG where you try to survive as long as possible in Knox County, Kentucky, looting, crafting, building, and fighting hordes, knowing that 'this is the story of how you died' as no help is coming and death is inevitable, though the details of survival are deep and complex.",
         "screens": [
             "images/projectzomboid1.jpg",
@@ -955,7 +998,8 @@
         "discount": 60,
         "image": "images/terraria.jpg",
         "isNew": "false",
-        "isHot": "true",
+        "isHot": "false",
+        "isPopular": "false",
         "description":"Terraria is a 2D sandbox action-adventure, role-playing, and platformer video game developed by Re-Logic, often described as a 16-bit, side-scrolling equivalent to Minecraft. It focuses on exploration, crafting, building, and combat against various creatures and bosses in procedurally generated worlds. Players can explore, gather resources, build structures, and fight, featuring both single-player and multiplayer modes.",
         "screens": [
             "images/terraria1.jpg",
@@ -991,6 +1035,7 @@
         "image": "images/helldiversII.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Helldivers 2 is a chaotic, 1-4 player cooperative third-person shooter where players act as elite soldiers 'Helldivers' for 'Super Earth' to battle hordes of alien insects (Terminids) and robots (Automatons). It is a satirical, high-stakes game focused on team-based combat, utilizing heavy weaponry and orbital airstrikes while navigating active friendly fire.",
         "screens": [
             "images/helldiversII1.jpg",
@@ -1025,7 +1070,8 @@
         "discount": 10,
         "image": "images/arcraiders.jpg",
         "isNew": "false",
-        "isHot": "true",
+        "isHot": "false",
+        "isPopular": "true",
         "description":"ARC Raiders is a 2025 third-person, online PvPvE extraction shooter developed by Embark Studios, featuring squad-based gameplay. Players 'Raiders' scavenge for loot on a ruined Earth surface while fighting or avoiding intelligent, deadly machines (ARC). The core goal is to survive, collect resources, and extract to the underground city of Speranza.",
         "screens": [
             "images/arcraiders1.jpg",
@@ -1061,6 +1107,7 @@
         "image": "images/deadisland2.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Dead Island 2 is a thrilling First-Person, Action RPG takes players across a brand-new playground a hellish vision of LA (or HELL-A, as we like to call it). Dead Island 2 is stylish, vibrant and flooded with zombie infection. Explore iconic, gore-drenched Los Angeles. Meet larger-than-life characters.",
         "screens": [
             "images/deadisland21.jpg",
@@ -1096,6 +1143,7 @@
         "image": "images/overwatch2.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "true",
         "description":"Overwatch 2 is a free-to-play, team-based, first-person 'hero shooter' developed by Blizzard Entertainment, released in 2022 as a sequel to Overwatch. It features 5v5 player-versus-player (PvP) combat, where players choose from a diverse roster of 40+ unique characters—divided into Tank, Damage, and Support roles—to compete in objective-based matches.",
         "screens": [
             "images/overwatch21.jpg",
@@ -1131,6 +1179,7 @@
         "image": "images/fallout4.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"Fallout 4 is a 2015 dystopian action role-playing game (ARPG) developed by Bethesda, set in a post-apocalyptic Boston. As the 'Sole Survivor' of Vault 111, players explore a 1950s-inspired, radioactive wasteland, fighting enemies, crafting items, and building settlements to locate their missing child, featuring both first- and third-person perspectives. ",
         "screens": [
             "images/fallout41.jpg",
@@ -1166,6 +1215,7 @@
         "image": "images/skyrim.jpg",
         "isNew": "false",
         "isHot": "false",
+        "isPopular": "false",
         "description":"The Elder Scrolls V: Skyrim is an open-world fantasy action RPG developed by Bethesda Game Studios. Players assume the role of the 'Last Dragonborn' in a vast, free-roaming, Nordic-inspired landscape, fighting dragons, completing quests, and leveling skills in first or third-person perspectives.",
         "screens": [
             "images/skyrim1.jpg",
@@ -1192,7 +1242,404 @@
             "directx": "Version 12"
           }
       }
+    },
+    {
+        "title": "Marathon",
+        "editor": "Bungie",
+        "price": 39.99,
+        "discount": 0,
+        "image": "images/marathon.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "true",
+        "description":"Marathon is a science fiction first-person shooter video game series from Bungie, originally released for the Classic Mac OS. The name of the series is derived from the giant interstellar colony ship that provides the main setting for the first game; the ship is constructed out of the Martian moon Deimos. The series is often regarded as a spiritual predecessor of Bungie's Halo series.",
+        "screens": [
+            "images/marathon1.jpg",
+            "images/marathon2.jpg",
+            "images/marathon3.jpg",
+            "images/marathon4.jpg",
+            "images/marathon5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-6600 or AMD Ryzen 5 2600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 Ti 4GB or AMD Radeon RX 5500 XT 4GB",
+            "storage": "30 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-10400 or AMD Ryzen 5 3500",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 6GB or AMD Radeon RX 5700 XT 8GB",
+            "storage": "30 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Crimson Desert",
+        "editor": "Pearl Abyss",
+        "price": 69.99,
+        "discount": 0,
+        "image": "images/crimsondesert.jpg",
+        "isNew": "true",
+        "isHot": "true",
+        "isPopular": "true",
+        "description":"Crimson Desert is an ambitious open-world action-adventure game set on the continent of Pywel, focusing on a mercenary named Kliff navigating a war-torn land. Developed by Pearl Abyss, it features fast-paced combat, extensive exploration, and, according to GameSpot, a 100-180 hour playtime, blending medieval fantasy with unique traversal like gliding and horseback riding.",
+        "screens": [
+            "images/crimsondesert1.jpg",
+            "images/crimsondesert2.jpg",
+            "images/crimsondesert3.jpg",
+            "images/crimsondesert4.jpg",
+            "images/crimsondesert5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-8500 or AMD Ryzen 5 2600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon RX 5500 XT",
+            "storage": "150 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-11600K or AMD Ryzen 5 5600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2080 or AMD Radeon RX 6700 XT",
+            "storage": "150 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Death Stranding 2",
+        "editor": "Kojima Productions",
+        "price": 69.99,
+        "discount": 0,
+        "image": "images/deathstranding2.jpg",
+        "isNew": "true",
+        "isHot": "false",
+        "isPopular": "true",
+        "description":"Death Stranding 2: On the Beach is set primarily in Australia, eleven months after the events of the first game, in a post-apocalyptic world ravaged by otherworldly creatures. The player controls Sam Porter Bridges, a freelance porter, as he and his companions set out on an expedition across the Australian continent to connect isolated survivors and colonies to the wireless communications 'chiral' network in order to save humanity from extinction.",
+        "screens": [
+            "images/deathstranding21.jpg",
+            "images/deathstranding22.jpg",
+            "images/deathstranding23.jpg",
+            "images/deathstranding24.jpg",
+            "images/deathstranding25.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i3-10100 or AMD Ryzen 3 3100",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1660 or AMD Radeon RX 5500 XT 8GB",
+            "storage": "150 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i7-11700 or AMD Ryzen 7 5700X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 3070 or AMD Radeon RX 6800",
+            "storage": "150 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Resident Evil Requiem",
+        "editor": "CAPCOM",
+        "price": 69.99,
+        "discount": 0,
+        "image": "images/residentevilrequiem.jpg",
+        "isNew": "true",
+        "isHot": "false",
+        "isPopular": "true",
+        "description":"Resident Evil Requiem is a 2026 survival horror game developed and published by Capcom. It is the ninth main Resident Evil game, following Resident Evil Village (2021) It features a new playable character, FBI analyst Grace Ashcroft, who investigates a series of mysterious deaths involving the survivors of the Raccoon City incident with the aid of federal agent and returning protagonist Leon S. Kennedy.",
+        "screens": [
+            "images/residentevilrequiem1.jpg",
+            "images/residentevilrequiem2.jpg",
+            "images/residentevilrequiem3.jpg",
+            "images/residentevilrequiem4.jpg",
+            "images/residentevilrequiem5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i5-8500 or AMD Ryzen 5 3500",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1660 6GB or AMD Radeon RX 5500 XT 8GB",
+            "storage": "100 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i7-8700 or AMD Ryzen 5 5500",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 Super 8GB or AMD Radeon RX 6600 8GB",
+            "storage": "100 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Football Manager 26",
+        "editor": "SEGA",
+        "price": 49.99,
+        "discount": 33,
+        "image": "images/footballmanager26.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"As with previous entries in the series, Football Manager 26 places the player in control of a football club, overseeing tactics, transfers, training and financial management. The game utilises the Unity platform for its graphical and rendering systems, replacing the in-house technologies previously developed by Sports Interactive. This change introduced improvements to matchday presentation, including enhanced animations, ball physics and stadium lighting.",
+        "screens": [
+            "images/footballmanager261.jpg",
+            "images/footballmanager262.jpg",
+            "images/footballmanager263.jpg",
+            "images/footballmanager264.jpg",
+            "images/footballmanager265.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i3-530 or AMD FX-4100",
+            "ram": "4 GB",
+            "gpu": "NVIDIA GeForce GTX 960 or AMD Radeon R9 380",
+            "storage": "20 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i5-9600 or AMD Ryzen 5 2600",
+            "ram": "12 GB",
+            "gpu": "NVIDIA GeForce RTX 2060 or AMD Radeon RX 5600 XT",
+            "storage": "20 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "NBA 2K26",
+        "editor": "2K",
+        "price": 59.99,
+        "discount": 75,
+        "image": "images/nba2k26.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"NBA 2K26 is a 2025 basketball simulation game developed by Visual Concepts, focusing on enhanced, skill-based gameplay powered by the ProPLAY™ motion engine. The game features a 'Ball Over Everything' theme, aiming for a faster, more fluid, and realistic experience compared to previous entries, allowing for more precise control over shooting and movement.",
+        "screens": [
+            "images/nba2k261.jpg",
+            "images/nba2k262.jpg",
+            "images/nba2k263.jpg",
+            "images/nba2k264.jpg",
+            "images/nba2k265.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i3-9100 or AMD Ryzen 3 1200",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 5GB or AMD Radeon RX 5500 XT 4GB",
+            "storage": "110 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i5-10600 or AMD Ryzen 5 3600X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2070 8GB or AMD Radeon RX 5700 8GB",
+            "storage": "110 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "eFootball",
+        "editor": "KONAMI",
+        "price": 0,
+        "discount": 0,
+        "image": "images/efootball.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"eFootball is a 2021 association football video game developed, published, and updated annually by Konami. It is the revamped successor to the popular Pro Evolution Soccer franchise, known as Winning Eleven in Japan. Unlike its predecessor, it was designed as a free-to-play digital video game that includes microtransactions and optional additional content, with the goal of offering more features and online and offline game modes such as Master League, as well as enabling cross-platform play. This eliminates the need for annual physical releases and instead provides periodic, free content updates that introduce new seasons. ",
+        "screens": [
+            "images/efootball1.jpg",
+            "images/efootball2.jpg",
+            "images/efootball3.jpg",
+            "images/efootball4.jpg",
+            "images/efootball5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i5-2300 or AMD FX-4350",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 660 Ti or AMD Radeon HD 7790",
+            "storage": "50 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i5-7600 or AMD Ryzen 5 1600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon RX 590",
+            "storage": "50 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "No Man's Sky",
+        "editor": "Hello Games",
+        "price": 29.99,
+        "discount": 60,
+        "image": "images/nomanssky.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"No Man's Sky is an action-adventure survival game, The game is built around four pillars: exploration, survival, combat, and trading. Players can engage with the entirety of a procedurally generated deterministic open world universe, which includes over 18 quintillion planets. Through the game's procedural generation system, planets have their own ecosystems with unique forms of flora and fauna, and various alien species may engage the player in combat or trade within planetary systems. Players advance in the game by mining for resources to power and improve their equipment, buying and selling resources using currencies earned by documenting flora and fauna or trading with the aforementioned lifeforms, building planetary bases and expanding space fleets, or otherwise following the game's overarching plot by seeking out the mystery around the entity known as The Atlas.",
+        "screens": [
+            "images/nomanssky1.jpg",
+            "images/nomanssky2.jpg",
+            "images/nomanssky3.jpg",
+            "images/nomanssky4.jpg",
+            "images/nomanssky5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 7",
+            "cpu": "Intel Core i3",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 480 or AMD Radeon 7870",
+            "storage": "10 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 7",
+            "cpu": "Intel Core i3",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 480 or AMD Radeon 7870",
+            "storage": "10 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Need For Speed Unbound",
+        "editor": "Electronic Arts",
+        "price": 59.99,
+        "discount": 30,
+        "image": "images/nfsunbound.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"Need for Speed Unbound is a racing game set in a fictional city called Lakeshore City, which is based on Chicago. It features an open world environment and gameplay similar to that of previous entries in the series, being mainly focused around street racing. The game features various forms of customization such as installing various body kits, adding a splitter, and even completely removing the front or rear bumpers. Leaning into the street art-inspired aesthetic of the game, Need for Speed Unbound features a set of driving effects which may be changed at will by the player. Post-launch updates introduced the ability to disable them entirely.",
+        "screens": [
+            "images/nfsunbound1.jpg",
+            "images/nfsunbound2.jpg",
+            "images/nfsunbound3.jpg",
+            "images/nfsunbound4.jpg",
+            "images/nfsunbound5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-8600 or AMD Ryzen 5 2600",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1050 Ti or AMD Radeon RX 570",
+            "storage": "50 GB HDD",
+            "directx": "Version 12"
+          },
+          "recommended": {
+            "os": "Windows 11",
+            "cpu": "Intel Core i7-8700 or AMD Ryzen 5 3600",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce RTX 2070 8GB or AMD Radeon RX 5700 8GB",
+            "storage": "50 GB SSD",
+            "directx": "Version 12"
+          }
+      }
+    },
+    {
+        "title": "Need for Speed Heat",
+        "editor": "Electronic Arts",
+        "price": 59.99,
+        "discount": 95,
+        "image": "images/nfsheat.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"Need for Speed Heat is the twenty-fourth installment in the Need for Speed series and commemorates the series' 25th anniversary. Set in Palm City, a fictionalised version of Miami, Florida, the game's single-player campaign revolves around the player character partaking in the 'Speedhunters Showdown', an exhibition held in the city that promotes legal street racing, while getting involved with siblings Lucas and Ana Rivera as they interact with the city's police force, led by authority figure Lt. Frank Mercer..",
+        "screens": [
+            "images/nfsheat1.jpg",
+            "images/nfsheat2.jpg",
+            "images/nfsheat3.jpg",
+            "images/nfsheat4.jpg",
+            "images/nfsheat5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-3570 or AMD FX-6350",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 760 or AMD Radeon 7970",
+            "storage": "50 GB HDD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i7-4790 or AMD Ryzen 3 1300X",
+            "ram": "16 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 or AMD Radeon RX 480",
+            "storage": "50 GB SSD",
+            "directx": "Version 11"
+          }
+      }
+    },
+    {
+        "title": "The Crew Motorfest",
+        "editor": "Ubisoft",
+        "price": 59.99,
+        "discount": 95,
+        "image": "images/thecrewmotorfest.jpg",
+        "isNew": "false",
+        "isHot": "false",
+        "isPopular": "false",
+        "description":"The Crew Motorfest is set in a scaled-down version of the islands of O'ahu and Maui in Hawaii. It is themed around a festival that serves as the main area for accessing the various events in the game, which is similar to that of the Forza Horizon series of games. Its gameplay is similar to that of the previous games in the series, featuring online multiplayer features referred to in game as a 'crew', as well as being able to control vehicles other than cars such as planes and boats.",
+        "screens": [
+            "images/thecrewmotorfest1.jpg",
+            "images/thecrewmotorfest2.jpg",
+            "images/thecrewmotorfest3.jpg",
+            "images/thecrewmotorfest4.jpg",
+            "images/thecrewmotorfest5.jpg"
+        ],
+        "requirements": {
+          "minimum": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-4460 or AMD Ryzen 5 1400",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce GTX 1060 6GB or AMD Radeon RX 480 8GB",
+            "storage": "40 GB SSD",
+            "directx": "Version 11"
+          },
+          "recommended": {
+            "os": "Windows 10",
+            "cpu": "Intel Core i5-8400 or AMD Ryzen 7 2700X",
+            "ram": "8 GB",
+            "gpu": "NVIDIA Geforce RTX 2060 6GB or AMD Radeon RX 5700 XT 8GB",
+            "storage": "40 GB SSD",
+            "directx": "Version 11"
+          }
+      }
     }
+    
     
     
 ]

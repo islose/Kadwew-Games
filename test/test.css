@@ -30,6 +30,8 @@ body {
   margin-top: 100px;
   border-radius: 100px;
   box-shadow: 0 0 20px 20px rgba(233, 30, 30, 0.8);
+  border-right: 1px solid white;
+  padding: 10px;
   
 }
 
@@ -259,6 +261,19 @@ button {
     left: 150%;
   }
 }
+
+
+
+  .container { padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+  .status { font-size: 14px; font-weight: 500; }
+  .log { width: 340px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 12px; font-size: 12px; font-family: monospace; height: 120px; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+  .log-entry.enter { color: green; }
+  .log-entry.leave { color: orange; }
+  .log-entry.change { color: blue; }
+
+
+
+
 
 
 

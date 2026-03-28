@@ -33,30 +33,18 @@ gsap.set(panierMenu, {
 
 panier.addEventListener('click', () => {
   const open = panierMenu.classList.toggle('open');
-  panierMenu.setAttribute('aria-hidden', !open);
+  panierMenu.inert = !open;
   document.body.classList.toggle('cart-open', open);
 
   if (open) {
-    gsap.timeline()
-      .set(panierMenu, { display: 'block' })
-      .to(panierMenu, {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
+    panierMenu.style.display = 'flex';
+    panierMenu.style.opacity = '1';
+    panierMenu.style.transform = 'translate(-50%, -50%)';
   } 
   
   else {
-    gsap.to(panierMenu, {
-      y: -20,
-      opacity: 0,
-      duration: 0.3,
-      ease: 'power2.out',
-      onComplete: () => {
-        gsap.set(panierMenu, { display: 'none' });
-      }
-    });
+    panierMenu.style.display = 'none';
+    panierMenu.style.opacity = '0';
   }
 });
 
@@ -64,22 +52,14 @@ document.addEventListener('click', (e) => {
   if (!panier.contains(e.target) && !panierMenu.contains(e.target)) {
     if (panierMenu.classList.contains('open')) {
       panierMenu.classList.remove('open');
-      panierMenu.setAttribute('aria-hidden', true);
+      panierMenu.inert = true;
       document.body.classList.remove('cart-open');
       
-      gsap.to(panierMenu, {
-        y: -20,
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.out',
-        onComplete: () => {
-          gsap.set(panierMenu, { display: 'none' });
-        }
-      });
+      panierMenu.style.display = 'none';
+      panierMenu.style.opacity = '0';
     }
   }
 });
-
 
 
 
@@ -160,9 +140,14 @@ if (searchInputs.length > 0) {
       if (searchInput.value.trim() === '') {
         container.innerHTML = "";
         
-        const hotGames = (window.allGames || [])
-          .filter(game => game.isHot)
-          .slice(0, 4);
+        const topDiscounts = (window.allGames || [])
+          .filter(game => game.discount)
+          .sort((a, b) => b.discount - a.discount)
+          .slice(0, 2);
+        const newGames = (window.allGames || [])
+          .filter(game => game.isNew === "true")
+          .slice(0, 2);
+        const hotGames = [...topDiscounts, ...newGames];
 
         if (hotGames.length === 0) {
           container.innerHTML = `<div class="search-suggestion" style="color:#999; padding: 10px;">Aucun jeu populaire</div>`;

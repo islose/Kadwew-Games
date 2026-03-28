@@ -1131,8 +1131,8 @@ console.log(firstNonRepeatedLetter("aabbcc"));
 const canvas = document.getElementById('starfield');
 const ctx = canvas.getContext('2d');
 const stars = [];
-const numStars = 1000;
-let speed = 0.1;
+const numStars = 2000;
+let speed = 0.3;
 
 // Ajuster la taille du canvas
 function resizeCanvas() {
@@ -2084,3 +2084,199 @@ function fizzBuzz () {
 }
 
 fizzBuzz();
+
+const romanLetters = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000
+}
+
+function romanToInt (s) {
+  let resulta = 0;
+  for(let i = 0; i < s.length; i++) {
+
+    if (romanLetters[s[i]] < romanLetters[s[i + 1]]) {
+      resulta -= romanLetters[s[i]];
+    }
+
+    else {
+      resulta += romanLetters[s[i]];
+    }
+    
+  }
+  return resulta;
+}
+
+
+function romanToInt (s) {
+  let result = 0;
+
+  for (let i = s.length - 1; i > - 1; i--) {
+    if (romanLetters[s[i]] < romanLetters[s[i + 1]]) {
+      result -= romanLetters[s[i]];
+    }
+    else {
+      result += romanLetters[s[i]];
+    }
+  }
+  return result;
+}
+
+console.log(romanToInt("II"));
+console.log(romanToInt("VII"));
+console.log(romanToInt("XV"));
+console.log(romanToInt("LVIIX"));
+console.log(romanToInt("DDII"));
+console.log(romanToInt("IVXLCDM"));
+console.log(romanToInt("MDCLXVI"));
+
+function longestCommonPrefix (str) {
+  let letters = "";
+  for(let i = 0; i < str.length; i++) {
+    console.log(str);
+    console.log(str[i]);
+    for (let letter of str[i]) {
+      console.log(letter);
+      if (letter === letter[str[i]]) {
+        letter.push(letters);
+      }
+      else {
+        return "";
+      }
+    }
+  }
+  return letters;
+}
+
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+console.log(longestCommonPrefix(["dog", "plane", "maze"]));
+
+/*
+const boite = document.getElementById('boite');
+let intervalId = null;
+let fadeTimeoutId = null;
+let timeoutId = null;
+let idx = 0;
+const originalSrc = boite.src;
+const pics = [
+      "/images/apexlegends1.jpg",
+      "/images/apexlegends2.jpg",
+      "/images/apexlegends3.jpg",
+      "/images/apexlegends4.jpg",
+];
+
+pics.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+const changeImage = (src) => {
+  boite.style.opacity = "0";
+  fadeTimeoutId = setTimeout(() => {
+    boite.src = src;
+    boite.style.opacity = "1";
+  }, 300);
+}
+
+const stopSlideShow = () => {
+  clearTimeout(timeoutId);
+  clearInterval(intervalId);
+  clearTimeout(fadeTimeoutId);
+  timeoutId = null;
+  intervalId = null;
+  fadeTimeoutId = null;
+  idx = 0;
+}
+
+boite.addEventListener('mouseenter', () => {
+  timeoutId = setTimeout(() => {
+    intervalId = setInterval(() => {
+      idx = (idx + 1) % pics.length;
+      changeImage(pics[idx]);
+    }, 1000);
+  }, 600);
+});
+
+boite.addEventListener('mouseleave', () => {
+  stopSlideShow();
+  boite.src = originalSrc;
+  boite.style.opacity = "1";
+});
+*/
+
+const boite = document.getElementById('boite');
+  const statusEl = document.getElementById('status');
+  const logEl = document.getElementById('log');
+
+  let intervalId = null;
+  let fadeTimeoutId = null;
+  let timeoutId = null;
+  let idx = 0;
+  const originalSrc = boite.src;
+
+  const pics = [
+    "https://picsum.photos/300/200?random=10",
+    "https://picsum.photos/300/200?random=20",
+    "https://picsum.photos/300/200?random=30",
+    "https://picsum.photos/300/200?random=40",
+  ];
+
+  pics.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  const addLog = (msg, type) => {
+    const div = document.createElement('div');
+    div.className = 'log-entry ' + type;
+    div.textContent = msg;
+    logEl.appendChild(div);
+    logEl.scrollTop = logEl.scrollHeight;
+  };
+
+  const changeImage = (src) => {
+    clearTimeout(fadeTimeoutId);
+    boite.style.opacity = "0";
+    fadeTimeoutId = setTimeout(() => {
+      boite.src = src;
+      boite.style.opacity = "1";
+      addLog(`image changée → random=${src.split('=')[1]}`, 'change');
+    }, 300);
+  };
+
+  const stopSlideshow = () => {
+    clearTimeout(timeoutId);
+    clearInterval(intervalId);
+    clearTimeout(fadeTimeoutId);
+    timeoutId = null;
+    intervalId = null;
+    fadeTimeoutId = null;
+    idx = 0;
+  };
+
+  boite.addEventListener('mouseenter', () => {
+    statusEl.textContent = "Souris entrée — attente 600ms...";
+    addLog('mouseenter — timer 600ms démarré', 'enter');
+
+    timeoutId = setTimeout(() => {
+      statusEl.textContent = "Slideshow en cours !";
+      addLog('600ms écoulés — slideshow démarré', 'enter');
+
+      intervalId = setInterval(() => {
+        idx = (idx + 1) % pics.length;
+        changeImage(pics[idx]);
+      }, 1000);
+    }, 600);
+  });
+
+  boite.addEventListener('mouseleave', () => {
+    stopSlideshow();
+    boite.src = originalSrc;
+    boite.style.opacity = "1";
+    statusEl.textContent = "Souris partie — image remise.";
+    addLog('mouseleave — tout stoppé', 'leave');
+  });

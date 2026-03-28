@@ -1,90 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="games.css">
-    <link rel="icon" type="png" href="/images/kadwew-logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
-    
-    <title>Kadwew Games</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="games.css">
+  <link rel="icon" type="png" href="/images/kadwew-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+
+  <title>Kadwew Games</title>
 
 </head>
+
 <body>
   <div id="page-content">
     <header class="header">
-  <a class="logo" href="/index.html">
-    <img src="/images/kadwew-logo.png" alt="Kadwew Games Logo" width="70" height="70">
-    <div class="brand">
-      Kadwew Games
-      <small>Store & Hub</small>
-    </div>
-  </a>
+      <a class="logo" href="/index.html">
+        <img src="/images/kadwew-logo.png" alt="Kadwew Games Logo" width="70" height="70">
+        <div class="brand">
+          Kadwew Games
+          <small>Store & Hub</small>
+        </div>
+      </a>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-links" role="navigation" aria-label="Main">
-      <a class="active" href="#">Accueil</a>
-      <a href="#">Jeux</a>
-      <a href="#">Offres</a>
-      <a href="#">Communauté</a>
-      <a href="#">Support</a>
-    </div>
+      <!-- Navigation -->
+      <nav>
+        <div class="nav-links" role="navigation" aria-label="Main">
+          <a class="active" href="#">Accueil</a>
+          <a href="#">Jeux</a>
+          <a href="#">Offres</a>
+          <a href="#">Communauté</a>
+          <a href="#">Support</a>
+        </div>
 
-    <!-- Search -->
-    <label id="search1" class="search" for="search-input">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-        <circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></circle>
-      </svg>
-      <input id="search-input" placeholder="Search" />
-    </label>
+        <!-- Search -->
+        <label id="search1" class="search" for="search-input">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round"></circle>
+          </svg>
+          <input id="search-input" placeholder="Search" />
+        </label>
 
-  </nav>
+      </nav>
 
-  <!-- Actions -->
-  <div class="actions">
-    <button class="hamburger" id="hambBtn" aria-label="Ouvrir le menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
-    </button>
-    <button class="panier-btn" id="panier-btn">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span class="panier-item" id="panier-item"></span>
-    </button>
-  </div>
+      <!-- Actions -->
+      <div class="actions">
+        <button class="hamburger" id="hambBtn" aria-label="Ouvrir le menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <button class="panier-btn" id="panier-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="panier-item" id="panier-item"></span>
+        </button>
+      </div>
 
-  <div class="panier-menu" id="panier-menu" aria-hidden="true">
-    <h2 class="panierH2"></h2>
-  </div>
-
-  <!-- Mobile menu (hidden on desktop) -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#">Accueil</a>
-    <a href="#">Jeux</a>
-    <a href="#">Offres</a>
-    <a href="#">Communauté</a>
-    <a href="#">Support</a>
-    <hr style="border:none;border-top:1px solid rgba(255,255,255,0.500);margin:8px 0;">
-    <a href="#">My Cart</a>
-    <a href="#">Wishlist</a>
-  </div>
-
-  </header>
-    
-  <main>
-    <div class="game-box" id="game-box">
-      <div class="game-image" id="game-image"></div>
-      <div class="game-information" id="game-information"></div>
-      <div class="game-screens" id="game-screens"></div>
-    </div>
-    
+      <div class="panier-menu" id="panier-menu" inert>
+        <div class="panier-content">
+          <div class="panier-header">
+            <h2>My Cart</h2>
+            <button class="close-panier" aria-label="Fermer le panier">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
 
 
+          <div class="panier-left">
+            <div class="panier-items-container" id="panier-items-container">
+
+            </div>
+
+            <div class="panier-empty" id="panier-empty">
+              <p>Empty Cart</p>
+            </div>
+          </div>
 
 
-  </main>
+          <div class="panier-right">
+            <div class="promo-code-section">
+              <input type="text" id="promo-code-input" placeholder="Discount Code" class="promo-input">
+              <button id="apply-promo-btn" class="apply-promo-btn">Apply</button>
+            </div>
+
+            <span id="code-message">Only one code can be used per purchase.</span>
+
+            <div class="panier-summary">
+              <div class="summary-row">
+                <span>Price Before Discount</span>
+                <span id="price-before">0€</span>
+              </div>
+              <div class="summary-row" id="game-discount-row" style="display: none;">
+                <span>Games Discount</span>
+                <span id="game-discount-amount">-0€</span>
+              </div>
+              <div class="summary-row" id="promo-discount-row" style="display: none;">
+                <span>Discount Code</span>
+                <span id="promo-discount-amount">-0€</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">0€</span>
+              </div>
+            </div>
+
+            <button class="checkout-btn">Proceed to payment</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu (hidden on desktop) -->
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#">Accueil</a>
+        <a href="#">Jeux</a>
+        <a href="#">Offres</a>
+        <a href="#">Communauté</a>
+        <a href="#">Support</a>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.500);margin:8px 0;">
+        <a href="#">My Cart</a>
+        <a href="#">Wishlist</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="game-box" id="game-box">
+        <div class="game-image" id="game-image"></div>
+        <div class="game-information" id="game-information"></div>
+        <div class="game-screens" id="game-screens"></div>
+      </div>
+
+
+
+    </main>
 
 
 
@@ -100,16 +154,19 @@
 
 
 
-    </div>
     <div class="background-blur"></div>
     <div id="loading-screen">
-        <div id="loading-text">Loading...</div>
+      <div id="loading-text">Loading...</div>
     </div>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/a45b53a937.js" crossorigin="anonymous"></script>
     <script src="cart.js"></script>
     <script src="games.js"></script>
-    
+
 </body>
+
 </html>
