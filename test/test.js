@@ -2208,7 +2208,7 @@ boite.addEventListener('mouseleave', () => {
 });
 */
 
-const boite = document.getElementById('boite');
+  const boite = document.getElementById('boite');
   const statusEl = document.getElementById('status');
   const logEl = document.getElementById('log');
 
@@ -2280,3 +2280,38 @@ const boite = document.getElementById('boite');
     statusEl.textContent = "Souris partie — image remise.";
     addLog('mouseleave — tout stoppé', 'leave');
   });
+
+
+const number = document.getElementById('number');
+const increase = document.getElementById('increase');
+const decrease = document.getElementById('decrease');
+let compteur = 0;
+
+const updateColors = () => {
+  if (compteur > 0) {
+    number.style.color = 'green';
+  }
+
+  else if (compteur < 0) {
+    number.style.color = 'red';
+  }
+
+  else {
+    number.style.color = 'white';
+  }
+}
+
+increase.addEventListener('click', () => {
+  compteur += 1;
+  number.textContent = compteur;
+  updateColors();
+});
+
+decrease.addEventListener('click', () => {
+  compteur -= 1;
+  number.textContent = compteur;
+  updateColors();
+});
+
+
+

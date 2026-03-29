@@ -272,7 +272,10 @@ button {
   .log-entry.change { color: blue; }
 
 
-
+  #number {
+    color: white;
+    font-size: 2rem;
+  }
 
 
 
