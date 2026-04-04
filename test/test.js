@@ -1334,7 +1334,7 @@ monCompte.retirer(400);
 
 const img = new Image();
 img.onload = function() {
-  console.log("✅ L'image est chargée !");
+  // console.log("✅ L'image est chargée !");
 };
 
 console.log("🔄 Je commence a charger l'image...");
@@ -2313,5 +2313,312 @@ decrease.addEventListener('click', () => {
   updateColors();
 });
 
+const promesse = new Promise ((resolve) => {
+  resolve("Données reçues ✅");
+});
+
+async function recupdonnees() {
+  const result = await promesse;
+  // console.log(result);
+}
+
+recupdonnees();
+
+/*
+const promise = new Promise((resolve, reject) => {
+  const conexionAuServeur = false;
+
+  if (conexionAuServeur) {
+    resolve("Connecté !");
+  }
+  else {
+    reject("Connexion ßÈÉÊû} }‼§+♀■Úß¦Ì»▓╩ßÓÒõÕÌ▀Þ¢║ªøÜð¶○þþÒÜ╗}£ø■ ▄║ÜØ░↑}ÇËı▓¼þ↑♦×‘ÝÄ¶ë☼");
+  }
+});
+
+async function conexion() {
+  try {
+    const resultat = await promise;
+    console.log(resultat);
+  }
+  catch(erreur) {
+    console.log(erreur);
+  }
+}
+conexion();
+*/
+/*
+function waitAndGiveName() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Kadwew");
+    }, 2000);
+  });
+}
+
+async function call() {
+  console.log("Chargement...");
+  const result = await waitAndGiveName();
+  console.log("Bonjour", result);
+}
+call();
+*/
+/*
+function attendre (ms) {
+  return new Promise (resolve => setTimeout(resolve, ms));
+}
+
+async function chargerDonnees() {
+  console.log("Chargement...");
+  attendre(2000);
+  console.log("Données Chargées !");
+}
+attendre();
+chargerDonnees();
+*/
+/*
+function loadUser() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Wewdak");
+    }, 1000);
+  });
+}
+
+function loadScore() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(950);
+    }, 1500);
+  });
+}
+
+async function loadUserAndScore() {
+  console.log("Loading User...");
+  const resultU = await loadUser();
+
+  console.log("Loading Score...");
+  const resultS = await loadScore();
+  console.log(`Le score de ${resultU} est de ${resultS}pts`);
+}
+loadUserAndScore();
+*/
+
+function chargementDonees() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const succes = Math.random() > 0.5;
+
+      if(succes) {
+        resolve("Données Chargées !");
+      }
+      else {
+        reject("Erreur Serveur");
+      }
+    }, 1000);
+  });
+}
+
+async function recupedonnees() {
+  console.log("Chargement...");
+  
+  try {
+    const result = await chargementDonees();
+    console.log(result);
+  }
+  catch(error) {
+    console.error(error);
+  }
+}
+recupedonnees();
+
+const imgPlace = document.getElementById('imgPlace');
+
+async function countryGame() {
+  const response = await fetch("https://restcountries.com/v3.1/name/a");
+  const data = await response.json();
+  const random = Math.floor(Math.random() * data.length);
+
+  console.log(data[random]);
+  let flag = document.createElement('img');
+  flag.src = data[random].flags.png;
+  imgPlace.appendChild(flag);
+}
+
+countryGame();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const scene = document.getElementById('scene');
+const canvass = document.getElementById('c');
+const ctxx = canvass.getContext('2d');
+const titleEl = document.getElementById('title');
+const hintEl = document.getElementById('hint');
+
+let W, H, started = false, particles = [], t = 0;
+
+function resize() {
+  W = canvass.width = scene.offsetWidth;
+  H = canvass.height = scene.offsetHeight;
+}
+resize();
+
+class Particle {
+  constructor(x, y, type) {
+    this.x = x;
+    this.y = y;
+    this.type = type;
+    if (type === 'ember') {
+      this.vx = (Math.random() - 0.5) * 2;
+      this.vy = -(Math.random() * 3 + 1);
+      this.life = 1;
+      this.decay = Math.random() * 0.02 + 0.015;
+      this.size = Math.random() * 3 + 1;
+      this.color = Math.random() > 0.5 ? '#ff6030' : '#ffaa20';
+    } else if (type === 'smoke') {
+      this.vx = (Math.random() - 0.5) * 0.8;
+      this.vy = -(Math.random() * 1.5 + 0.5);
+      this.life = 1;
+      this.decay = Math.random() * 0.008 + 0.005;
+      this.size = Math.random() * 8 + 4;
+    } else if (type === 'rose') {
+      this.vx = (Math.random() - 0.5) * 1.2;
+      this.vy = -(Math.random() * 2.5 + 1.5);
+      this.life = 1;
+      this.decay = Math.random() * 0.006 + 0.004;
+      this.size = Math.random() * 6 + 4;
+      this.rotation = Math.random() * Math.PI * 2;
+      this.rotSpeed = (Math.random() - 0.5) * 0.05;
+      this.hue = Math.random() * 30 - 15;
+    }
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life -= this.decay;
+    if (this.type === 'ember') this.vy -= 0.05;
+    if (this.type === 'rose') { this.rotation += this.rotSpeed; this.vx *= 0.99; }
+  }
+  draw() {
+    if (this.life <= 0) return;
+    ctxx.save();
+    ctxx.globalAlpha = Math.max(0, this.life * 0.8);
+    if (this.type === 'ember') {
+      ctxx.fillStyle = this.color;
+      ctxx.beginPath();
+      ctxx.arc(this.x, this.y, this.size * this.life, 0, Math.PI * 2);
+      ctxx.fill();
+    } else if (this.type === 'smoke') {
+      ctxx.fillStyle = `rgba(60,40,30,${this.life * 0.3})`;
+      ctxx.beginPath();
+      ctxx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctxx.fill();
+    } else if (this.type === 'rose') {
+      ctxx.translate(this.x, this.y);
+      ctxx.rotate(this.rotation);
+      drawRose(ctxx, this.size, this.life, this.hue);
+    }
+    ctxx.restore();
+  }
+}
+
+function drawRose(ctxx, size, life, hue) {
+  const petalCount = 5;
+  for (let i = 0; i < petalCount; i++) {
+    ctxx.save();
+    ctxx.rotate((i / petalCount) * Math.PI * 2);
+    ctxx.fillStyle = `hsla(${340 + hue}, 70%, ${50 + life * 20}%, ${life * 0.9})`;
+    ctxx.beginPath();
+    ctxx.ellipse(0, -size * 0.7, size * 0.4, size * 0.8, 0, 0, Math.PI * 2);
+    ctxx.fill();
+    ctxx.restore();
+  }
+  ctxx.fillStyle = `hsla(${340 + hue}, 60%, 35%, ${life})`;
+  ctxx.beginPath();
+  ctxx.arc(0, 0, size * 0.3, 0, Math.PI * 2);
+  ctxx.fill();
+}
+
+let burnProgress = 0;
+let burning = false;
+let burnComplete = false;
+
+function spawnBurn() {
+  const rect = titleEl.getBoundingClientRect();
+  const sceneRect = scene.getBoundingClientRect();
+  const tx = rect.left - sceneRect.left + rect.width / 2;
+  const ty = rect.top - sceneRect.top + rect.height / 2;
+  const spread = rect.width * 0.5 * burnProgress;
+
+  for (let i = 0; i < 4; i++) {
+    const x = tx + (Math.random() - 0.5) * spread * 2;
+    const y = ty + (Math.random() - 0.4) * rect.height;
+    particles.push(new Particle(x, y, 'ember'));
+  }
+  for (let i = 0; i < 2; i++) {
+    const x = tx + (Math.random() - 0.5) * spread * 2;
+    const y = ty + (Math.random() - 0.4) * rect.height;
+    particles.push(new Particle(x, y, 'smoke'));
+  }
+  for (let i = 0; i < 3; i++) {
+    const x = tx + (Math.random() - 0.5) * spread * 1.5;
+    const y = ty + (Math.random() * 0.3) * rect.height;
+    particles.push(new Particle(x, y, 'rose'));
+  }
+}
+
+function loop() {
+  ctxx.clearRect(0, 0, W, H);
+
+  if (burning && !burnComplete) {
+    burnProgress = Math.min(1, burnProgress + 0.012);
+    spawnBurn();
+    titleEl.style.opacity = Math.max(0, 1 - burnProgress * 1.3);
+    if (burnProgress >= 1) {
+      burnComplete = true;
+      titleEl.style.opacity = 0;
+      hintEl.style.opacity = 0;
+    }
+  }
+
+  particles = particles.filter(p => p.life > 0);
+  particles.forEach(p => { p.update(); p.draw(); });
+
+  t++;
+  requestAnimationFrame(loop);
+}
+
+scene.addEventListener('click', () => {
+  if (!started && !burning) {
+    burning = true;
+    started = true;
+    hintEl.style.transition = 'opacity 0.5s';
+    hintEl.style.opacity = '0';
+  }
+});
+
+window.addEventListener('resize', resize);
+loop();

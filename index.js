@@ -230,7 +230,7 @@ function createCard(game) {
   }
 
   card.innerHTML = `
-    <img src="${game.image}" alt="${game.title}">
+    <img src="${game.image}" alt="${game.title}" loading="lazy">
     <p class="price">${prices}</p>
   `;
 
@@ -516,28 +516,31 @@ function initCarousel(newGamesData) {
   }
 
   function showGame(i) {
-    const oldCard = content.querySelector('.carousel-card');
-    if (oldCard) {
-      gsap.to(oldCard, {
-        opacity: 0,
-        scale: 0.98,
-        duration: 0.18,
-        ease: "power2.out",
-        onComplete: () => oldCard.remove()
-      });
-    }
-
-    const card = createCard(newGamesData[i]);
-    card.classList.add('carousel-card');
-
-    content.style.position = "relative";
-    gsap.set(card, { position: "absolute", opacity: 0, scale: 1 });
-    content.appendChild(card);
-
-    gsap.to(card, { opacity: 1, scale: 1, duration: 0.28, ease: "power2.out" });
-
-    updateDots(i);
+  const oldCard = content.querySelector('.carousel-card');
+  if (oldCard) {
+    oldCard.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+    oldCard.style.opacity = "0";
+    oldCard.style.transform = "scale(0.98)";
+    setTimeout(() => oldCard.remove(), 180);
   }
+
+  const card = createCard(newGamesData[i]);
+  card.classList.add('carousel-card');
+
+  content.style.position = "relative";
+  card.style.position = "absolute";
+  card.style.opacity = "0";
+  card.style.transform = "scale(1)";
+  content.appendChild(card);
+
+  requestAnimationFrame(() => {
+    card.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+    card.style.opacity = "1";
+    card.style.transform = "scale(1)";
+  });
+
+  updateDots(i);
+}
 
   function nextGame() {
     index = (index + 1) % newGamesData.length;
@@ -618,7 +621,7 @@ if (searchInputs.length > 0) {
     }
     
     suggestion.innerHTML = `
-      <img src="${game.image}" alt="${game.title}" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
+      <img src="${game.image}" alt="${game.title}" loading="lazy" style="width: 60px; height: 30px; object-fit: cover; border-radius: 4px;">
       <span>${game.title} : </span>
       <span>${prices}</span>
     `;
