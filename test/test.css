@@ -403,3 +403,37 @@ button {
     pointer-events: none;
     border-radius: 12px;
   }
+
+
+  #wrap {
+      background: #0a0a0f;
+      width: 100%;
+      height: 500px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    canvas { position: absolute; top: 0; left: 0; border-radius: 12px; }
+    #btnnn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      border: 1px solid #4a4035;
+      color: #8a7a60;
+      font-family: 'Georgia', serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 10px 28px;
+      cursor: pointer;
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+      transition: all 0.3s;
+      z-index: 10;
+    }
+    #btnnn:hover { border-color: #8a7a60; color: #c8b89a; }
+    #btnnn.hidden { opacity: 0; pointer-events: none; }

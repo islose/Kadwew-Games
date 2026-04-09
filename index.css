@@ -1130,6 +1130,95 @@ body.cart-open main {
 .ft-bottom a { font-size: 12px; color: #333; text-decoration: none; }
 .ft-bottom a:hover { color: #666; }
 
+@media (max-width: 900px) {
+  .ft {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .ft-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: none;
+    margin-bottom: 2rem;
+  }
+
+  .ft-brand {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .ft-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .ft-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .ft-bottom div {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ft {
+    padding: 1.75rem 1rem 1rem;
+  }
+
+  .ft-top {
+    gap: 1rem;
+  }
+
+  .ft-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ft-brand-text h2 {
+    font-size: 14px;
+  }
+
+  .ft-brand-text p {
+    font-size: 11px;
+  }
+
+  .ft-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ft h4 {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .ft ul a {
+    font-size: 12px;
+  }
+
+  .ft-bottom {
+    align-items: stretch;
+  }
+
+  .ft-bottom p {
+    width: 100%;
+  }
+
+  .ft-bottom div {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+
 
 
 /* -------------------  Mobile ------------------- */
@@ -1416,6 +1505,11 @@ body.cart-open main {
   .apply-promo-btn {
     padding: 10px 16px;
     font-size: 0.9rem;
+  }
+
+  .ft-logo {
+    width: 30px;
+    height: 30px;
   }
   
 }

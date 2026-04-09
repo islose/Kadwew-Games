@@ -1128,16 +1128,16 @@ console.log(firstNonRepeatedLetter("aabbcc"));
 
 
 
-const canvas = document.getElementById('starfield');
-const ctx = canvas.getContext('2d');
+const canvasss = document.getElementById('starfield');
+const ctxxx = canvasss.getContext('2d');
 const stars = [];
 const numStars = 2000;
 let speed = 0.3;
 
 // Ajuster la taille du canvas
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvasss.width = window.innerWidth;
+  canvasss.height = window.innerHeight;
 
   stars.forEach(star => star.reset());
 }
@@ -1152,9 +1152,9 @@ class Star {
 }
 
 reset() {
-  this.x = Math.random() * canvas.width - canvas.width / 2;
-  this.y = Math.random() * canvas.height - canvas.height / 2;
-  this.z = Math.random() * canvas.width;
+  this.x = Math.random() * canvasss.width - canvasss.width / 2;
+  this.y = Math.random() * canvasss.height - canvasss.height / 2;
+  this.z = Math.random() * canvasss.width;
   this.prevX = this.x;
   this.prevY = this.y;
 }
@@ -1174,31 +1174,31 @@ update() {
 
 draw() {
   // Projection 3D vers 2D
-  const x = (this.x / this.z) * canvas.width + canvas.width / 2;
-  const y = (this.y / this.z) * canvas.height + canvas.height / 2;
+  const x = (this.x / this.z) * canvasss.width + canvasss.width / 2;
+  const y = (this.y / this.z) * canvasss.height + canvasss.height / 2;
                 
-  const prevX = (this.prevX / (this.z + speed)) * canvas.width + canvas.width / 2;
-  const prevY = (this.prevY / (this.z + speed)) * canvas.height + canvas.height / 2;
+  const prevX = (this.prevX / (this.z + speed)) * canvasss.width + canvasss.width / 2;
+  const prevY = (this.prevY / (this.z + speed)) * canvasss.height + canvasss.height / 2;
 
   // Taille de l'étoile basée sur la distance
-  const size = (1 - this.z / canvas.width) * 3;
+  const size = (1 - this.z / canvasss.width) * 3;
                 
   // Opacité basée sur la distance
-  const opacity = 1 - this.z / canvas.width;
+  const opacity = 1 - this.z / canvasss.width;
 
   // Dessiner la traînée (ligne)
-  ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-  ctx.lineWidth = size;
-  ctx.beginPath();
-  ctx.moveTo(prevX, prevY);
-  ctx.lineTo(x, y);
-  ctx.stroke();
+  ctxxx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+  ctxxx.lineWidth = size;
+  ctxxx.beginPath();
+  ctxxx.moveTo(prevX, prevY);
+  ctxxx.lineTo(x, y);
+  ctxxx.stroke();
 
   // Dessiner l'étoile (point)
-  ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-  ctx.beginPath();
-  ctx.arc(x, y, size, 0, Math.PI * 2);
-  ctx.fill();
+  ctxxx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+  ctxxx.beginPath();
+  ctxxx.arc(x, y, size, 0, Math.PI * 2);
+  ctxxx.fill();
   }
 }
 
@@ -1210,8 +1210,8 @@ for (let i = 0; i < numStars; i++) {
 // Animation
 function animate() {
   // Effet de traînée
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctxxx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+  ctxxx.fillRect(0, 0, canvasss.width, canvasss.height);
 
   // Mettre à jour et dessiner chaque étoile
   stars.forEach(star => {
@@ -1241,6 +1241,7 @@ function changeSpeed(mode) {
       break;
   }
 }
+
 
 
 class Dog {
@@ -2432,6 +2433,17 @@ async function recupedonnees() {
 }
 recupedonnees();
 
+
+
+
+
+const nameInput = document.getElementById('nameInput');
+const confPays = document.getElementById('confPays');
+const msgPays = document.getElementById('msgPays');
+const capitalInput = document.getElementById('capitalInput');
+const confCapital = document.getElementById('confCapital');
+const msgCapital = document.getElementById('msgCapital');
+
 const imgPlace = document.getElementById('imgPlace');
 
 async function countryGame() {
@@ -2443,6 +2455,33 @@ async function countryGame() {
   let flag = document.createElement('img');
   flag.src = data[random].flags.png;
   imgPlace.appendChild(flag);
+
+  confPays.addEventListener("click", () => {
+    if (nameInput.value.toLowerCase() === data[random].name.common.toLowerCase()) {
+      msgPays.textContent = "Vous avez trouvé la bonne réponse !";
+      confPays.style.background = "green";
+      confPays.style.color = "yellow";
+      confPays.textContent = "Trouvé !";
+    }
+    else {
+      nameInput.value = "";
+      msgPays.textContent = "Mauvaise réponse reéssayer";
+    }
+  });
+
+  confCapital.addEventListener("click", () => {
+    if (capitalInput.value.toLowerCase() === data[random].capital[0].toLowerCase()) {
+      msgCapital.textContent = "Vous avez trouvé la bonne réponse !";
+      confCapital.style.background = "green";
+      confCapital.style.color = "yellow";
+      confCapital.textContent = "Trouvé !";
+    }
+    else {
+      capitalInput.value = "";
+      msgCapital.textContent = "Mauvaise réponse reéssayer";
+    }
+  })
+  
 }
 
 countryGame();
@@ -2471,7 +2510,7 @@ countryGame();
 
 
 
-
+/*
 const scene = document.getElementById('scene');
 const canvass = document.getElementById('c');
 const ctxx = canvass.getContext('2d');
@@ -2622,3 +2661,245 @@ scene.addEventListener('click', () => {
 
 window.addEventListener('resize', resize);
 loop();
+*/
+
+    const wrap = document.getElementById('wrap');
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const btnnn = document.getElementById('btnnn');
+
+    let W, H, particles = [], petals = [], started = false;
+    let progress = 0, running = false;
+    let textPixels = [];
+
+    function resize() {
+      W = canvas.width = wrap.offsetWidth;
+      H = canvas.height = wrap.offsetHeight;
+    }
+    resize();
+
+    // Bruit simplifié (imitation Perlin)
+    function hash(n) { return Math.sin(n * 127.1 + 311.7) * 43758.5453 % 1; }
+    function noise(x, y) {
+      const ix = Math.floor(x), iy = Math.floor(y);
+      const fx = x - ix, fy = y - iy;
+      const ux = fx * fx * (3 - 2 * fx), uy = fy * fy * (3 - 2 * fy);
+      const a = hash(ix + iy * 57), b = hash(ix+1 + iy*57);
+      const c = hash(ix + (iy+1)*57), d = hash(ix+1 + (iy+1)*57);
+      return a + (b-a)*ux + (c-a)*uy + (d-c)*ux*uy + (a-b)*uy;
+    }
+
+    // Récupère les pixels du texte pour spawner les particules dessus
+    function getTextPixels() {
+      const offscreen = document.createElement('canvas');
+      offscreen.width = W; offscreen.height = H;
+      const octx = offscreen.getContext('2d');
+      octx.fillStyle = '#fff';
+      octx.font = `bold ${W > 500 ? 64 : 42}px Georgia, serif`;
+      octx.letterSpacing = '8px';
+      octx.textAlign = 'center';
+      octx.textBaseline = 'middle';
+      octx.fillText('LA VOIE DE LA LEGENDE', W/2, H/2 - 36);
+      octx.font = `${W > 500 ? 28 : 20}px Georgia, serif`;
+      octx.letterSpacing = '12px';
+      octx.fillText('KADWEW GAMES', W/2, H/2 + 28);
+      const data = octx.getImageData(0, 0, W, H).data;
+      const pixels = [];
+      const step = 3;
+      for (let y = 0; y < H; y += step) {
+        for (let x = 0; x < W; x += step) {
+          const i = (y * W + x) * 4;
+          if (data[i] > 128) pixels.push({ x, y });
+        }
+      }
+      return pixels;
+    }
+
+    // Particule de poussière
+    class Dust {
+      constructor(x, y) {
+        this.x = x; this.y = y;
+        this.seed = Math.random();
+        this.birth = performance.now() / 1000;
+        this.life = 3 + Math.random() * 2;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.vx = (Math.random() - 0.5) * 0.8 - 0.3;
+        this.vy = -(Math.random() * 1.5 + 0.5);
+      }
+      update(t) {
+        const age = t - this.birth;
+        const n1 = noise(this.x * 0.03 + this.seed * 10 + t * 0.01, this.y * 0.03);
+        const n2 = noise(this.x * 0.03 + 13.37, this.y * 0.03 + this.seed * 10 + t * 0.01);
+        this.x += this.vx + (n1 - 0.5) * 0.4;
+        this.y += this.vy + (n2 - 0.5) * 0.3;
+        this.vy *= 0.99;
+        const life01 = age / this.life;
+        this.alpha = life01 < 0.8 ? Math.min(1, life01 * 10) : (1 - (life01 - 0.8) / 0.2);
+        return age < this.life;
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha * 0.7;
+        ctx.fillStyle = `hsl(30, 20%, ${50 + this.seed * 20}%)`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Pétale
+    class Petal {
+      constructor(x, y) {
+        this.x = x; this.y = y;
+        this.seed = Math.random();
+        this.birth = performance.now() / 1000;
+        this.life = 5 + Math.random() * 3;
+        this.vx = (Math.random() - 0.5) * 1.2 - 0.2;
+        this.vy = -(Math.random() * 2 + 1);
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.12;
+        this.size = Math.random() * 8 + 5;
+        this.isRed = Math.random() > 0.33;
+        this.bendPhase = Math.random() * Math.PI * 2;
+      }
+      update(t) {
+        const age = t - this.birth;
+        const n = noise(this.x * 0.02 + this.seed * 7 + t * 0.008, this.y * 0.02);
+        const n2 = noise(this.x * 0.02, this.y * 0.02 + this.seed * 5 + t * 0.008);
+        this.x += this.vx + (n - 0.5) * 0.5;
+        this.y += this.vy + (n2 - 0.5) * 0.4;
+        this.vy *= 0.995;
+        this.rotation += this.rotSpeed;
+        this.rotSpeed += (n - 0.5) * 0.003;
+        const life01 = age / this.life;
+        this.alpha = life01 < 0.05 ? life01 / 0.05 : life01 > 0.8 ? (1 - (life01 - 0.8) / 0.2) : 1;
+        this.bend = Math.sin(age * 2 + this.bendPhase) * 0.4;
+        return age < this.life;
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.globalAlpha = this.alpha * 0.9;
+        const s = this.size;
+        const bend = this.bend;
+        ctx.beginPath();
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.6 + bend * s, -s * 0.3, s * 0.5, s * 0.5, 0, s * 0.3);
+        ctx.bezierCurveTo(-s * 0.5, s * 0.5, -s * 0.6 + bend * s, -s * 0.3, 0, -s);
+        if (this.isRed) {
+          ctx.fillStyle = `hsl(0, ${70 + this.seed * 20}%, ${35 + this.alpha * 15}%)`;
+        } else {
+          ctx.fillStyle = `hsl(30, 20%, ${85 + this.seed * 10}%)`;
+        }
+        ctx.shadowColor = this.isRed ? '#9B0000' : '#ffffff';
+        ctx.shadowBlur = 4;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Canvas offscreen pour le texte coloré
+    let offTex = null;
+
+    function buildTextures() {
+      offTex = document.createElement('canvas');
+      offTex.width = W; offTex.height = H;
+      const octx = offTex.getContext('2d');
+      octx.fillStyle = '#D5CBB2';
+      octx.font = `bold ${W > 500 ? 64 : 42}px Georgia, serif`;
+      octx.textAlign = 'center';
+      octx.textBaseline = 'middle';
+      octx.letterSpacing = '8px';
+      octx.fillText('KADWEW GAMES', W/2, H/2 - 36);
+      octx.fillStyle = '#8a7a60';
+      octx.font = `${W > 500 ? 28 : 20}px Georgia, serif`;
+      octx.letterSpacing = '12px';
+      octx.fillText('LA VOIE DE LA LEGENDE', W/2, H/2 + 28);
+    }
+
+    // Dissolution pixel par pixel avec le bruit
+    function drawDissolvedText(progress) {
+      if (!offTex) return;
+      const imgData = ctx.createImageData(W, H);
+      const src = offTex.getContext('2d').getImageData(0, 0, W, H);
+      for (let y = 0; y < H; y++) {
+        for (let x = 0; x < W; x++) {
+          const i = (y * W + x) * 4;
+          if (src.data[i + 3] < 10) continue;
+          const n = Math.abs(noise(x * 0.04 + 0.5, y * 0.04));
+          const n2 = Math.abs(noise(x * 0.02, y * 0.02 + 100));
+          const combined = (n * 0.6 + n2 * 0.4);
+          const threshold = progress * 1.1 - 0.05;
+          if (combined > threshold) {
+            const fade = Math.min(1, (combined - threshold) / 0.08);
+            imgData.data[i]   = src.data[i];
+            imgData.data[i+1] = src.data[i+1];
+            imgData.data[i+2] = src.data[i+2];
+            imgData.data[i+3] = src.data[i+3] * fade * (1 - progress * 0.8);
+          }
+        }
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+
+    function spawnParticles() {
+      if (!textPixels.length) textPixels = getTextPixels();
+      const count = textPixels.length;
+      for (let i = 0; i < 3; i++) {
+        const p = textPixels[Math.floor(Math.random() * count)];
+        particles.push(new Dust(p.x + (Math.random()-0.5)*10, p.y + (Math.random()-0.5)*10));
+      }
+      if (Math.random() < 0.4) {
+        const p = textPixels[Math.floor(Math.random() * count)];
+        petals.push(new Petal(p.x + (Math.random()-0.5)*20, p.y + (Math.random()-0.5)*20));
+      }
+    }
+
+    let lastTime = 0;
+    let spawnInterval = 0;
+
+    function loop(ts) {
+      const t = ts / 1000;
+      const dt = t - lastTime;
+      lastTime = t;
+
+      ctx.clearRect(0, 0, W, H);
+
+      if (running && progress < 1) {
+        progress += dt * 0.18;
+        spawnInterval += dt;
+        if (spawnInterval > 0.05) {
+          spawnParticles();
+          spawnInterval = 0;
+        }
+      }
+
+      if (progress < 0.99) drawDissolvedText(Math.min(progress, 1));
+
+      particles = particles.filter(p => {
+        const alive = p.update(t);
+        if (alive) p.draw();
+        return alive;
+      });
+
+      petals = petals.filter(p => {
+        const alive = p.update(t);
+        if (alive) p.draw();
+        return alive;
+      });
+
+      requestAnimationFrame(loop);
+    }
+
+    btnnn.addEventListener('click', () => {
+      if (running) return;
+      running = true;
+      btnnn.classList.add('hidden');
+      if (!offTex) buildTextures();
+      if (!textPixels.length) textPixels = getTextPixels();
+    });
+
+    buildTextures();
+    requestAnimationFrame(loop);

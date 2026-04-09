@@ -8,6 +8,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["FPS", "Multiplayer", "War", "Action", "Shooter"],
         "description":"Battlefield 6 is a modern-day, large-scale first-person shooter set in 2027, returning to classic class systems (Assault, Engineer, Support, Recon) and 64-player battles, focusing on tactical destruction, infantry-vehicle combat, and objective play, featuring both a single-player campaign following US Marine Raiders against Pax Armata and the popular Battlefield Portal mode for user-created content. Key elements include customizable weapons, deep environmental destruction for strategic advantage, and a return to grounded warfare with intense firefights and aerial dogfights.",
         "screens": [
             "images/battlefield61.jpg",
@@ -44,6 +45,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Horror", "Puzzle", "Adventure", "Platformer", "Co-op"],
         "description":"Little Nightmares III follows two new child protagonists, Low and Alone, as they navigate the twisted world of the Nowhere, trapped in the 'Spiral' of disturbing locations, seeking an escape back to the real world, featuring the series' first online co-op mode alongside solo play with an AI companion. Each character has unique tools—Low uses a bow, Alone a wrench—to solve puzzles and overcome monstrous 'Residents' in locations like the Necropolis and Candy Factory, all while confronting personal fears and traumatic past memories. ",
         "screens": [
             "images/littleNightmares31.jpg",
@@ -80,6 +82,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["MMORPG", "Free-to-Play", "Anime", "Adventure", "RPG"],
         "description":"Nostale is a free-to-play anime-styled MMORPG where players explore a fantasy world, battle monsters, team up with others, and customize characters with numerous specialist classes, pets, and partners, featuring quests, raids, PvP, and player housing, all with a focus on action and adventure in a 2D-in-2.5D world that blends typical MMORPG elements with unique features like 'Specialist Cards' and elemental fairies. ",
         "screens": [
             "images/nostale1.jpg",
@@ -116,6 +119,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action RPG", "Open World", "Souls-like", "Fantasy", "Adventure"],
         "description":"Elden Ring is an epic open-world action RPG from FromSoftware, set in the vast, mysterious Lands Between, where players, as Tarnished, explore ruins and battle formidable foes to become the Elden Lord, guided by lore from Hidetaka Miyazaki and George R.R. Martin. The game features deep, challenging combat, vast freedom for exploration using a spectral steed (Torrent), and a cryptic story centered around the shattered Elden Ring and its runes, offering immense replayability and discovery. ",
         "screens": [
             "images/eldenRing1.jpg",
@@ -152,6 +156,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Sports", "Soccer", "Simulation", "Multiplayer", "Realistic"],
         "description":"EA Sports FC 26 offers an overhauled, community-driven gameplay experience with responsive dribbling, smarter AI, and lifelike animations, featuring new Archetypes for player development, dynamic Manager Live Career scenarios, and enhanced Football Ultimate Team (FUT) modes with Live Events and Tournaments, all built on unmatched authenticity with thousands of licensed players, clubs, and competitions, including exclusive UEFA rights. Key additions include Competitive and Authentic gameplay presets, deeper PC settings, and a 'World Tour Through History' theme for FUT Seasons, celebrating football's biggest stories. ",
         "screens": [
             "images/eafc26Screen1.jpg",
@@ -188,6 +193,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["RPG", "Open World", "Cyberpunk", "Action", "Story-driven"],
         "description":"Cyberpunk 2077 is an open-world, action-adventure RPG set in the futuristic, corrupt megalopolis of Night City, where players control a customizable mercenary named V, navigating a world obsessed with power, glamour, and cybernetic body modification, with choices affecting story and character development, featuring intense combat, stealth, hacking, and a deep lore built around mega-corporations and street life, enhanced by the Phantom Liberty spy-thriller expansion and ongoing updates. ",
         "screens": [
             "images/cyberpunk20771.jpg",
@@ -224,6 +230,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Open World", "Fantasy", "Magic", "Adventure"],
         "description":"Hogwarts Legacy is an open-world action RPG set in the 1800s Wizarding World, where you play as a new fifth-year student at Hogwarts, uncovering an ancient magical secret while attending classes, learning spells, and exploring the castle and its surroundings, with a focus on your unique legacy. Players can create their own witch or wizard, customize their magical journey, interact with iconic creatures, brew potions, and shape the destiny of the wizarding world. ",
         "screens": [
             "images/hogwarts-legacy1.jpg",
@@ -260,6 +267,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["FPS", "Multiplayer", "Tactical", "Shooter", "Competitive"],
         "description":"Counter-Strike 2 is a free-to-play, multiplayer tactical first-person shooter by Valve that replaced CS:GO, offering significant technical upgrades with the Source 2 engine, realistic volumetric smoke physics, updated maps, and a new competitive ranking system called CS Rating, focusing on classic bomb defusal/hostage rescue gameplay with enhanced visuals and audio. ",
         "screens": [
             "images/csgo21.jpg",
@@ -296,6 +304,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Open World", "RPG", "Historical", "Stealth"],
         "description":"Assassin's Creed Valhalla is an open-world action RPG where you play as Eivor, a Viking warrior leading their clan from Norway to establish a new home in 9th-century England, engaging in brutal combat, epic raids, settlement building, and forging alliances while navigating the conflict between Assassins and Templars, all wrapped in Norse mythology and sagas. It features a massive, dynamic world, visceral dual-wielding combat, and deep RPG mechanics allowing players to shape their character and story through choices, promising a true 'Viking fantasy'. ",
         "screens": [
             "images/assassinValhalla1.jpg",
@@ -332,6 +341,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Stealth", "RPG", "Historical", "Samurai"],
         "description":"Assassin's Creed Shadows is an open-world action-adventure game set in feudal Japan (Sengoku period) featuring two playable protagonists: the stealthy shinobi Naoe and the powerful samurai Yasuke, allowing players to seamlessly switch between their distinct combat and stealth styles to dismantle a common enemy and usher in a new era. It emphasizes deep stealth mechanics, visceral combat, a beautiful world with dynamic seasons and weather, customizable hideouts, and a non-linear approach to missions, building on the series' stealth roots and RPG elements. ",
         "screens": [
             "images/assassinShadows1.jpg",
@@ -368,6 +378,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Stealth", "RPG", "Historical", "Assassin"],
         "description":"Assassin's Creed Mirage is a narrative-driven, open-world action-adventure game set in 9th-century Baghdad, focusing on the origin story of Basim Ibn Ishaq, a cunning street thief who becomes a Master Assassin for the Hidden Ones, returning to the series' roots with enhanced parkour, stealth, and Black Box assassination missions in a dense, vibrant city with distinct districts. ",
         "screens": [
             "images/assassinMirage1.jpg",
@@ -404,6 +415,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Open World", "Western", "Action", "Adventure", "Story-driven"],
         "description":"Red Dead Redemption 2 is an epic open-world Western adventure by Rockstar Games, set in 1899 America, following outlaw Arthur Morgan and the Van der Linde gang as they flee lawmen and internal strife during the dying days of the Wild West, forcing Arthur to choose between loyalty and his own ideals in a story of survival and consequence. Players experience a rich, detailed world through first/third-person perspectives, engaging in shootouts, hunting, robberies, and moral choices that shape the story and Arthur's honor. ",
         "screens": [
             "images/rdr21.jpg",
@@ -440,6 +452,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Open World", "Fantasy", "Action", "Adventure"],
         "description":"The Witcher 3: Wild Hunt is a critically acclaimed, dark fantasy, open-world RPG where you play as Geralt of Rivia, a monster-hunting Witcher, searching for his adopted daughter, Ciri, before she's captured by the spectral Wild Hunt; it features a massive world, morally grey choices with significant consequences, deep storytelling, monster slaying with swords and magic, and expansive content including two major expansions, 'Hearts of Stone' and 'Blood and Wine', making it a vast adventure. ",
         "screens": [
             "images/witcher31.jpg",
@@ -476,6 +489,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action RPG", "Souls-like", "Challenging", "Fantasy", "Exploration"],
         "description":"Dark Souls Remastered is a visually enhanced re-release of the original iconic action RPG, bringing updated graphics, smoother performance, and improved multiplayer with dedicated servers, while retaining the notoriously challenging gameplay, deep lore, and interconnected world of Lordran, plus the Artorias of the Abyss DLC. It offers a definitive experience for new players and fans, emphasizing strategic combat, exploration, and player accomplishment within its dark, rich universe. ",
         "screens": [
             "images/dark-souls1.jpg",
@@ -512,6 +526,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action RPG", "Souls-like", "Challenging", "Fantasy", "Exploration"],
         "description":"Dark Souls II is a challenging action RPG from FromSoftware, set in the ruined kingdom of Drangleic, where an undead traveler seeks a cure for their curse, leading to encounters with powerful foes, deep customization, and strategic combat emphasizing stamina management and exploration, with the Scholar of the First Sin edition overhauling enemy placement for an even tougher, different experience. ",
         "screens": [
             "images/dark-soulsII1.jpg",
@@ -548,6 +563,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action RPG", "Souls-like", "Challenging", "Fantasy", "Exploration"],
         "description":"Dark Souls III is the final chapter in the acclaimed action RPG series, where players, as an 'Unkindled' warrior, journey through the dying kingdom of Lothric to prevent the world's end by finding and returning the powerful Lords of Cinder to their thrones to rekindle the fading First Flame. It features faster combat, intense atmosphere, deeper customization, and the series' signature challenging gameplay, set in a beautiful but ruined world where colossal enemies and epic scale define the experience. ",
         "screens": [
             "images/dark-soulsIII1.jpg",
@@ -584,6 +600,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Souls-like", "Martial Arts", "Stealth", "Challenging"],
         "description":"Sekiro: Shadows Die Twice is a challenging third-person action-adventure game by FromSoftware, set in a dark, mythical version of 1500s Japan, where you play as the 'One-Armed Wolf' a shinobi dedicated to protecting a young lord, facing brutal foes with a katana, stealth, and a versatile prosthetic arm (including a grappling hook) to master posture-based combat and vertical exploration, all while dealing with a unique resurrection mechanic after death.",
         "screens": [
             "images/sekiro1.jpg",
@@ -620,6 +637,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Rogue-like", "Action", "Mythology", "Dungeon Crawler", "Indie"],
         "description":"Hades II is a rogue-like dungeon crawler sequel where you play as Melinoë, Hades' daughter, fighting to rescue her family from the Titan of Time, Chronos, using dark magic, Olympian boons, and powerful weapons in an ever-shifting underworld and surface world. It expands the original's gameplay with new paths (Erebus/Olympus), deeper narrative, more gods, and unique witchcraft mechanics, maintaining Supergiant Games' signature art, voice acting, and engaging action. ",
         "screens": [
             "images/hadesII1.jpg",
@@ -656,6 +674,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Rogue-like", "Action", "Mythology", "Dungeon Crawler", "Indie"],
         "description":"Hades is a critically acclaimed rogue-like dungeon crawler where you play as Zagreus, the immortal son of Hades, in his persistent attempts to escape the Underworld and reach Mount Olympus, aided by powers from his Olympian relatives like Zeus, Athena, and Ares, all while unraveling a rich, character-driven story through frequent, permanent death and rebirth. It combines fast-paced hack-and-slash combat with permanent progression, story revelations, and deep character relationships, making each escape attempt unique and engaging.",
         "screens": [
             "images/hades1.jpg",
@@ -692,6 +711,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Racing", "Open World", "Simulation", "Driving", "Multiplayer"],
         "description":"Forza Horizon 5 is a massive, vibrant open-world racing game set in a fictionalized Mexico, featuring the series' largest and most diverse map with unique biomes like jungles, deserts, beaches, and a volcano, dynamic seasons, stunning graphics with ray tracing, hundreds of customizable cars, and a deep campaign with challenges, plus online multiplayer for cooperative or competitive fun. Players explore, race, and create content in this evolving world with unique weather events like dust storms and tropical storms, offering limitless driving action and customization. ",
         "screens": [
             "images/forza51.jpg",
@@ -728,6 +748,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Sci-Fi", "Adventure", "Story-driven", "Exploration"],
         "description":"The Outer Worlds 2 is a single-player sci-fi RPG from Obsidian Entertainment, set in the new Arcadia system, where you play as an Earth Directorate Agent investigating dangerous space-time rifts and corporate conflicts, offering expanded character customization (including unique 'Flaws'), deeper RPG systems, improved first/third-person combat, and more player choice in a retro-futuristic world with new factions, characters, planets, and a greater focus on identity, morality, and exploration than the original game. ",
         "screens": [
             "images/theouterworlds21.jpg",
@@ -764,6 +785,7 @@
         "isNew":"false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Sci-Fi", "Adventure", "Story-driven", "Exploration"],
         "description":"The Outer Worlds is a first-person sci-fi RPG set in the far-flung Halcyon colony, where mega-corporations rule, and players, as a thawed-out colonist from a lost ship, uncover a conspiracy while shaping a player-driven story with significant choices, combat (including a 'time dilation' bullet-time), and exploration, all with a retro-futuristic, corporate-dystopian theme. ",
         "screens": [
             "images/theouterworlds1.jpg",
@@ -800,6 +822,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Survival", "Crafting", "Multiplayer", "Exploration"],
         "description":"Rust is a brutal, multiplayer-only open-world survival game where players spawn naked on a mysterious island with just a rock and a torch, facing threats from wildlife, the environment (hunger, cold), and most significantly, other players, requiring them to gather resources, craft tools, build shelters, and fight or team up to survive and dominate the harsh world. The core gameplay revolves around PvP conflict, raiding, base building, and continuous resource management, with the constant tension of potentially losing everything upon death, even when offline. ",
         "screens": [
             "images/rust1.jpg",
@@ -836,6 +859,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Battle-Royale", "Free-to-Play", "Shooter", "FPS", "Multiplayer"],
         "description":"Apex Legends is a free-to-play, squad-based, hero-shooter battle royale game set in the Titanfall universe, where legendary characters 'Legends' with unique abilities team up to fight for fame and fortune in a shrinking arena, emphasizing strategic squad play, diverse characters, and innovative gameplay mechanics. Developed by Respawn Entertainment, it combines tactical shooter elements with hero abilities, offering a fresh take on the battle royale genre with rich lore and evolving content. ",
         "screens": [
             "images/apexLegends1.jpg",
@@ -872,6 +896,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Action", "Adventure", "Story-driven", "Exploration"],
         "description":"Clair Obscur: Expedition 33 is a dark fantasy, turn-based RPG set in a world inspired by Belle Époque France, where a being called the Paintress erases people by painting cursed numbers on a monolith, with your team, Expedition 33, sent on a final, desperate quest to destroy her before the number '33' is painted, featuring deep character customization, real-time timed combat mechanics (dodging/parrying), a rich story about mortality and legacy, and stunning art direction. Players lead a party of unique individuals, utilizing strategic skill synergy and upgrades to overcome challenging enemies, all while exploring a somber yet hopeful world filled with melancholy and charm. ",
         "screens": [
             "images/clairobscur1.jpg",
@@ -908,6 +933,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "War", "Historical", "Simulation", "Strategy"],
         "description":"Crusader Kings III is a grand strategy RPG where you lead a medieval dynasty, focusing on characters, intrigue, and dynastic legacy over generations, rather than just nations, from 867 or 1066 to the fall of Byzantium. Players guide their noble family through the Middle Ages, using diplomacy, war, plots, and marriage to expand power, manage traits, religions, and courtly drama, ensuring their lineage survives and thrives through heirs, even as rulers die and are replaced. ",
         "screens": [
             "images/crusaderkingsIII1.jpg",
@@ -944,6 +970,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Indie", "Adventure", "Simulation", "Exploration"],
         "description":"Stardew Valley is an open-ended, pixel-art farming RPG where you inherit a rundown farm, escape corporate drudgery, and build a new life in Pelican Town, focusing on farming, foraging, fishing, mining, and building relationships with villagers, all while restoring the dilapidated Community Center or setting your own goals at your own pace. It's a charming, relaxing simulation game with deep mechanics, social depth, and endless replayability, featuring seasonal changes, crafting, combat, and exploring caves and the desert. ",
         "screens": [
             "images/stardewvalley1.jpg",
@@ -972,6 +999,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Simulation", "Adventure", "Zombie", "Indie"],
         "description":"Project Zomboid is a hardcore, open-world isometric zombie survival RPG where you try to survive as long as possible in Knox County, Kentucky, looting, crafting, building, and fighting hordes, knowing that 'this is the story of how you died' as no help is coming and death is inevitable, though the details of survival are deep and complex.",
         "screens": [
             "images/projectzomboid1.jpg",
@@ -1000,6 +1028,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Simulation", "Adventure", "Action", "Indie"],
         "description":"Terraria is a 2D sandbox action-adventure, role-playing, and platformer video game developed by Re-Logic, often described as a 16-bit, side-scrolling equivalent to Minecraft. It focuses on exploration, crafting, building, and combat against various creatures and bosses in procedurally generated worlds. Players can explore, gather resources, build structures, and fight, featuring both single-player and multiplayer modes.",
         "screens": [
             "images/terraria1.jpg",
@@ -1036,6 +1065,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Shooter", "Sci-Fi", "TPS", "Multiplayer"],
         "description":"Helldivers 2 is a chaotic, 1-4 player cooperative third-person shooter where players act as elite soldiers 'Helldivers' for 'Super Earth' to battle hordes of alien insects (Terminids) and robots (Automatons). It is a satirical, high-stakes game focused on team-based combat, utilizing heavy weaponry and orbital airstrikes while navigating active friendly fire.",
         "screens": [
             "images/helldiversII1.jpg",
@@ -1072,6 +1102,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Shooter", "TPS", "Multiplayer", "Survival", "Extraction"],
         "description":"ARC Raiders is a 2025 third-person, online PvPvE extraction shooter developed by Embark Studios, featuring squad-based gameplay. Players 'Raiders' scavenge for loot on a ruined Earth surface while fighting or avoiding intelligent, deadly machines (ARC). The core goal is to survive, collect resources, and extract to the underground city of Speranza.",
         "screens": [
             "images/arcraiders1.jpg",
@@ -1108,6 +1139,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Survival", "Adventure", "Zombie", "FPS"],
         "description":"Dead Island 2 is a thrilling First-Person, Action RPG takes players across a brand-new playground a hellish vision of LA (or HELL-A, as we like to call it). Dead Island 2 is stylish, vibrant and flooded with zombie infection. Explore iconic, gore-drenched Los Angeles. Meet larger-than-life characters.",
         "screens": [
             "images/deadisland21.jpg",
@@ -1144,6 +1176,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Action", "Free-to-Play", "FPS", "Multiplayer", "Shooter"],
         "description":"Overwatch 2 is a free-to-play, team-based, first-person 'hero shooter' developed by Blizzard Entertainment, released in 2022 as a sequel to Overwatch. It features 5v5 player-versus-player (PvP) combat, where players choose from a diverse roster of 40+ unique characters—divided into Tank, Damage, and Support roles—to compete in objective-based matches.",
         "screens": [
             "images/overwatch21.jpg",
@@ -1180,6 +1213,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Action", "Survival", "FPS", "Adventure"],
         "description":"Fallout 4 is a 2015 dystopian action role-playing game (ARPG) developed by Bethesda, set in a post-apocalyptic Boston. As the 'Sole Survivor' of Vault 111, players explore a 1950s-inspired, radioactive wasteland, fighting enemies, crafting items, and building settlements to locate their missing child, featuring both first- and third-person perspectives. ",
         "screens": [
             "images/fallout41.jpg",
@@ -1216,6 +1250,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Action", "Adventure", "FPS", "Medieval"],
         "description":"The Elder Scrolls V: Skyrim is an open-world fantasy action RPG developed by Bethesda Game Studios. Players assume the role of the 'Last Dragonborn' in a vast, free-roaming, Nordic-inspired landscape, fighting dragons, completing quests, and leveling skills in first or third-person perspectives.",
         "screens": [
             "images/skyrim1.jpg",
@@ -1252,6 +1287,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["RPG", "Shooter", "Extraction", "FPS", "Multiplayer"],
         "description":"Marathon is a science fiction first-person shooter video game series from Bungie, originally released for the Classic Mac OS. The name of the series is derived from the giant interstellar colony ship that provides the main setting for the first game; the ship is constructed out of the Martian moon Deimos. The series is often regarded as a spiritual predecessor of Bungie's Halo series.",
         "screens": [
             "images/marathon1.jpg",
@@ -1288,6 +1324,7 @@
         "isNew": "true",
         "isHot": "true",
         "isPopular": "true",
+        "tags": ["RPG", "Action", "Adventure", "Fantasy", "Medieval"],
         "description":"Crimson Desert is an ambitious open-world action-adventure game set on the continent of Pywel, focusing on a mercenary named Kliff navigating a war-torn land. Developed by Pearl Abyss, it features fast-paced combat, extensive exploration, and, according to GameSpot, a 100-180 hour playtime, blending medieval fantasy with unique traversal like gliding and horseback riding.",
         "screens": [
             "images/crimsondesert1.jpg",
@@ -1324,6 +1361,7 @@
         "isNew": "true",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["RPG", "Action", "Adventure", "Story-driven", "Sci-Fi"],
         "description":"Death Stranding 2: On the Beach is set primarily in Australia, eleven months after the events of the first game, in a post-apocalyptic world ravaged by otherworldly creatures. The player controls Sam Porter Bridges, a freelance porter, as he and his companions set out on an expedition across the Australian continent to connect isolated survivors and colonies to the wireless communications 'chiral' network in order to save humanity from extinction.",
         "screens": [
             "images/deathstranding21.jpg",
@@ -1360,6 +1398,7 @@
         "isNew": "true",
         "isHot": "false",
         "isPopular": "true",
+        "tags": ["Survival", "Action", "Horror", "FPS", "Zombie"],
         "description":"Resident Evil Requiem is a 2026 survival horror game developed and published by Capcom. It is the ninth main Resident Evil game, following Resident Evil Village (2021) It features a new playable character, FBI analyst Grace Ashcroft, who investigates a series of mysterious deaths involving the survivors of the Raccoon City incident with the aid of federal agent and returning protagonist Leon S. Kennedy.",
         "screens": [
             "images/residentevilrequiem1.jpg",
@@ -1396,6 +1435,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Strategy", "Multiplayer", "Sports", "Simulation"],
         "description":"As with previous entries in the series, Football Manager 26 places the player in control of a football club, overseeing tactics, transfers, training and financial management. The game utilises the Unity platform for its graphical and rendering systems, replacing the in-house technologies previously developed by Sports Interactive. This change introduced improvements to matchday presentation, including enhanced animations, ball physics and stadium lighting.",
         "screens": [
             "images/footballmanager261.jpg",
@@ -1432,6 +1472,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Action", "Multiplayer", "Sports", "Simulation"],
         "description":"NBA 2K26 is a 2025 basketball simulation game developed by Visual Concepts, focusing on enhanced, skill-based gameplay powered by the ProPLAY™ motion engine. The game features a 'Ball Over Everything' theme, aiming for a faster, more fluid, and realistic experience compared to previous entries, allowing for more precise control over shooting and movement.",
         "screens": [
             "images/nba2k261.jpg",
@@ -1468,6 +1509,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Strategy", "Multiplayer", "Sports", "Simulation"],
         "description":"eFootball is a 2021 association football video game developed, published, and updated annually by Konami. It is the revamped successor to the popular Pro Evolution Soccer franchise, known as Winning Eleven in Japan. Unlike its predecessor, it was designed as a free-to-play digital video game that includes microtransactions and optional additional content, with the goal of offering more features and online and offline game modes such as Master League, as well as enabling cross-platform play. This eliminates the need for annual physical releases and instead provides periodic, free content updates that introduce new seasons. ",
         "screens": [
             "images/efootball1.jpg",
@@ -1504,6 +1546,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["RPG", "Open World", "Multiplayer", "Adventure", "Simulation"],
         "description":"No Man's Sky is an action-adventure survival game, The game is built around four pillars: exploration, survival, combat, and trading. Players can engage with the entirety of a procedurally generated deterministic open world universe, which includes over 18 quintillion planets. Through the game's procedural generation system, planets have their own ecosystems with unique forms of flora and fauna, and various alien species may engage the player in combat or trade within planetary systems. Players advance in the game by mining for resources to power and improve their equipment, buying and selling resources using currencies earned by documenting flora and fauna or trading with the aforementioned lifeforms, building planetary bases and expanding space fleets, or otherwise following the game's overarching plot by seeking out the mystery around the entity known as The Atlas.",
         "screens": [
             "images/nomanssky1.jpg",
@@ -1540,6 +1583,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Sports", "Action", "Racing", "Driving", "Simulation"],
         "description":"Need for Speed Unbound is a racing game set in a fictional city called Lakeshore City, which is based on Chicago. It features an open world environment and gameplay similar to that of previous entries in the series, being mainly focused around street racing. The game features various forms of customization such as installing various body kits, adding a splitter, and even completely removing the front or rear bumpers. Leaning into the street art-inspired aesthetic of the game, Need for Speed Unbound features a set of driving effects which may be changed at will by the player. Post-launch updates introduced the ability to disable them entirely.",
         "screens": [
             "images/nfsunbound1.jpg",
@@ -1576,6 +1620,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Sports", "Action", "Racing", "Driving", "Simulation"],
         "description":"Need for Speed Heat is the twenty-fourth installment in the Need for Speed series and commemorates the series' 25th anniversary. Set in Palm City, a fictionalised version of Miami, Florida, the game's single-player campaign revolves around the player character partaking in the 'Speedhunters Showdown', an exhibition held in the city that promotes legal street racing, while getting involved with siblings Lucas and Ana Rivera as they interact with the city's police force, led by authority figure Lt. Frank Mercer..",
         "screens": [
             "images/nfsheat1.jpg",
@@ -1612,6 +1657,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
+        "tags": ["Racing", "Open World", "Multiplayer", "Driving", "Simulation"],
         "description":"The Crew Motorfest is set in a scaled-down version of the islands of O'ahu and Maui in Hawaii. It is themed around a festival that serves as the main area for accessing the various events in the game, which is similar to that of the Forza Horizon series of games. Its gameplay is similar to that of the previous games in the series, featuring online multiplayer features referred to in game as a 'crew', as well as being able to control vehicles other than cars such as planes and boats.",
         "screens": [
             "images/thecrewmotorfest1.jpg",

@@ -341,7 +341,7 @@ async function loadGames() {
 
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
-      const particleCount = 100;
+      const particleCount = 50;
       for (let i = 0; i < particleCount; i++) {
         const p = document.createElement("div");
         p.classList.add("particle");
@@ -349,7 +349,7 @@ async function loadGames() {
 
         const size = Math.random() * 3 + 10;
         const hue = 50 + Math.random() * 30;
-        const duration = 1 + Math.random() * 4;
+        const duration = 2 + Math.random() * 4;
         const bannerRect = banner.getBoundingClientRect();
         const bannerWidth = bannerRect.width;
 
@@ -755,28 +755,31 @@ const sortDropdown = document.getElementById("sort-dropdown");
 
 
 function displayGames(list) {
+  const cards = container.querySelectorAll(".game-card");
 
-  gsap.to("#games-container .game-card", {
-    opacity: 0,
-    y: -10,
-    duration: 0.2,
-    onComplete: () => {
-
-      container.innerHTML = "";
-
-      list.forEach(game => {
-        const card = createCard(game);
-        container.appendChild(card);
-      });
-
-      gsap.from("#games-container .game-card", {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out"
-      });
-
-    }
+  cards.forEach(card => {
+    card.style.transition = "opacity 0.2s, transform 0.2s";
+    card.style.opacity = "0";
+    card.style.transform = "translateY(-10px)";
   });
+
+  setTimeout(() => {
+    container.innerHTML = "";
+
+    list.forEach(game => {
+      const card = createCard(game);
+      card.style.opacity = "0";
+      card.style.transition = "opacity 0.5s";
+      container.appendChild(card);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          card.style.opacity = "1";
+        });
+      });
+    });
+
+  }, 200);
 }
 
 
