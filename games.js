@@ -261,7 +261,6 @@ function createCardGames(game) {
       ${prices}
     </div>
     <div class="game-information" id="game-information">
-        <button class="buy-btn" id="buy-btn">Purchase</button>
         <button class="add-cart-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to cart</button>
     </div>
     <div class="description" id="description">${game.description}</div>

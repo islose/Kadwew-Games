@@ -107,108 +107,12 @@ function slugify (text) {
 const container = document.getElementById("games-container");
 const newContainer = document.getElementById("new-game-container");
 const discountContainer = document.getElementById("featured-games");
-/*
-function createCard(game) {
-  const slug = slugify(game.title);
-  const card = document.createElement("a");
-  card.classList.add("game-card");
-  card.href = `games.html?game=${slug}`;
-  
+const initialGamesCount = 15;
+const gamesPerLoad = 15;
+let visibleGamesCount = initialGamesCount;
+let displayedGames = [];
+let showMoreButton = null;
 
-  let prices;
-
-  if (Number(game.price) === 0) {
-    prices = `<span class="free">Free-To-Play</span>`;
-  }
-
-  else if (game.discount && Number(game.discount) > 0) {
-    const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
-    prices = `
-    <span class="old-price">${game.price}€</span>
-    <span class="new-price">${newPrice}€</span>
-    `;
-  }
-
-  else {
-    prices = `${game.price}€`;
-  }
-    
-  card.innerHTML = `
-    <img src="${game.image}" alt="${game.title}">
-    <p class="price">${prices}</p>
-  `;
-
-  
-
-  
-  
-  if (game.discount && Number(game.discount) > 0) {
-    const badge = document.createElement("span");
-    badge.classList.add("badge", "discount");
-    badge.textContent = `-${game.discount}%`;
-    const priceElement = card.querySelector(".price");
-    priceElement.prepend(badge);
-  }
-
-
-  if (game.screens && game.screens.length > 0) {
-    const imgElement = card.querySelector("img");
-    const originalSrc = imgElement.src;
-    let currentIndex = 0;
-    let intervalId;
-    let timeoutId;
-
-    card.addEventListener("mouseenter", () => {
-    imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
-
-    timeoutId = setTimeout(() => {
-      currentIndex = (currentIndex + 1) % game.screens.length;
-      imgElement.style.opacity = "0";
-      setTimeout(() => {
-        imgElement.src = game.screens[currentIndex];
-        imgElement.style.opacity = "1";
-      }, 250);
-
-      intervalId = setInterval(() => {
-        currentIndex = (currentIndex + 1) % game.screens.length;
-        imgElement.style.opacity = "0";
-        setTimeout(() => {
-          imgElement.src = game.screens[currentIndex];
-          imgElement.style.opacity = "1";
-        }, 250);
-      }, 1200);
-    }, 600);
-  });
-
-
-  card.addEventListener("mouseleave", () => {
-    clearTimeout(timeoutId);
-    clearInterval(intervalId);
-
-    imgElement.style.opacity = "0";
-    setTimeout(() => {
-      imgElement.src = originalSrc;
-      imgElement.style.opacity = "1";
-    }, 10);
-
-    imgElement.style.transform = "scale(1)";
-  });
-  
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        clearInterval(intervalId);
-        imgElement.src = originalSrc;
-      }
-    });
-  });
-
-observer.observe(card);
-}
-  return card;
-}
-*/
 function createCard(game) {
   const slug = slugify(game.title);
   const card = document.createElement("a");
@@ -320,8 +224,6 @@ async function loadGames() {
     const games = await response.json();
 
     window.allGames = games;
-
-    preloadScreens(games);
 
     const banner = document.getElementById("banner");
     const hotBanner = games.find(game => game.isHot === true || game.isHot === "true");
@@ -444,18 +346,11 @@ async function loadGames() {
     discountContainer.appendChild(layout);
   }
 
-  const newGamesData = [];
+  const newGamesData = games.filter(game =>
+    game.isPopular === true || game.isPopular === "true"
+  );
 
-    games.forEach(game => {
-      const card = createCard(game);
-
-      container.appendChild(card);
-
-      if (game.isPopular === true || game.isPopular === "true") {
-        newGamesData.push(game);
-      }
-
-    });
+    displayGames(games);
 
     if (newGamesData.length > 0) initCarousel(newGamesData);
     createDiscountLayout(games);
@@ -755,21 +650,32 @@ const sortDropdown = document.getElementById("sort-dropdown");
 
 
 function displayGames(list) {
+  displayedGames = list;
+  visibleGamesCount = initialGamesCount;
+  renderVisibleGames();
+}
+
+function renderVisibleGames() {
   const cards = container.querySelectorAll(".game-card");
 
+  /*
   cards.forEach(card => {
-    card.style.transition = "opacity 0.2s, transform 0.2s";
+    card.style.transition = "opacity 0.2s ease, transform 0.2s ease";
     card.style.opacity = "0";
-    card.style.transform = "translateY(-10px)";
+    card.style.removeProperty("transform");
   });
+  */
 
   setTimeout(() => {
     container.innerHTML = "";
 
-    list.forEach(game => {
+    const visibleGames = displayedGames.slice(0, visibleGamesCount);
+    preloadScreens(visibleGames);
+
+    visibleGames.forEach(game => {
       const card = createCard(game);
       card.style.opacity = "0";
-      card.style.transition = "opacity 0.5s";
+      card.style.transition = "opacity 0.5s ease, transform 0.25s ease";
       container.appendChild(card);
 
       requestAnimationFrame(() => {
@@ -779,7 +685,25 @@ function displayGames(list) {
       });
     });
 
-  }, 200);
+    if (!showMoreButton) {
+      showMoreButton = document.getElementById("show-more-games") || document.createElement("button");
+      showMoreButton.id = "show-more-games";
+      showMoreButton.type = "button";
+      showMoreButton.textContent = "Show more";
+      showMoreButton.addEventListener("click", () => {
+        visibleGamesCount += gamesPerLoad;
+        renderVisibleGames();
+      });
+      if (!showMoreButton.isConnected) {
+        container.insertAdjacentElement("afterend", showMoreButton);
+      }
+    }
+
+    const hasMoreGames = visibleGamesCount < displayedGames.length;
+    showMoreButton.hidden = !hasMoreGames;
+    showMoreButton.style.display = hasMoreGames ? "block" : "none";
+
+  }, 1);
 }
 
 

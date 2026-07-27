@@ -610,6 +610,7 @@ body.cart-open main {
 }
 
 .game-card {
+  display: block;
   background: rgba(0, 0, 0, 0.400);
 }
 
@@ -683,7 +684,7 @@ body.cart-open main {
 }
 
 .add-cart-btn:hover {
-  background-color: rgb(85, 162, 192);
+  background-color: rgb(255, 81, 0);
   color: rgb(255, 255, 255);
 }
 
@@ -1244,6 +1245,10 @@ h3 {
   .apply-promo-btn {
     padding: 10px 16px;
     font-size: 0.9rem;
+  }
+
+  .systemRequirements h2 {
+    font-size: 2.5rem;
   }
   
 }
