@@ -2905,23 +2905,11 @@ loop();
     requestAnimationFrame(loop);
 
   
-    const TheContainer = document.getElementById("Thecontainer");
-    const ShowBtn = document.getElementById("ShowBtn");
-    const Fruits = ["Pomme", "Fraise", "Banane", "Poire", "Orange", "Melon", "Nectarine", "Peche", "Citron", "Mangue"];
+                               //////////
 
-    let addFruits = 3;
-    function afficherFruits() {
-      TheContainer.innerHTML = "";
-      const visibles = Fruits.slice(0, addFruits);
-      visibles.forEach(fruit => {
-        TheContainer.innerHTML += "<p>" + fruit + "</p>";
-      });
-    }
+    const toggleBtn = document.getElementById("toggleBtn");
+    const texteASecret = document.getElementById("texteASecret");
 
-    afficherFruits();
-    
-    ShowBtn.addEventListener("click", () => {
-      addFruits += 2;
-      afficherFruits();
+    toggleBtn.addEventListener("click", () => {
+      texteASecret.hidden = !texteASecret.hidden;
     });
-    

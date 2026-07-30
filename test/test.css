@@ -2,6 +2,10 @@ body {
   background: rgb(51, 51, 51);
 }
 
+p {
+  color: white;
+}
+
 #verif {
   cursor: pointer;
   z-index: 100;

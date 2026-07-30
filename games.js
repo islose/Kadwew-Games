@@ -338,6 +338,136 @@ function createCardGames(game) {
   return card;
 }
 
+function getSimilarGames(games, currentGame) {
+  const currentTags = (currentGame.tags || []).map(tag => tag.toLowerCase());
+
+  const similarGames = games
+    .filter(g => g.title !== currentGame.title)
+    .map(g => {
+      const tags = (g.tags || []).map(tag => tag.toLowerCase());
+      const score = tags.filter(tag => currentTags.includes(tag)).length;
+      return { game: g, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (a.game.isPopular !== b.game.isPopular) return (b.game.isPopular === "true") ? 1 : -1;
+      return a.game.title.localeCompare(b.game.title);
+    })
+    .map(item => item.game);
+
+  if (similarGames.length === 0) {
+    return games
+      .filter(g => g.title !== currentGame.title)
+      .slice(0, 4);
+  }
+
+  return similarGames.slice(0, 4);
+}
+
+function createSuggestionCarousel(suggestions) {
+  const section = document.createElement('section');
+  section.className = 'suggestionsSection';
+  section.innerHTML = `
+    <div class="suggestionsHeader">
+      <h2>Discover Also</h2>
+    </div>
+    <div class="suggestionsCarousel">
+      <button class="carouselButton left" type="button" aria-label="Jeu précédent">‹</button>
+      <div class="suggestionsTrackWrapper">
+        <div class="suggestionsTrack"></div>
+      </div>
+      <button class="carouselButton right" type="button" aria-label="Jeu suivant">›</button>
+    </div>
+  `;
+
+  const track = section.querySelector('.suggestionsTrack');
+  const wrapper = section.querySelector('.suggestionsTrackWrapper');
+  const prevBtn = section.querySelector('.carouselButton.left');
+  const nextBtn = section.querySelector('.carouselButton.right');
+
+  if (suggestions.length === 0) {
+    track.innerHTML = `<div class="no-suggestions">Aucune suggestion disponible.</div>`;
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    return section;
+  }
+
+  suggestions.forEach(game => {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'suggestionCard';
+    card.innerHTML = `
+      <img src="${game.image}" alt="${game.title}">
+      <div class="suggestion-title">${game.title}</div>
+      <div class="suggestion-price">${Number(game.price) === 0 ? 'Free-To-Play' : game.discount && Number(game.discount) > 0 ? `<span class="badge discount">-${game.discount}%</span> ${(Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2)}€` : `${game.price}€`}</div>
+      <div class="suggestion-tags">${(game.tags || []).slice(0, 4).map(tag => `<span class="suggestion-tag">${tag}</span>`).join('')}</div>
+    `;
+
+    card.addEventListener('click', () => {
+      const slug = slugify(game.title);
+      window.open(`games.html?game=${slug}`);
+    });
+
+    track.appendChild(card);
+  });
+
+  const cards = Array.from(track.children);
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  function getScrollAmount() {
+    if (!cards[0]) return 260;
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    return cardWidth + 16;
+  }
+
+  function scrollByAmount(direction) {
+    wrapper.scrollBy({
+      left: direction * getScrollAmount(),
+      behavior: 'smooth'
+    });
+  }
+
+  function goPrev() {
+    scrollByAmount(-1);
+  }
+
+  function goNext() {
+    scrollByAmount(1);
+  }
+
+  wrapper.addEventListener('pointerdown', (event) => {
+    isDragging = true;
+    wrapper.classList.add('dragging');
+    startX = event.pageX - wrapper.offsetLeft;
+    startScrollLeft = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener('pointermove', (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    const x = event.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    wrapper.scrollLeft = startScrollLeft - walk;
+  });
+
+  const stopDragging = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.classList.remove('dragging');
+  };
+
+  wrapper.addEventListener('pointerup', stopDragging);
+  wrapper.addEventListener('pointerleave', stopDragging);
+  wrapper.addEventListener('pointercancel', stopDragging);
+
+  prevBtn.addEventListener('click', goPrev);
+  nextBtn.addEventListener('click', goNext);
+  return section;
+}
+
 async function loadGame() {
   const response = await fetch("games.json");
   const games = await response.json();
@@ -355,7 +485,12 @@ async function loadGame() {
   }
 
   gameBox.innerHTML = "";
-  gameBox.appendChild(createCardGames(game));
+  const card = createCardGames(game);
+  gameBox.appendChild(card);
+
+  const suggestions = getSimilarGames(games, game);
+  const suggestionSection = createSuggestionCarousel(suggestions);
+  gameBox.appendChild(suggestionSection);
 
   const buyBtn = document.getElementById('add-cart-btn');
   const removeGameBtn = document.getElementById('remove-game-btn');
