@@ -193,7 +193,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "true",
-        "tags": ["RPG", "Open World", "Cyberpunk", "Action", "Story-driven"],
+        "tags": ["RPG", "Open World", "Cyberpunk", "Action", "FPS"],
         "description":"Cyberpunk 2077 is an open-world, action-adventure RPG set in the futuristic, corrupt megalopolis of Night City, where players control a customizable mercenary named V, navigating a world obsessed with power, glamour, and cybernetic body modification, with choices affecting story and character development, featuring intense combat, stealth, hacking, and a deep lore built around mega-corporations and street life, enhanced by the Phantom Liberty spy-thriller expansion and ongoing updates. ",
         "screens": [
             "images/cyberpunk20771.jpg",
@@ -304,7 +304,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
-        "tags": ["Action", "Open World", "RPG", "Historical", "Stealth"],
+        "tags": ["Action", "Open World", "Parkour", "Historical", "Stealth"],
         "description":"Assassin's Creed Valhalla is an open-world action RPG where you play as Eivor, a Viking warrior leading their clan from Norway to establish a new home in 9th-century England, engaging in brutal combat, epic raids, settlement building, and forging alliances while navigating the conflict between Assassins and Templars, all wrapped in Norse mythology and sagas. It features a massive, dynamic world, visceral dual-wielding combat, and deep RPG mechanics allowing players to shape their character and story through choices, promising a true 'Viking fantasy'. ",
         "screens": [
             "images/assassinValhalla1.jpg",
@@ -341,7 +341,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
-        "tags": ["Action", "Stealth", "RPG", "Historical", "Samurai"],
+        "tags": ["Action", "Stealth", "Parkour", "Historical", "Samurai"],
         "description":"Assassin's Creed Shadows is an open-world action-adventure game set in feudal Japan (Sengoku period) featuring two playable protagonists: the stealthy shinobi Naoe and the powerful samurai Yasuke, allowing players to seamlessly switch between their distinct combat and stealth styles to dismantle a common enemy and usher in a new era. It emphasizes deep stealth mechanics, visceral combat, a beautiful world with dynamic seasons and weather, customizable hideouts, and a non-linear approach to missions, building on the series' stealth roots and RPG elements. ",
         "screens": [
             "images/assassinShadows1.jpg",
@@ -378,7 +378,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
-        "tags": ["Action", "Stealth", "RPG", "Historical", "Assassin"],
+        "tags": ["Action", "Stealth", "Parkour", "Historical", "Assassin"],
         "description":"Assassin's Creed Mirage is a narrative-driven, open-world action-adventure game set in 9th-century Baghdad, focusing on the origin story of Basim Ibn Ishaq, a cunning street thief who becomes a Master Assassin for the Hidden Ones, returning to the series' roots with enhanced parkour, stealth, and Black Box assassination missions in a dense, vibrant city with distinct districts. ",
         "screens": [
             "images/assassinMirage1.jpg",
@@ -748,7 +748,7 @@
         "isNew": "false",
         "isHot": "false",
         "isPopular": "false",
-        "tags": ["RPG", "Sci-Fi", "Adventure", "Story-driven", "Exploration"],
+        "tags": ["RPG", "Sci-Fi", "Adventure", "FPS", "Action"],
         "description":"The Outer Worlds 2 is a single-player sci-fi RPG from Obsidian Entertainment, set in the new Arcadia system, where you play as an Earth Directorate Agent investigating dangerous space-time rifts and corporate conflicts, offering expanded character customization (including unique 'Flaws'), deeper RPG systems, improved first/third-person combat, and more player choice in a retro-futuristic world with new factions, characters, planets, and a greater focus on identity, morality, and exploration than the original game. ",
         "screens": [
             "images/theouterworlds21.jpg",
@@ -785,7 +785,7 @@
         "isNew":"false",
         "isHot": "false",
         "isPopular": "false",
-        "tags": ["RPG", "Sci-Fi", "Adventure", "Story-driven", "Exploration"],
+        "tags": ["RPG", "Sci-Fi", "Adventure", "FPS", "Action"],
         "description":"The Outer Worlds is a first-person sci-fi RPG set in the far-flung Halcyon colony, where mega-corporations rule, and players, as a thawed-out colonist from a lost ship, uncover a conspiracy while shaping a player-driven story with significant choices, combat (including a 'time dilation' bullet-time), and exploration, all with a retro-futuristic, corporate-dystopian theme. ",
         "screens": [
             "images/theouterworlds1.jpg",
@@ -1361,7 +1361,7 @@
         "isNew": "true",
         "isHot": "false",
         "isPopular": "true",
-        "tags": ["RPG", "Action", "Adventure", "Story-driven", "Sci-Fi"],
+        "tags": ["Action", "Adventure", "Story-driven", "Sci-Fi"],
         "description":"Death Stranding 2: On the Beach is set primarily in Australia, eleven months after the events of the first game, in a post-apocalyptic world ravaged by otherworldly creatures. The player controls Sam Porter Bridges, a freelance porter, as he and his companions set out on an expedition across the Australian continent to connect isolated survivors and colonies to the wireless communications 'chiral' network in order to save humanity from extinction.",
         "screens": [
             "images/deathstranding21.jpg",
@@ -1398,7 +1398,7 @@
         "isNew": "true",
         "isHot": "false",
         "isPopular": "true",
-        "tags": ["Survival", "Action", "Horror", "FPS", "Zombie"],
+        "tags": ["Survival", "Zombie", "Horror", "FPS", "Action"],
         "description":"Resident Evil Requiem is a 2026 survival horror game developed and published by Capcom. It is the ninth main Resident Evil game, following Resident Evil Village (2021) It features a new playable character, FBI analyst Grace Ashcroft, who investigates a series of mysterious deaths involving the survivors of the Raccoon City incident with the aid of federal agent and returning protagonist Leon S. Kennedy.",
         "screens": [
             "images/residentevilrequiem1.jpg",

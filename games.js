@@ -338,6 +338,17 @@ function createCardGames(game) {
   return card;
 }
 
+function isSameFranchise(titleA, titleB) {
+  const a = titleA.toLowerCase().trim();
+  const b = titleB.toLowerCase().trim();
+  return a.includes(b) || b.includes(a);
+}
+
+function isSameEditor(editorA, editorB) {
+  if (!editorA || !editorB) return false;
+  return editorA.toLowerCase().trim() === editorB.toLowerCase().trim();
+}
+
 function getSimilarGames(games, currentGame) {
   const currentTags = (currentGame.tags || []).map(tag => tag.toLowerCase());
 
@@ -346,10 +357,14 @@ function getSimilarGames(games, currentGame) {
     .map(g => {
       const tags = (g.tags || []).map(tag => tag.toLowerCase());
       const score = tags.filter(tag => currentTags.includes(tag)).length;
-      return { game: g, score };
+      const sameName = isSameFranchise(g.title, currentGame.title);
+      const sameEditor = isSameEditor(g.editor, currentGame.editor); 
+      return { game: g, score, sameName, sameEditor };
     })
-    .filter(item => item.score > 0)
+    .filter(item => item.score > 0 || item.sameName || item.sameEditor)
     .sort((a, b) => {
+      if (a.sameName !== b.sameName) return a.sameName ? -1 : 1;
+      if (a.sameEditor !== b.sameEditor) return a.sameEditor ? -1 : 1;
       if (b.score !== a.score) return b.score - a.score;
       if (a.game.isPopular !== b.game.isPopular) return (b.game.isPopular === "true") ? 1 : -1;
       return a.game.title.localeCompare(b.game.title);
@@ -362,7 +377,7 @@ function getSimilarGames(games, currentGame) {
       .slice(0, 4);
   }
 
-  return similarGames.slice(0, 4);
+  return similarGames.slice(0, 5);
 }
 
 function createSuggestionCarousel(suggestions) {
