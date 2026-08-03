@@ -358,14 +358,14 @@ function getSimilarGames(games, currentGame) {
       const tags = (g.tags || []).map(tag => tag.toLowerCase());
       const score = tags.filter(tag => currentTags.includes(tag)).length;
       const sameName = isSameFranchise(g.title, currentGame.title);
-      const sameEditor = isSameEditor(g.editor, currentGame.editor); 
+      const sameEditor = isSameEditor(g.editor, currentGame.editor);
       return { game: g, score, sameName, sameEditor };
     })
     .filter(item => item.score > 0 || item.sameName || item.sameEditor)
     .sort((a, b) => {
       if (a.sameName !== b.sameName) return a.sameName ? -1 : 1;
-      if (a.sameEditor !== b.sameEditor) return a.sameEditor ? -1 : 1;
       if (b.score !== a.score) return b.score - a.score;
+      if (a.sameEditor !== b.sameEditor) return a.sameEditor ? -1 : 1;
       if (a.game.isPopular !== b.game.isPopular) return (b.game.isPopular === "true") ? 1 : -1;
       return a.game.title.localeCompare(b.game.title);
     })

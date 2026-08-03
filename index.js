@@ -211,6 +211,69 @@ function createCard(game) {
   return card;
 }
 
+function createMultiplayerSection(games) {
+  const container = document.getElementById('multiplayer-games');
+  if (!container) return;
+
+  // On garde seulement les jeux qui ont le tag "multiplayer"
+  const multiplayerGames = games
+    .filter(game => (game.tags || []).some(tag => tag.toLowerCase() === 'multiplayer'))
+    .slice(0, 6);
+
+  if (multiplayerGames.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  // On construit le HTML de la section
+  const section = document.createElement('section');
+  section.className = 'multiplayerSection';
+  container.innerHTML = `<h2 class="Multi-games-title">MULTIPLAYERS GAMES</h2>`
+  section.innerHTML = `
+    <div class="multiplayerCarousel">
+      <button class="carouselButton left">‹</button>
+      <div class="multiplayerTrackWrapper">
+        <div class="multiplayerTrack"></div>
+      </div>
+      <button class="carouselButton right">›</button>
+    </div>
+  `;
+
+  container.appendChild(section);
+
+  const track = section.querySelector('.multiplayerTrack');
+  const wrapper = section.querySelector('.multiplayerTrackWrapper');
+  const prevBtn = section.querySelector('.left');
+  const nextBtn = section.querySelector('.right');
+
+  // On ajoute chaque jeu dans le carrousel
+  multiplayerGames.forEach(game => {
+    const card = createCard(game);
+    card.classList.add('multiplayerCard');
+    track.appendChild(card);
+  });
+
+  const seeAllCard = document.createElement('a');
+seeAllCard.href = 'multiplayer.html';
+seeAllCard.classList.add('multiplayerCard', 'seeAllCard');
+seeAllCard.innerHTML = `
+    <div class="seeAllContent">
+      <span class="seeAllArrow">→</span>
+      <span>See More</span>
+    </div>
+`;
+track.appendChild(seeAllCard);
+
+  prevBtn.addEventListener('click', () => {
+    wrapper.scrollBy({ left: -312, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    wrapper.scrollBy({ left: 312, behavior: 'smooth' });
+  });
+
+}
+
 
 
 
@@ -243,7 +306,7 @@ async function loadGames() {
 
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
-      const particleCount = 50;
+      const particleCount = 100;
       for (let i = 0; i < particleCount; i++) {
         const p = document.createElement("div");
         p.classList.add("particle");
@@ -316,32 +379,27 @@ async function loadGames() {
       return;
     }
 
-    const [left, center, rightTop, rightBottom] = discounted.slice(0, 4);
+    const [first, second, third, fourth] = discounted.slice(0, 4);
 
     const layout = document.createElement("div");
     layout.classList.add("discount-layout");
 
+    const firstCard = createCard(first);
+    firstCard.classList.add("discount-card");
 
-    const leftCard = createCard(left);
-    leftCard.classList.add("left-game", "discount-card");
+    const secondCard = createCard(second);
+    secondCard.classList.add("discount-card");
 
-    const centerCard = createCard(center);
-    centerCard.classList.add("center-game", "discount-card");
+    const thirdCard = createCard(third);
+    thirdCard.classList.add("discount-card");
 
-    const topRightCard = createCard(rightTop);
-    topRightCard.classList.add("top-game", "discount-card");
+    const fourthCard = createCard(fourth);
+    fourthCard.classList.add("discount-card");
 
-    const bottomRightCard = createCard(rightBottom);
-    bottomRightCard.classList.add("bottom-game", "discount-card");
-
-    const rightCol = document.createElement("div");
-    rightCol.classList.add("right-column");
-    rightCol.appendChild(topRightCard);
-    rightCol.appendChild(bottomRightCard);
-
-    layout.appendChild(leftCard);
-    layout.appendChild(centerCard);
-    layout.appendChild(rightCol);
+    layout.appendChild(firstCard);
+    layout.appendChild(secondCard);
+    layout.appendChild(thirdCard);
+    layout.appendChild(fourthCard);
 
     discountContainer.appendChild(layout);
   }
@@ -354,12 +412,18 @@ async function loadGames() {
 
     if (newGamesData.length > 0) initCarousel(newGamesData);
     createDiscountLayout(games);
+    createMultiplayerSection(games);
 
     
   } catch (error) {
     console.error("Erreur de chargement JSON :", error);
   }
 }
+
+
+    ///////// ------------------    MULTIPLAYER GAMES    ------------------- //////////
+
+
 
 
 
