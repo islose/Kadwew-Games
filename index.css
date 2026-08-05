@@ -676,10 +676,12 @@ body.cart-open main {
   border: solid 2px transparent;
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  
 }
 
 #new-game-container .game-card:hover {
   box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.555);
+  border: solid 2px white;
   transition: 0.2s ease-in-out;
 }
 
@@ -772,7 +774,7 @@ body.cart-open main {
 .Multi-games-title {
   position: relative;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 100px;
   max-width: 1010px;
   letter-spacing: 10px;
   font-weight: bolder;
@@ -889,6 +891,169 @@ body.cart-open main {
   margin: 0.75rem 1rem 1rem;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.indieSection {
+  width: 100%;
+  max-height: 900px;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 200px;
+  padding: 2rem 1rem;
+  background-color: #1e699b11;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.555);
+}
+
+.indie-games-title {
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 1010px;
+  letter-spacing: 10px;
+  font-weight: bolder;
+  font-family: "Faculty Glyphic", sans-serif;
+  background-color: hsl(120, 100%, 25%);
+  box-shadow: 0 0 10px hsla(120, 100%, 25%);
+}
+
+
+.carouselButton {
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carouselButton:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.carouselButton.left,
+.carouselButton.right {
+  flex: 0 0 auto;
+}
+
+.indieCarousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.indieTrackWrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 0.35rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(107, 224, 255, 0.45) transparent;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.indieTrackWrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.indieTrackWrapper::-webkit-scrollbar-thumb {
+  background: rgba(107, 224, 255, 0.45);
+  border-radius: 999px;
+}
+
+.indieTrackWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.indieTrackWrapper.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.indieTrack {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding-bottom: 2px;
+}
+
+.indieGamesCard {
+  min-width: 300px;
+  flex: 0 0 300px;
+  border: solid 2px rgba(0, 0, 0, 0.658);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(44, 44, 44);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.indieGamesCard:hover {
+  border-color: white;
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.12);
+  z-index: 2;
+}
+
+.indieGamesCard img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.indieGamesCard .price {
+  margin: 0.75rem 1rem 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .seeAllCard {
   display: flex;
   align-items: center;
@@ -1004,7 +1169,6 @@ body.cart-open main {
   border: solid 2px rgba(0, 0, 0, 0.658);
   flex-direction: column;
   overflow: hidden;
-  min-height: 320px;
 }
 
 .discount-layout .game-card:hover {

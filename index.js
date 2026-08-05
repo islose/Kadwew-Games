@@ -1,3 +1,5 @@
+/// const { createElement } = require("react");
+
 ///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
 window.addEventListener("load", () => {
   const loadingScreen = document.getElementById("loading-screen");
@@ -275,6 +277,68 @@ track.appendChild(seeAllCard);
 }
 
 
+function createIndieGamesSection(games) {
+  const container = document.getElementById("indie-games");
+  if (!container) return;
+
+  const indieGames = games
+  .filter(game => (game.tags || []).some(tag => tag.toLowerCase() === 'indie'))
+  .slice(0, 6);
+
+  if (indieGames.length === 0) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const section = document.createElement('section');
+  section.className = 'indieSection';
+  container.innerHTML = `<h2 class="indie-games-title">INDIE GAMES</h2>` 
+  section.innerHTML = `
+    <div class="indieCarousel">
+      <button class="carouselButton left">‹</button>
+      <div class="indieTrackWrapper">
+        <div class="indieTrack"></div>
+      </div>
+      <button class="carouselButton right">›</button>
+    </div>
+  `;
+
+  container.appendChild(section);
+
+  const track = section.querySelector(".indieTrack");
+  const trackWrapper = section.querySelector(".indieTrackWrapper");
+  const nextBtn = section.querySelector(".right");
+  const prevBtn = section.querySelector(".left");
+
+
+  indieGames.forEach(game => {
+    const card = createCard(game);
+    card.classList.add('indieGamesCard');
+    track.appendChild(card);
+  });
+
+  const seeAllCard = document.createElement('a');
+  seeAllCard.href = 'indieGames.html';
+  seeAllCard.classList.add('indieGamesCard', 'seeAllCard');
+  seeAllCard.innerHTML = `
+    <div class="seeAllContent">
+      <span class="seeAllArrow">→</span>
+      <span>See More</span>
+    </div>
+  `;
+  track.appendChild(seeAllCard);
+
+  prevBtn.addEventListener('click', () => {
+    trackWrapper.scrollBy({ left: -312, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    trackWrapper.scrollBy({ left: 312, behavior: 'smooth' });
+  });
+
+
+}
+
 
 
 
@@ -413,6 +477,7 @@ async function loadGames() {
     if (newGamesData.length > 0) initCarousel(newGamesData);
     createDiscountLayout(games);
     createMultiplayerSection(games);
+    createIndieGamesSection(games);
 
     
   } catch (error) {
