@@ -1577,37 +1577,6 @@ freeGames.forEach(game => {
   console.log(game.title);
 });
 
-
-const taskInput = document.getElementById('taskInput');
-const addBtn = document.getElementById('addBtn');
-const taskList = document.getElementById('taskList');
-
-addBtn.addEventListener('click', () => {
-  if (taskInput.value.trim() === "") {
-    alert("Veuillez entrer une tâche a faire !");
-    return;
-  }
-
-  const newTask = document.createElement('li');
-  newTask.textContent = taskInput.value;
-
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = "Supprimer";
-
-  deleteBtn.addEventListener('click', () => {
-    newTask.remove();
-  });
-
-  newTask.appendChild(deleteBtn);
-
-  taskList.appendChild(newTask);
-
-  taskInput.value = "";
-
-});
-
-
-
 let panier = [];
 let affichage = document.getElementById('affichage');
 let total = document.getElementById('total');
@@ -2913,3 +2882,159 @@ loop();
     toggleBtn.addEventListener("click", () => {
       texteASecret.hidden = !texteASecret.hidden;
     });
+
+
+
+
+
+
+function getWeekNumber() {
+  const msPerSecond = 1000;
+  const msPerMinut = msPerSecond * 60;
+  const msPerHour = msPerMinut * 60;
+  const msPerDay = msPerHour * 24;
+  const msPerWeek = msPerDay * 7;
+  const now = new Date();
+  const time = now.getTime();
+  const weeks = Math.floor(time / msPerWeek);
+
+  console.log(time);
+  console.log(now);
+  console.log(msPerSecond);
+  console.log(msPerMinut);
+  console.log(msPerHour);
+  console.log(msPerDay);
+  console.log(msPerWeek);
+  console.log(weeks);
+
+  return weeks;
+}
+
+function mulberry32(seed) {
+  return function () { 
+    seed |= 0;
+    seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const seedResult = getWeekNumber();
+const rand = mulberry32(seedResult);
+const nombre1 = rand();
+const nombre2 = rand();
+const nombre3 = rand();
+const nombre4 = rand();
+
+
+
+console.log(seedResult);
+console.log(nombre1);
+console.log(nombre2);
+console.log(nombre3);
+console.log(nombre4);
+
+
+const array = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const randTest = mulberry32(2953);
+
+function shuffle(array, rand) {
+  for(let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    console.log("i=", i ,"j=", j);
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+shuffle(array, randTest);
+console.log(array);
+
+function getWeeklyDiscounts(games) {
+  const gamesCopy = [...games];
+  const seed = getWeekNumber();
+  const rand = mulberry32(seed);
+  shuffle(gamesCopy, rand);
+  const weeklyGames = gamesCopy.slice(0, 4);
+  const minDiscount = 70;
+  const maxDiscount = 95;
+
+  weeklyGames.forEach(game => {
+    const averageDiscount = Math.floor(rand() * (maxDiscount - minDiscount + 1) + minDiscount);
+    game.discount = averageDiscount;
+  });
+
+  return weeklyGames;
+}
+
+
+
+
+const Input = document.querySelector("#taskInput");
+const addBtn = document.querySelector("#addBtn");
+const mainList = document.querySelector("#taskList");
+
+addBtn.addEventListener("click", () => {
+  const values = Input.value;
+  const list = document.createElement("li");
+  list.textContent = `${values}`;
+  mainList.appendChild(list);
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "Supprimer";
+  list.appendChild(removeBtn);
+
+  removeBtn.addEventListener("click", () => {
+    list.remove();
+  });
+  const doneBtn = document.createElement("button");
+  doneBtn.textContent = "Términer";
+  list.appendChild(doneBtn);
+
+  doneBtn.addEventListener("click", () => {
+    
+    list.classList.toggle("done");
+  })
+  Input.value = "";
+});
+
+
+
+
+
+
+
+const usersContainer = document.querySelector("#usersContainer");
+
+class Users {
+  constructor(name, email, phone) {
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+  }
+}
+
+
+
+async function usersApi() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    console.log(data);
+    const usersData = data.map(Udata => new Users(Udata.name, Udata.email, Udata.phone));
+
+    usersData.forEach((user) => {
+     const usersInfo = document.createElement("p");
+      usersInfo.innerHTML = `Name: ${user.name},<br> Email: ${user.email},<br> Phone: ${user.phone}`;
+      usersContainer.append(usersInfo);
+      console.log(user);
+    });
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+console.log(usersApi());

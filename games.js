@@ -490,7 +490,7 @@ async function loadGame() {
   game = games.find(g => slugify(g.title) === slugFromUrl);
 
   if (!game) {
-    document.body.innerHTML = "Jeu introuvable";
+    document.body.innerHTML = "No Game Found";
     return;
   }
 
@@ -524,4 +524,3 @@ async function loadGame() {
 }
 
 loadGame();
-

@@ -670,19 +670,18 @@ body.cart-open main {
 }
 
 #new-game-container .game-card {
+  display: block;
   margin-top: 10%;
   width: 90%;
   background: rgb(44, 44, 44);
   border: solid 2px transparent;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
   cursor: pointer;
-  
 }
 
 #new-game-container .game-card:hover {
   box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.555);
-  border: solid 2px white;
-  transition: 0.2s ease-in-out;
+  border-color: white;
 }
 
 #new-game-container .game-card img {
@@ -707,8 +706,6 @@ body.cart-open main {
 .carousel-card {
   position: absolute;
   width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .carousel-card.visible {
@@ -723,6 +720,7 @@ body.cart-open main {
 }
 
 .carousel-content {
+  position: relative;
   width: 100%;
   max-width: 1000px;
   min-height: 400px;
@@ -758,6 +756,11 @@ body.cart-open main {
 .carousel-arrow:hover {
   box-shadow: 0 4px 24px rgba(0,0,0,0.22);
   filter: brightness(0.95);
+}
+
+.deal-timer {
+  margin-bottom: 20px;
+  font-size: 3rem;
 }
 
 .multiplayerSection {

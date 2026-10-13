@@ -32,14 +32,12 @@ panier.addEventListener('click', () => {
   document.body.classList.toggle('cart-open', open);
 
   if (open) {
-    // Test sans GSAP - affichage simple
     panierMenu.style.display = 'flex';
     panierMenu.style.opacity = '1';
     panierMenu.style.transform = 'translate(-50%, -50%)';
   } 
   
   else {
-    // Test sans GSAP - masquage simple
     panierMenu.style.display = 'none';
     panierMenu.style.opacity = '0';
   }
@@ -51,8 +49,6 @@ document.addEventListener('click', (e) => {
       panierMenu.classList.remove('open');
       panierMenu.inert = true;
       document.body.classList.remove('cart-open');
-      
-      // Test sans GSAP - masquage simple
       panierMenu.style.display = 'none';
       panierMenu.style.opacity = '0';
     }
@@ -149,75 +145,89 @@ function createCard(game) {
   }
 
   if (game.screens && game.screens.length > 0) {
-    const imgElement = card.querySelector("img");
-    const originalSrc = imgElement.src;
-    let currentIndex = 0;
-    let intervalId = null;
-    let timeoutId = null;
-    let fadeTimeoutId = null;
+  const imgElement = card.querySelector("img");
+  const originalSrc = imgElement.src;
+  let currentIndex = 0;
+  let running = false;
+  let timeoutId = null;
+  let fadeTimeoutId = null;
 
-    const changeImage = (src) => {
-      clearTimeout(fadeTimeoutId);
-      imgElement.style.opacity = "0";
-      fadeTimeoutId = setTimeout(() => {
-        imgElement.src = src;
-        imgElement.style.opacity = "1";
-      }, 250);
-    };
+  // Charge une image en arrière-plan, la promesse se résout quand elle est prête
+  const loadImage = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = reject;
+    img.src = src;
+  });
 
-    const stopSlideshow = () => {
-      clearTimeout(timeoutId);
-      clearInterval(intervalId);
-      clearTimeout(fadeTimeoutId);
-      timeoutId = null;
-      intervalId = null;
-      fadeTimeoutId = null;
-      currentIndex = 0;
-    };
+  const step = async () => {
+    if (!running) return;
 
-    card.addEventListener("mouseenter", () => {
-      imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
+    const next = (currentIndex + 1) % game.screens.length;
 
-      timeoutId = setTimeout(() => {
-        currentIndex = (currentIndex + 1) % game.screens.length;
-        changeImage(game.screens[currentIndex]);
+    try {
+      await loadImage(game.screens[next]);   // on attend que l'image soit chargée
+    } catch {
+      // image cassée : on passe à la suivante
+      currentIndex = next;
+      timeoutId = setTimeout(step, 1200);
+      return;
+    }
 
-        intervalId = setInterval(() => {
-          currentIndex = (currentIndex + 1) % game.screens.length;
-          changeImage(game.screens[currentIndex]);
-        }, 1200);
-      }, 600);
-    });
+    if (!running) return;   // la souris est partie pendant le chargement
 
-    card.addEventListener("mouseleave", () => {
-      stopSlideshow();
-      clearTimeout(fadeTimeoutId);
-      imgElement.src = originalSrc;
+    currentIndex = next;
+    imgElement.style.opacity = "0";
+    fadeTimeoutId = setTimeout(() => {
+      imgElement.src = game.screens[currentIndex];
       imgElement.style.opacity = "1";
-      imgElement.style.transform = "scale(1)";
+      timeoutId = setTimeout(step, 1200);   // prochaine étape seulement maintenant
+    }, 250);
+  };
+
+  const stopSlideshow = () => {
+    running = false;
+    clearTimeout(timeoutId);
+    clearTimeout(fadeTimeoutId);
+    timeoutId = null;
+    fadeTimeoutId = null;
+    currentIndex = 0;
+  };
+
+  card.addEventListener("mouseenter", () => {
+    imgElement.style.transition = "transform 0.3s ease, opacity 0.5s ease";
+    running = true;
+    timeoutId = setTimeout(step, 600);
+  });
+
+  card.addEventListener("mouseleave", () => {
+    stopSlideshow();
+    imgElement.src = originalSrc;
+    imgElement.style.opacity = "1";
+    imgElement.style.transform = "scale(1)";
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        stopSlideshow();
+        imgElement.src = originalSrc;
+        imgElement.style.opacity = "1";
+      }
     });
+  });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          stopSlideshow();
-          imgElement.src = originalSrc;
-          imgElement.style.opacity = "1";
-        }
-      });
-    });
-
-    observer.observe(card);
-  }
-
-  return card;
+  observer.observe(card);
 }
+
+return card;
+}
+
 
 function createMultiplayerSection(games) {
   const container = document.getElementById('multiplayer-games');
   if (!container) return;
 
-  // On garde seulement les jeux qui ont le tag "multiplayer"
   const multiplayerGames = games
     .filter(game => (game.tags || []).some(tag => tag.toLowerCase() === 'multiplayer'))
     .slice(0, 6);
@@ -227,7 +237,6 @@ function createMultiplayerSection(games) {
     return;
   }
 
-  // On construit le HTML de la section
   const section = document.createElement('section');
   section.className = 'multiplayerSection';
   container.innerHTML = `<h2 class="Multi-games-title">MULTIPLAYERS GAMES</h2>`
@@ -248,7 +257,6 @@ function createMultiplayerSection(games) {
   const prevBtn = section.querySelector('.left');
   const nextBtn = section.querySelector('.right');
 
-  // On ajoute chaque jeu dans le carrousel
   multiplayerGames.forEach(game => {
     const card = createCard(game);
     card.classList.add('multiplayerCard');
@@ -292,7 +300,7 @@ function createIndieGamesSection(games) {
 
   const section = document.createElement('section');
   section.className = 'indieSection';
-  container.innerHTML = `<h2 class="indie-games-title">INDIE GAMES</h2>` 
+  container.innerHTML = `<h2 class="indie-games-title">INDIE GAMES</h2>`;
   section.innerHTML = `
     <div class="indieCarousel">
       <button class="carouselButton left">‹</button>
@@ -335,8 +343,100 @@ function createIndieGamesSection(games) {
   nextBtn.addEventListener('click', () => {
     trackWrapper.scrollBy({ left: 312, behavior: 'smooth' });
   });
+}
 
 
+
+///////// ------------------    PROMOTIONS HEBDO    ------------------- //////////
+
+
+
+const currentWeek = getWeekNumber();
+
+function updateTimer() {
+  if (getWeekNumber() !== currentWeek) {
+    location.reload();
+    return;
+  }
+
+  const t = getTimeLeft();
+  const timer = document.getElementById("timer");
+  if (timer) {
+    timer.textContent = `${t.days}d ${t.hours}h ${t.minutes}m ${t.seconds}s`;
+  }
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+
+
+
+function getWeekNumber() {
+  const msPerWeek = 1000 * 60 * 60 * 24 * 7;
+  const mondayOffset = 4 * 24 * 60 * 60 * 1000;
+  return Math.floor((Date.now() + mondayOffset) / msPerWeek);
+}
+
+function mulberry32(seed) {
+  return function () {
+    seed |= 0;
+    seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle(array, rand) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function getTimeLeft() {
+  const msPerWeek = 1000 * 60 * 60 * 24 * 7;
+  const mondayOffset = 4 * 24 * 60 * 60 * 1000;
+  const nextWeekStart = (getWeekNumber() + 1) * msPerWeek - mondayOffset;
+  const diff = nextWeekStart - Date.now();
+
+  return {
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor(diff / 3600000) % 24,
+    minutes: Math.floor(diff / 60000) % 60,
+    seconds: Math.floor(diff / 1000) % 60
+  };
+}
+
+function applyWeeklyDiscount(games) {
+  const rand = mulberry32(getWeekNumber());
+
+  const pool = games.filter(g => Number(g.price) > 0);
+  shuffle(pool, rand);
+
+  pool.slice(0, 4).forEach(g => {
+    g.discount = Math.floor(rand() * (95 - 75 + 1)) + 75;
+  });
+
+  games.forEach(g => {
+    if (!g.discount) g.discount = 0;
+  });
+}
+
+function previewWeek(games, weekNumber) {
+  const rand = mulberry32(weekNumber);
+
+  const pool = games
+    .filter(g => Number(g.price) > 0)
+    .map(g => ({ ...g }));
+
+  shuffle(pool, rand);
+
+  return pool.slice(0, 4).map(g => ({
+    title: g.title,
+    discount: Math.floor(rand() * (95 - 75 + 1)) + 75
+  }));
 }
 
 
@@ -344,12 +444,12 @@ function createIndieGamesSection(games) {
 
 ///////// ------------------    APPELLE DATA DU FICHIER JSON    ------------------- //////////
 
-
 async function loadGames() {
   try {
     const response = await fetch("games.json");
     const games = await response.json();
 
+    applyWeeklyDiscount(games);
     window.allGames = games;
 
     const banner = document.getElementById("banner");
@@ -370,7 +470,7 @@ async function loadGames() {
 
     const Pcontainer = document.querySelector("#banner .particles");
     if (Pcontainer) {
-      const particleCount = 100;
+      const particleCount = 0;
       for (let i = 0; i < particleCount; i++) {
         const p = document.createElement("div");
         p.classList.add("particle");
@@ -416,8 +516,6 @@ async function loadGames() {
     newContainer.innerHTML = "";
     discountContainer.innerHTML = "";
 
-    ///////// ------------------    PROMOTION CONTAINER    ------------------- //////////
-
 
     function createDiscountLayout(games) {
       const discounted = games
@@ -425,6 +523,7 @@ async function loadGames() {
         .sort((a, b) => Number(b.discount) - Number(a.discount));
 
       discountContainer.innerHTML = `
+        <p class="deal-timer"><span id="timer"></span></p>
         <h2 class="discount-title">OFFERS OF THE WEEK</h2>
       `;
 
@@ -540,28 +639,27 @@ function initCarousel(newGamesData) {
   }
 
   function showGame(i) {
-  const oldCard = content.querySelector('.carousel-card');
-  if (oldCard) {
-    oldCard.style.transition = "opacity 0.18s ease, transform 0.18s ease";
-    oldCard.style.opacity = "0";
-    oldCard.style.transform = "scale(0.98)";
-    setTimeout(() => oldCard.remove(), 180);
-  }
+  // 1. Sortie des cartes actuelles
+  content.querySelectorAll('.carousel-card:not(.leaving)').forEach(old => {
+    old.classList.add('leaving');
+    old.animate(
+      [
+        { opacity: 1, transform: 'scale(1)' },
+        { opacity: 0, transform: 'scale(0.98)' }
+      ],
+      { duration: 180, easing: 'ease', fill: 'forwards' }
+    ).onfinish = () => old.remove();
+  });
 
+  // 2. Entrée de la nouvelle carte
   const card = createCard(newGamesData[i]);
   card.classList.add('carousel-card');
-
-  content.style.position = "relative";
-  card.style.position = "absolute";
-  card.style.opacity = "0";
-  card.style.transform = "scale(1)";
   content.appendChild(card);
 
-  requestAnimationFrame(() => {
-    card.style.transition = "opacity 0.28s ease, transform 0.28s ease";
-    card.style.opacity = "1";
-    card.style.transform = "scale(1)";
-  });
+  card.animate(
+    [{ opacity: 0 }, { opacity: 1 }],
+    { duration: 280, easing: 'ease' }
+  );
 
   updateDots(i);
 }
@@ -598,7 +696,6 @@ function initCarousel(newGamesData) {
     startAuto();
   }
 
-  // initial
   showGame(index);
   startAuto();
 }
@@ -787,14 +884,6 @@ function displayGames(list) {
 function renderVisibleGames() {
   const cards = container.querySelectorAll(".game-card");
 
-  /*
-  cards.forEach(card => {
-    card.style.transition = "opacity 0.2s ease, transform 0.2s ease";
-    card.style.opacity = "0";
-    card.style.removeProperty("transform");
-  });
-  */
-
   setTimeout(() => {
     container.innerHTML = "";
 
@@ -949,4 +1038,3 @@ document.addEventListener("click", (e) => {
     sortDropdown.classList.add("hidden");
   }
 });
-

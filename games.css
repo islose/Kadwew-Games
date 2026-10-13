@@ -787,11 +787,6 @@ body.cart-open main {
   background: transparent;
 }
 
-.suggestionsTrackWrapper.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
-
 .suggestionsTrack {
   display: flex;
   gap: 16px;

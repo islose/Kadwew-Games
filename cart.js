@@ -8,7 +8,6 @@ function loadCart() {
   }
 }
 
-// Codes de réduction disponibles
 const promoCodes = {
   'WELCOME10': 10,
   'SUMMER20': 20,
@@ -157,7 +156,6 @@ function displayCart() {
     itemsContainer.appendChild(gameElement);
   });
 
-  // Ajouter event listeners pour les boutons de suppression
   document.querySelectorAll('.remove-game-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -194,10 +192,8 @@ function updatePrices() {
   const afterGameDiscount = priceBefore - gameDiscount;
   const total = afterGameDiscount - promoDiscount;
 
-  // Afficher le prix avant réductions
   priceBeforeEl.textContent = priceBefore.toFixed(2) + '€';
   
-  // Afficher les réductions de jeux si applicable
   if (gameDiscount > 0) {
     gameDiscountRowEl.style.display = 'flex';
     gameDiscountEl.textContent = '-' + gameDiscount.toFixed(2) + '€';
@@ -205,7 +201,6 @@ function updatePrices() {
     gameDiscountRowEl.style.display = 'none';
   }
 
-  // Afficher les réductions de code promo si applicable
   if (promoDiscount > 0) {
     promoDiscountRowEl.style.display = 'flex';
     promoDiscountEl.textContent = '-' + promoDiscount.toFixed(2) + '€';
@@ -213,7 +208,6 @@ function updatePrices() {
     promoDiscountRowEl.style.display = 'none';
   }
 
-  // Afficher le total
   totalEl.textContent = Math.max(0, total).toFixed(2) + '€';
 }
 
@@ -230,4 +224,4 @@ function setupCartCloseButton() {
 
 document.addEventListener('DOMContentLoaded', setupCartCloseButton);
 
-console.log('Codes de réduction disponibles pour tester: WELCOME10 (10€), SUMMER20 (20€), SAVE15 (15€)');
+console.log('Codes de réduction disponibles: WELCOME10 (10€), SUMMER20 (20€), SAVE15 (15€)');
