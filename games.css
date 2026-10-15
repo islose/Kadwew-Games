@@ -876,6 +876,61 @@ body.cart-open main {
   font-size: 1.2rem;
 }
 
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.zoomable {
+  cursor: zoom-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
   .suggestionsSection {
     padding: 1.25rem 0.75rem;
@@ -892,6 +947,13 @@ body.cart-open main {
   .suggestionCard {
     min-width: 180px;
     max-width: 180px;
+  }
+
+  #lightbox img {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   }
 }
 

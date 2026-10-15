@@ -35,6 +35,7 @@ panier.addEventListener('click', () => {
   const open = panierMenu.classList.toggle('open');
   panierMenu.inert = !open;
   document.body.classList.toggle('cart-open', open);
+  document.body.style.overflow = "hidden";
 
   if (open) {
     panierMenu.style.display = 'flex';
@@ -45,6 +46,7 @@ panier.addEventListener('click', () => {
   else {
     panierMenu.style.display = 'none';
     panierMenu.style.opacity = '0';
+    document.body.style.overflow = "";
   }
 });
 
@@ -54,7 +56,7 @@ document.addEventListener('click', (e) => {
       panierMenu.classList.remove('open');
       panierMenu.inert = true;
       document.body.classList.remove('cart-open');
-      
+      document.body.style.overflow = ""; 
       panierMenu.style.display = 'none';
       panierMenu.style.opacity = '0';
     }
@@ -234,7 +236,7 @@ function createCardGames(game) {
   let screensHTML = "";
   if (game.screens && game.screens.length > 0) {
     game.screens.forEach(screen => {
-      screensHTML += `<img src="${screen}" alt="${game.title} screen">`;
+      screensHTML += `<img src="${screen}" alt="${game.title} screen" class="zoomable">`;
     });
   }
 
@@ -523,4 +525,40 @@ async function loadGame() {
   }
 }
 
+
+
+
 loadGame();
+
+
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+lightbox.innerHTML = `<img alt="">`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector("img");
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "";
+  lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("click", (e) => {
+  const img = e.target.closest(".zoomable");
+  if (img) openLightbox(img.src, img.alt);
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});

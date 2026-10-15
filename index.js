@@ -30,6 +30,7 @@ panier.addEventListener('click', () => {
   const open = panierMenu.classList.toggle('open');
   panierMenu.inert = !open;
   document.body.classList.toggle('cart-open', open);
+  document.body.style.overflow = "hidden";
 
   if (open) {
     panierMenu.style.display = 'flex';
@@ -40,6 +41,7 @@ panier.addEventListener('click', () => {
   else {
     panierMenu.style.display = 'none';
     panierMenu.style.opacity = '0';
+    document.body.style.overflow = "";
   }
 });
 
@@ -49,6 +51,7 @@ document.addEventListener('click', (e) => {
       panierMenu.classList.remove('open');
       panierMenu.inert = true;
       document.body.classList.remove('cart-open');
+      document.body.style.overflow = "";
       panierMenu.style.display = 'none';
       panierMenu.style.opacity = '0';
     }
@@ -121,13 +124,17 @@ function createCard(game) {
 
   if (Number(game.price) === 0) {
     prices = `<span class="free">Free-To-Play</span>`;
-  } else if (game.discount && Number(game.discount) > 0) {
+  } 
+  
+  else if (game.discount && Number(game.discount) > 0) {
     const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
     prices = `
       <span class="old-price">${game.price}€</span>
       <span class="new-price">${newPrice}€</span>
     `;
-  } else {
+  } 
+  
+  else {
     prices = `${game.price}€`;
   }
 
@@ -152,7 +159,6 @@ function createCard(game) {
   let timeoutId = null;
   let fadeTimeoutId = null;
 
-  // Charge une image en arrière-plan, la promesse se résout quand elle est prête
   const loadImage = (src) => new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => resolve(src);
@@ -166,22 +172,22 @@ function createCard(game) {
     const next = (currentIndex + 1) % game.screens.length;
 
     try {
-      await loadImage(game.screens[next]);   // on attend que l'image soit chargée
-    } catch {
-      // image cassée : on passe à la suivante
+      await loadImage(game.screens[next]);
+    } 
+    catch {
       currentIndex = next;
       timeoutId = setTimeout(step, 1200);
       return;
     }
 
-    if (!running) return;   // la souris est partie pendant le chargement
+    if (!running) return;
 
     currentIndex = next;
     imgElement.style.opacity = "0";
     fadeTimeoutId = setTimeout(() => {
       imgElement.src = game.screens[currentIndex];
       imgElement.style.opacity = "1";
-      timeoutId = setTimeout(step, 1200);   // prochaine étape seulement maintenant
+      timeoutId = setTimeout(step, 1200);
     }, 250);
   };
 
@@ -639,7 +645,6 @@ function initCarousel(newGamesData) {
   }
 
   function showGame(i) {
-  // 1. Sortie des cartes actuelles
   content.querySelectorAll('.carousel-card:not(.leaving)').forEach(old => {
     old.classList.add('leaving');
     old.animate(
@@ -651,7 +656,6 @@ function initCarousel(newGamesData) {
     ).onfinish = () => old.remove();
   });
 
-  // 2. Entrée de la nouvelle carte
   const card = createCard(newGamesData[i]);
   card.classList.add('carousel-card');
   content.appendChild(card);

@@ -863,7 +863,7 @@ body.cart-open main {
 }
 
 .multiplayerCard {
-  min-width: 300px;
+  max-width: 300px;
   flex: 0 0 300px;
   border: solid 2px rgba(0, 0, 0, 0.658);
   background: rgba(255, 255, 255, 0.06);
@@ -1200,7 +1200,6 @@ body.cart-open main {
   cursor: pointer;
 }
 
-/* Discount badge */
 .discount-layout .discount-badge {
   position: absolute;
   top: 10px;
@@ -1453,6 +1452,16 @@ body.cart-open main {
 .ft-bottom a { font-size: 12px; color: #333; text-decoration: none; }
 .ft-bottom a:hover { color: #666; }
 
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
   .ft {
     padding: 2rem 1.5rem 1.5rem;
@@ -1488,6 +1497,61 @@ body.cart-open main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .deal-timer {
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+
+  .multiplayerSection {
+    margin-bottom: 50px;
+  }
+
+  .multiplayerCard {
+    max-width: 50%;
+  }
+
+  .multiplayerSection {
+    padding: 1rem 0.5rem;
+    margin-bottom: 100px;
+  }
+
+  .multiplayerCarousel .carouselButton {
+    display: none;
+  }
+
+  .multiplayerCarousel {
+    gap: 0;
+  }
+
+  .multiplayerTrackWrapper {
+    scroll-snap-type: x mandatory;
+  }
+
+  .multiplayerCard {
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    scroll-snap-align: center;
+  }
+
+
+  .indieSection {
+    margin-bottom: 50px;
+  }
+
+  .indieCarousel .carouselButton {
+    display: none;
+  }
+
+  .indieTrackWrapper {
+    scroll-snap-type: x mandatory;
+  }
+
+  .indieGamesCard {
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    scroll-snap-align: center;
   }
 }
 
@@ -1841,7 +1905,6 @@ body.cart-open main {
 
 
 
-/* === ÉCRAN DE CHARGEMENT === */
 #loading-screen {
   position: fixed;
   inset: 0;
