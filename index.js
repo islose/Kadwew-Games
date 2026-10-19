@@ -129,6 +129,7 @@ function createCard(game) {
   else if (game.discount && Number(game.discount) > 0) {
     const newPrice = (Number(game.price) * (1 - Number(game.discount) / 100)).toFixed(2);
     prices = `
+      <span class="badge discount">-${game.discount}%</span>
       <span class="old-price">${game.price}€</span>
       <span class="new-price">${newPrice}€</span>
     `;
@@ -138,18 +139,17 @@ function createCard(game) {
     prices = `${game.price}€`;
   }
 
-  card.innerHTML = `
+/*
     <img src="${game.image}" alt="${game.title}" loading="lazy">
     <p class="price">${prices}</p>
+*/
+  card.innerHTML = `
+   
+    <img src="${game.image}" alt="${game.title}" loading="lazy">
+    <div class="suggestion-title">${game.title}</div>
+    <div class="suggestion-price">${prices}</div>
+    <div class="suggestion-tags">${(game.tags || []).slice(0, 5).map(tag => `<span class="suggestion-tag">${tag}</span>`).join('')}</div>
   `;
-
-  if (game.discount && Number(game.discount) > 0) {
-    const badge = document.createElement("span");
-    badge.classList.add("badge", "discount");
-    badge.textContent = `-${game.discount}%`;
-    const priceElement = card.querySelector(".price");
-    priceElement.prepend(badge);
-  }
 
   if (game.screens && game.screens.length > 0) {
   const imgElement = card.querySelector("img");
@@ -230,6 +230,11 @@ return card;
 }
 
 
+
+    ///////// ------------------    MULTIPLAYER SECTION    ------------------- //////////
+
+
+
 function createMultiplayerSection(games) {
   const container = document.getElementById('multiplayer-games');
   if (!container) return;
@@ -289,6 +294,13 @@ track.appendChild(seeAllCard);
   });
 
 }
+
+
+
+
+    ///////// ------------------    INDIE SECTION    ------------------- //////////
+
+
 
 
 function createIndieGamesSection(games) {
@@ -591,12 +603,6 @@ async function loadGames() {
 }
 
 
-    ///////// ------------------    MULTIPLAYER GAMES    ------------------- //////////
-
-
-
-
-
 
 
 
@@ -896,8 +902,6 @@ function renderVisibleGames() {
 
     visibleGames.forEach(game => {
       const card = createCard(game);
-      card.style.opacity = "0";
-      card.style.transition = "opacity 0.5s ease, transform 0.25s ease";
       container.appendChild(card);
 
       requestAnimationFrame(() => {
