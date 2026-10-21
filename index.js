@@ -139,10 +139,6 @@ function createCard(game) {
     prices = `${game.price}€`;
   }
 
-/*
-    <img src="${game.image}" alt="${game.title}" loading="lazy">
-    <p class="price">${prices}</p>
-*/
   card.innerHTML = `
    
     <img src="${game.image}" alt="${game.title}" loading="lazy">

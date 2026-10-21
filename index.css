@@ -52,6 +52,10 @@
   font-family: "Faculty Glyphic", sans-serif;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 
 body{
   min-height: 300vh;
@@ -1054,7 +1058,7 @@ body.cart-open main {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.06);
-  height: 160px;
+  height: 352px;
   text-decoration: none;
   color: #fff;
   transition: background 0.2s ease, transform 0.25s ease;
@@ -1062,7 +1066,6 @@ body.cart-open main {
 
 .seeAllCard:hover {
   background: rgba(255, 255, 255, 0.14);
-  transform: scale(1.01);
 }
 
 .seeAllContent {
@@ -1740,15 +1743,31 @@ body.cart-open main {
 
   .hamburger {
     display: block;
+    margin-left: -25px;
+  }
+
+  .panier-btn {
+    margin-left: -25px;
   }
 
   #search1 {
+    display: flex;
+    width: 10px;
+  }
+
+  .brand {
     display: none;
+  }
+
+  .logo {
+    margin-right: -20px;
   }
 
   #search2 {
     display: flex;
   }
+
+  
 
   #banner.banner-game img {
     width: 95%;
