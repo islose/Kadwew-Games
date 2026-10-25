@@ -1592,6 +1592,10 @@ body.cart-open main {
     max-width: 80vw;
     scroll-snap-align: center;
   }
+
+  .search-suggestion {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1752,7 +1756,6 @@ body.cart-open main {
 
   #search1 {
     display: flex;
-    width: 10px;
   }
 
   .brand {

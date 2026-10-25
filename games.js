@@ -421,6 +421,79 @@ function createSuggestionCarousel(suggestions) {
       <div class="suggestion-tags">${(game.tags || []).slice(0, 4).map(tag => `<span class="suggestion-tag">${tag}</span>`).join('')}</div>
     `;
 
+    const image = card.querySelector('img');
+    if (game.screens && game.screens.length > 0) {
+      const originalSrc = image.src;
+      let currentIndex = -1;
+      let running = false;
+      let timeoutId = null;
+      let fadeTimeoutId = null;
+
+      const preloadImage = src => new Promise((resolve, reject) => {
+        const preload = new Image();
+        preload.onload = () => resolve();
+        preload.onerror = reject;
+        preload.src = src;
+      });
+
+      const showNextScreen = async () => {
+        if (!running) return;
+
+        const nextIndex = (currentIndex + 1) % game.screens.length;
+        try {
+          await preloadImage(game.screens[nextIndex]);
+        } catch {
+          if (running) {
+            currentIndex = nextIndex;
+            timeoutId = setTimeout(showNextScreen, 1200);
+          }
+          return;
+        }
+
+        if (!running) return;
+
+        currentIndex = nextIndex;
+        image.style.opacity = '0';
+        fadeTimeoutId = setTimeout(() => {
+          image.src = game.screens[currentIndex];
+          image.style.opacity = '1';
+          timeoutId = setTimeout(showNextScreen, 1200);
+        }, 250);
+      };
+
+      const stopSlideshow = () => {
+        running = false;
+        clearTimeout(timeoutId);
+        clearTimeout(fadeTimeoutId);
+        timeoutId = null;
+        fadeTimeoutId = null;
+        currentIndex = -1;
+      };
+
+      card.addEventListener('mouseenter', () => {
+        image.style.transition = 'opacity 0.5s ease';
+        running = true;
+        timeoutId = setTimeout(showNextScreen, 600);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        stopSlideshow();
+        image.src = originalSrc;
+        image.style.opacity = '1';
+      });
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            stopSlideshow();
+            image.src = originalSrc;
+            image.style.opacity = '1';
+          }
+        });
+      });
+      observer.observe(card);
+    }
+
     card.addEventListener('click', () => {
       const slug = slugify(game.title);
       window.open(`games.html?game=${slug}`);

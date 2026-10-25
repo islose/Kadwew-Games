@@ -597,14 +597,13 @@ body.cart-open main {
 
 .background-blur {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: -30px; left: -30px; right: -30px; bottom: -30px;
   background-image: url('');
   background-size: cover;
   background-position: center;
   filter: blur(15px) brightness(0.6);
   z-index: -1;
   pointer-events: none;
-  backdrop-filter: brightness(0.5) saturate(1.3);
 }
 
 .game-box {
@@ -817,7 +816,7 @@ body.cart-open main {
 
 .suggestionCard img {
   width: 100%;
-  height: 160px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -952,6 +951,10 @@ body.cart-open main {
 
   .suggestionCard {
     width: 360px;
+  }
+
+  .search-suggestion {
+    max-width: 300px;
   }
 
   #lightbox img {
@@ -1325,7 +1328,7 @@ h3 {
 
   .background-blur {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: -30px; left: -30px; right: -30px; bottom: -30px;
     background-image: url('');
     background-size: cover;
     background-position: center;
