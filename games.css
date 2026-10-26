@@ -1549,6 +1549,10 @@ h3 {
     max-width: 300px;
     min-width: 0;
   }
+
+  #search-input {
+    width: 180px;
+  }
 }
 
 
