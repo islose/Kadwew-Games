@@ -1865,8 +1865,8 @@ body.cart-open main {
     font-size: 13px;
   }
 
-  .hamburger {
-    margin-left: -70px;
+  #search1 {
+    margin-left: -20px;
   }
 
   .carousel-arrow {
