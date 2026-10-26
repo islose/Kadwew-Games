@@ -1866,7 +1866,19 @@ body.cart-open main {
   }
 
   #search1 {
-    margin-left: -5px;
+    flex: 0 1 90%;
+    width: 90%;
+    max-width: 90%;
+    min-width: 0;
+  }
+
+  #search-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .actions {
+    margin-right: 20px;
   }
 
   .carousel-arrow {
