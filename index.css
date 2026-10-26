@@ -1,6 +1,7 @@
 *{
   box-sizing:border-box;
   text-decoration: none;
+  outline: 1px solid red;
 }
 
 #loading-screen {
@@ -1749,10 +1750,12 @@ body.cart-open main {
     display: block;
   }
 
+  .panier-btn {
+    margin-left: -15px;
+  }
+
   #search1 {
     display: flex;
-    width: 10px;
-    max-width: 100%;
   }
 
   .brand {
