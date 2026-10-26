@@ -1544,8 +1544,10 @@ h3 {
 }
 
 @media (max-width: 430px) {
-  .logo img {
-    margin-left: -17px;
+  #search1 {
+    width: 220px;
+    max-width: 300px;
+    min-width: 0;
   }
 }
 
