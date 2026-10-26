@@ -1747,15 +1747,12 @@ body.cart-open main {
 
   .hamburger {
     display: block;
-    margin-left: -25px;
-  }
-
-  .panier-btn {
-    margin-left: -25px;
   }
 
   #search1 {
     display: flex;
+    width: 10px;
+    max-width: 100%;
   }
 
   .brand {
@@ -1764,6 +1761,12 @@ body.cart-open main {
 
   .logo {
     margin-right: -20px;
+  }
+
+  .logo img {
+    display: flex;
+    width: 60px;
+    height: 60px;
   }
 
   #search2 {
