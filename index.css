@@ -1852,6 +1852,23 @@ body.cart-open main {
     font-size: 0.8rem;
   }
 
+  .panier-btn {
+  padding: 4px;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+  .panier-item {
+    top: -10px;
+    right: -10px;
+    padding: 2px 6px;
+    font-size: 13px;
+  }
+
+  .hamburger {
+    margin-left: -70px;
+  }
+
   .carousel-arrow {
     top: 55%;
     transform: translateY(-50%);
