@@ -1,12 +1,4 @@
 /// const { createElement } = require("react");
-
-///////// ------------------    ÉCRAN DE CHARGEMENT    ------------------- //////////
-window.addEventListener("load", () => {
-  const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.classList.add("hidden");
-});
-
-
 ///////// ------------------    MENU HAMBURGER    ------------------- //////////
 
 
@@ -475,7 +467,7 @@ async function loadGames() {
       const hotHref = `games.html?game=${hotSlug}`;
       banner.innerHTML = `
         <a href="${hotHref}" class="banner-link">
-          <img src="${hotBanner.image}" alt="${hotBanner.title}" class="banner-aura">
+          <img src="${hotBanner.image}" fetchpriority="high" alt="${hotBanner.title}" class="banner-aura">
           <div class="dispoBtn">NOW AVAILABLE</div>
         </a>
         <div class="particles"></div>
@@ -595,6 +587,8 @@ async function loadGames() {
     
   } catch (error) {
     console.error("Erreur de chargement JSON :", error);
+  } finally {
+    document.getElementById("loading-screen").classList.add("hidden");
   }
 }
 

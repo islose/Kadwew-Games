@@ -636,25 +636,6 @@ body.cart-open main {
   margin: 0 auto;
   cursor: pointer;
   z-index: 1;
-  box-shadow: 0 0 20px 20px black;
-}
-
-.banner-aura {
-  box-shadow: 0 0 10px 10px hsl(39, 100%, 50%);
-  animation: aura-fire 2s infinite alternate;
-  transition: box-shadow 0.3;
-}
-
-@keyframes aura-fire {
-  0% {
-    box-shadow: 0 0 30px 20px hsl(39, 100%, 52%), 0 0 360px 20px rgba(255, 68, 0, 0.600);
-  }
-  50% {
-    box-shadow: 0 0 50px 20px hsl(39, 100%, 52%), 0 0 3120px 40px rgba(255, 68, 0, 0.300);
-  }
-  100% {
-    box-shadow: 0 0 30px 20px hsl(39, 100%, 52%), 0 0 3160px 20px rgba(255, 68, 0, 0.300);
-  }
 }
 
 .particles {
@@ -714,12 +695,11 @@ body.cart-open main {
   width: 70%;
   background: rgba(255, 255, 255, 0.06);
   border: solid 2px transparent;
-  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: ease-in-out, border-color 0.2s ease-in-out;
   cursor: pointer;
 }
 
 #new-game-container .game-card:hover {
-  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.555);
   border-color: white;
 }
 
@@ -780,7 +760,6 @@ body.cart-open main {
   font-size: 3rem;
   cursor: pointer;
   z-index: 2;
-  transition: box-shadow 0.2s;
   user-select: none;
 }
 
@@ -790,11 +769,6 @@ body.cart-open main {
 
 .carousel-arrow.right {
   right: 0;
-}
-
-.carousel-arrow:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.22);
-  filter: brightness(0.95);
 }
 
 .deal-timer {
@@ -910,12 +884,11 @@ body.cart-open main {
   cursor: pointer;
   padding: 0;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .multiplayerCard:hover {
   border-color: white;
-  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.12);
   z-index: 2;
 }
 
@@ -1033,12 +1006,11 @@ body.cart-open main {
   cursor: pointer;
   padding: 0;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .indieGamesCard:hover {
   border-color: white;
-  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.12);
   z-index: 2;
 }
 
@@ -1097,7 +1069,7 @@ body.cart-open main {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: transform .12s ease, background ease, box-shadow .15s;
+  transition: transform .12s ease, background ease;
   outline: none;
   padding: 0;
 }
@@ -1171,7 +1143,6 @@ body.cart-open main {
 
 .discount-layout .game-card:hover {
   border-color: white;
-  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.12);
   z-index: 2;
 }
 
@@ -1180,7 +1151,7 @@ body.cart-open main {
   overflow: hidden;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.06);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -1335,8 +1306,6 @@ body.cart-open main {
 }
 
 #games-container .game-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   border-color: white;
 }
 
