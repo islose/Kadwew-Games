@@ -606,7 +606,6 @@ body.cart-open main {
   filter: blur(15px) brightness(0.6);
   z-index: -1;
   pointer-events: none;
-  transform: translateZ(0);
 }
 
 .game-box {
@@ -1350,7 +1349,7 @@ h3 {
 
   .panier-btn {
     display: block;
-    margin-left: -10px;
+    margin-left: -25px;
   }
 
   .game-box {
