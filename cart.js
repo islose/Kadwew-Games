@@ -145,7 +145,9 @@ function displayCart() {
     const gameElement = document.createElement('div');
     gameElement.className = 'cart-games';
     gameElement.innerHTML = `
-      <i class="fa-solid fa-square-xmark remove-game-btn" data-index="${index}"></i>
+      <svg class="remove-game-btn" data-index="${index}" width="1em" height="1em" viewBox="0 0 24 24" role="button" tabindex="0" aria-label="Remove ${game.title} from cart">
+        <path fill="currentColor" fill-rule="evenodd" d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm4.6 5.2a1 1 0 0 1 1.4 0l1 1 1-1a1 1 0 1 1 1.4 1.4l-1 1 1 1a1 1 0 1 1-1.4 1.4l-1-1-1 1a1 1 0 1 1-1.4-1.4l1-1-1-1a1 1 0 0 1 0-1.4Z"/>
+      </svg>
       <img src="${game.image}" alt="${game.title}">
       <div class="cart-games-info">
         <div class="cart-games-title">${game.title}</div>
@@ -157,10 +159,18 @@ function displayCart() {
   });
 
   document.querySelectorAll('.remove-game-btn').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+    const removeItem = (e) => {
       e.stopPropagation();
       const index = btn.getAttribute('data-index');
       removeFromCart(cart[index].title);
+    };
+
+    btn.addEventListener('click', removeItem);
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        removeItem(e);
+      }
     });
   });
 

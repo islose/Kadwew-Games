@@ -263,7 +263,15 @@ function createCardGames(game) {
       ${prices}
     </div>
     <div class="game-information" id="game-information">
-        <button class="add-cart-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Add to cart</button>
+        <button class="add-cart-btn" id="add-cart-btn">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="8" cy="21" r="1"/>
+            <circle cx="19" cy="21" r="1"/>
+            <path d="M2 2h2l2.7 12.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L22 7H5.1"/>
+            <path d="M13.5 8.5v5M11 11h5"/>
+          </svg>
+          Add to cart
+        </button>
     </div>
     <div class="description" id="description">${game.description}</div>
     

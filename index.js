@@ -607,9 +607,13 @@ function initCarousel(newGamesData) {
   newContainer.innerHTML = `
   <h2 class="popular-title">TENDANCES AND POPULARS</h2>
     <div class="carousel-slot">
-      <i class="fa-solid fa-angle-left carousel-arrow left" role="button" aria-label="Previous"></i>
+      <svg class="carousel-arrow left" width="1em" height="1em" viewBox="0 0 24 24" fill="none" role="button" tabindex="0" aria-label="Previous">
+        <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <div class="carousel-content"></div>
-      <i class="fa-solid fa-chevron-right carousel-arrow right" role="button" aria-label="Next"></i>
+      <svg class="carousel-arrow right" width="1em" height="1em" viewBox="0 0 24 24" fill="none" role="button" tabindex="0" aria-label="Next">
+        <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
     <div class="carousel-dots" aria-hidden="false"></div>
     
@@ -675,6 +679,20 @@ function initCarousel(newGamesData) {
 
   next.addEventListener('click', () => { nextGame(); restartAuto(); });
   prev.addEventListener('click', () => { prevGame(); restartAuto(); });
+  next.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      nextGame();
+      restartAuto();
+    }
+  });
+  prev.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      prevGame();
+      restartAuto();
+    }
+  });
 
   slot.addEventListener('mouseenter', () => {
     isPaused = true;
