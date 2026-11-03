@@ -529,7 +529,7 @@ async function loadGames() {
         .sort((a, b) => Number(b.discount) - Number(a.discount));
 
       discountContainer.innerHTML = `
-        <p class="deal-timer"><span id="timer"></span></p>
+        <p id="deal-timer" class="deal-timer"><span id="timer"></span></p>
         <h2 class="discount-title">OFFERS OF THE WEEK</h2>
       `;
 
@@ -583,6 +583,7 @@ async function loadGames() {
     createDiscountLayout(games);
     createMultiplayerSection(games);
     createIndieGamesSection(games);
+    updateActiveLink();
 
     
   } catch (error) {
@@ -590,6 +591,7 @@ async function loadGames() {
   } finally {
     document.getElementById("loading-screen").classList.add("hidden");
   }
+  
 }
 
 
@@ -1054,3 +1056,53 @@ document.addEventListener("click", (e) => {
     sortDropdown.classList.add("hidden");
   }
 });
+
+
+///////// ------------------    MENU ACTIF SELON LA POSITION    ------------------- //////////
+
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+
+// Le lien Home n'a pas de #, il est actif quand aucune section n'est atteinte
+const homeLinks = [...navLinks].filter(a => a.getAttribute('href') === '/index.html');
+
+// Les liens avec un # (Games, Offers) et l'élément vers lequel ils pointent
+const spyItems = [...navLinks]
+  .filter(a => a.hash)
+  .map(a => ({ link: a, target: document.querySelector(a.hash) }))
+  .filter(item => item.target);
+
+function updateActiveLink() {
+  if (spyItems.length === 0) return;   // autres pages : on ne touche à rien
+
+  const offset = 150;   // distance du haut de l'écran à partir de laquelle une section est "atteinte"
+  let currentHash = null;
+  let bestTop = -Infinity;
+
+  // On cherche la section déjà atteinte qui est la plus proche du haut
+  spyItems.forEach(({ link, target }) => {
+    const top = target.getBoundingClientRect().top;
+    if (top <= offset && top > bestTop) {
+      bestTop = top;
+      currentHash = link.hash;
+    }
+  });
+
+  navLinks.forEach(a => {
+    const isActive = currentHash ? a.hash === currentHash : homeLinks.includes(a);
+    a.classList.toggle('active', isActive);
+  });
+}
+
+// requestAnimationFrame : on limite le calcul à une fois par image, pour ne pas ralentir le scroll
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    updateActiveLink();
+    ticking = false;
+  });
+}, { passive: true });
+
+window.addEventListener('resize', updateActiveLink);
+updateActiveLink();
