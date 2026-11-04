@@ -306,7 +306,7 @@ function createIndieGamesSection(games) {
 
   const section = document.createElement('section');
   section.className = 'indieSection';
-  container.innerHTML = `<h2 class="indie-games-title">INDIE GAMES</h2>`;
+  container.innerHTML = `<h2 class="indie-games-title" id="indie-games-title">INDIE GAMES</h2>`;
   section.innerHTML = `
     <div class="indieCarousel">
       <button class="carouselButton left">‹</button>
